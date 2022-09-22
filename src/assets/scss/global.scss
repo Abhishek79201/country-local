@@ -40,6 +40,17 @@ svg {
   );
 }
 
+.purple_gradient_text {
+  background: linear-gradient(90deg, #e45f8c 0%, #a96ad8 100%);
+  background: -webkit-linear-gradient(0deg, #e45f8c 0%, #a96ad8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.purple_gradient_bg {
+  background: rgb(228, 95, 140);
+  background: linear-gradient(90deg, #e45f8c 0%, #a96ad8 100%);
+}
+
 :root {
   --x: 0;
 }

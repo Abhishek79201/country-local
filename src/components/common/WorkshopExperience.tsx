@@ -56,7 +56,8 @@ const WorkshopExperience = () => {
           variants={fadeInUp}
           className="mb-8 text-center text-xl font-bold text-black md:mb-10 md:text-3xl lg:mb-12 lg:text-4xl"
         >
-          MentorOcean Workshop Experience
+          <span className="purple_gradient_text mr-2">Country Locals</span>
+          Workshop Experience
         </motion.h2>
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-5 lg:gap-7">
@@ -65,10 +66,10 @@ const WorkshopExperience = () => {
               <motion.div
                 key={item.id}
                 variants={fadeInUp}
-                className="flex w-full rounded-2xl bg-[#D3FFEB] p-3 sm:w-[48%] lg:mb-0 lg:w-[380px] lg:p-4 xl:w-[368px] xl:p-5"
+                className="purple_gradient_bg flex w-full rounded-2xl p-3 sm:w-[48%] lg:mb-0 lg:w-[380px] lg:p-4 xl:w-[368px] xl:p-5"
               >
-                <div className="mr-3 flex h-[66px] w-[66px] flex-shrink-0 items-center justify-center rounded-[10px] bg-[#76F4BA]">
-                  <div className="svg_icon w-8 text-[#0DB668]">
+                <div className="mr-3 flex h-[66px] w-[66px] flex-shrink-0 items-center justify-center rounded-[10px] bg-white">
+                  <div className="svg_icon flex w-8 items-center text-[#EF5DA8]">
                     <Image
                       src={item.imgUrl}
                       width={32}
@@ -78,10 +79,10 @@ const WorkshopExperience = () => {
                   </div>
                 </div>
                 <div>
-                  <p className="pb-1 text-base font-bold leading-tight text-[#484848] sm:pb-[6px] lg:text-[16px]">
+                  <p className="pb-1 text-base font-bold leading-tight text-white sm:pb-[6px] lg:text-[16px]">
                     {item.title}
                   </p>
-                  <div className="text-[11px] text-[#4B4B4B] sm:text-[12px]">
+                  <div className="text-[11px] text-white sm:text-[12px]">
                     {item.description}
                   </div>
                 </div>

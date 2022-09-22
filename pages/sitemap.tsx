@@ -6,10 +6,10 @@ const Sitemap: NextPage = () => (
   <div className="py-56">
     <div className="container">
       <Link href="/">
-        <a className="mb-3 block">Home</a>
+        <a className="mb-3 block">Country Locals</a>
       </Link>
-      <Link href="/multi-day-workshop">
-        <a className="mb-3 block">Multi Day and Short Course WorkShop</a>
+      <Link href="/home">
+        <a className="mb-3 block">Old Home</a>
       </Link>
       <Link href="/one-day-workshop">
         <a className="mb-3 block">One Day WorkShop</a>

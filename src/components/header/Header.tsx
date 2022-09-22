@@ -11,11 +11,8 @@ import HiddenMobileMenu from './HiddenMobileMenu';
 
 import SearchIcon from '../../../public/icons/search.svg';
 import SearchBlackIcon from '../../../public/icons/search-black.svg';
-import EnvelopeIcon from '../../../public/icons/envelope.svg';
-import TeachIcon from '../../../public/icons/teach.svg';
 import BarIcon from '../../../public/icons/bar.svg';
-import UserGreenIcon from '../../../public/icons/user-green.svg';
-import CoinIcon from '../../../public/icons/coins.svg';
+import UserPurpleIcon from '../../../public/icons/circle-user.svg';
 import MobileFloatingHeader from './MobileFloatingHeader';
 import { OverflowContext } from '../../context/overflowContext';
 
@@ -27,7 +24,6 @@ const Header = () => {
   const [totalChildren, setTotalChildren] = useState<number>(0);
   const [totalInfants, setTotalInfants] = useState<number>(0);
   const [when, setWhen] = useState<Date | null>(new Date());
-  const hasNotifications = true;
   const [secondaryMenuItems, setSecondaryMenuItems] = useState<SecondaryNav[]>([
     { id: 1, title: 'Mentors', active: true },
     { id: 2, title: 'Online Classes', active: false },
@@ -117,15 +113,15 @@ const Header = () => {
               isOpen ? 'pb-[105px]' : 'pb-4'
             }`}
           >
-            <div className="mx-auto px-[15px] lg:max-w-[1024px] lg:px-5 xl:max-w-[1200px]">
+            <div className="mx-auto px-[15px] lg:max-w-[1024px] lg:px-5 xl:max-w-[1320px]">
               <div className="relative flex items-center justify-between">
                 <div className="md:w-[166px] lg:w-3/12 xl:w-1/3">
                   <Link href="/">
                     <a className="focus-green relative z-10 hidden py-3 text-left lg:inline-flex">
                       <Image
-                        src="/mentor-ocean-logo.svg"
-                        width={190}
-                        height={34}
+                        src="/country-locals-logo.svg"
+                        width={110}
+                        height={49}
                         alt="Mentor Ocean"
                       />
                     </a>
@@ -176,7 +172,7 @@ const Header = () => {
                       onClick={() => handlePrimaryNavClick(4)}
                     >
                       Who
-                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#288890]">
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#E71575]">
                         <span className="w-5">
                           <SearchIcon />
                         </span>
@@ -204,24 +200,9 @@ const Header = () => {
                   <div className="flex items-center justify-end gap-5">
                     <button
                       type="button"
-                      className={`focus-green relative hidden xl:flex ${
-                        hasNotifications
-                          ? 'after:absolute after:-top-[1px] after:-right-[2px] after:h-[6px] after:w-[6px] after:rounded-full after:bg-[#FD61AD]'
-                          : ''
-                      }`}
+                      className="focus-green relative hidden items-center gap-[6px] xl:flex"
                     >
-                      <span className="w-5">
-                        <EnvelopeIcon />
-                      </span>
-                    </button>
-                    <button
-                      type="button"
-                      className="focus-green relative hidden items-center gap-[6px] font-bold xl:flex"
-                    >
-                      Teach
-                      <span className="w-5">
-                        <TeachIcon />
-                      </span>
+                      Become a host
                     </button>
 
                     <Menu as="div" className="relative">
@@ -231,7 +212,7 @@ const Header = () => {
                         </span>
 
                         <span className="inline-flex h-8 w-8 items-center justify-center rounded-full">
-                          <UserGreenIcon />
+                          <UserPurpleIcon />
                         </span>
                       </Menu.Button>
                       <Menu.Items className="focus-green absolute top-14 w-[220px] rounded-lg bg-white py-2 shadow-spread">
@@ -273,17 +254,6 @@ const Header = () => {
                         </Menu.Item>
                       </Menu.Items>
                     </Menu>
-
-                    <div className="flex items-center justify-center gap-1">
-                      <span className="flex items-center justify-center">
-                        <span className="w-4">
-                          <CoinIcon />
-                        </span>
-                      </span>
-                      <span className="text-lg font-semibold text-[#17A966]">
-                        ₹123
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>

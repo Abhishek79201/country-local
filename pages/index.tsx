@@ -1,76 +1,110 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
+import { serviceData } from '../src/utilities/dummy-api';
 
-import BannerSection from '../src/components/home/BannerSection';
-import MentorSlider from '../src/components/home/MentorSlider';
-import PopularLeadership from '../src/components/home/PopularLeadership';
-// import EducationCategories from '../src/components/home/EducationCategories';
-import Sponsors from '../src/components/home/Sponsors';
-import Timeline from '../src/components/home/Timeline';
-import UpcomingLiveSessions from '../src/components/home/UpcomingLiveSessions';
-import Creativity from '../src/components/home/Creativity';
-import PersonalizeTour from '../src/components/home/PersonalizeTour';
-import CreativeGoals from '../src/components/home/CreativeGoals';
+import BannerWithImageGrid from '../src/components/common/BannerWithImageGrid';
+import GreenBlueGradient from '../src/components/common/GreenBlueGradient';
+import SessionInfoGrid from '../src/components/common/SessionInfoGrid';
+import GoodToKnow from '../src/components/common/GoodToKnow';
 import DarkThreeColumns from '../src/components/common/DarkThreeColumns';
 import ServicesSlider from '../src/components/common/ServicesSlider';
-import MentorTalks from '../src/components/home/MentorTalks';
-import CollegeLogos from '../src/components/home/CollegeLogos';
-import PersonalCareer from '../src/components/home/PersonalCareer';
-import StopDebut from '../src/components/home/StopDebut';
+import ThingsToKnow from '../src/components/common/ThingsToKnow';
+import WorkshopExperience from '../src/components/common/WorkshopExperience';
+import FrequentlyAskedQuestions from '../src/components/common/FAQ';
+import MentorCards from '../src/components/common/MentorCards';
+import ClassSchedule from '../src/components/common/ClassSchedule';
+import OngoingCourse from '../src/components/common/OngoingCourse';
+import CourseCard from '../src/components/common/CourseCard';
+import CourseDetails from '../src/components/multi-day-workshop/CourseDetails';
+import ImageSlider from '../src/components/common/ImageSlider';
+import CourseCurriculum from '../src/components/common/CourseCurriculum';
+import Reviews from '../src/components/common/Reviews';
 
 import BoxIcon from '../public/icons/box.svg';
-import { mentorSliderData } from '../src/utilities/dummy-api';
+import TimerIcon from '../public/icons/recently-viewed.svg';
+import TourismBanner from '../src/components/common/TourismBanner';
 
+/* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-wrap-multilines: "off" */
-const Home: NextPage = () => (
-  <div>
-    <BannerSection />
+const MultiDayWorkshop: NextPage = () => (
+  <>
+    <Head>
+      <title>Country Locals</title>
+    </Head>
+    <div className="bg-[#FBFBFB]">
+      <TourismBanner />
 
-    <Sponsors />
+      {/* <GreenBlueGradient /> */}
 
-    <Timeline />
+      {/* <SessionInfoGrid /> */}
 
-    <PopularLeadership />
+      <CourseDetails />
 
-    <MentorSlider />
+      <GoodToKnow />
 
-    <UpcomingLiveSessions />
+      <DarkThreeColumns
+        greenText="AN IMMERSIVE LEARNING EXPERIENCE"
+        title="A better kind of online class"
+        subtitle="Monthly classes go beyond a playlist of videos. The classroom has been fully digitzied, allowing you to get a hands-on learning experience and community from anywhere."
+      />
 
-    <ServicesSlider
-      sliderId="most_popular_mentors_slider"
-      title={
-        <h2 className="mr-7 inline-flex items-center text-[20px] font-bold text-black md:text-[24px]">
-          <span className="svg_icon mr-4 w-[28px] text-transparent">
-            <BoxIcon />
-          </span>
-          Most popular
-          <span className="ml-2 text-[#1589C1]">Mentors</span>
-        </h2>
-      }
-      data={mentorSliderData}
-    />
+      <Reviews />
 
-    <Creativity />
+      <CourseCurriculum />
 
-    {/* <EducationCategories /> */}
+      <ImageSlider />
 
-    <PersonalizeTour />
+      <OngoingCourse />
 
-    <CreativeGoals />
+      <CourseCard />
 
-    <DarkThreeColumns
-      greenText="AN IMMERSIVE LEARNING EXPERIENCE"
-      title="How Does it Work"
-      subtitle="Monthly classes go beyond a playlist of videos. The classroom has been fully digitzied, allowing you to get a hands-on learning experience and community from anywhere."
-    />
+      <ClassSchedule sliderId="available_class_schedule" />
 
-    <MentorTalks />
+      <MentorCards />
 
-    <CollegeLogos />
+      <FrequentlyAskedQuestions />
 
-    <PersonalCareer />
+      <ServicesSlider
+        sliderId="other_services_slider"
+        title={
+          <h2 className="mr-7 inline-flex items-center text-[20px] font-bold text-black md:text-[24px]">
+            Other Services by Abdullah Faza Farhan
+          </h2>
+        }
+        data={serviceData}
+      />
 
-    <StopDebut />
-  </div>
+      <ServicesSlider
+        sliderId="more_services_slider"
+        title={
+          <h2 className="mr-7 inline-flex items-center text-[20px] font-bold text-black md:text-[24px]">
+            <span className="svg_icon mr-4 w-[28px] text-transparent">
+              <BoxIcon />
+            </span>
+            More Services Like this
+          </h2>
+        }
+        data={serviceData}
+      />
+
+      <ServicesSlider
+        sliderId="recent_browsing_slider"
+        title={
+          <h2 className="mr-7 inline-flex items-center text-[20px] font-bold text-black md:text-[24px]">
+            <span className="svg_icon mr-4 w-[28px] text-[#17A966]">
+              <TimerIcon />
+            </span>
+            Recent Browsing
+          </h2>
+        }
+        data={serviceData}
+      />
+
+      <WorkshopExperience />
+
+      <ThingsToKnow />
+    </div>
+  </>
 );
 
-export default Home;
+export default MultiDayWorkshop;

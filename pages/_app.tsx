@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Head>
         <link rel="shortcut icon" href="/mentor-ocean-favicon.png" />
-        <title>Mentor Ocean</title>
+        <title>Country Locals</title>
       </Head>
       <ViewportProvider>
         <OverflowProvider>
