@@ -10,6 +10,26 @@ import LeafIcon from '../../public/icons/leaf.svg';
 import CodeIcon from '../../public/icons/code.svg';
 import BarberIcon from '../../public/icons/barber.svg';
 import MusicIcon from '../../public/icons/music.svg';
+import User2Icon from '../../public/icons/profile-2user.svg';
+import RoomDoor from '../../public/icons/roomDoor.svg';
+import Bed from '../../public/icons/bed.svg';
+import Bath from '../../public/icons/bath.svg';
+import Rope from '../../public/icons/rope.png';
+import Camping from '../../public/icons/camping.png';
+import Stargazing from '../../public/icons/stargazing.png';
+import Campfire from '../../public/icons/campfire.png';
+import Camping2 from '../../public/icons/camping2.png';
+import Lock from '../../public/icons/lock.png';
+import Kit from '../../public/icons/kit.png';
+import House from '../../public/icons/house.png';
+import Crowd from '../../public/icons/crowd.png';
+import Wifi from '../../public/icons/wifi.svg';
+import Tv from '../../public/icons/tv.svg';
+import Hair from '../../public/icons/hair.svg';
+import CheckCalender from '../../public/icons/check-calender.svg';
+import Pool from '../../public/icons/pool.svg';
+import AirCondition from '../../public/icons/air-condition.svg';
+import Cup from '../../public/icons/cup.svg';
 
 /* eslint import/prefer-default-export: "off" */
 export const categoryMenuItems: PrimaryNav[] = [
@@ -664,4 +684,39 @@ export const mentorSliderData = [
     offer: 30,
     imgUrl: '/popular-mentor-1.jpg',
   },
+];
+
+export const highlightData = [
+  { icon: User2Icon, title: '5 Guest' },
+  { icon: RoomDoor, title: 'Bedrooms' },
+  { icon: Bed, title: '4 Beds' },
+  { icon: Bath, title: '3 Baths' },
+  { icon: User2Icon, title: '5 Guest' },
+  { icon: RoomDoor, title: 'Bedrooms' },
+  { icon: Bed, title: '4 Beds' },
+  { icon: Bath, title: '3 Baths' },
+];
+
+export const activitiesData = [
+  { icon: Campfire, title: 'Campfire' },
+  { icon: Rope, title: 'Rope Activites ' },
+  { icon: Camping, title: 'Camping near Bangalore ' },
+  { icon: Stargazing, title: 'Stargazing' },
+  { icon: Camping2, title: 'Camping near Chennai' },
+];
+export const safetyFeaturesData = [
+  { icon: Lock, title: 'Gated Private Campsite' },
+  { icon: Kit, title: 'First Aid Kit' },
+  { icon: House, title: 'Backup Cottage ' },
+  { icon: Crowd, title: 'Crowd Free Campsite' },
+];
+
+export const offersData = [
+  { icon: Wifi, title: 'Wifi' },
+  { icon: Tv, title: 'Tv' },
+  { icon: Hair, title: 'Hair dryer' },
+  { icon: CheckCalender, title: 'Long-term stays allowed' },
+  { icon: Pool, title: 'Pool' },
+  { icon: AirCondition, title: 'Air Conditioning' },
+  { icon: Cup, title: 'Breakfast' },
 ];

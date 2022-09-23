@@ -351,19 +351,19 @@ const CourseDetails = () => {
             >
               <h3 className="pb-6 text-lg font-semibold text-black md:text-[20px]">
                 6 Reason to Book{' '}
-                <span className="text-[#17A966]">this Experience</span>
+                <span className="text-[#e45f8c]">this Experience</span>
               </h3>
-              <div className="flex w-full flex-wrap justify-between gap-y-5 md:max-w-[590px]">
+              <div className="flex w-full flex-wrap justify-between gap-y-5 md:max-w-[696px]">
                 {[1, 2, 3, 4, 5, 6].map((item) => (
                   <div
                     key={item}
                     className="flex items-center rounded-[5px] bg-white py-[6px] pl-2  pr-6 shadow-spread"
                   >
-                    <div className="svg_icon w-6 text-[#F9E171]">
+                    <div className="svg_icon w-6 text-[#e45f8c]">
                       <Checkmark />
                     </div>
                     <div className="ml-2 text-sm font-semibold">
-                      Structured but flexible to fit
+                      Explore Berlin in a conviertible car
                     </div>
                   </div>
                 ))}

@@ -25,7 +25,7 @@ const ServicesSlider = ({
   sliderId,
   title,
   data,
-  useLine = true,
+  useLine,
 }: ServicesSliderProps) => (
   <div className="relative pb-14">
     <motion.div
@@ -38,11 +38,32 @@ const ServicesSlider = ({
       <div className="pb-5">
         <motion.div
           variants={fadeInLeft}
-          className="flex items-center justify-between pb-2"
+          className="flex items-center justify-between gap-4 pb-2"
         >
           {title}
-          {useLine && (
+          {useLine ? (
             <div className="hidden h-[1px] flex-auto bg-[#D8D8D8] md:block" />
+          ) : (
+            <div className="flex justify-between gap-3 border-b-[1px]">
+              <button
+                type="button"
+                className=" border-b-[3px]  pb-2 text-base font-bold text-[#808080] duration-100 ease-linear hover:border-[#E71575] hover:text-[#E71575]"
+              >
+                Available Casses
+              </button>
+              <button
+                type="button"
+                className=" border-b-[3px]  pb-2 text-base font-bold text-[#808080] duration-100 ease-linear hover:border-[#E71575] hover:text-[#E71575]"
+              >
+                Prime Packs
+              </button>
+              <button
+                type="button"
+                className=" border-b-[3px] border-[#E71575] pb-2 text-base font-bold text-[#E71575] duration-100 ease-linear hover:text-[#E71575]"
+              >
+                Workshop
+              </button>
+            </div>
           )}
         </motion.div>
       </div>

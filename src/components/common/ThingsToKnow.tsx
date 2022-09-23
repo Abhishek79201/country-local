@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import IdCardIcon from '../../../public/icons/id-card.svg';
 import UserIcon from '../../../public/icons/user.svg';
 import MaskIcon from '../../../public/icons/mask-face.svg';
-import Checkmark from '../../../public/icons/circle-check.svg';
+import Checkmark from '../../../public/icons/checked-purple.svg';
 
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
@@ -107,7 +107,7 @@ const ThingsToKnow = () => (
               consequat sunt nostrud amet.
             </p>
             <Link href="/">
-              <a className="font-semibold text-[#4B4B4B] hover:text-[#17A966]">
+              <a className="font-semibold text-[#4B4B4B] hover:text-[#E71575]">
                 Show More &gt;
               </a>
             </Link>

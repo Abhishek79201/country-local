@@ -45,7 +45,7 @@ const MentorCard = ({
         </div>
         {isAvailable && (
           <div className="z-1 absolute top-3 left-3 flex items-center rounded-md bg-[#C4C4C4] bg-opacity-20 px-2 py-1 text-[8px] font-bold text-white">
-            <div className="mr-1 h-[6px] w-[6px] rounded-full bg-[#00FF29]" />
+            <div className="mr-1 h-[6px] w-[6px] rounded-full bg-[#E71575]" />
             Available
           </div>
         )}
@@ -55,7 +55,7 @@ const MentorCard = ({
           </button>
         </div>
         {isNew && (
-          <div className="absolute -left-[5px] top-11 bg-[#00FF29] px-3 py-1 text-[10px] font-bold text-black">
+          <div className="absolute -left-[5px] top-11 bg-[#E71575] px-3 py-1 text-[10px] font-bold text-black">
             New Mentor
           </div>
         )}
@@ -86,14 +86,16 @@ const MentorCard = ({
             <StarIcon />
           </span>
           <span className="ml-1 mr-3 text-[8px] font-bold">(231)</span>
-          <span className="block rounded-full bg-[#DCF2E8] px-[6px] py-[1px] text-[8px] text-[#17A966]">
-            {offer}%<span className="ml-1">off</span>
-          </span>
         </div>
         <div className="pt-[6px] text-[11px] text-[#878787]">
           Advocate Suhasini S practices at city Civil Court I Bangalore,
           Intellectual property appelate borad (IPAB) Delhi, Karnataka Hight
-          Court.. <span className="font-bold text-[#17A966]">See more</span>
+          Court.. <span className="font-bold text-[#E71575]">See more</span>
+        </div>
+        <div className="flex w-full items-end justify-end py-1">
+          <span className="block rounded-full bg-[#DCF2E8] px-[6px] py-[1px] text-[8px] text-[#17A966]">
+            {offer}%<span className="ml-1">off</span>
+          </span>
         </div>
         <div className="text-right text-sm font-bold">
           From

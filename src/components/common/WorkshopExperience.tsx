@@ -13,33 +13,33 @@ const WorkshopExperience = () => {
       title: 'Thoughtful Hosts',
       description:
         'Get to know hosts who share their expertise and a window into their world.',
-      imgUrl: '/icons/smile.svg',
+      imgUrl: '/icons/purple-smile.svg',
     },
     {
       id: 2,
       title: 'Small-group Activities',
       description:
         'Meet people from all over the world while learning something new together.',
-      imgUrl: '/icons/people-group.svg',
+      imgUrl: '/icons/purple-user.svg',
     },
     {
       id: 3,
       title: 'Simple and Global',
       description:
         'Join easily and participate from home without a lot of prep.',
-      imgUrl: '/icons/phone-laptop.svg',
+      imgUrl: '/icons/purple-device.svg',
     },
     {
       id: 4,
       title: 'Flexible Schedule',
       description: 'Rescheduling Option Available',
-      imgUrl: '/icons/calendar-outline.svg',
+      imgUrl: '/icons/purple-calendar.svg',
     },
     {
       id: 5,
       title: 'Easy Refund - Cancel Anytime',
       description: '100% Refund on unused classes',
-      imgUrl: '/icons/refund.svg',
+      imgUrl: '/icons/purple-dollar.svg',
     },
   ];
 
