@@ -26,7 +26,7 @@ const Review = () => {
   };
 
   return (
-    <div className="relative pt-20">
+    <div className="relative pt-11">
       <div className="container">
         <motion.div
           variants={animationWrapper}

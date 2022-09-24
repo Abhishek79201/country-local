@@ -66,7 +66,7 @@ const WorkshopExperience = () => {
               <motion.div
                 key={item.id}
                 variants={fadeInUp}
-                className="purple_gradient_bg flex w-full rounded-2xl p-3 sm:w-[48%] lg:mb-0 lg:w-[380px] lg:p-4 xl:w-[368px] xl:p-5"
+                className="purple_gradient_bg_light flex w-full rounded-2xl p-3 sm:w-[48%] lg:mb-0 lg:w-[380px] lg:p-4 xl:w-[368px] xl:p-5"
               >
                 <div className="mr-3 flex h-[66px] w-[66px] flex-shrink-0 items-center justify-center rounded-[10px] bg-white">
                   <div className="svg_icon flex w-8 items-center text-[#EF5DA8]">

@@ -156,14 +156,14 @@ const GoodToKnow = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="mt-0 max-w-[749px] border-t-0 border-[#EBEBEB] pt-10"
+          className="mt-0 max-w-[749px] border-t-0 border-[#EBEBEB]"
         >
           <motion.div variants={fadeInUp} className="mb-6">
-            <h3 className="pb-3 font-bold text-[#262626] lg:text-2xl">
+            <h3 className="pb-3 font-bold text-[#222] lg:text-2xl">
               Whats not Included
             </h3>
             <p className="mb-1 flex text-sm text-[#484848] md:text-base lg:text-lg">
-              <span className="mr-2 inline-block w-[22px] flex-shrink-0 text-[#E71575] xl:pt-1 ">
+              <span className="mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1 ">
                 <CancelMark />
               </span>
               Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
@@ -177,19 +177,25 @@ const GoodToKnow = () => {
             </p>
           </motion.div>
           <motion.div variants={fadeInUp} className="mb-6">
-            <h3 className="pb-3 font-bold text-[#262626] lg:text-[22px]">
+            <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
               Where we will meet?
             </h3>
             <p className="mb-1 flex text-sm text-[#484848] md:text-base lg:text-lg">
-              <span className="mr-2 inline-block w-[22px] flex-shrink-0 xl:pt-1">
+              <span className="svg_icon mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1">
                 <Checkmark />
               </span>
               Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
               condimentum.. Nulla Orci congue prasent
             </p>
+            <button
+              type="button"
+              className="purple_gradient_bg ml-6 mt-2 h-[44px] w-[185px] rounded-[10px] text-sm font-bold text-[#fff] "
+            >
+              View Meeting Location
+            </button>
           </motion.div>
           <motion.div variants={fadeInUp}>
-            <h3 className="pb-3 font-bold text-[#262626] lg:text-[22px]">
+            <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
               Cancelation
             </h3>
             <p className="mb-1 flex text-sm text-[#484848] md:text-base lg:text-[22px]">

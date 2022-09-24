@@ -44,16 +44,26 @@ svg {
 }
 
 .purple_gradient_text {
-  background: linear-gradient(90deg, #e45f8c 0%, #a96ad8 100%);
-  background: -webkit-linear-gradient(0deg, #e45f8c 0%, #a96ad8 100%);
+  background: linear-gradient(90deg, #e71575 -16.54%, #6f01f0 167.58%);
+  // background: -webkit-linear-gradient(0deg, #e45f8c 0%, #a96ad8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.purple_gradient_bg {
-  background: rgb(228, 95, 140);
-  background: linear-gradient(90deg, #e45f8c 0%, #a96ad8 100%);
+.purple_gradient_text_deep {
+  background: linear-gradient(90deg, #e71575 -16.54%, #6f01f0 167.58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
-
+.purple_gradient_bg {
+  background: rgb(231, 21, 117);
+  background: linear-gradient(90deg, #e71575 -16.54%, #6f01f0 167.58%);
+}
+.purple_gradient_bg_light {
+  background: rgb(228, 95, 140);
+  background: linear-gradient(90.29deg, #e45f8c 0.27%, #a96ad8 103.4%);
+}
 :root {
   --x: 0;
 }
@@ -368,5 +378,36 @@ input:checked + .slider:before {
   }
   .custom_scrollbar::-webkit-scrollbar {
     display: none;
+  }
+}
+
+.footer {
+  background: radial-gradient(
+      42.95% 106.38% at 99.62% 53.61%,
+      rgba(0, 241, 198, 0.42) 15.16%,
+      rgba(203, 29, 29, 0) 100%
+    ),
+    linear-gradient(109.26deg, #6ae8d1 14.08%, rgba(216, 17, 172, 0.5) 62.34%);
+}
+
+.gallery-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 800px 345px auto;
+  background: #000;
+
+  .item1 {
+    width: 800px;
+    height: 456px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  div {
+    padding: 1px 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }

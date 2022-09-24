@@ -13,7 +13,7 @@ const Activities = () => (
     viewport={{ once: true }}
   >
     <h1 className="pb-8 text-[22px] font-bold text-[#222] ">Activities</h1>
-    <div className="flex w-full flex-wrap justify-start gap-5 pb-8 md:gap-y-7 md:gap-x-[80px]">
+    <div className="flex w-full flex-wrap justify-start gap-5  md:gap-y-7 md:gap-x-[80px]">
       {activitiesData.map((item) => (
         <motion.div
           variants={fadeIn}

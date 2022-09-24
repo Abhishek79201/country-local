@@ -10,7 +10,7 @@ import UnderLine from '../common/UnderLine';
 const ProfileDetails = () => {
   const [openReport, setOpenReport] = useState(false);
   return (
-    <div className="max-w-[749px] py-12 ">
+    <div className="max-w-[749px]">
       <div className="header flex items-start justify-between pb-4">
         <div className="flex flex-wrap gap-4 sm:flex-nowrap">
           <div className="relative mb-3 flex shrink-0 sm:mb-0">
@@ -107,10 +107,10 @@ const ProfileDetails = () => {
         </div>
       </div>
       <div className="content">
-        <h1 className="pb-1 text-[14px] font-bold text-[#575757] ">
+        <h1 className="text-[14px] font-bold text-[#575757] ">
           The Traveling Painters
         </h1>
-        <div className="flex items-center gap-2 pb-5">
+        <div className="flex items-center gap-2 pb-8">
           <Image src="/icons/global.png" alt="global" width={20} height={20} />
           <h1 className="text-[12px] font-bold text-[#4A4A4A]">
             <span className="font-thin"> I speak </span>
@@ -119,12 +119,12 @@ const ProfileDetails = () => {
         </div>
 
         <button
-          className="purple_gradient_bg mb-8 rounded-lg py-4 px-8 text-base font-bold text-[#fff]"
+          className="purple_gradient_bg_light mb-8 rounded-lg py-4 px-8 text-base font-bold text-[#fff]"
           type="button"
         >
           Contact Host
         </button>
-        <p className="pb-14 text-[18px] leading-[26px] text-[#808080] ">
+        <p className=" p-0 text-[18px]  text-[#808080] ">
           Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
           condimentum. Nulla orci congue praesent nullam vitae nibh. Sed sit sed
           eu lectus mi amet egestas massa. Nunc enim eleifend tellus tincidunt

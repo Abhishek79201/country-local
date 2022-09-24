@@ -9,7 +9,6 @@ import UnderLine from '../common/UnderLine';
 
 const AboutProperty = () => (
   <motion.div
-    className="my-8"
     variants={animationWrapper}
     initial="initial"
     whileInView="animate"
@@ -49,7 +48,7 @@ const AboutProperty = () => (
           key={item}
           className="flex items-center rounded-[5px]  py-[8px]"
         >
-          <div className="svg_icon w-6 text-[#e45f8c]">
+          <div className="svg_icon w-6 text-[#E71575]">
             <Checkmark />
           </div>
           <div className="ml-2 text-sm font-semibold">

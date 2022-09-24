@@ -17,7 +17,7 @@ import HouseRules from './HouseRules';
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
 const Profiles = () => (
-  <div className="relative bg-[#fff] pt-10 md:pt-14 lg:pt-20">
+  <div className="relative bg-[#fff]  md:pt-14 lg:pt-12">
     <motion.div
       variants={animationWrapper}
       initial="initial"
@@ -27,8 +27,8 @@ const Profiles = () => (
     >
       <div className="flex flex-wrap justify-between gap-14 lg:flex-nowrap">
         <div className="max-w-[749px]">
-          <div className="w-full py-12">
-            <h1 className="text-[#222 my-4 text-2xl font-semibold">
+          <div className="w-full">
+            <h1 className="text-[#222 text-2xl font-semibold">
               Aberdeen Fishermen Cultural Tou <br /> r with Delicious Dim Sums
               Lunch <span className="font-thin">(2D1N)</span>
             </h1>

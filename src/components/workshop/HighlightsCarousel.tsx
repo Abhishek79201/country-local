@@ -13,6 +13,7 @@ const HighlightsCarousel = () => (
     initial="initial"
     whileInView="animate"
     viewport={{ once: true }}
+    className="pt-11"
   >
     <h1 className="font-[22px] pb-5 font-semibold text-[#222]">Highlights</h1>
     <div className="relative mb-5 max-w-[749px]">

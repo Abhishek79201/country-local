@@ -47,15 +47,15 @@ const ServicesSlider = ({
             <div className="flex justify-between gap-3 border-b-[1px]">
               <button
                 type="button"
-                className=" border-b-[3px]  pb-2 text-base font-bold text-[#808080] duration-100 ease-linear hover:border-[#E71575] hover:text-[#E71575]"
+                className=" pb-2  text-[14px] font-semibold text-[#808080] duration-100 ease-linear hover:border-b-[3px] hover:border-[#E71575] hover:text-[#E71575] lg:text-base"
               >
                 Available Casses
               </button>
               <button
                 type="button"
-                className=" border-b-[3px]  pb-2 text-base font-bold text-[#808080] duration-100 ease-linear hover:border-[#E71575] hover:text-[#E71575]"
+                className=" pb-2  text-[14px] font-semibold text-[#808080] duration-100 ease-linear hover:border-b-[3px] hover:border-[#E71575] hover:text-[#E71575] lg:text-base"
               >
-                Prime Packs
+                Available Casses
               </button>
               <button
                 type="button"
