@@ -6,7 +6,7 @@ import UnderLine from '../common/UnderLine';
 
 const StayBanner = () => (
   <motion.div
-    className="w-full py-8"
+    className="w-full "
     variants={animationWrapper}
     initial="initial"
     whileInView="animate"
@@ -17,9 +17,9 @@ const StayBanner = () => (
     </h1>
     <motion.div
       variants={fadeInLeft}
-      className="flex h-[198px] w-full flex-wrap items-start rounded shadow-spread lg:flex-nowrap"
+      className="flex h-[198px] w-full flex-wrap items-start rounded bg-[#f8f8f8] shadow-spread lg:flex-nowrap "
     >
-      <div className="banner w-[244px] p-0 ">
+      <div className="banner h-[198px] w-[244px] overflow-hidden rounded-[10px] bg-black p-0 ">
         <Image
           src="/stayBanner.png"
           width="244px"

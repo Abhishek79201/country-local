@@ -107,9 +107,7 @@ const ThingsToKnow = () => (
               consequat sunt nostrud amet.
             </p>
             <Link href="/">
-              <a className="font-semibold text-[#4B4B4B] hover:text-[#E71575]">
-                Show More &gt;
-              </a>
+              <a className="font-semibold  text-[#E71575]">Read More &gt;</a>
             </Link>
           </motion.div>
         </div>

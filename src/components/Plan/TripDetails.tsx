@@ -43,7 +43,7 @@ const TripDetails = () => (
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
-        className="mx-auto lg:max-w-[820px]"
+        className="mx-auto pb-8 lg:max-w-[820px]"
       >
         {[1, 2, 3, 4].map((item) => (
           <Disclosure as={motion.div} variants={fadeInUp} key={item}>
@@ -87,14 +87,14 @@ const TripDetails = () => (
                               <div className="svg_icon absolute -left-9 top-2 w-[26px] shrink-0 text-[#E71575]">
                                 <LocationIcon />
                               </div>
-                              <div className="flex w-full justify-between bg-[#F8F8F8] p-2 pl-3 text-[#4A4A4A]">
+                              <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-3 pl-3 text-[#4A4A4A]">
                                 <h3>Day One</h3>
                                 {open ? (
-                                  <span className="svg_icon absolute right-3 top-5 inline-block w-[15px] rotate-180 text-transparent md:w-[18px]">
+                                  <span className="svg_icon absolute right-3 top-3 inline-block w-[15px] rotate-180 text-transparent md:w-[18px]">
                                     <ArrowDownIcon />
                                   </span>
                                 ) : (
-                                  <span className="svg_icon absolute right-3 top-5 inline-block w-[15px]  text-transparent md:w-[18px]">
+                                  <span className="svg_icon inline-block w-[15px]  text-transparent md:w-[18px]">
                                     <ArrowDownIcon />
                                   </span>
                                 )}
@@ -169,14 +169,14 @@ const TripDetails = () => (
                               <div className="svg_icon absolute -left-9 top-2 w-[26px] shrink-0 text-[#E71575]">
                                 <LocationIcon />
                               </div>
-                              <div className="flex w-full justify-between bg-[#F8F8F8] p-2 pl-3 text-[#4A4A4A]">
-                                <h3>Day Two</h3>
+                              <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-3 pl-3 text-[#4A4A4A]">
+                                <h3>Day One</h3>
                                 {open ? (
-                                  <span className="svg_icon absolute right-3 top-5 inline-block w-[15px] rotate-180 text-transparent md:w-[18px]">
+                                  <span className="svg_icon absolute right-3 top-3 inline-block w-[15px] rotate-180 text-transparent md:w-[18px]">
                                     <ArrowDownIcon />
                                   </span>
                                 ) : (
-                                  <span className="svg_icon absolute right-3 top-5 inline-block w-[15px]  text-transparent md:w-[18px]">
+                                  <span className="svg_icon inline-block w-[15px]  text-transparent md:w-[18px]">
                                     <ArrowDownIcon />
                                   </span>
                                 )}
@@ -193,7 +193,7 @@ const TripDetails = () => (
                                     type="button"
                                     className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
                                   >
-                                    Waterfalls
+                                    Ramboda Waterfalls
                                   </button>
                                   <button
                                     type="button"
@@ -251,14 +251,14 @@ const TripDetails = () => (
                               <div className="svg_icon absolute -left-9 top-2 w-[26px] shrink-0 text-[#E71575]">
                                 <LocationIcon />
                               </div>
-                              <div className="flex w-full justify-between bg-[#F8F8F8] p-2 pl-3 text-[#4A4A4A]">
-                                <h3>Day Three</h3>
+                              <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-3 pl-3 text-[#4A4A4A]">
+                                <h3>Day One</h3>
                                 {open ? (
-                                  <span className="svg_icon absolute right-3 top-5 inline-block w-[15px] rotate-180 text-transparent md:w-[18px]">
+                                  <span className="svg_icon absolute right-3 top-3 inline-block w-[15px] rotate-180 text-transparent md:w-[18px]">
                                     <ArrowDownIcon />
                                   </span>
                                 ) : (
-                                  <span className="svg_icon absolute right-3 top-5 inline-block w-[15px]  text-transparent md:w-[18px]">
+                                  <span className="svg_icon inline-block w-[15px]  text-transparent md:w-[18px]">
                                     <ArrowDownIcon />
                                   </span>
                                 )}

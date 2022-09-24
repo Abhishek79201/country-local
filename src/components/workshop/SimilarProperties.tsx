@@ -23,7 +23,7 @@ interface ServicesSliderProps {
 }
 
 const SimilarProperties = ({ data }: ServicesSliderProps) => (
-  <div className="relative pb-5">
+  <div className="relative pb-11">
     <motion.div
       variants={animationWrapper}
       initial="initial"

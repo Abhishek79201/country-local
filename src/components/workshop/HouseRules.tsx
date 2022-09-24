@@ -8,7 +8,7 @@ import {
 
 const HouseRules = () => (
   <motion.div
-    className="py-8"
+    className="pb-12"
     variants={animationWrapper}
     initial="initial"
     whileInView="animate"
@@ -22,7 +22,7 @@ const HouseRules = () => (
     </motion.h1>
     <motion.div
       variants={fadeInLeft}
-      className="card h-auto w-full p-4 shadow-spread lg:h-[249px] lg:max-w-[749]"
+      className="card h-auto w-full rounded-[10px] p-4 shadow-spread lg:h-[249px] lg:max-w-[749]"
     >
       <div className="flex items-center gap-x-4">
         <div className="flex items-center">
@@ -49,14 +49,14 @@ const HouseRules = () => (
             className="text-[14px] font-semibold text-[#4B4B4B]"
             key={item}
           >
-            <span className="mr-3 text-xl font-bold text-[#000]">•</span>
+            <span className="mr-3 text-sm font-semibold text-[#4B4B4B]">•</span>
             Children allowed
           </motion.p>
         ))}
       </div>
       <button
         type="button"
-        className="text-[#E71575 ho] h-[44px] w-[118px] rounded-lg border border-[#E71575] duration-100 ease-linear hover:bg-[#E71575] hover:text-[#fff]"
+        className="h-[44px] w-[118px] rounded-lg border border-[#E71575] text-[#E71575] duration-100 ease-linear hover:bg-[#E71575] hover:text-[#fff]"
       >
         View More
       </button>

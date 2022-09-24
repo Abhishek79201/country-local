@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
-import {
-  animationWrapper,
-  fadeInUp,
-  fadeIn,
-  zoomIn,
-} from '../../utilities/animations';
+// import Image from 'next/image';
+// import {
+//   animationWrapper,
+//   fadeInUp,
+//   fadeIn,
+//   zoomIn,
+// } from '../../utilities/animations';
 
 import StarIcon from '../../../public/icons/star.svg';
 import ShareIcon from '../../../public/icons/upload.svg';
@@ -14,7 +14,7 @@ import HeartIcon from '../../../public/icons/heart-outline.svg';
 
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 const TourismBanner = () => (
-  <div className="pb-16 pt-16 md:pb-24 md:pt-24">
+  <div className="pb-16 pt-16 md:pb-12 md:pt-24">
     <div className="container">
       <div className="flex items-end justify-between">
         <div>
@@ -31,7 +31,7 @@ const TourismBanner = () => (
               <a className="underline">Culture and History</a>
             </Link>
             <span>&gt;</span>
-            Culture
+            <span className="text-[#808080]">Culture</span>
           </div>
           <h1 className="text-[#222 my-4 text-2xl font-semibold">
             2235 GREAT 3BED / 2.5BATHS IN BRAND NEW BUILDING

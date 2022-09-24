@@ -4,7 +4,8 @@ import Head from 'next/head';
 import { ViewportProvider } from '../src/context/ViewPortContext';
 import { OverflowProvider } from '../src/context/overflowContext';
 import Header from '../src/components/header/Header';
-import Footer from '../src/components/Footer';
+// import Footer from '../src/components/Footer';
+import Footer from '../src/components/workshop/Footer';
 
 import '../src/assets/scss/global.scss';
 

@@ -6,14 +6,14 @@ import UnderLine from '../common/UnderLine';
 
 const SafetyFeatures = () => (
   <motion.div
-    className="mt-8 mb-8 max-w-[749px]"
+    className=" max-w-[749px]"
     variants={animationWrapper}
     initial="initial"
     whileInView="animate"
     viewport={{ once: true }}
   >
     <h1 className="pb-8 text-[22px] font-bold text-[#222] ">Safety Features</h1>
-    <div className="flex w-full flex-wrap justify-start gap-5 pb-8 md:gap-y-7 md:gap-x-[80px]">
+    <div className="flex w-full flex-wrap justify-start gap-5  md:gap-y-7 md:gap-x-[80px]">
       {safetyFeaturesData.map((item) => (
         <motion.div
           className="ml-3 flex items-center gap-2 "
