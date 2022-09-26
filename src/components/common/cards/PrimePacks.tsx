@@ -39,7 +39,7 @@ const PrimePacks = ({
   <Link href="/">
     <motion.a
       variants={fadeInUp}
-      className="mx-1 mb-4 block rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
+      className="mx-1 mb-4 block rounded-xl bg-white shadow-xl transition-shadow hover:shadow-xl"
     >
       <div className="relative rounded">
         <div className="flex justify-center overflow-hidden rounded-lg">

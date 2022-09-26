@@ -9,6 +9,14 @@ import {
 import TickMarkIcon from '../../../public/icons/check-lg.svg';
 import UnderLine from '../common/UnderLine';
 
+const imgData = [
+  'group-1.png',
+  'group-2.png',
+  'group-3.png',
+  'group-4.png',
+  'group-5.png',
+];
+
 const Plan = () => (
   <motion.div
     className="container pt-8"
@@ -28,23 +36,23 @@ const Plan = () => (
       </p>
 
       <div className="relative h-5 w-12">
-        <div className="svg_icon absolute top-0 -left-3 w-6 text-[#E71575] ">
+        <div className="svg_icon absolute top-0 -left-3 z-10 w-6 text-[#E71575] ">
           <FillLocate />
         </div>
       </div>
-      <div className="relative z-0 mb-8 h-full pt-5">
-        <div className="absolute -left-[.5px] -z-10 h-full ">
-          <Image
+      <div className="relative z-0 mb-0 h-full pt-5 lg:pt-11">
+        <div className="absolute -left-[1px] -top-2 -z-10 h-full w-[1px] border-[1px] border-dashed border-r-[#E71575] ">
+          {/* <Image
             src="/line4.png"
             height="789px"
             width="2px"
             className="min-h-full"
-          />
+          /> */}
         </div>
-        {[1, 2, 3, 4, 5].map((item) => (
+        {imgData.map((item) => (
           <motion.div
             variants={fadeInUp}
-            className="relative ml-6 flex max-w-[749px] flex-wrap gap-14 py-5"
+            className="relative ml-6 flex max-w-[749px] flex-wrap gap-14 pt-3 pb-8"
             key={item}
           >
             <div className=" max-w-[373px]">
@@ -63,7 +71,7 @@ const Plan = () => (
             </div>
 
             <Image
-              src="/group-2486.png"
+              src={`/${item}`}
               width={289}
               height={99}
               className="rounded"
@@ -91,11 +99,11 @@ const Plan = () => (
             variants={fadeInLeft}
             className="flex min-h-[230px] w-full flex-wrap items-start gap-4 rounded  lg:flex-nowrap"
           >
-            <div className="banner min-h-[230px] w-[332px] p-0 ">
+            <div className="banner min-h-[230px] w-[332px] p-0 lg:w-[332px] ">
               <Image
                 src="/girl.png"
-                width="352px"
-                height="270px"
+                width="362px"
+                height="330px"
                 alt="staybanner"
               />
             </div>

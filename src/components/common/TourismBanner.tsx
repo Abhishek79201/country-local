@@ -39,18 +39,18 @@ const TourismBanner = () => (
           </div>
         </div>
         <div className="flex gap-x-5 text-black">
-          <div className="flex items-center">
+          <button type="button" className="flex items-center">
             <div className="w-[22px]">
               <ShareIcon />
             </div>
             <span className="ml-1 underline">Share</span>
-          </div>
-          <div className="flex items-center">
+          </button>
+          <button type="button" className="flex items-center">
             <div className="svg_icon w-[22px] text-transparent">
               <HeartIcon />
             </div>
             <span className="ml-1 underline">Save</span>
-          </div>
+          </button>
         </div>
       </div>
     </div>

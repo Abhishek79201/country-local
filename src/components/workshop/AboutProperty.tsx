@@ -48,7 +48,7 @@ const AboutProperty = () => (
           key={item}
           className="flex items-center rounded-[5px]  py-[8px]"
         >
-          <div className="svg_icon w-6 text-[#E71575]">
+          <div className="svg_icon w-10 text-[#E71575] md:w-6">
             <Checkmark />
           </div>
           <div className="ml-2 text-sm font-semibold">

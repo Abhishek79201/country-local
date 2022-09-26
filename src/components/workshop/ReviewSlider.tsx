@@ -14,7 +14,7 @@ const ReviewSlider = () => (
     <div className="flex flex-wrap items-center justify-center gap-5">
       {[1, 2, 3, 4].map((item) => (
         <motion.div
-          className="flex w-[300px] items-center gap-5 rounded-md p-2 shadow-spread"
+          className="flex w-[300px] items-center gap-5 rounded-lg p-2 shadow-xl"
           variants={fadeInUp}
           key={item}
         >

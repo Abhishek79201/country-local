@@ -37,7 +37,7 @@ const MentorCard = ({
   <Link href="/">
     <motion.a
       variants={fadeInUp}
-      className="dark_shadow mx-1 mb-4 block rounded-lg bg-white transition-shadow hover:shadow-lg"
+      className="mx-1 mb-4 block rounded-xl bg-white shadow-xl transition-shadow hover:shadow-xl"
     >
       <div className="relative rounded">
         <div className="flex justify-center overflow-hidden rounded-lg">
