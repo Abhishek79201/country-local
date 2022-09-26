@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+  --x: 0;
+}
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
@@ -58,14 +60,21 @@ svg {
 }
 .purple_gradient_bg {
   background: rgb(231, 21, 117);
-  background: linear-gradient(90deg, #e71575 -16.54%, #6f01f0 167.58%);
+  background: linear-gradient(90deg, #e71575 -16.54%, #6f01f0 167.58%)
+    var(--x, 0) / 200%;
+  transition: all 0.5s;
+}
+.purple_gradient_bg:hover {
+  --x: 100%;
 }
 .purple_gradient_bg_light {
   background: rgb(228, 95, 140);
-  background: linear-gradient(90.29deg, #e45f8c 0.27%, #a96ad8 103.4%);
+  background: linear-gradient(90.29deg, #e45f8c 0.27%, #a96ad8 103.4%)
+    var(--x, 0) / 200%;
+  transition: all 0.5s;
 }
-:root {
-  --x: 0;
+.purple_gradient_bg_light:hover {
+  --x: 100%;
 }
 .purple_btn_2 {
   background: #1740a9;
@@ -393,11 +402,12 @@ input:checked + .slider:before {
 .gallery-layout {
   width: 100%;
   display: grid;
-  grid-template-columns: 800px 345px auto;
+  grid-template-columns: auto auto auto;
   background: #000;
 
   .item1 {
-    width: 800px;
+    min-width: 800px;
+    width: 100%;
     height: 456px;
     grid-row-start: 1;
     grid-row-end: 3;

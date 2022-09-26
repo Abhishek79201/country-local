@@ -122,7 +122,7 @@ const GoodToKnow = () => {
               <SwiperSlide key={item.id}>
                 <motion.div
                   variants={fadeInUp}
-                  className="rounded-lg border-2 border-[#E1E1E1] bg-white p-[15px]"
+                  className="my-3  rounded-xl bg-white p-[15px] shadow-xl"
                 >
                   <div className="relative flex">
                     <Image
@@ -162,14 +162,14 @@ const GoodToKnow = () => {
             <h3 className="pb-3 font-bold text-[#222] lg:text-2xl">
               Whats not Included
             </h3>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base lg:text-lg">
+            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
               <span className="mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1 ">
                 <CancelMark />
               </span>
               Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
               condimentum.. Nulla Orci congue prasent
             </p>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base lg:text-lg">
+            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
               <span className="mr-2 inline-block w-[22px] flex-shrink-0 xl:pt-1">
                 <CancelMark />
               </span>
@@ -180,7 +180,7 @@ const GoodToKnow = () => {
             <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
               Where we will meet?
             </h3>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base lg:text-lg">
+            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
               <span className="svg_icon mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1">
                 <Checkmark />
               </span>
@@ -189,7 +189,7 @@ const GoodToKnow = () => {
             </p>
             <button
               type="button"
-              className="purple_gradient_bg ml-6 mt-2 h-[44px] w-[185px] rounded-[10px] text-sm font-bold text-[#fff] "
+              className="purple_gradient_bg ml-6 mt-2 rounded-[10px] py-3 px-5 text-sm font-bold text-[#fff] "
             >
               View Meeting Location
             </button>
@@ -198,14 +198,14 @@ const GoodToKnow = () => {
             <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
               Cancelation
             </h3>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base lg:text-[22px]">
+            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
               <span className="mr-2 inline-block w-[22px] flex-shrink-0 xl:pt-1">
                 <CancelMark />
               </span>
               Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
               condimentum.. Nulla Orci congue prasent
             </p>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base lg:text-lg">
+            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
               <span className="mr-2 inline-block w-[22px] flex-shrink-0 xl:pt-1">
                 <CancelMark />
               </span>

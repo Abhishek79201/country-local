@@ -77,7 +77,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="lg:px-10">
-        <div className="h-[1px] w-full bg-[#fff]">{/* // */}</div>
+        <div className="mb-1 h-[1px] w-full bg-[#fff]">{/* // */}</div>
         <div className="flex flex-wrap justify-between">
           <div className="flex flex-wrap items-center gap-2 lg:gap-4">
             <a href="#" className="text-[14px] uppercase text-[#fff]">
@@ -128,7 +128,7 @@ const Footer = () => (
           </div>
           <button
             type="button"
-            className="flex h-[33px] w-[33px] items-center justify-center rounded border"
+            className="  hidden h-[33px] w-[33px] items-center justify-center rounded border"
           >
             <div className="svg_icon w-2 rotate-90 text-[#fff]">
               <Arrow />

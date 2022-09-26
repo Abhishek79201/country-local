@@ -26,7 +26,7 @@ const Profiles = () => (
       className="container"
     >
       <div className="flex flex-wrap justify-between gap-14 lg:flex-nowrap">
-        <div className="max-w-[749px]">
+        <div className="w-full md:max-w-[749px]">
           <div className="w-full">
             <h1 className="text-[#222 text-2xl font-semibold">
               Aberdeen Fishermen Cultural Tou <br /> r with Delicious Dim Sums

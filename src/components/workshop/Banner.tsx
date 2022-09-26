@@ -12,7 +12,10 @@ const Banner = () => {
     <div className="flex h-[456px] w-full flex-wrap pb-11">
       <div className="gallery-layout w-full gap-2">
         {bannerData.map((item, index) => (
-          <div className={`h-[223px] w-[345px] item${index + 1}`} key={item}>
+          <div
+            className={`h-[223px] w-[345px] item${index + 1}`}
+            key={item + Math.random()}
+          >
             <img src={`/${item}`} alt="img" />
           </div>
         ))}

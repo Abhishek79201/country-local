@@ -16,7 +16,7 @@ import LocationIcon from '../../../public/icons/location.svg';
 /* eslint react/jsx-one-expression-per-line: "off" */
 const TripDetails = () => (
   <div className=" container relative">
-    <div className=" lg:max-w-[749px]">
+    <div className=" max-w-[749px]">
       <motion.div
         variants={animationWrapper}
         initial="initial"
@@ -82,13 +82,16 @@ const TripDetails = () => (
                     >
                       <Disclosure>
                         {({ open }) => (
-                          <div className="mb-4 flex flex-col items-center justify-center">
+                          <div className=" relative mb-4 flex flex-col items-center justify-center">
+                            <div className="absolute -left-0 top-6 z-10 h-[96%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] ">
+                              {/**/}
+                            </div>
+                            <div className=" svg_icon absolute -left-3 top-2 z-10 w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
+                              <LocationIcon />
+                            </div>
                             <Disclosure.Button className="focus-purple relative w-[90%] text-left text-[16px] font-bold ">
-                              <div className="svg_icon absolute -left-9 top-2 w-[26px] shrink-0 text-[#E71575]">
-                                <LocationIcon />
-                              </div>
-                              <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-3 pl-3 text-[#4A4A4A]">
-                                <h3>Day One</h3>
+                              <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-5 pl-3 text-[#4A4A4A]">
+                                <h3 className="pl-1">Day One</h3>
                                 {open ? (
                                   <span className="svg_icon absolute right-3 top-3 inline-block w-[15px] rotate-180 text-transparent md:w-[18px]">
                                     <ArrowDownIcon />
@@ -103,19 +106,19 @@ const TripDetails = () => (
                                 <div className="flex items-center gap-5 p-2 pl-3">
                                   <button
                                     type="button"
-                                    className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
+                                    className="rounded-3xl border border-[#808080] px-3 py-1 text-[12px] font-medium text-[#808080]"
                                   >
                                     Ramboda Waterfalls
                                   </button>
                                   <button
                                     type="button"
-                                    className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
+                                    className="rounded-3xl border border-[#808080] px-3 py-1 text-[12px] font-medium text-[#808080]"
                                   >
-                                    Ramboda Waterfalls
+                                    Golf Course
                                   </button>
                                   <button
                                     type="button"
-                                    className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
+                                    className="rounded-3xl border border-[#808080] px-3 py-1 text-[12px] font-medium text-[#808080]"
                                   >
                                     Ramboda Waterfalls
                                   </button>
@@ -137,7 +140,7 @@ const TripDetails = () => (
                                   {[1, 2, 3].map((item) => (
                                     <div
                                       key={item}
-                                      className="max-w-[590px] pt-3"
+                                      className="ml-5 max-w-[590px] pt-3 md:ml-0"
                                     >
                                       <h1 className="pb-2 text-base font-semibold text-[#222]">
                                         <Image
@@ -164,13 +167,16 @@ const TripDetails = () => (
                       </Disclosure>
                       <Disclosure>
                         {({ open }) => (
-                          <div className="mb-4 flex flex-col items-center justify-center">
+                          <div className=" relative mb-4 flex flex-col items-center justify-center">
+                            <div className="absolute -left-0 top-6 z-10 h-[96%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] ">
+                              {/**/}
+                            </div>
+                            <div className=" svg_icon absolute -left-3 top-2 z-10 w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
+                              <LocationIcon />
+                            </div>
                             <Disclosure.Button className="focus-purple relative w-[90%] text-left text-[16px] font-bold ">
-                              <div className="svg_icon absolute -left-9 top-2 w-[26px] shrink-0 text-[#E71575]">
-                                <LocationIcon />
-                              </div>
-                              <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-3 pl-3 text-[#4A4A4A]">
-                                <h3>Day One</h3>
+                              <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-5 pl-3 text-[#4A4A4A]">
+                                <h3 className="pl-1">Day One</h3>
                                 {open ? (
                                   <span className="svg_icon absolute right-3 top-3 inline-block w-[15px] rotate-180 text-transparent md:w-[18px]">
                                     <ArrowDownIcon />
@@ -185,19 +191,19 @@ const TripDetails = () => (
                                 <div className="flex items-center gap-5 p-2 pl-3">
                                   <button
                                     type="button"
-                                    className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
+                                    className="rounded-3xl border border-[#808080] px-3 py-1 text-[12px] font-medium text-[#808080]"
                                   >
                                     Ramboda Waterfalls
                                   </button>
                                   <button
                                     type="button"
-                                    className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
+                                    className="rounded-3xl border border-[#808080] px-3 py-1 text-[12px] font-medium text-[#808080]"
                                   >
-                                    Ramboda Waterfalls
+                                    Golf Course
                                   </button>
                                   <button
                                     type="button"
-                                    className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
+                                    className="rounded-3xl border border-[#808080] px-3 py-1 text-[12px] font-medium text-[#808080]"
                                   >
                                     Ramboda Waterfalls
                                   </button>
@@ -219,7 +225,7 @@ const TripDetails = () => (
                                   {[1, 2, 3].map((item) => (
                                     <div
                                       key={item}
-                                      className="max-w-[590px] pt-3"
+                                      className="ml-5 max-w-[590px] pt-3 md:ml-0"
                                     >
                                       <h1 className="pb-2 text-base font-semibold text-[#222]">
                                         <Image
@@ -246,13 +252,20 @@ const TripDetails = () => (
                       </Disclosure>
                       <Disclosure>
                         {({ open }) => (
-                          <div className="mb-4 flex flex-col items-center justify-center">
+                          <div className=" relative mb-4 flex flex-col items-center justify-center">
+                            <div
+                              className={`absolute -left-0 top-6 z-10 ${
+                                open ? 'h-[96%]' : 'h-0'
+                              }  w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] `}
+                            >
+                              {/**/}
+                            </div>
+                            <div className=" svg_icon absolute -left-3 top-2 z-10 w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
+                              <LocationIcon />
+                            </div>
                             <Disclosure.Button className="focus-purple relative w-[90%] text-left text-[16px] font-bold ">
-                              <div className="svg_icon absolute -left-9 top-2 w-[26px] shrink-0 text-[#E71575]">
-                                <LocationIcon />
-                              </div>
-                              <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-3 pl-3 text-[#4A4A4A]">
-                                <h3>Day One</h3>
+                              <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-5 pl-3 text-[#4A4A4A]">
+                                <h3 className="pl-1">Day One</h3>
                                 {open ? (
                                   <span className="svg_icon absolute right-3 top-3 inline-block w-[15px] rotate-180 text-transparent md:w-[18px]">
                                     <ArrowDownIcon />
@@ -267,19 +280,19 @@ const TripDetails = () => (
                                 <div className="flex items-center gap-5 p-2 pl-3">
                                   <button
                                     type="button"
-                                    className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
+                                    className="rounded-3xl border border-[#808080] px-3 py-1 text-[12px] font-medium text-[#808080]"
                                   >
                                     Ramboda Waterfalls
                                   </button>
                                   <button
                                     type="button"
-                                    className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
+                                    className="rounded-3xl border border-[#808080] px-3 py-1 text-[12px] font-medium text-[#808080]"
                                   >
-                                    Ramboda Waterfalls
+                                    Golf Course
                                   </button>
                                   <button
                                     type="button"
-                                    className="text-[14px ] rounded-3xl border border-[#808080] p-2 font-medium text-[#808080]"
+                                    className="rounded-3xl border border-[#808080] px-3 py-1 text-[12px] font-medium text-[#808080]"
                                   >
                                     Ramboda Waterfalls
                                   </button>
@@ -301,7 +314,7 @@ const TripDetails = () => (
                                   {[1, 2, 3].map((item) => (
                                     <div
                                       key={item}
-                                      className="max-w-[590px] pt-3"
+                                      className="ml-5 max-w-[590px] pt-3 md:ml-0"
                                     >
                                       <h1 className="pb-2 text-base font-semibold text-[#222]">
                                         <Image
