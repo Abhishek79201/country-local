@@ -48,7 +48,7 @@ const TripDetails = () => (
         {[1, 2, 3, 4].map((item) => (
           <Disclosure as={motion.div} variants={fadeInUp} key={item}>
             {({ open }) => (
-              <div className="mb-4 rounded-md px-2 pt-2 pb-2 shadow-spread md:px-4">
+              <div className="mb-4 rounded-xl px-2 pt-2 pb-2 shadow-xl md:px-4">
                 <Disclosure.Button className="focus-purple relative flex w-full gap-3 px-1 pb-3 pt-3 text-left text-base font-bold focus-visible:ring-offset-0 md:px-3 md:text-[20px]">
                   <span>
                     <Image
@@ -83,7 +83,7 @@ const TripDetails = () => (
                       <Disclosure>
                         {({ open }) => (
                           <div className=" relative mb-4 flex flex-col items-center justify-center">
-                            <div className="absolute -left-0 top-6 z-10 h-[96%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] ">
+                            <div className="absolute -left-0 top-6 z-10 h-[100%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] ">
                               {/**/}
                             </div>
                             <div className=" svg_icon absolute -left-3 top-2 z-10 w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
@@ -168,7 +168,7 @@ const TripDetails = () => (
                       <Disclosure>
                         {({ open }) => (
                           <div className=" relative mb-4 flex flex-col items-center justify-center">
-                            <div className="absolute -left-0 top-6 z-10 h-[96%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] ">
+                            <div className="absolute -left-0 top-6 z-10 h-[100%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] ">
                               {/**/}
                             </div>
                             <div className=" svg_icon absolute -left-3 top-2 z-10 w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
@@ -255,7 +255,7 @@ const TripDetails = () => (
                           <div className=" relative mb-4 flex flex-col items-center justify-center">
                             <div
                               className={`absolute -left-0 top-6 z-10 ${
-                                open ? 'h-[96%]' : 'h-0'
+                                open ? 'h-[100%]' : 'h-0'
                               }  w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] `}
                             >
                               {/**/}

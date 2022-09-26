@@ -5,6 +5,7 @@ import {
   fadeIn,
   fadeInLeft,
 } from '../../utilities/animations';
+import Dot from '../../../public/icons/dot.svg';
 
 const HouseRules = () => (
   <motion.div
@@ -24,7 +25,7 @@ const HouseRules = () => (
       variants={fadeInLeft}
       className="card h-auto w-full rounded-[10px] p-4 shadow-spread lg:h-[249px] lg:max-w-[749]"
     >
-      <div className="flex items-center gap-x-4">
+      <div className="flex items-center gap-x-4 border-b-2  pl-4 pb-3">
         <div className="flex items-center">
           <Image src="/icons/timer.png" width={24} height={24} alt="timer" />
           <p className="text-[14px] font-bold text-[#808080]">
@@ -42,16 +43,20 @@ const HouseRules = () => (
         </div>
       </div>
 
-      <div className="my-4 flex w-full flex-wrap gap-3">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-          <motion.p
+      <div className="my-3 flex w-full flex-wrap gap-0 pl-4">
+        {[1, 2, 3, 4, 5, 6].map((item) => (
+          <motion.div
             variants={fadeIn}
-            className="text-[14px] font-semibold text-[#4B4B4B]"
+            className="flex w-1/2 items-center gap-3  py-2 text-[14px] font-semibold "
             key={item}
           >
-            <span className="mr-3 text-sm font-semibold text-[#4B4B4B]">•</span>
-            Children allowed
-          </motion.p>
+            <div className="svg_icon w-[6px] text-[#000]">
+              <Dot />
+            </div>
+            <span className="text-sm font-semibold text-[#4B4B4B]">
+              Children allowed
+            </span>
+          </motion.div>
         ))}
       </div>
       <button

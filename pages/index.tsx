@@ -78,7 +78,7 @@ const MultiDayWorkshop: NextPage = () => (
       <ServicesSlider
         sliderId="other_services_slider"
         title={
-          <h2 className="mr-7  text-[20px] font-bold text-black md:text-[24px]">
+          <h2 className="mr-7  text-2xl font-bold text-[#202124] md:text-4xl">
             Other Services by
             <span className="purple_gradient_text_deep">
               {' '}
@@ -104,7 +104,7 @@ const MultiDayWorkshop: NextPage = () => (
       <BookOffers
         sliderId="book_one_of_my_offers"
         title={
-          <h2 className="mr-7  text-[20px] font-bold text-black md:text-[24px]">
+          <h2 className="mr-7  text-2xl font-bold text-[#202124] md:text-4xl">
             Book one of
             <span className="purple_gradient_text_deep"> my offers</span>
           </h2>

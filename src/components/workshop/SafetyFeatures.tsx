@@ -13,15 +13,15 @@ const SafetyFeatures = () => (
     viewport={{ once: true }}
   >
     <h1 className="pb-8 text-[22px] font-bold text-[#222] ">Safety Features</h1>
-    <div className="flex w-full flex-wrap justify-start gap-5  md:gap-y-7 md:gap-x-[80px]">
+    <div className="flex w-full flex-wrap justify-start gap-5  md:gap-y-10 md:gap-x-[80px]">
       {safetyFeaturesData.map((item) => (
         <motion.div
-          className="ml-3 flex items-center gap-2 "
+          className="ml-3 flex  items-center gap-2 "
           key={Math.random() * 10}
           variants={fadeInUp}
         >
           <div className="flex w-[36] items-center text-[#E71575]">
-            <Image src={item.icon} alt="icon" width="21px" height="21px" />
+            <Image src={item.icon} alt="icon" width="26px" height="26px" />
           </div>
           <h1 className="text-base font-semibold text-[#222] ">{item.title}</h1>
         </motion.div>

@@ -33,10 +33,10 @@ const HighlightsCarousel = () => (
           },
           540: { slidesPerView: 3 },
         }}
-        className="flex"
+        className="pr-[110px]"
       >
         {highlightData?.map((item) => (
-          <SwiperSlide key={Math.random() * 10}>
+          <SwiperSlide className="slide" key={Math.random() * 10}>
             <motion.div variants={fadeInUp}>
               <div className="flex h-[139px] w-[136px] flex-col items-center gap-3 rounded-xl border p-8">
                 {' '}

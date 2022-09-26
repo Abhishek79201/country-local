@@ -45,7 +45,7 @@ const FavouriteBookCardOffer = ({
     >
       <div className="relative w-[250px] rounded">
         <div className=" overflow-hidden rounded-lg">
-          <Image src="/boat-girl.png" width={246} height={293} />
+          <Image src="/boat-girl.png" width={246} height={263} />
         </div>
 
         <div className="z-1 absolute top-3 right-3 flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">

@@ -45,7 +45,7 @@ const BookCardOffer = ({
     >
       <div className="relative rounded">
         <div className=" overflow-hidden rounded-lg">
-          <Image src="/boat-girl.png" width={246} height={293} />
+          <Image src="/boat-girl.png" width={246} height={263} />
         </div>
 
         <div className="z-1 absolute top-3 right-3 flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
@@ -61,7 +61,7 @@ const BookCardOffer = ({
           </div>
           <p className="semi-bold text-[12px]">Florence, Italy</p>
         </div>
-        <div className="mt-[2px] mb-1 flex items-center gap-0">
+        <div className="mt-[2px] mb-3 flex items-center gap-0">
           <div className="z-10 flex">
             <div className="z-[5] flex h-[54px] w-[54px] overflow-hidden rounded-full border-2 border-white">
               <Image src="/author-head.png" width={54} height={54} />
@@ -110,11 +110,11 @@ const BookCardOffer = ({
             </p>
           </div>
         </div>
-        <h4 className="text-[14px] font-bold text-[#222]">
+        <h4 className="mb-1 text-[14px] font-bold text-[#222]">
           City Escape: Tuscany Day Trip
         </h4>
-        <div className="item-center flex gap-2">
-          <h4 className="pb-1 text-[12px] font-bold text-[#222]">
+        <div className="flex items-center gap-2">
+          <h4 className=" text-[10px] font-bold text-[#222]">
             From $2,420/<span className="font-medium">person</span>
           </h4>
           <h5 className="flex items-center gap-1 text-[10px] font-semibold">

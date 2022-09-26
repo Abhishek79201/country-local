@@ -18,10 +18,10 @@ const Offers = () => (
       {offersData.map((item) => (
         <motion.div
           variants={fadeInUp}
-          className="flex w-[239px] cursor-pointer items-center gap-x-1 rounded-md bg-[#F8F8F8] p-4 duration-150 ease-linear hover:bg-[#E71575] hover:text-[#fff]"
+          className="flex w-[239px] cursor-pointer items-center gap-x-1 rounded-md bg-[#F8F8F8] p-4 text-[#4A4A4A] duration-150 ease-linear hover:bg-[#E71575] hover:text-[#fff]"
           key={Math.random() * 10}
         >
-          <div className="svg_icon text-[#222]] w-[20px] ease-linear hover:bg-[#E71575] hover:text-[#fff]">
+          <div className="svg_icon w-[20px] ease-linear hover:bg-[#E71575] hover:text-[#fff]">
             <item.icon />
           </div>
           <h1 className="text-[14px]">{item.title}</h1>
@@ -29,7 +29,7 @@ const Offers = () => (
       ))}
       <motion.div
         variants={fadeInUp}
-        className="flex w-[230px] cursor-pointer items-center gap-x-2 rounded-md border border-[#E71575] bg-[#F8F8F8] p-4 text-[#E71575] duration-150 ease-linear hover:bg-[#E71575] hover:text-[#fff]"
+        className="flex w-[239px] cursor-pointer items-center gap-x-2 rounded-md border border-[#E71575]  p-4 text-[#E71575] duration-150 ease-linear hover:bg-[#E71575] hover:text-[#fff]"
       >
         <h1>Show all 14 amenities</h1>
       </motion.div>

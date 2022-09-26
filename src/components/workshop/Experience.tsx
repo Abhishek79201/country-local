@@ -20,7 +20,7 @@ const Experience = () => (
         <motion.div
           variants={fadeIn}
           key={item}
-          className="flex items-center rounded-[5px] bg-[#fff] py-[6px] pl-2  pr-6 shadow-spread"
+          className="flex items-center rounded-[5px] bg-[#fff] py-[6px] pl-2  pr-6 shadow-xl"
         >
           <div className="svg_icon w-6 text-[#E71575]">
             <Checkmark />
