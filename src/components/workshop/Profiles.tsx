@@ -28,9 +28,10 @@ const Profiles = () => (
       <div className="flex flex-wrap justify-between gap-14 lg:flex-nowrap">
         <div className="w-full md:max-w-[749px]">
           <div className="w-full">
-            <h1 className="text-[#222 text-2xl font-semibold">
-              Aberdeen Fishermen Cultural Tou <br /> r with Delicious Dim Sums
-              Lunch <span className="font-thin">(2D1N)</span>
+            <h1 className="pb-7 text-[36px] font-bold  leading-[43px] text-[#222]">
+              Aberdeen Fishermen Cultural Tour with
+              <br /> Delicious Dim Sums Lunch{' '}
+              <span className="font-thin">(2D1N)</span>
             </h1>
             <div className="flex max-w-[749px] flex-wrap justify-between lg:flex-nowrap">
               <div className="flex w-1/2 items-center">
@@ -38,7 +39,7 @@ const Profiles = () => (
                   <LocationIcon />
                 </div>
 
-                <div className="text-sm font-thin text-[#4A4A4A] lg:text-[20px]">
+                <div className="text-sm text-[#4A4A4A] lg:text-[20px]">
                   Mussoorie,Uttarkhand. India
                 </div>
               </div>
@@ -47,7 +48,9 @@ const Profiles = () => (
                   <StarIcon />
                 </div>
                 <div className="text-[18px]">
-                  <span className="text-[18px] font-semibold">4.6</span>{' '}
+                  <span className="text-[18px] font-medium text-[#222]">
+                    4.6
+                  </span>{' '}
                   <span className="text-[#808080]">(25)reviews</span>
                 </div>
               </div>

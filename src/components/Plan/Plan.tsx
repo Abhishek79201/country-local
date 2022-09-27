@@ -40,7 +40,7 @@ const Plan = () => (
           <FillLocate />
         </div>
       </div>
-      <div className="relative z-0 mb-0 h-full pt-5 lg:pt-11">
+      <div className="relative z-0 mb-0 h-full pt-10 lg:pt-[70px]">
         <div className="absolute -left-[1px] -top-2 -z-10 h-full w-[1px] border-[1px] border-dashed border-r-[#E71575] ">
           {/* <Image
             src="/line4.png"
@@ -99,22 +99,22 @@ const Plan = () => (
             variants={fadeInLeft}
             className="flex min-h-[230px] w-full flex-wrap items-start gap-4 rounded  lg:flex-nowrap"
           >
-            <div className="banner min-h-[230px] w-[332px] p-0 lg:w-[332px] ">
+            <div className="banner min-h-[230px] w-[40%] p-0 ">
               <Image
                 src="/girl.png"
                 width="362px"
-                height="330px"
+                height="270px"
                 alt="staybanner"
               />
             </div>
-            <div className="relative max-w-[505px]">
+            <div className="relative w-[60%]">
               {[1, 2, 3].map((item) => (
                 <motion.div
                   variants={fadeInUp}
-                  className="flex items-center gap-2 py-1 "
+                  className="flex items-center gap-3 pb-[10px] "
                   key={item}
                 >
-                  <div className="svg_icon w-6 text-[#E71575]">
+                  <div className="svg_icon w-6 text-[#E71575] md:w-8">
                     <TickMarkIcon />
                   </div>
                   <p className="text-sm text-[#808080]">

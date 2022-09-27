@@ -17,7 +17,7 @@ const StayBanner = () => (
     </h1>
     <motion.div
       variants={fadeInLeft}
-      className="flex h-auto w-full flex-wrap items-start rounded shadow-spread  lg:h-[198px] lg:flex-nowrap "
+      className="flex h-auto w-full flex-wrap items-start rounded-xl shadow-xl  lg:h-[198px] lg:flex-nowrap "
     >
       <div className="banner h-[198px] w-[244px] overflow-hidden rounded-[10px] bg-black p-0 ">
         <Image
@@ -27,7 +27,7 @@ const StayBanner = () => (
           alt="staybanner"
         />
       </div>
-      <div className="relative h-full max-w-[505px] bg-[#f8f8f8] p-4 pt-6 lg:pt-0 ">
+      <div className="relative h-full max-w-[505px]  p-4 pt-6 lg:pt-0 ">
         <h1 className="text-[18px] font-bold text-[#4A4A4A]">
           Where You Sleep
         </h1>

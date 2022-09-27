@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const TouringBanner = () => (
-  <div className=" max-w[1440px] purple_gradient_bg flex h-auto  items-center justify-center py-4 lg:h-[681px]">
+  <div className=" purple_gradient_bg_1 mb-6 flex h-auto  w-full items-center justify-center py-4 lg:h-[681px]">
     <div className="max-w[753px] text-center">
       <h1 className="pb-3 text-[22px] uppercase text-[#fff] ">
         during your Tour

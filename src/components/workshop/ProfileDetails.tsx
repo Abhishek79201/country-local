@@ -12,7 +12,7 @@ const ProfileDetails = () => {
   return (
     <div className="max-w-[749px]">
       <div className="header flex items-start justify-between pb-4">
-        <div className="flex flex-wrap gap-4 sm:flex-nowrap">
+        <div className="flex flex-wrap items-center gap-4 sm:flex-nowrap">
           <div className="relative mb-3 flex shrink-0 sm:mb-0">
             <div className="absolute top-0 left-12 z-[2] h-4 w-4 rounded-full border border-white bg-[#1DBF73]" />
             <div className="relative z-[1] flex items-center overflow-hidden rounded-full">
@@ -35,7 +35,7 @@ const ProfileDetails = () => {
                   },
                 },
               }}
-              className="-ml-10 flex items-center overflow-hidden rounded-full"
+              className="-ml-4 flex items-center overflow-hidden rounded-full"
             >
               <Image
                 src="/mentor-card-2.jpg"
@@ -124,7 +124,7 @@ const ProfileDetails = () => {
         >
           Contact Host
         </button>
-        <p className=" p-0 text-[18px]  text-[#808080] ">
+        <p className=" p-0 text-[17px]  text-[#808080] ">
           Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
           condimentum. Nulla orci congue praesent nullam vitae nibh. Sed sit sed
           eu lectus mi amet egestas massa. Nunc enim eleifend tellus tincidunt
