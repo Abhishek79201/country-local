@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { animationWrapper, fadeInUp } from '../../utilities/animations';
 import LocationIcon from '../../../public/icons/location.svg';
 import StarIcon from '../../../public/icons/star.svg';
@@ -10,9 +10,10 @@ import SafetyFeatures from './SafetyFeatures';
 import Offers from './Offers';
 import AboutProperty from './AboutProperty';
 import Experience from './Experience';
-import Panel from '../../../public/icons/panel.png';
+// import Panel from '../../../public/icons/panel.png';
 import StayBanner from './StayBanner';
 import HouseRules from './HouseRules';
+import BookingCard from './BookingCard';
 
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
@@ -71,7 +72,8 @@ const Profiles = () => (
           className="panel flex flex-col items-center pb-16"
           variants={fadeInUp}
         >
-          <div className="h-auto max-w-[424px] pb-1">
+          <BookingCard />
+          {/* <div className="h-auto max-w-[424px] pb-1">
             <Image
               src={Panel}
               alt="panel"
@@ -79,7 +81,7 @@ const Profiles = () => (
               width="424px"
               height="982px"
             />
-          </div>
+          </div> */}
 
           <div className="relative z-0 mb-3 max-w-[424px]">
             <button
