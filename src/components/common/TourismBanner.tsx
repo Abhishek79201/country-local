@@ -1,13 +1,4 @@
-// import { motion } from 'framer-motion';
 import Link from 'next/link';
-// import Image from 'next/image';
-// import {
-//   animationWrapper,
-//   fadeInUp,
-//   fadeIn,
-//   zoomIn,
-// } from '../../utilities/animations';
-
 import StarIcon from '../../../public/icons/star.svg';
 import ShareIcon from '../../../public/icons/upload.svg';
 import HeartIcon from '../../../public/icons/heart-outline.svg';

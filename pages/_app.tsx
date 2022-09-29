@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <NextNProgress color="#288890" />
 
       <Head>
-        <link rel="shortcut icon" href="/mentor-ocean-favicon.png" />
+        <link rel="shortcut icon" href="/tourism-favicon.png" />
         <title>Country Locals</title>
       </Head>
       <ViewportProvider>

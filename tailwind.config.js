@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         green_primary: '#45EC9C',
         green_light: '#63DCA4',
+        pink_primary: '#e71575',
       },
       boxShadow: {
         spread: '0 0 10px -1px rgba(0, 0, 0, 0.2)',
