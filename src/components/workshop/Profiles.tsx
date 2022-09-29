@@ -73,30 +73,6 @@ const Profiles = () => (
           variants={fadeInUp}
         >
           <BookingCard />
-          {/* <div className="h-auto max-w-[424px] pb-1">
-            <Image
-              src={Panel}
-              alt="panel"
-              className="rounded-xl"
-              width="424px"
-              height="982px"
-            />
-          </div> */}
-
-          <div className="relative z-0 mb-3 max-w-[424px]">
-            <button
-              type="button"
-              className=" z-50 w-[400px]  rounded-xl border-4 border-[#fff] bg-[#002390] py-3 text-center text-[#fff] "
-            >
-              View All My Service
-            </button>
-            <button
-              type="button"
-              className=" absolute left-0 top-11 -z-10  w-[400px]  rounded-xl border-4 border-[#fff] bg-[#23B4ED] py-3 text-center text-[#fff] "
-            >
-              Total 10 Services
-            </button>
-          </div>
         </motion.div>
       </div>
     </motion.div>
