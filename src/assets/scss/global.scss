@@ -416,6 +416,22 @@ input:checked + .slider:before {
     grid-row-start: 1;
     grid-row-end: 3;
   }
+  .item5 {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      // background: rgba(0, 0, 0, 0.452);
+      background: url('/plus.png') center no-repeat;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+  }
   div {
     padding: 1px 0;
     overflow: hidden;
@@ -431,4 +447,95 @@ input:checked + .slider:before {
 }
 .slide:nth-child(4) {
   margin-right: 150px !important;
+}
+
+// lightBox
+.box_body {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.501);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+
+.box_content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.arrow {
+  flex-basis: 10%;
+}
+
+.right_arrow {
+  display: flex;
+  justify-content: flex-end;
+  order: 3;
+}
+.img_content {
+  flex-basis: 80%;
+  order: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img_content .img_div {
+  height: 70%;
+  width: 100%;
+  position: relative;
+}
+.img_div img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.length {
+  position: absolute;
+  bottom: -3rem;
+  right: 0;
+  color: #ddd;
+}
+.responsive_arrow {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .img_content .img_div {
+    height: 55%;
+    width: 90%;
+  }
+  .img_content {
+    order: 1;
+    flex-basis: 100%;
+    height: 80vh;
+  }
+  .arrow {
+    display: none !important;
+  }
+  .res_arrow img {
+    width: 40px;
+    cursor: pointer;
+  }
+  .responsive_arrow {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -60%);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 3rem;
+  }
 }
