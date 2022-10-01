@@ -23,7 +23,7 @@ svg {
     @apply focus-green relative h-[46px] flex-auto rounded-l-full text-sm text-[#6B7280] transition-colors duration-300 ease-in-out after:absolute after:right-0 after:h-[24px] after:w-[1px] after:bg-[#E5E7EB] hover:text-black focus-visible:rounded-full focus-visible:ring-offset-0;
   }
   .focus-purple {
-    @apply focus-visible:ring-pink-600 focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-offset-4 focus-visible:ring-offset-white;
+    @apply focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-pink-600 focus-visible:ring-opacity-75 focus-visible:ring-offset-4 focus-visible:ring-offset-white;
   }
 }
 
@@ -448,8 +448,19 @@ input:checked + .slider:before {
 .slide:nth-child(4) {
   margin-right: 150px !important;
 }
+@media screen and (max-width: 740px) {
+  .slide {
+    margin-right: auto !important ;
+  }
+  .slide:nth-child(4) {
+    margin-right: auto !important;
+  }
+}
 
 // lightBox
+body.active {
+  overflow: hidden;
+}
 .box_body {
   display: flex;
   flex-direction: column;

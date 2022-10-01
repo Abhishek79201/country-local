@@ -28,7 +28,7 @@ const HouseRules = () => (
       <div className="flex items-center gap-x-4 border-b-2  pl-4 pb-3">
         <div className="flex items-center">
           <Image src="/icons/timer.png" width={24} height={24} alt="timer" />
-          <p className="text-[14px] font-bold text-[#808080]">
+          <p className=" text-[11px] font-bold text-[#808080] sm:text-[14px]">
             Check In after:
             <span className="font-semibold text-[#222]"> 4:00 PM</span>
           </p>
@@ -36,7 +36,7 @@ const HouseRules = () => (
         <div className="flex items-center">
           <Image src="/icons/timer.png" width={24} height={24} alt="timer" />
 
-          <p className="text-[14px] font-bold text-[#808080]">
+          <p className="text-[11px] font-bold text-[#808080] sm:text-[14px]">
             Check out befor:
             <span className="font-semibold text-[#222]"> 10:00 AM</span>
           </p>

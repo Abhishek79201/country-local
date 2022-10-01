@@ -33,7 +33,7 @@ const SimilarProperties = ({ data }: ServicesSliderProps) => (
     >
       <div className="flex flex-wrap items-center pb-6">
         <motion.div variants={fadeInLeft} className="w-1/2">
-          <h2 className="mr-7  text-2xl font-bold text-[#202124] md:text-4xl">
+          <h2 className="mr-7  text-2xl font-bold text-[#202124] lg:text-4xl">
             Similer
             <span className="purple_gradient_text"> Properites</span>
           </h2>

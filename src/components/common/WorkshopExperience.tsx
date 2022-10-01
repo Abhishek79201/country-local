@@ -54,7 +54,7 @@ const WorkshopExperience = () => {
       >
         <motion.h2
           variants={fadeInUp}
-          className="mb-8 text-center text-xl font-bold text-black md:mb-10 md:text-3xl lg:mb-12 lg:text-4xl"
+          className="mb-8 text-center text-2xl font-bold text-black md:mb-10 md:text-3xl lg:mb-12 lg:text-4xl"
         >
           <span className="purple_gradient_text mr-2">Country Locals</span>
           Workshop Experience

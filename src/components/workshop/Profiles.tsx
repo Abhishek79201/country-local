@@ -18,7 +18,7 @@ import BookingCard from './BookingCard';
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
 const Profiles = () => (
-  <div className="relative bg-[#fff]  md:pt-14 lg:pt-12">
+  <div className="relative mt-8 bg-[#fff] md:mt-0  md:pt-14 lg:pt-12">
     <motion.div
       variants={animationWrapper}
       initial="initial"
@@ -29,13 +29,13 @@ const Profiles = () => (
       <div className="flex flex-wrap justify-between gap-14 lg:flex-nowrap">
         <div className="w-full md:max-w-[749px]">
           <div className="w-full">
-            <h1 className="pb-7 text-[36px] font-bold  leading-[43px] text-[#222]">
+            <h1 className="pb-7 text-2xl font-bold text-[#222]  md:text-[36px] md:leading-[43px]">
               Aberdeen Fishermen Cultural Tour with
               <br /> Delicious Dim Sums Lunch{' '}
               <span className="font-thin">(2D1N)</span>
             </h1>
-            <div className="flex max-w-[749px] flex-wrap justify-between lg:flex-nowrap">
-              <div className="flex w-1/2 items-center">
+            <div className="flex max-w-[749px] flex-wrap items-start justify-between gap-4 sm:gap-0 lg:flex-nowrap">
+              <div className="flex w-[280px] items-center sm:w-1/2">
                 <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <LocationIcon />
                 </div>
@@ -44,11 +44,11 @@ const Profiles = () => (
                   Mussoorie,Uttarkhand. India
                 </div>
               </div>
-              <div className="flex w-1/2 items-center justify-end">
+              <div className="flex w-1/2 items-center sm:justify-end">
                 <div className="svg_icon mr-2 w-[24px] shrink-0 text-[#FFCE31] ">
                   <StarIcon />
                 </div>
-                <div className="text-[18px]">
+                <div className="flex items-center gap-1 text-[18px]">
                   <span className="text-[18px] font-medium text-[#222]">
                     4.6
                   </span>{' '}

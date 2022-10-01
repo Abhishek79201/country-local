@@ -13,7 +13,7 @@ import Checkmark from '../../../public/icons/checked-purple.svg';
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
 const ThingsToKnow = () => (
-  <div className="relative pt-10 pb-10 md:pt-14 md:pb-14  lg:pt-20 lg:pb-20">
+  <div className="relative pt-10 pb-2 md:pt-14 md:pb-14  lg:pt-20 lg:pb-20">
     <motion.div
       variants={animationWrapper}
       initial="initial"
@@ -25,7 +25,7 @@ const ThingsToKnow = () => (
         <div className="pb-8">
           <motion.h3
             variants={fadeInUp}
-            className="text-xl font-bold text-black md:text-[24px] lg:text-[28px]"
+            className="text-2xl font-bold text-black  lg:text-[28px]"
           >
             Things to know
           </motion.h3>
