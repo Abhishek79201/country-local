@@ -19,7 +19,7 @@ import BookOffers from '../src/components/workshop/BookOffers';
 
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-wrap-multilines: "off" */
-const MultiDayWorkshop: NextPage = () => (
+const Home: NextPage = () => (
   <>
     <Head>
       <title>Country Locals</title>
@@ -74,4 +74,4 @@ const MultiDayWorkshop: NextPage = () => (
   </>
 );
 
-export default MultiDayWorkshop;
+export default Home;

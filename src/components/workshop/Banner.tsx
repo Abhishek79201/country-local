@@ -6,13 +6,13 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable @next/next/no-img-element */
 
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import LightBox from './PopUp/LighBox';
 import PopUpScreen from './PopUp/PopUpScreen';
 
 const Banner = () => {
   const [lightImg, setLightImg] = useState('');
-  const [totalImg, setTotalImg] = useState();
+  const [totalImg, setTotalImg] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activePopUp, setActivePopUp] = useState(false);
 
@@ -24,10 +24,7 @@ const Banner = () => {
     { id: 5, img: 'img4.png' },
   ];
 
-  const handleLightBox = (
-    data: { img: SetStateAction<string> },
-    index: SetStateAction<number>,
-  ) => {
+  const handleLightBox = (data: { img: string }, index: number) => {
     setLightImg(data.img);
     setCurrentIndex(index);
     setTotalImg(bannerData.length);
@@ -97,24 +94,22 @@ const Banner = () => {
             handleLeft={handleLeft}
           />
           <div className="absolute bottom-5 left-5 z-[1060] flex gap-3">
-            {bannerData.map(
-              (items: { img: string | undefined }, index: any) => (
-                <div key={Math.random() * 10}>
-                  <img
-                    src={items.img}
-                    alt=""
-                    width={80}
-                    height={50}
-                    onClick={() => handleLightBox(items, index)}
-                    className={
-                      items.img === lightImg
-                        ? ' cursor-pointer border border-[#e25454]'
-                        : 'cursor-pointer'
-                    }
-                  />
-                </div>
-              ),
-            )}
+            {bannerData.map((items: { img: string }, index: any) => (
+              <div key={Math.random() * 10}>
+                <img
+                  src={items.img}
+                  alt=""
+                  width={80}
+                  height={50}
+                  onClick={() => handleLightBox(items, index)}
+                  className={
+                    items.img === lightImg
+                      ? ' cursor-pointer border border-[#e25454]'
+                      : 'cursor-pointer'
+                  }
+                />
+              </div>
+            ))}
           </div>
         </PopUpScreen>
       )}

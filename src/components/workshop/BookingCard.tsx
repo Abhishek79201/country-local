@@ -1,24 +1,46 @@
 /* eslint react/jsx-one-expression-per-line: "off" */
 /* eslint @next/next/no-img-element: "off" */
 /* eslint jsx-a11y/label-has-associated-control: "off" */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import DatePicker from 'react-datepicker';
+import { formatDate } from '../../utilities/helpers';
 
 import BookInfoPopups from './popovers/BookInfoPopups';
 import ReportPopup from '../common/popups/report-popups/ReportPopup';
+import GuestsPopover from './popovers/GuestsPopover';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 import StarIcon from '../../../public/icons/star.svg';
 import QuestionMarkIcon from '../../../public/icons/question-mark.svg';
 import FlagIcon from '../../../public/icons/purple-flag.svg';
+import UserIcon from '../../../public/icons/user-outline.svg';
+import ChevronIcon from '../../../public/icons/chevron-down.svg';
 
 const BookingCard = () => {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
+  const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
+  const [showGuests, setShowGuests] = useState<boolean>(false);
+  const [startDate, setStartDate] = useState<Date | null>(new Date());
+  const [endDate, setEndDate] = useState<Date | null>(new Date());
+  const onChange = (dates: any) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
+
+  useEffect(() => {
+    if (endDate) {
+      setShowDatePicker(false);
+    }
+  }, [endDate]);
 
   return (
     <div className="max-w-[425px]">
-      <div className="booking-card mb-5 w-full overflow-hidden rounded-[20px] pb-8 shadow-spread">
-        <div className="relative overflow-hidden pb-[52%]">
+      <div className="booking-card mb-5 w-full rounded-[20px] pb-8 shadow-spread">
+        <div className="relative overflow-hidden rounded-tl-[20px] rounded-tr-[20px] pb-[52%]">
           <img
             src="/book-card.jpg"
             alt="book-card-bg"
@@ -39,7 +61,7 @@ const BookingCard = () => {
             <span className="mr-3">Hosted by</span>
             <Image src="/miha.png" width={51} height={22} />
           </div>
-          <div className="mt-3 mb-6 flex items-center justify-center text-center text-sm">
+          <div className="mt-3 mb-5 flex items-center justify-center text-center text-sm">
             <div className="font-semibold">
               From $45 <span className="line-through">$567</span> / night
             </div>
@@ -51,28 +73,113 @@ const BookingCard = () => {
               <span className="underline">(25)reviews</span>
             </div>
           </div>
-          <div className="rounded-lg border border-[#808080]">
+          <div className="relative rounded-lg border border-[#808080]">
             <div className="flex border-b border-b-[#808080]">
               <button
                 type="button"
-                className="flex-1 border-r border-r-[#808080] px-4 py-4 text-left text-xs font-semibold"
+                onClick={() => setShowDatePicker(!showDatePicker)}
+                className="flex-1 border-r border-r-[#808080] px-4 py-4 text-left text-xs"
               >
-                CHECK-IN
+                <span className="block font-semibold">CHECK-IN</span>
+                <span className="">{formatDate(startDate)}</span>
               </button>
               <button
                 type="button"
-                className="flex-1 px-4 py-4 text-left text-xs font-semibold"
+                onClick={() => setShowDatePicker(!showDatePicker)}
+                className="flex-1 px-4 py-4 text-left text-xs"
               >
-                CHECK-OUT
+                <span className="block font-semibold">CHECK-OUT</span>
+                <span className="">{formatDate(endDate)}</span>
               </button>
+
+              {showDatePicker && (
+                <div className="absolute -top-[40px] -right-[40px] z-[11] w-[660px] rounded-2xl bg-white p-10 shadow-spread">
+                  <div className="flex justify-between">
+                    <div className="w-4/12">
+                      <h4 className="text-lg font-semibold">32 nights</h4>
+                      <p className="text-sm text-[#808080]">
+                        {formatDate(startDate)} - {formatDate(endDate)}
+                      </p>
+                    </div>
+                    <div className="w-[345px]">
+                      <div className="flex rounded-lg border border-[#808080]">
+                        <button
+                          type="button"
+                          onClick={() => setShowDatePicker(!showDatePicker)}
+                          className="flex-1 border-r border-r-[#808080] px-4 py-4 text-left text-xs"
+                        >
+                          <span className="block font-semibold">CHECK-IN</span>
+                          <span className="">{formatDate(startDate)}</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setShowDatePicker(!showDatePicker)}
+                          className="flex-1 px-4 py-4 text-left text-xs"
+                        >
+                          <span className="block font-semibold">CHECK-OUT</span>
+                          <span className="">{formatDate(endDate)}</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="booking_calendar mt-8 mb-4">
+                    <DatePicker
+                      selected={startDate}
+                      onChange={onChange}
+                      startDate={startDate}
+                      endDate={endDate}
+                      monthsShown={2}
+                      selectsRange
+                      inline
+                      isClearable
+                    />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setStartDate(null);
+                        setEndDate(null);
+                      }}
+                      className="text-xs underline"
+                    >
+                      Clear dates
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowDatePicker(!showDatePicker)}
+                      className="rounded-lg bg-[#222] px-5 py-2 text-xs text-white"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="flex px-4 py-4">
+            <div className="relative flex px-4 py-4">
               <button
                 type="button"
-                className="flex-1 text-left text-xs font-semibold"
+                onClick={() => setShowGuests(!showGuests)}
+                className="flex flex-1 items-center justify-between text-left text-xs"
               >
-                GUESTS
+                <div>
+                  <span className="font-semibold">GUESTS</span>
+                  <div className="mt-1 flex items-center">
+                    <div className="svg_icon w-4">
+                      <UserIcon />
+                    </div>
+                    <span className="ml-2">2 guests</span>
+                  </div>
+                </div>
+                <div
+                  className={`svg_icon w-4 transform text-transparent ${
+                    showGuests ? 'rotate-180' : ''
+                  }`}
+                >
+                  <ChevronIcon />
+                </div>
               </button>
+              {showGuests && <GuestsPopover />}
             </div>
           </div>
           <div className="mt-5 mb-7">

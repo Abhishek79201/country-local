@@ -21,7 +21,7 @@ import BoxIcon from '../public/icons/box.svg';
 import { mentorSliderData } from '../src/utilities/dummy-api';
 
 /* eslint react/jsx-wrap-multilines: "off" */
-const Home: NextPage = () => (
+const OldHome: NextPage = () => (
   <div>
     <BannerSection />
 
@@ -73,4 +73,4 @@ const Home: NextPage = () => (
   </div>
 );
 
-export default Home;
+export default OldHome;
