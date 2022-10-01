@@ -28,6 +28,7 @@ const Banner = () => {
     setLightImg(data.img);
     setCurrentIndex(index);
     setTotalImg(bannerData.length);
+    document.querySelector('body')?.classList.add('active');
   };
 
   const handleRight = () => {

@@ -48,23 +48,28 @@ const BookOffers = ({ sliderId, title, data }: BookOffersProps) => (
           breakpoints={{
             // when window width is >= 768px
 
-            1200: {
+            1300: {
               spaceBetween: 20,
               slidesPerView: 5,
             },
             1024: {
-              spaceBetween: 10,
-              slidesPerView: 4.8,
+              spaceBetween: 20,
+              slidesPerView: 4,
             },
             768: {
               spaceBetween: 20,
-              slidesPerView: 3.5,
+              slidesPerView: 3,
             },
             548: {
               spaceBetween: 30,
-              slidesPerView: 2.5,
+              slidesPerView: 2,
+            },
+            400: {
+              spaceBetween: 20,
+              slidesPerView: 1.6,
             },
             200: {
+              spaceBetween: 20,
               slidesPerView: 1,
             },
           }}

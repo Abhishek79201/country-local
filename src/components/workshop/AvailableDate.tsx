@@ -14,7 +14,7 @@ const AvailableDate = () => (
     whileInView="animate"
     viewport={{ once: true }}
   >
-    <h1 className="pb-0 font-bold lg:text-[38px]">
+    <h1 className="pb-0 text-2xl font-bold md:text-3xl lg:text-[38px]">
       Choose from
       <span className="purple_gradient_text"> available dates</span>
     </h1>
@@ -69,22 +69,22 @@ const AvailableDate = () => (
 
     <motion.div className="w-100 mt-16 flex flex-wrap items-center justify-center gap-5">
       {[1, 2].map((item) => (
-        <div className="mx-4 my-2 w-[590px]  md:m-0 " key={item}>
+        <div className="mx-4 my-2 w-full sm:w-[590px]  md:m-0 " key={item}>
           <div className="flex flex-wrap overflow-hidden rounded-[10px] shadow-spread sm:flex-nowrap">
             <div
               className="flex h-[160px] w-full shrink-0 overflow-hidden rounded-[10px] bg-cover bg-center bg-no-repeat sm:h-auto sm:max-w-[155px]"
               style={{ backgroundImage: `url(/review-headshot-${item}.jpg)` }}
             >
               {/* <Image
-          src={`/review-headshot-${item}.jpg`}
-          width={202 * 2}
-          height={183 * 2}
-          alt="review 1"
-          className="w-full rounded-[10px] sm:w-auto"
-        /> */}
+               src={`/review-headshot-${item}.jpg`}
+                width={202 * 2}
+                height={183 * 2}
+                alt="review 1"
+                className="w-full rounded-[10px] sm:w-auto"
+              /> */}
             </div>
-            <div className="flex-auto p-5">
-              <div className="flex items-center justify-between">
+            <div className="w-full p-5">
+              <div className="flex flex-wrap items-center justify-between">
                 <h1 className="text-[18px] font-semibold text-[#000]">
                   Hosted by The Isla Experience
                 </h1>
@@ -116,14 +116,14 @@ const AvailableDate = () => (
                   Identity verified
                 </h4>
               </div>
-              <div className="flex items-center gap-5">
+              <div className="flex flex-wrap items-center gap-5">
                 <button
                   type="button"
-                  className="purple_gradient_bg h-[40px] w-[164px] rounded-lg text-sm font-bold text-[#fff]"
+                  className="purple_gradient_bg order-2 h-[40px] w-[164px] rounded-lg text-sm font-bold text-[#fff] sm:order-1"
                 >
                   Contact Host
                 </button>
-                <div className="flex items-center gap-2">
+                <div className="order-1 flex items-center gap-2 sm:order-2">
                   <div className="svg_icon w-[18px] text-[#FFCE31]">
                     <Sheild />
                   </div>

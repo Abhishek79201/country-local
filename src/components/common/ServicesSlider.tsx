@@ -38,7 +38,7 @@ const ServicesSlider = ({
       <div className="pb-5">
         <motion.div
           variants={fadeInLeft}
-          className="flex items-center justify-between gap-4 pb-2"
+          className="pb- flex flex-wrap items-center justify-between gap-4 md:flex-nowrap"
         >
           {title}
           {useLine ? (

@@ -18,7 +18,7 @@ const Footer = () => (
             Fancy seeing you down here.
           </h3>
         </div>
-        <div className="menu flex flex-wrap justify-between gap-10 pb-10 lg:w-[60%]">
+        <div className="menu flex w-full flex-wrap justify-between gap-3 pb-10 sm:gap-10 lg:w-[60%]">
           <div className="lg:w-1/4 ">
             <h3 className="mb-3 text-sm font-bold text-[#FFF]">
               How does it work

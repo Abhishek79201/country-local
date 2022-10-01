@@ -13,11 +13,11 @@ const Activities = () => (
     viewport={{ once: true }}
   >
     <h1 className="pb-8 text-[22px] font-bold text-[#222] ">Activities</h1>
-    <div className="flex w-full flex-wrap items-center justify-start  md:gap-y-10 ">
+    <div className="flex w-full flex-wrap items-center justify-start gap-y-10 gap-x-5 md:gap-x-0 ">
       {activitiesData.map((item) => (
         <motion.div
           variants={fadeIn}
-          className="flex w-full flex-wrap items-center gap-1   md:w-[249px] md:flex-nowrap"
+          className="flex  w-[246px] flex-wrap items-center  gap-1 md:flex-nowrap"
           key={Math.random() * 10}
         >
           <div className="flex w-[36px] items-center text-[#E71575]">

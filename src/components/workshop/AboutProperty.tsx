@@ -29,7 +29,10 @@ const AboutProperty = () => (
           </motion.div>
         ))}
       </div>
-      <motion.p variants={fadeIn} className="mb-5 text-[18px] text-[#808080]">
+      <motion.p
+        variants={fadeIn}
+        className="mb-5 text-base text-[#808080] md:text-[18px]"
+      >
         Hloyo Village is located on Doi Mae Salong in Chiang Rai. The Akha, a
         hill tribe, lives here in a very simple way. Their Thai might not be
         very fluent, so sometimes you need to use your body language and of

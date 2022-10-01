@@ -30,7 +30,7 @@ const Plan = () => (
         This is the plan
       </h1>
 
-      <p className="mb-8 text-[18px] text-[#808080]">
+      <p className="mb-8 text-base text-[#808080] md:text-[18px]">
         Check out the plan below to see what you will get up with your local
         host. Feel free to personalize this offer with the host of your choice.
       </p>
@@ -97,9 +97,9 @@ const Plan = () => (
           </h1>
           <motion.div
             variants={fadeInLeft}
-            className="flex min-h-[230px] w-full flex-wrap items-start gap-4 rounded  lg:flex-nowrap"
+            className="flex w-full flex-wrap items-start gap-4 rounded lg:min-h-[230px]  lg:flex-nowrap"
           >
-            <div className="banner min-h-[230px] w-[40%] p-0 ">
+            <div className="banner w-full p-0 lg:w-[40%] ">
               <Image
                 src="/girl.png"
                 width="362px"
@@ -107,7 +107,7 @@ const Plan = () => (
                 alt="staybanner"
               />
             </div>
-            <div className="relative w-[60%]">
+            <div className="relative w-full lg:w-[60%]">
               {[1, 2, 3].map((item) => (
                 <motion.div
                   variants={fadeInUp}

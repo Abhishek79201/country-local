@@ -7,7 +7,7 @@ import HeartIcon from '../../../public/icons/heart-outline.svg';
 const TourismBanner = () => (
   <div className="pb-16 pt-16 md:pb-12 md:pt-24">
     <div className="container">
-      <div className="flex items-end justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3 md:flex-nowrap md:items-end">
         <div>
           <div className="flex items-center gap-x-1 text-xs text-[#4A4A4A]">
             <Link href="#">
@@ -24,7 +24,7 @@ const TourismBanner = () => (
             <span>&gt;</span>
             <span className="text-[#808080]">Culture</span>
           </div>
-          <h1 className="text-[#222 my-4 text-2xl font-semibold">
+          <h1 className="my-4 text-[18px] font-semibold text-[#222] sm:text-2xl">
             2235 GREAT 3BED / 2.5BATHS IN BRAND NEW BUILDING
           </h1>
           <div className="flex text-xs">

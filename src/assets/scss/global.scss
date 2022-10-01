@@ -467,8 +467,19 @@ input:checked + .slider:before {
 .slide:nth-child(4) {
   margin-right: 150px !important;
 }
+@media screen and (max-width: 740px) {
+  .slide {
+    margin-right: auto !important ;
+  }
+  .slide:nth-child(4) {
+    margin-right: auto !important;
+  }
+}
 
 // lightBox
+body.active {
+  overflow: hidden;
+}
 .box_body {
   display: flex;
   flex-direction: column;
