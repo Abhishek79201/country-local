@@ -84,7 +84,7 @@ const OneDayWorkshop: NextPage = () => (
         sliderId="recent_browsing_slider"
         title={
           <h2 className="mr-7 inline-flex items-center text-[20px] font-bold text-black md:text-[24px]">
-            <span className="svg_icon mr-4 w-[28px] text-[#17A966]">
+            <span className="svg_icon mr-4 w-[28px] text-[#E71575]">
               <TimerIcon />
             </span>
             Recent Browsing

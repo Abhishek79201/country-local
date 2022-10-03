@@ -25,7 +25,7 @@ const GoodToKnow = () => (
       <div className="flex flex-wrap lg:flex-nowrap">
         <motion.div variants={fadeInUp} className="w-auto">
           <h2 className="pb-5 text-xl font-bold text-black md:text-[24px] lg:text-[28px]">
-            What we are going <span className="text-[#17A966]">to do</span>
+            What we are going <span className="text-[#E71575]">to do</span>
           </h2>
           <div className="text-base lg:text-lg">
             <p className="pb-4">
@@ -61,7 +61,7 @@ const GoodToKnow = () => (
 
       <div className="mt-10">
         <h2 className="pb-5 text-xl font-bold text-black md:text-[24px] lg:text-[28px]">
-          Good <span className="text-[#17A966]">to know</span>
+          Good <span className="text-[#E71575]">to know</span>
         </h2>
         <motion.div variants={fadeInUp} className="mb-6">
           <h3 className="pb-3 font-bold text-[#262626] lg:text-2xl">

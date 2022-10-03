@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const GreenBlueGradient = () => (
-  <div className="bg-[#17A966]">
+  <div className="bg-[#E71575]">
     <motion.div
       variants={{
         initial: { opacity: 0 },

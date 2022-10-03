@@ -29,7 +29,7 @@ const OngoingCourse = () => (
           />
         </div>
         <div className="py-4 pr-3 pl-4 lg:pr-4 lg:pl-6">
-          <div className="absolute right-0 top-0 flex h-9 w-[140px] items-center justify-center rounded-lg bg-[#17A966] text-[17px] font-semibold text-white">
+          <div className="absolute right-0 top-0 flex h-9 w-[140px] items-center justify-center rounded-lg bg-[#E71575] text-[17px] font-semibold text-white">
             $45 / Person
           </div>
           <h3 className="text-lg font-bold text-black md:text-xl lg:text-2xl">
@@ -37,7 +37,7 @@ const OngoingCourse = () => (
           </h3>
           <div className="flex flex-wrap justify-between gap-y-4 pt-4 md:gap-y-2 lg:gap-y-5 lg:pt-7">
             <div className="flex w-full items-center md:w-[49%] lg:w-[48%]">
-              <div className="svg_icon mr-[6px] w-6 text-[#17A966] lg:mr-[10px]">
+              <div className="svg_icon mr-[6px] w-6 text-[#E71575] lg:mr-[10px]">
                 <ClockIcon />
               </div>
               <p className="text-base xl:text-[17px]">
@@ -45,7 +45,7 @@ const OngoingCourse = () => (
               </p>
             </div>
             <div className="flex w-full items-center md:w-[49%] lg:w-[48%]">
-              <div className="svg_icon mr-[6px] w-6 text-[#17A966] lg:mr-[10px]">
+              <div className="svg_icon mr-[6px] w-6 text-[#E71575] lg:mr-[10px]">
                 <CalendarIcon />
               </div>
               <p className="text-base xl:text-[17px]">
@@ -53,7 +53,7 @@ const OngoingCourse = () => (
               </p>
             </div>
             <div className="flex w-full items-center md:w-[49%] lg:w-[48%]">
-              <div className="svg_icon mr-[6px] w-6 text-[#17A966] lg:mr-[10px]">
+              <div className="svg_icon mr-[6px] w-6 text-[#E71575] lg:mr-[10px]">
                 <BirthdayIcon />
               </div>
               <p className="text-base xl:text-[17px]">
@@ -61,7 +61,7 @@ const OngoingCourse = () => (
               </p>
             </div>
             <div className="flex w-full items-center md:w-[49%] lg:w-[48%]">
-              <div className="svg_icon mr-[6px] w-6 text-[#17A966] lg:mr-[10px]">
+              <div className="svg_icon mr-[6px] w-6 text-[#E71575] lg:mr-[10px]">
                 <GroupIcon />
               </div>
               <p className="text-base xl:text-[17px]">
@@ -69,7 +69,7 @@ const OngoingCourse = () => (
               </p>
             </div>
             <div className="flex w-full items-center md:w-[49%] lg:w-[48%]">
-              <div className="svg_icon mr-[6px] w-6 text-[#17A966] lg:mr-[10px]">
+              <div className="svg_icon mr-[6px] w-6 text-[#E71575] lg:mr-[10px]">
                 <QuestionIcon />
               </div>
               <p className="text-base xl:text-[17px]">

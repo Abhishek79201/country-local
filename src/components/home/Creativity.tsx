@@ -39,7 +39,7 @@ const Creativity = () => (
         <div className="md:w-5/12">
           <motion.div variants={fadeInUp} className="pb-5">
             <h4 className="flex items-center pb-1 text-base font-bold leading-tight text-black md:text-lg">
-              <span className="svg_icon mr-2 inline-block w-[24px] text-[#17A966] md:mr-3 md:w-[27px]">
+              <span className="svg_icon mr-2 inline-block w-[24px] text-[#E71575] md:mr-3 md:w-[27px]">
                 <CalenderIcon />
               </span>
               Commit to your creativity for 30 days
@@ -62,7 +62,7 @@ const Creativity = () => (
           </motion.div>
           <motion.div variants={fadeInUp} className="pb-5">
             <h4 className="flex items-center pb-1 text-base font-bold leading-tight text-black md:text-lg">
-              <span className="svg_icon mr-2 inline-block w-[24px] text-[#17A966] md:mr-3 md:w-[27px]">
+              <span className="svg_icon mr-2 inline-block w-[24px] text-[#E71575] md:mr-3 md:w-[27px]">
                 <ShareChartIcon />
               </span>
               Shareable Certification
@@ -73,7 +73,7 @@ const Creativity = () => (
           </motion.div>
           <motion.div variants={fadeInUp}>
             <h4 className="flex items-center pb-1 text-base font-bold leading-tight text-black md:text-lg">
-              <span className="svg_icon mr-2 inline-block w-[24px] text-[#17A966] md:mr-3 md:w-[27px]">
+              <span className="svg_icon mr-2 inline-block w-[24px] text-[#E71575] md:mr-3 md:w-[27px]">
                 <WebIcon />
               </span>
               100% Online and Offline

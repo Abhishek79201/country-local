@@ -101,10 +101,10 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
           ref={range}
           className="absolute z-[2] h-1 rounded-[3px] bg-[#000]"
         />
-        {/* <div className="absolute left-[6px] mt-5 text-xs text-[#17A966]">
+        {/* <div className="absolute left-[6px] mt-5 text-xs text-[#E71575]">
           {minVal}
         </div>
-        <div className="absolute -right-1 mt-5 text-xs text-[#17A966]">
+        <div className="absolute -right-1 mt-5 text-xs text-[#E71575]">
           {maxVal}
         </div> */}
       </div>

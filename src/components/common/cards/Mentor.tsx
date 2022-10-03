@@ -93,7 +93,7 @@ const MentorCard = ({
           Court.. <span className="font-bold text-[#E71575]">See more</span>
         </div>
         <div className="flex w-full items-end justify-end py-1">
-          <span className="block rounded-full bg-[#DCF2E8] px-[6px] py-[1px] text-[8px] text-[#17A966]">
+          <span className="block rounded-full bg-[#DCF2E8] px-[6px] py-[1px] text-[8px] text-[#E71575]">
             {offer}%<span className="ml-1">off</span>
           </span>
         </div>

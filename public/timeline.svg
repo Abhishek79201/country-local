@@ -1,27 +1,27 @@
 <svg width="65" height="215" viewBox="0 0 65 215" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9 7.5H56.5V205.5H9" stroke="#17A966" stroke-width="3"/>
+<path d="M9 7.5H56.5V205.5H9" stroke="#E71575" stroke-width="3"/>
 <g filter="url(#filter0_d_378_1545)">
-<circle cx="8.5" cy="7.5" r="6.5" fill="#17A966"/>
+<circle cx="8.5" cy="7.5" r="6.5" fill="#E71575"/>
 <circle cx="8.5" cy="7.5" r="6" stroke="white"/>
 </g>
 <g filter="url(#filter1_d_378_1545)">
-<circle cx="8.5" cy="205.5" r="6.5" fill="#17A966"/>
+<circle cx="8.5" cy="205.5" r="6.5" fill="#E71575"/>
 <circle cx="8.5" cy="205.5" r="6" stroke="white"/>
 </g>
 <g filter="url(#filter2_d_378_1545)">
-<circle cx="56.5" cy="7.5" r="6.5" fill="#17A966"/>
+<circle cx="56.5" cy="7.5" r="6.5" fill="#E71575"/>
 <circle cx="56.5" cy="7.5" r="6" stroke="white"/>
 </g>
 <g filter="url(#filter3_d_378_1545)">
-<circle cx="56.5" cy="73.5" r="6.5" fill="#17A966"/>
+<circle cx="56.5" cy="73.5" r="6.5" fill="#E71575"/>
 <circle cx="56.5" cy="73.5" r="6" stroke="white"/>
 </g>
 <g filter="url(#filter4_d_378_1545)">
-<circle cx="56.5" cy="139.5" r="6.5" fill="#17A966"/>
+<circle cx="56.5" cy="139.5" r="6.5" fill="#E71575"/>
 <circle cx="56.5" cy="139.5" r="6" stroke="white"/>
 </g>
 <g filter="url(#filter5_d_378_1545)">
-<circle cx="56.5" cy="205.5" r="6.5" fill="#17A966"/>
+<circle cx="56.5" cy="205.5" r="6.5" fill="#E71575"/>
 <circle cx="56.5" cy="205.5" r="6" stroke="white"/>
 </g>
 <defs>

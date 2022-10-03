@@ -23,7 +23,7 @@ const FrequentlyAskedQuestions = () => (
       >
         <motion.p
           variants={fadeInUp}
-          className="text-sm uppercase text-[#17A966] md:text-lg"
+          className="text-sm uppercase text-[#E71575] md:text-lg"
         >
           WE’RE HERE TO ANSWER
         </motion.p>

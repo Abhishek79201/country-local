@@ -86,7 +86,7 @@ const CourseDetails = () => {
                 </div>
                 <div className="pt-2 pb-1 text-base font-bold text-[#8796A0] md:text-[18px]">
                   <span className="text-black">With</span>{' '}
-                  <span className="text-[#17A966]">Martin & Alexa</span>{' '}
+                  <span className="text-[#E71575]">Martin & Alexa</span>{' '}
                   <span className="font-normal text-[#C7C7C7]">|</span> B.A
                   Child & Adolescent Development
                 </div>
@@ -201,7 +201,7 @@ const CourseDetails = () => {
               className="mt-8 flex flex-wrap gap-y-6 border-t-2 border-b-2 border-[#EBEBEB] py-5"
             >
               <div className="flex w-1/2 items-center md:w-1/3">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <LocationIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -209,7 +209,7 @@ const CourseDetails = () => {
                 </div>
               </div>
               <div className="flex w-1/2 items-center md:w-1/3">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <PersonWorkspaceIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -217,7 +217,7 @@ const CourseDetails = () => {
                 </div>
               </div>
               <div className="flex w-1/2 items-center md:w-1/3">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <TimeIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -225,7 +225,7 @@ const CourseDetails = () => {
                 </div>
               </div>
               <div className="flex w-1/2 items-center md:w-1/3">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <UserGroupIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -233,7 +233,7 @@ const CourseDetails = () => {
                 </div>
               </div>
               <div className="flex w-1/2 items-center md:w-1/3">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <LeafIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -273,7 +273,7 @@ const CourseDetails = () => {
             <motion.div variants={fadeInUp} className="mt-1 pt-5 pb-7">
               <h3 className="pb-6 text-lg font-semibold text-black md:text-[20px]">
                 6 Reason to Book{' '}
-                <span className="text-[#17A966]">this Experience</span>
+                <span className="text-[#E71575]">this Experience</span>
               </h3>
               <div className="flex w-full flex-wrap justify-between gap-y-5 md:max-w-[590px]">
                 {[1, 2, 3, 4, 5, 6].map((item) => (

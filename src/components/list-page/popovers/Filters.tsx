@@ -43,7 +43,7 @@ const Filters = () => {
             setGlobalOverflow(true);
           }
         }}
-        className="flex rounded-full border border-[#C2C2C2] py-[6px] px-2 text-xs text-[#70757A] hover:border-[#17A966] hover:text-[#17A966] xl:py-[7px] xl:px-4"
+        className="flex rounded-full border border-[#C2C2C2] py-[6px] px-2 text-xs text-[#70757A] hover:border-[#E71575] hover:text-[#E71575] xl:py-[7px] xl:px-4"
       >
         <div className="svg_icon mr-2 w-4 text-[#fff]">
           <SettingsIcon />
@@ -338,7 +338,7 @@ const Filters = () => {
                           <div className="mr-3 flex w-6 items-center md:w-5">
                             <ListIcon />
                           </div>
-                          <p className="text-sm font-semibold group-hover:text-[#17A966]">
+                          <p className="text-sm font-semibold group-hover:text-[#E71575]">
                             Recommended
                           </p>
                         </div>
@@ -354,7 +354,7 @@ const Filters = () => {
                           <div className="svg_icon mr-3 flex w-6 items-center text-transparent md:w-5">
                             <StarIcon />
                           </div>
-                          <p className="text-sm font-semibold group-hover:text-[#17A966]">
+                          <p className="text-sm font-semibold group-hover:text-[#E71575]">
                             Best selling
                           </p>
                         </div>
@@ -370,7 +370,7 @@ const Filters = () => {
                           <div className="svg_icon mr-3 flex w-6 items-center text-[#9D9FA2] md:w-5">
                             <FormNewIcon />
                           </div>
-                          <p className="text-sm font-semibold group-hover:text-[#17A966]">
+                          <p className="text-sm font-semibold group-hover:text-[#E71575]">
                             New arrivals
                           </p>
                         </div>
@@ -524,7 +524,7 @@ const Filters = () => {
                   </button>
                   <button
                     type="button"
-                    className="rounded-full bg-[#288890] px-8 py-2 text-sm font-semibold text-white md:text-base"
+                    className="rounded-full bg-[#E71575] px-8 py-2 text-sm font-semibold text-white md:text-base"
                   >
                     Apply
                   </button>

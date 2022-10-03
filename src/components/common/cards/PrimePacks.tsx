@@ -92,7 +92,7 @@ const PrimePacks = ({
             <StarIcon />
           </span>
           <span className="ml-1 mr-3 text-[8px] font-bold">(231)</span>
-          <span className="block rounded-full bg-[#DCF2E8] px-[6px] py-[1px] text-[8px] text-[#17A966]">
+          <span className="block rounded-full bg-[#DCF2E8] px-[6px] py-[1px] text-[8px] text-[#E71575]">
             {/* {offer}%<span className="ml-1">off</span> */}
             30%<span className="ml-1">off</span>
           </span>

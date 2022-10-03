@@ -12,7 +12,7 @@ import '../src/assets/scss/global.scss';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <NextNProgress color="#288890" />
+      <NextNProgress color="#E71575" />
 
       <Head>
         <link rel="shortcut icon" href="/tourism-favicon.png" />

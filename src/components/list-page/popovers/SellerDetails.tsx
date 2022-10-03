@@ -35,7 +35,7 @@ const SellerDetails = () => {
                 setGlobalOverflow(true);
               }
             }}
-            className="shrink-0 rounded-[5px] border border-[#17A966] bg-[#F7F7F7] py-[6px] px-2 text-xs text-[#17A966] hover:bg-[#17A966] hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#17A966] xl:py-[7px] xl:px-3"
+            className="shrink-0 rounded-[5px] border border-[#E71575] bg-[#F7F7F7] py-[6px] px-2 text-xs text-[#E71575] hover:bg-[#E71575] hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E71575] xl:py-[7px] xl:px-3"
           >
             Seller Details
           </Popover.Button>
@@ -257,7 +257,7 @@ const SellerDetails = () => {
                         </div>
                         <button
                           type="button"
-                          className="mt-5 text-sm font-semibold text-[#17A966] md:mt-2 md:text-[13px]"
+                          className="mt-5 text-sm font-semibold text-[#E71575] md:mt-2 md:text-[13px]"
                         >
                           Show less
                         </button>
@@ -296,7 +296,7 @@ const SellerDetails = () => {
                         </div>
                         <button
                           type="button"
-                          className="mt-5 text-sm font-semibold text-[#17A966] md:mt-2 md:text-[13px]"
+                          className="mt-5 text-sm font-semibold text-[#E71575] md:mt-2 md:text-[13px]"
                         >
                           +185 More
                         </button>
@@ -335,7 +335,7 @@ const SellerDetails = () => {
                         </div>
                         <button
                           type="button"
-                          className="mt-5 text-sm font-semibold text-[#17A966] md:mt-2 md:text-[13px]"
+                          className="mt-5 text-sm font-semibold text-[#E71575] md:mt-2 md:text-[13px]"
                         >
                           +15 More
                         </button>
@@ -351,7 +351,7 @@ const SellerDetails = () => {
                       </button>
                       <button
                         type="button"
-                        className="rounded-full bg-[#288890] px-8 py-2 text-sm font-semibold text-white md:text-base"
+                        className="rounded-full bg-[#E71575] px-8 py-2 text-sm font-semibold text-white md:text-base"
                       >
                         Apply
                       </button>

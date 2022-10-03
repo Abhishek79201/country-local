@@ -25,8 +25,8 @@ const WherePopover = ({ stateItems }: WherePopoverType) => (
               <li key={item.id} className="group w-1/3">
                 <div
                   className={`flex cursor-pointer  items-center  border-r border-r-[#F1F1F1] py-1 sm:py-2 sm:pr-5 ${
-                    item.active ? 'text-[#17A966]' : 'text-[#A8ABC1]'
-                  } group-hover:text-[#17A966]`}
+                    item.active ? 'text-[#E71575]' : 'text-[#A8ABC1]'
+                  } group-hover:text-[#E71575]`}
                 >
                   <span className="svg_icon hidden w-5 sm:inline-block">
                     <MapIcon />
@@ -47,7 +47,7 @@ const WherePopover = ({ stateItems }: WherePopoverType) => (
                     <button
                       key={val}
                       type="button"
-                      className="h-7 rounded border border-[#17A966] px-3 text-center text-xs font-semibold text-[#17A966] transition duration-200 ease-out hover:bg-[#17A966] hover:text-white md:h-[32px] md:rounded-md md:px-4"
+                      className="h-7 rounded border border-[#E71575] px-3 text-center text-xs font-semibold text-[#E71575] transition duration-200 ease-out hover:bg-[#E71575] hover:text-white md:h-[32px] md:rounded-md md:px-4"
                     >
                       {val}
                     </button>

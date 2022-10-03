@@ -55,7 +55,7 @@ const Timeline = () => (
                 variants={fadeInLeft}
                 className="flex w-full flex-wrap justify-center rounded-[14px] border border-[#EAEAEA] bg-white py-2 px-3 shadow-md lg:flex-nowrap lg:justify-start xl:py-3 xl:px-5"
               >
-                <div className="mb-2 flex h-[70px] w-[70px] rounded-full border-[3px] border-[#17A966] p-[2px] lg:mb-0 xl:h-[86px] xl:w-[86px]">
+                <div className="mb-2 flex h-[70px] w-[70px] rounded-full border-[3px] border-[#E71575] p-[2px] lg:mb-0 xl:h-[86px] xl:w-[86px]">
                   <Image
                     src="/alex-headshot.png"
                     width={76}
@@ -67,7 +67,7 @@ const Timeline = () => (
                   <h4 className="pt-0 pb-1 font-bold xl:pt-1 xl:pb-2 xl:text-[17px]">
                     <span className="text-[#1C1C25]">Alex Dan</span>
                     <span className="px-2 font-light text-[#CFCFCF]">|</span>
-                    <span className="text-[#17A966]">Student</span>
+                    <span className="text-[#E71575]">Student</span>
                   </h4>
                   <p className="text-[11px] font-medium leading-tight text-[#585858]">
                     Monthly classes go beyond a playlist of videos. The
@@ -80,7 +80,7 @@ const Timeline = () => (
                 variants={fadeInLeft}
                 className="flex w-full flex-wrap justify-center rounded-[14px] border border-[#EAEAEA] bg-white py-2 px-3 shadow-md lg:flex-nowrap lg:justify-start xl:py-3 xl:px-5"
               >
-                <div className="mb-2 flex h-[70px] w-[70px] rounded-full border-[3px] border-[#17A966] p-[2px] lg:mb-0 xl:h-[86px] xl:w-[86px]">
+                <div className="mb-2 flex h-[70px] w-[70px] rounded-full border-[3px] border-[#E71575] p-[2px] lg:mb-0 xl:h-[86px] xl:w-[86px]">
                   <Image
                     src="/barak-headshot.png"
                     width={76}
@@ -92,7 +92,7 @@ const Timeline = () => (
                   <h4 className="pt-0 pb-1 font-bold xl:pt-1 xl:pb-2 xl:text-[17px]">
                     <span className="text-[#1C1C25]">Barak Lino</span>
                     <span className="px-2 font-light text-[#CFCFCF]">|</span>
-                    <span className="text-[#17A966]">Instructor</span>
+                    <span className="text-[#E71575]">Instructor</span>
                   </h4>
                   <p className="text-[11px] font-medium leading-tight text-[#585858]">
                     Monthly classes go beyond a playlist of videos. The

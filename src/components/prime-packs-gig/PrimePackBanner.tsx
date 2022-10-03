@@ -44,12 +44,12 @@ const PrimePackBanner = () => {
                 <div className="svg_icon mr-2 w-6 text-transparent">
                   <BoxIcon />
                 </div>
-                <h4 className="text-lg font-bold text-[#17A966]">
+                <h4 className="text-lg font-bold text-[#E71575]">
                   Prime Packs Gig
                 </h4>
                 <button
                   type="button"
-                  className="ml-2 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-[#3EB451] bg-opacity-10 font-bold text-[#17A966]"
+                  className="ml-2 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-[#3EB451] bg-opacity-10 font-bold text-[#E71575]"
                   onClick={handlePrimePackInfoPopup}
                 >
                   ?

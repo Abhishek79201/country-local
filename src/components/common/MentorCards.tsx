@@ -76,8 +76,8 @@ const MentorCards = () => {
                     <span className="mt-[2px] text-xs font-semibold text-[#969696] md:ml-2 lg:text-[16px]">
                       (62 Classes Completed)
                     </span>
-                    <div className="ml-1 flex items-center rounded-full border-2 border-[#17A966] px-2 py-[3px] text-[9px] font-semibold text-[#17A966] md:ml-2 lg:text-[13px]">
-                      <div className="mr-1 h-[6px] w-[6px] rounded-full bg-[#17A966]" />
+                    <div className="ml-1 flex items-center rounded-full border-2 border-[#E71575] px-2 py-[3px] text-[9px] font-semibold text-[#E71575] md:ml-2 lg:text-[13px]">
+                      <div className="mr-1 h-[6px] w-[6px] rounded-full bg-[#E71575]" />
                       Online
                     </div>
                   </div>
@@ -196,8 +196,8 @@ const MentorCards = () => {
                     <span className="mt-[2px] text-xs font-semibold text-[#969696] md:ml-2 lg:text-[16px]">
                       (62 Classes Completed)
                     </span>
-                    <div className="ml-1 flex items-center rounded-full border-2 border-[#17A966] px-2 py-[3px] text-[9px] font-semibold text-[#17A966] md:ml-2 lg:text-[13px]">
-                      <div className="mr-1 h-[6px] w-[6px] rounded-full bg-[#17A966]" />
+                    <div className="ml-1 flex items-center rounded-full border-2 border-[#E71575] px-2 py-[3px] text-[9px] font-semibold text-[#E71575] md:ml-2 lg:text-[13px]">
+                      <div className="mr-1 h-[6px] w-[6px] rounded-full bg-[#E71575]" />
                       Online
                     </div>
                   </div>

@@ -23,8 +23,8 @@ const WhatPopover = ({ categoryMenu }: WhatPopoverType) => (
               <li key={item.id} className="group w-1/3">
                 <div
                   className={`flex cursor-pointer  items-center  border-r border-r-[#F1F1F1] py-1 sm:py-2 sm:pr-5 ${
-                    item.active ? 'text-[#17A966]' : 'text-[#A8ABC1]'
-                  } group-hover:text-[#17A966]`}
+                    item.active ? 'text-[#E71575]' : 'text-[#A8ABC1]'
+                  } group-hover:text-[#E71575]`}
                 >
                   <span className="svg_icon hidden w-5 sm:inline-block">
                     <item.icon />

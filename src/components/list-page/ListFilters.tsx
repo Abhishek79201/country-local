@@ -210,7 +210,7 @@ const ListFilters = () => {
                   />
                   <button
                     type="button"
-                    className="absolute top-[6px] right-[6px] flex h-9 w-full max-w-[36px] items-center justify-center rounded-full bg-[#288890] text-xs text-white sm:max-w-[80px] md:h-[52px] md:max-w-[140px] md:text-base"
+                    className="absolute top-[6px] right-[6px] flex h-9 w-full max-w-[36px] items-center justify-center rounded-full bg-[#E71575] text-xs text-white sm:max-w-[80px] md:h-[52px] md:max-w-[140px] md:text-base"
                   >
                     <div className="w-5 sm:mr-1 sm:w-3 md:w-[22px]">
                       <WhiteSearchIcon />
@@ -232,7 +232,7 @@ const ListFilters = () => {
                     <Filters />
                     <button
                       type="button"
-                      className="shrink-0 text-xs text-[#17A966]"
+                      className="shrink-0 text-xs text-[#E71575]"
                     >
                       Reset Filters
                     </button>
@@ -283,7 +283,7 @@ const ListFilters = () => {
                     <button
                       key={index}
                       type="button"
-                      className="shrink-0 rounded-full border border-[#C2C2C2] py-[5px] px-[11px] text-xs text-[#70757A] hover:border-[#17A966] hover:bg-[#17A966] hover:text-white xl:py-[7px] xl:px-3"
+                      className="shrink-0 rounded-full border border-[#C2C2C2] py-[5px] px-[11px] text-xs text-[#70757A] hover:border-[#E71575] hover:bg-[#E71575] hover:text-white xl:py-[7px] xl:px-3"
                     >
                       {item}
                     </button>
@@ -321,16 +321,16 @@ const ListFilters = () => {
               pageRangeDisplayed={1}
               pageCount={10}
               // renderOnZeroPageCount={null}
-              className="mx-auto flex h-10 w-max items-stretch justify-center overflow-hidden rounded-full border-2 border-[#17A966] sm:h-11"
-              pageClassName="flex items-stretch border-r-2 border-[#17A966]"
-              pageLinkClassName="px-2 sm:px-5 py-1 flex items-center text-[#17A966] hover:bg-[#17A966] hover:text-white"
-              activeLinkClassName="bg-[#17A966] text-white"
-              breakClassName="flex items-stretch border-r-2 border-[#17A966]"
-              breakLinkClassName="px-2 sm:px-4 pb-1 flex items-center text-[#17A966] text-[#17A966] hover:bg-[#17A966] hover:text-white"
-              previousClassName="flex items-stretch border-r-2 border-[#17A966]"
-              previousLinkClassName="flex items-center px-2 sm:px-5 py-1 text-[#17A966] text-[#17A966] hover:bg-[#17A966] hover:text-white"
-              nextClassName="flex items-stretch hover:bg-[#17A966] hover:text-white"
-              nextLinkClassName="flex items-center px-2 sm:px-5 py-1 text-[#17A966] text-[#17A966] hover:bg-[#17A966] hover:text-white"
+              className="mx-auto flex h-10 w-max items-stretch justify-center overflow-hidden rounded-full border-2 border-[#E71575] sm:h-11"
+              pageClassName="flex items-stretch border-r-2 border-[#E71575]"
+              pageLinkClassName="px-2 sm:px-5 py-1 flex items-center text-[#E71575] hover:bg-[#E71575] hover:text-white"
+              activeLinkClassName="bg-[#E71575] text-white"
+              breakClassName="flex items-stretch border-r-2 border-[#E71575]"
+              breakLinkClassName="px-2 sm:px-4 pb-1 flex items-center text-[#E71575] text-[#E71575] hover:bg-[#E71575] hover:text-white"
+              previousClassName="flex items-stretch border-r-2 border-[#E71575]"
+              previousLinkClassName="flex items-center px-2 sm:px-5 py-1 text-[#E71575] text-[#E71575] hover:bg-[#E71575] hover:text-white"
+              nextClassName="flex items-stretch hover:bg-[#E71575] hover:text-white"
+              nextLinkClassName="flex items-center px-2 sm:px-5 py-1 text-[#E71575] text-[#E71575] hover:bg-[#E71575] hover:text-white"
               disabledLinkClassName="opacity-50 cursor-not-allowed"
             />
           </div>

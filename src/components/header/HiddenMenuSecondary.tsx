@@ -227,7 +227,7 @@ const HiddenMenuSecondary = ({
                 </Popover.Button>
                 <button
                   type="submit"
-                  className="focus-green absolute right-3 top-3 flex h-[52px] w-full max-w-[124px] items-center justify-center gap-1 rounded-full bg-[#288890] transition-all duration-300 ease-in-out hover:shadow-lg focus-visible:rounded-full focus-visible:ring-offset-0"
+                  className="focus-green absolute right-3 top-3 flex h-[52px] w-full max-w-[124px] items-center justify-center gap-1 rounded-full bg-[#E71575] transition-all duration-300 ease-in-out hover:shadow-lg focus-visible:rounded-full focus-visible:ring-offset-0"
                 >
                   <span className="w-[26px]">
                     <SearchIcon />

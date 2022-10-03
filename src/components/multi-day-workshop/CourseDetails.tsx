@@ -117,7 +117,7 @@ const CourseDetails = () => {
                 </div>
                 <div className="pt-2 pb-1 text-base font-bold text-[#8796A0] md:text-[18px]">
                   <span className="text-black">With</span>{' '}
-                  <span className="text-[#17A966]">Martin & Alexa</span>{' '}
+                  <span className="text-[#E71575]">Martin & Alexa</span>{' '}
                   <span className="font-normal text-[#C7C7C7]">|</span> B.A
                   Child & Adolescent Development
                 </div>
@@ -264,7 +264,7 @@ const CourseDetails = () => {
               className="flex flex-wrap justify-between gap-y-6 border-b-2 border-[#EBEBEB] py-5"
             >
               <div className="flex w-1/2 items-center">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <LocationIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -272,7 +272,7 @@ const CourseDetails = () => {
                 </div>
               </div>
               <div className="flex w-1/2 items-center">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <PersonWorkspaceIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -280,7 +280,7 @@ const CourseDetails = () => {
                 </div>
               </div>
               <div className="flex w-1/2 items-center">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <TimeIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -288,7 +288,7 @@ const CourseDetails = () => {
                 </div>
               </div>
               <div className="flex w-1/2 items-center">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <UserGroupIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -296,7 +296,7 @@ const CourseDetails = () => {
                 </div>
               </div>
               <div className="flex w-1/2 items-center">
-                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#17A966]">
+                <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">
                   <LeafIcon />
                 </div>
                 <div className="text-sm font-semibold text-[#4B4B4B]">
@@ -389,7 +389,7 @@ const CourseDetails = () => {
 
         <motion.div variants={fadeInUp} className="mt-1 pt-5">
           <h3 className="pb-4 text-lg font-semibold text-black md:text-[20px]">
-            What we are going <span className="text-[#17A966]">to do</span>
+            What we are going <span className="text-[#E71575]">to do</span>
           </h3>
           <div className="text-sm text-black lg:text-base">
             <p className="pb-5">
