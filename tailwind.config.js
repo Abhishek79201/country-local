@@ -23,21 +23,20 @@ module.exports = {
     screens: {
       sm: '640px',
       md: '768px',
-      lg: '1024px',
-      xl: '1320px',
+      lg: '1064px',
+      xl: '1240px',
     },
     container: {
       center: true,
       padding: {
         DEFAULT: '15px',
         lg: '20px',
-        xl: '20px',
       },
       screens: {
         sm: '640px',
         md: '768px',
-        lg: '1024px',
-        xl: '1320px',
+        lg: '1064px',
+        xl: '1240px',
       },
     },
   },

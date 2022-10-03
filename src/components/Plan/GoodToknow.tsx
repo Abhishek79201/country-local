@@ -156,7 +156,7 @@ const GoodToKnow = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="mt-0 max-w-[749px] border-t-0 border-[#EBEBEB]"
+          className="mt-0  border-t-0 border-[#EBEBEB]"
         >
           <motion.div variants={fadeInUp} className="mb-6">
             <h3 className="pb-3 font-bold text-[#222] lg:text-2xl">

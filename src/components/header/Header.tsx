@@ -105,7 +105,7 @@ const Header = () => {
 
   return (
     <div>
-      {width > 1023 ? (
+      {width > 1063 ? (
         <>
           <header
             id="header"

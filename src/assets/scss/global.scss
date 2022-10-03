@@ -240,6 +240,9 @@ svg {
   color: #313131;
   height: 37px !important;
 }
+.booking_calendar .react-datepicker__day--keyboard-selected {
+  color: #fff;
+}
 .booking_calendar .react-datepicker__day--in-range,
 .booking_calendar
   .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
@@ -458,21 +461,6 @@ input:checked + .slider:before {
       width: 100%;
       object-fit: cover;
     }
-  }
-}
-
-.slide {
-  margin-right: -10px !important ;
-}
-.slide:nth-child(4) {
-  margin-right: 150px !important;
-}
-@media screen and (max-width: 740px) {
-  .slide {
-    margin-right: auto !important ;
-  }
-  .slide:nth-child(4) {
-    margin-right: auto !important;
   }
 }
 

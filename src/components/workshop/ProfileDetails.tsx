@@ -10,8 +10,8 @@ import UnderLine from '../common/UnderLine';
 const ProfileDetails = () => {
   const [openReport, setOpenReport] = useState(false);
   return (
-    <div className="max-w-[749px]">
-      <div className="header flex items-start justify-between pb-4">
+    <div className="">
+      <div className="header flex flex-wrap items-start justify-between gap-y-3 pb-4 md:flex-nowrap md:gap-y-0">
         <div className="flex flex-wrap items-center gap-4 sm:flex-nowrap">
           <div className="relative mb-3 flex shrink-0 sm:mb-0">
             <div className="absolute top-0 left-12 z-[2] h-4 w-4 rounded-full border border-white bg-[#1DBF73]" />
@@ -47,11 +47,10 @@ const ProfileDetails = () => {
           </div>
           <div className="text">
             <div className="flex items-center pb-1">
-              <h1 className="mr-3 text-[14px] font-semibold">
+              <p className="mr-1 text-[14px] font-semibold sm:mr-3">
                 Enjoy Local Experience
-              </h1>
+              </p>
               <div className="flex items-center gap-1">
-                {' '}
                 <Image
                   src="/icons/verified.png"
                   alt="verified"
@@ -59,16 +58,15 @@ const ProfileDetails = () => {
                   height={24}
                   className="mr-3"
                 />
-                <h1 className="text-[14px] font-bold text-[#1875FF]">
-                  {' '}
+                <p className="text-[14px] font-bold text-[#1875FF]">
                   Identify Verified
-                </h1>
+                </p>
               </div>
             </div>
-            <h1 className="text-[18px] font-bold text-[#4A4A4A]">
+            <p className="text-[18px] font-bold text-[#4A4A4A]">
               With
               <span className="ml-2 text-[#E71575] ">Martin & Alexa</span>
-            </h1>
+            </p>
           </div>
         </div>
         <div className="flex items-center gap-x-2">

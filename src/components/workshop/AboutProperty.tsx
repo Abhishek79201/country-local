@@ -46,7 +46,7 @@ const AboutProperty = () => (
         <motion.div
           variants={fadeIn}
           key={item}
-          className="flex items-center py-[8px]"
+          className="flex items-start py-[8px]"
         >
           <div className="svg_icon w-10 text-[#E71575] md:w-6">
             <Checkmark />

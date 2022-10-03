@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const UnderLine = () => (
-  <div className="my-11 max-w-[749px]">
+  <div className="my-6 md:my-10">
     <Image src="/icons/line.png" width="749" height="2" alt="line" />
   </div>
 );

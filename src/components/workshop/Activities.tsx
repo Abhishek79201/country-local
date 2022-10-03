@@ -1,36 +1,27 @@
-import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { animationWrapper, fadeIn } from '../../utilities/animations';
 import { activitiesData } from '../../utilities/dummy-api';
 import UnderLine from '../common/UnderLine';
 
 const Activities = () => (
-  <motion.div
-    className="max-w-[749px]"
-    variants={animationWrapper}
-    initial="initial"
-    whileInView="animate"
-    viewport={{ once: true }}
-  >
+  <div>
     <h1 className="pb-8 text-[22px] font-bold text-[#222] ">Activities</h1>
-    <div className="flex w-full flex-wrap items-center justify-start gap-y-10 gap-x-5 md:gap-x-0 ">
+    <div className="flex w-full flex-wrap items-center justify-start gap-y-5 gap-x-5 md:gap-y-10 md:gap-x-0 ">
       {activitiesData.map((item) => (
-        <motion.div
-          variants={fadeIn}
-          className="flex  w-[246px] flex-wrap items-center  gap-1 md:flex-nowrap"
+        <div
+          className="flex w-full items-center gap-1 md:w-1/3 md:pr-2 lg:w-1/2 xl:w-1/3"
           key={Math.random() * 10}
         >
-          <div className="flex w-[36px] items-center text-[#E71575]">
+          <div className="flex w-[36px] shrink-0 items-center text-[#E71575]">
             <Image src={item.icon} alt="icon" width="30px" height="30px" />
           </div>
           <h1 className="text-[15px] font-semibold text-[#222] ">
             {item.title}
           </h1>
-        </motion.div>
+        </div>
       ))}
     </div>
     <UnderLine />
-  </motion.div>
+  </div>
 );
 
 export default Activities;

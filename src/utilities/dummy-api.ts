@@ -777,10 +777,10 @@ export const activitiesData = [
   { icon: Camping2, title: 'Camping near Chennai' },
 ];
 export const safetyFeaturesData = [
-  { icon: Lock, title: 'Gated Private Campsite' },
+  { icon: Lock, title: 'Gated Private' },
   { icon: Kit, title: 'First Aid Kit' },
   { icon: House, title: 'Backup Cottage ' },
-  { icon: Crowd, title: 'Crowd Free Campsite' },
+  { icon: Crowd, title: 'Crowd Free' },
 ];
 
 export const offersData = [

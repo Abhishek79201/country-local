@@ -16,7 +16,7 @@ import LocationIcon from '../../../public/icons/location.svg';
 /* eslint react/jsx-one-expression-per-line: "off" */
 const TripDetails = () => (
   <div className=" container relative">
-    <div className=" max-w-[749px]">
+    <div className=" ">
       <motion.div
         variants={animationWrapper}
         initial="initial"

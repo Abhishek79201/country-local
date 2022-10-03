@@ -10,7 +10,7 @@ import { useState } from 'react';
 import LightBox from './PopUp/LighBox';
 import PopUpScreen from './PopUp/PopUpScreen';
 
-const Banner = () => {
+const Gallery = () => {
   const [lightImg, setLightImg] = useState('');
   const [totalImg, setTotalImg] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -118,4 +118,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Gallery;

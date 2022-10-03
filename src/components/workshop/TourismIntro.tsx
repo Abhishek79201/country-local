@@ -4,12 +4,12 @@ import ShareIcon from '../../../public/icons/upload.svg';
 import HeartIcon from '../../../public/icons/heart-outline.svg';
 
 /* eslint jsx-a11y/anchor-is-valid: "off" */
-const TourismBanner = () => (
-  <div className="pb-16 pt-16 md:pb-12 md:pt-24">
+const TourismIntro = () => (
+  <div className="pt-16 pb-10 sm:pb-12 sm:pt-28 xl:py-12">
     <div className="container">
-      <div className="flex flex-wrap items-center justify-between gap-3 md:flex-nowrap md:items-end">
+      <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-3 md:flex-nowrap md:items-end">
         <div>
-          <div className="flex items-center gap-x-1 text-xs text-[#4A4A4A]">
+          <div className="flex flex-wrap items-center gap-x-1 gap-y-1 text-xs text-[#4A4A4A] sm:flex-nowrap sm:gap-y-0">
             <Link href="#">
               <a className="underline">Delhi India</a>
             </Link>
@@ -27,7 +27,7 @@ const TourismBanner = () => (
           <h1 className="my-4 text-[18px] font-semibold text-[#222] sm:text-2xl">
             2235 GREAT 3BED / 2.5BATHS IN BRAND NEW BUILDING
           </h1>
-          <div className="flex text-xs">
+          <div className="flex flex-wrap gap-y-1 text-xs sm:gap-y-0">
             <div className="svg_icon mr-1 w-4 text-[#FFD166]">
               <StarIcon />
             </div>
@@ -38,15 +38,15 @@ const TourismBanner = () => (
             </span>
           </div>
         </div>
-        <div className="flex gap-x-5 text-black">
+        <div className="flex gap-x-5 text-sm text-black sm:text-base">
           <button type="button" className="flex items-center">
-            <div className="w-[22px]">
+            <div className="w-4 sm:w-[22px]">
               <ShareIcon />
             </div>
             <span className="ml-1 underline">Share</span>
           </button>
           <button type="button" className="flex items-center">
-            <div className="svg_icon w-[22px] text-transparent">
+            <div className="svg_icon w-4 text-transparent sm:w-[22px]">
               <HeartIcon />
             </div>
             <span className="ml-1 underline">Save</span>
@@ -56,4 +56,4 @@ const TourismBanner = () => (
     </div>
   </div>
 );
-export default TourismBanner;
+export default TourismIntro;

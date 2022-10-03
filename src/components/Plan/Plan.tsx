@@ -25,7 +25,7 @@ const Plan = () => (
     whileInView="animate"
     viewport={{ once: true }}
   >
-    <div className="h-auto max-w-[749px]">
+    <div className="h-auto ">
       <h1 className="mb-4 text-[22px] font-bold text-[#222]">
         This is the plan
       </h1>
@@ -52,7 +52,7 @@ const Plan = () => (
         {imgData.map((item) => (
           <motion.div
             variants={fadeInUp}
-            className="relative ml-6 flex max-w-[749px] flex-wrap gap-14 pt-3 pb-8"
+            className="relative ml-6 flex  flex-wrap gap-14 pt-3 pb-8"
             key={item}
           >
             <div className=" max-w-[373px]">

@@ -25,7 +25,7 @@ const BookingCard = () => {
   const [showGuests, setShowGuests] = useState<boolean>(false);
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [endDate, setEndDate] = useState<Date | null>(new Date());
-  const onChange = (dates: any) => {
+  const onChange = (dates: [Date, Date]) => {
     const [start, end] = dates;
     setStartDate(start);
     setEndDate(end);
@@ -38,7 +38,7 @@ const BookingCard = () => {
   }, [endDate]);
 
   return (
-    <div className="max-w-[425px]">
+    <div className="w-[320px] xl:w-[400px]">
       <div className="booking-card mb-5 w-full rounded-[20px] pb-8 shadow-spread">
         <div className="relative overflow-hidden rounded-tl-[20px] rounded-tr-[20px] pb-[52%]">
           <img
@@ -50,18 +50,18 @@ const BookingCard = () => {
             Instantly Confirmed
           </div>
         </div>
-        <div className="px-10">
+        <div className="px-5 xl:px-7">
           <div className="relative mx-auto -mt-[42px] h-[84px] w-[84px] overflow-hidden rounded-full border-[3px] border-white">
             <Image src="/book-card-author.jpg" alt="avatar" layout="fill" />
           </div>
-          <h3 className="mt-6 mb-3 text-center text-2xl font-bold leading-snug">
+          <h3 className="mt-4 mb-2 text-center text-xl font-bold leading-snug xl:mt-6 xl:mb-3 xl:text-2xl">
             The Best of Berling in a Convertible Car
           </h3>
-          <div className="flex items-center justify-center text-center text-xl">
+          <div className="flex items-center justify-center text-center text-lg xl:text-xl">
             <span className="mr-3">Hosted by</span>
             <Image src="/miha.png" width={51} height={22} />
           </div>
-          <div className="mt-3 mb-5 flex items-center justify-center text-center text-sm">
+          <div className="mt-3 mb-5 flex items-center justify-center text-center text-xs xl:text-sm">
             <div className="font-semibold">
               From $45 <span className="line-through">$567</span> / night
             </div>
@@ -101,7 +101,7 @@ const BookingCard = () => {
                         {formatDate(startDate)} - {formatDate(endDate)}
                       </p>
                     </div>
-                    <div className="w-[345px]">
+                    <div className="w-[280px] xl:w-[344px]">
                       <div className="flex rounded-lg border border-[#808080]">
                         <button
                           type="button"
