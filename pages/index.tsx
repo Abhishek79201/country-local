@@ -9,12 +9,16 @@ import ServicesSlider from '../src/components/common/ServicesSlider';
 import ThingsToKnow from '../src/components/common/ThingsToKnow';
 import WorkshopExperience from '../src/components/common/WorkshopExperience';
 import Profiles from '../src/components/workshop/Profiles';
-import TouringPlan from '../src/components/Plan/TouringPlan';
 import Review from '../src/components/workshop/Review';
 import SimilarProperties from '../src/components/workshop/SimilarProperties';
 import ReviewSlider from '../src/components/workshop/ReviewSlider';
 import AvailableDate from '../src/components/workshop/AvailableDate';
 import BookOffers from '../src/components/workshop/BookOffers';
+import TouringBanner from '../src/components/workshop/TouringBanner';
+import Plan from '../src/components/workshop/Plan';
+import GoodToKnow from '../src/components/workshop/GoodToknow';
+import TripDetails from '../src/components/workshop/TripDetails';
+import TripCalender from '../src/components/workshop/TripCalendar';
 
 const Home: NextPage = () => (
   <>
@@ -28,7 +32,23 @@ const Home: NextPage = () => (
 
       <Profiles />
 
-      <TouringPlan />
+      <TouringBanner />
+
+      <div className="container pt-8">
+        <div className="w-full lg:max-w-[730px]">
+          <Plan />
+        </div>
+      </div>
+
+      <GoodToKnow />
+
+      <div className="container">
+        <div className="w-full lg:max-w-[730px]">
+          <TripDetails />
+        </div>
+      </div>
+
+      <TripCalender />
 
       <Review />
 

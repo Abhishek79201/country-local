@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Navigation, Pagination } from 'swiper';
+import { FreeMode, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import {
@@ -50,6 +50,36 @@ const GoodToKnow = () => {
       title: 'Private Group',
       imgUrl: 'purple-bus.png',
     },
+    {
+      id: 7,
+      title: 'Transport',
+      imgUrl: 'purple-bus.png',
+    },
+    {
+      id: 8,
+      title: 'Private Group',
+      imgUrl: 'purple-bus.png',
+    },
+    {
+      id: 9,
+      title: 'Transport',
+      imgUrl: 'purple-bus.png',
+    },
+    {
+      id: 10,
+      title: 'Private Group',
+      imgUrl: 'purple-bus.png',
+    },
+    {
+      id: 11,
+      title: 'Transport',
+      imgUrl: 'purple-bus.png',
+    },
+    {
+      id: 12,
+      title: 'Private Group',
+      imgUrl: 'purple-bus.png',
+    },
   ];
 
   return (
@@ -66,7 +96,7 @@ const GoodToKnow = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="pb-7 text-2xl font-bold text-black md:text-[28px] lg:text-[32px]"
+          className="pb-5 text-2xl font-bold text-black md:text-[28px] lg:text-[32px]"
         >
           Good to know
         </motion.h2>
@@ -78,7 +108,7 @@ const GoodToKnow = () => {
           </motion.div>
           <motion.div
             variants={fadeInRight}
-            className="flex w-1/2 justify-end gap-5 md:pt-0"
+            className="hidden w-1/2 justify-end gap-5 md:flex md:pt-0"
           >
             <div className="relative flex w-[140px] items-center gap-2">
               <div className="good_to_know_slider swiper-pagination !relative !top-0 !bottom-0 !w-[50px] text-[#666]" />
@@ -88,11 +118,12 @@ const GoodToKnow = () => {
             </div>
           </motion.div>
         </div>
-        <div>
+        <div className="-mr-5 md:mr-0">
           <Swiper
-            slidesPerView={1}
+            slidesPerView="auto"
             spaceBetween={0}
-            modules={[Navigation, Pagination]}
+            freeMode
+            modules={[Navigation, Pagination, FreeMode]}
             navigation={{
               prevEl: '.good_to_know_slider.swiper-button-prev',
               nextEl: '.good_to_know_slider.swiper-button-next',
@@ -101,37 +132,22 @@ const GoodToKnow = () => {
               type: 'fraction',
               el: '.good_to_know_slider.swiper-pagination',
             }}
-            breakpoints={{
-              // when window width is >= 768px
-              1200: {
-                spaceBetween: 20,
-                slidesPerView: 5,
-              },
-              1024: {
-                spaceBetween: 20,
-                slidesPerView: 4,
-              },
-              768: {
-                spaceBetween: 20,
-                slidesPerView: 3,
-              },
-            }}
-            className="flex"
+            className="flex flex-wrap !pr-5 md:!pr-0"
           >
             {sliderItems.map((item) => (
-              <SwiperSlide key={item.id}>
-                <motion.div
-                  variants={fadeInUp}
-                  className="my-3  rounded-xl bg-white p-[15px] shadow-xl"
-                >
+              <SwiperSlide
+                key={item.id}
+                className="!w-[68%] md:!w-1/3 lg:!w-1/5"
+              >
+                <div className="m-3 my-5 rounded-xl bg-white p-[15px] shadow-lg">
                   <div className="relative flex">
                     <Image
                       src={`/icons/${item.imgUrl}`}
-                      width={40}
-                      height={40}
+                      width={33}
+                      height={33}
                     />
                   </div>
-                  <p className="pb-2 pt-2 text-base font-semibold text-black md:text-[20px]">
+                  <p className="pb-4 pt-4 text-base font-semibold text-black md:text-[20px]">
                     {item.title}
                   </p>
                   <p className="text-[13px]">
@@ -142,11 +158,11 @@ const GoodToKnow = () => {
                       Read More
                     </a>
                   </p>
-                </motion.div>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>{' '}
+        </div>
         <UnderLine />
       </motion.div>
 
@@ -162,15 +178,15 @@ const GoodToKnow = () => {
             <h3 className="pb-3 font-bold text-[#222] lg:text-2xl">
               Whats not Included
             </h3>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
-              <span className="mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1 ">
+            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
+              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
                 <CancelMark />
               </span>
               Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
               condimentum.. Nulla Orci congue prasent
             </p>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
-              <span className="mr-2 inline-block w-[22px] flex-shrink-0 xl:pt-1">
+            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
+              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
                 <CancelMark />
               </span>
               Tortor pellentesque nec sit nulla volutpat
@@ -180,7 +196,7 @@ const GoodToKnow = () => {
             <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
               Where we will meet?
             </h3>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
+            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
               <span className="svg_icon mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1">
                 <Checkmark />
               </span>
@@ -198,15 +214,15 @@ const GoodToKnow = () => {
             <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
               Cancelation
             </h3>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
-              <span className="mr-2 inline-block w-[22px] flex-shrink-0 xl:pt-1">
+            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
+              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
                 <CancelMark />
               </span>
               Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
               condimentum.. Nulla Orci congue prasent
             </p>
-            <p className="mb-1 flex text-sm text-[#484848] md:text-base">
-              <span className="mr-2 inline-block w-[22px] flex-shrink-0 xl:pt-1">
+            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
+              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
                 <CancelMark />
               </span>
               Tortor pellentesque nec sit nulla volutpat

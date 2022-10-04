@@ -17,17 +17,17 @@ const StayBanner = () => (
     </h1>
     <motion.div
       variants={fadeInLeft}
-      className="flex h-auto w-full flex-wrap items-start rounded-xl shadow-xl  lg:h-[198px] lg:flex-nowrap "
+      className="flex h-auto w-full flex-wrap items-center rounded-xl shadow-xl md:flex-nowrap lg:h-[198px] "
     >
-      <div className="banner h-[198px] w-[244px] overflow-hidden rounded-[10px] bg-black p-0 ">
+      <div className="banner overflow-hidden rounded-[10px] bg-black p-0 md:h-[198px] md:w-[244px] ">
         <Image
-          src="/stayBanner.png"
-          width="244px"
-          height="200px"
+          src="/stay-banner.jpg"
+          width={730}
+          height={546}
           alt="staybanner"
         />
       </div>
-      <div className="relative h-full max-w-[505px]  p-4 pt-6 lg:pt-0 ">
+      <div className="relative max-w-[505px]  p-4 pt-6 lg:pt-0 ">
         <h1 className="text-[18px] font-bold text-[#4A4A4A]">
           Where You Sleep
         </h1>
@@ -46,7 +46,7 @@ const StayBanner = () => (
             </p>
           </motion.div>
         ))}
-        <div className="purple_gradient_bg absolute right-3 -top-3 flex h-[28px] w-[149px] items-center justify-center rounded text-[14px] font-bold text-[#fff] ">
+        <div className="purple_gradient_bg absolute right-3 -top-4 flex h-[28px] w-[149px] items-center justify-center rounded text-[14px] font-bold text-[#fff] md:-top-6 ">
           From $45 / Person
         </div>
       </div>

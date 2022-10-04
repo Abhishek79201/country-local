@@ -14,54 +14,52 @@ const AvailableDate = () => (
     whileInView="animate"
     viewport={{ once: true }}
   >
-    <h1 className="pb-0 text-2xl font-bold md:text-3xl lg:text-[38px]">
+    <h1 className="pb-3 text-2xl font-bold md:text-3xl lg:text-[38px]">
       Choose from
       <span className="purple_gradient_text"> available dates</span>
     </h1>
-    <h5 className="pb-4 text-base font-medium">4 availables</h5>
-    <div className="flex flex-wrap items-center justify-center gap-6 pb-10">
+    <h5 className="text-base font-medium">4 available</h5>
+    <div className="flex flex-wrap items-center justify-between pt-10 pb-10">
       {[1, 2, 3].map((item) => (
         <motion.div
-          className="flex h-[173px] w-[400px] items-center gap-5 rounded-[10px] shadow-spread"
+          className="flex h-[173px] w-[32%] flex-wrap items-stretch justify-between overflow-hidden rounded-[10px] bg-white shadow-spread md:flex-nowrap"
           variants={fadeInUp}
           key={item}
         >
-          <div className="flex w-full justify-between  overflow-hidden rounded-[10px]  sm:flex-nowrap">
-            <div className="w-[70%] p-5 ">
-              <h3 className="py-0 text-base font-semibold text-[#222]">
-                Tue, 2 Jul
-              </h3>
-              <h4 className="mb-4 text-[12px] font-medium">
-                7:30 am - 8:00 am(IST)
-              </h4>
-              <a
-                href="#"
-                className="mb-3 text-[12px] text-[#222] underline hover:text-[#E71575]"
+          <div className="w-2/3 p-5">
+            <h3 className="py-0 text-base font-semibold text-[#222]">
+              Tue, 2 Jul
+            </h3>
+            <h4 className="mb-4 text-[12px] font-medium">
+              7:30 am - 8:00 am(IST)
+            </h4>
+            <a
+              href="#"
+              className="mb-3 text-[12px] text-[#222] underline hover:text-[#E71575]"
+            >
+              Book for a private group?
+            </a>
+            <div className="mt-4 flex items-center  gap-4">
+              <button
+                type="button"
+                className="purple_gradient_bg flex h-[40px] w-[115px] items-center justify-center rounded text-[14px] font-bold text-[#fff]"
               >
-                Book for a private group?
-              </a>
-              <div className="mt-4 flex items-center  gap-4">
-                <button
-                  type="button"
-                  className="purple_gradient_bg flex h-[40px] w-[115px] items-center justify-center rounded text-[14px] font-bold text-[#fff]"
-                >
-                  Select
-                </button>
+                Select
+              </button>
 
-                <p className="text-base text-[#808080]">
-                  <span className="text-[#E71575]">$45</span>
-                  /person
-                </p>
-              </div>
+              <p className="text-base text-[#808080]">
+                <span className="text-[#E71575]">$45</span>
+                /person
+              </p>
             </div>
-            <div className="flex h-[173px] w-[30%] shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[#1C1C25] sm:h-auto lg:w-[150px]">
-              <Image
-                src="/icons/yellow-love.png"
-                width={70}
-                height={70}
-                alt="review 1"
-              />
-            </div>
+          </div>
+          <div className="flex w-1/3 shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[#1C1C25]">
+            <Image
+              src="/icons/yellow-love.png"
+              width={70}
+              height={70}
+              alt="review 1"
+            />
           </div>
         </motion.div>
       ))}
