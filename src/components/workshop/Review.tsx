@@ -2,7 +2,7 @@
 /* eslint react/no-array-index-key: "off" */
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Navigation } from 'swiper';
+import { FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { fadeInUp, animationWrapper } from '../../utilities/animations';
 import useViewport from '../../hooks/useViewport';
@@ -188,14 +188,15 @@ const Review = () => {
           </div>
 
           {width < 768 ? (
-            <div className="review_slider relative mt-8">
+            <div className="review_slider relative -mr-4 -ml-4 mt-8 md:mr-0 md:ml-0">
               <Swiper
-                modules={[Navigation]}
+                freeMode
+                modules={[FreeMode]}
                 navigation={{
                   prevEl: '.review_slider .swiper-button-prev',
                   nextEl: '.review_slider .swiper-button-next',
                 }}
-                slidesPerView={1}
+                slidesPerView="auto"
                 spaceBetween={0}
               >
                 {[1, 2, 3, 4].map((item, index) => (
@@ -204,8 +205,6 @@ const Review = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <div className="swiper-button-prev !-left-[1px] !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs" />
-              <div className="swiper-button-next !-right-[1px] !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs" />
             </div>
           ) : (
             <div className="flex flex-wrap justify-between gap-y-5 pt-12">

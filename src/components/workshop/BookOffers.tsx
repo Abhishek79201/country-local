@@ -1,16 +1,16 @@
+/* eslint jsx-a11y/anchor-is-valid: "off" */
+/* eslint react/jsx-one-expression-per-line: "off" */
+/* eslint react/require-default-props: "off" */
 import { motion } from 'framer-motion';
-import { Navigation } from 'swiper';
+import { FreeMode, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { animationWrapper, fadeInLeft } from '../../utilities/animations';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+
 import BookCardOffer from './BookCardOffer';
 import FavouriteBookCardOffer from './FavouriteBookCardOffer';
-
-/* eslint jsx-a11y/anchor-is-valid: "off" */
-/* eslint react/jsx-one-expression-per-line: "off" */
-/* eslint react/require-default-props: "off" */
 
 interface BookOffersProps {
   sliderId: string;
@@ -36,57 +36,32 @@ const BookOffers = ({ sliderId, title, data }: BookOffersProps) => (
         </motion.div>
       </div>
 
-      <div className={`${sliderId} relative px-0`}>
+      <div className={`${sliderId} relative -ml-3 -mr-3 px-0`}>
         <Swiper
-          slidesPerView={5}
+          slidesPerView="auto"
           spaceBetween={0}
-          modules={[Navigation]}
+          modules={[Navigation, FreeMode]}
           navigation={{
             prevEl: `.${sliderId} .swiper-button-prev`,
             nextEl: `.${sliderId} .swiper-button-next`,
-          }}
-          breakpoints={{
-            // when window width is >= 768px
-
-            1300: {
-              spaceBetween: 20,
-              slidesPerView: 5,
-            },
-            1024: {
-              spaceBetween: 20,
-              slidesPerView: 4,
-            },
-            768: {
-              spaceBetween: 20,
-              slidesPerView: 3,
-            },
-            548: {
-              spaceBetween: 30,
-              slidesPerView: 2,
-            },
-            400: {
-              spaceBetween: 20,
-              slidesPerView: 1.6,
-            },
-            200: {
-              spaceBetween: 20,
-              slidesPerView: 1,
-            },
           }}
           className="flex"
         >
           {data &&
             data.map((item) => (
-              <SwiperSlide key={item.id}>
-                {item.type === 'local' ? <BookCardOffer {...item} /> : null}
-                {item.type === 'favourite' ? (
+              <SwiperSlide
+                key={item.id}
+                className="!w-[245px] sm:!w-[33.33%] lg:!w-[20%]"
+              >
+                {item.type === 'local' && <BookCardOffer {...item} />}
+                {item.type === 'favourite' && (
                   <FavouriteBookCardOffer {...item} />
-                ) : null}
+                )}
               </SwiperSlide>
             ))}
         </Swiper>
-        <div className="swiper-button-prev !-left-5 !-mt-[14px] !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs" />
-        <div className="swiper-button-next !-right-5 !-mt-[14px] !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs" />
+        <div className="swiper-button-prev !-left-5 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+        <div className="swiper-button-next !-right-5 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
       </div>
     </motion.div>
   </div>

@@ -39,12 +39,9 @@ const BookCardOffer = ({
   offer,
 }: bookCardOffersProps) => (
   <Link href="/">
-    <motion.a
-      variants={fadeInUp}
-      className="mx-1 mb-4 block  w-[250px] rounded-xl bg-white "
-    >
+    <a className="mx-3 block rounded-xl bg-white">
       <div className="relative rounded">
-        <div className=" overflow-hidden rounded-lg">
+        <div className="overflow-hidden rounded-lg">
           <Image src="/boat-girl.png" width={246} height={263} />
         </div>
 
@@ -110,24 +107,22 @@ const BookCardOffer = ({
             </p>
           </div>
         </div>
-        <h4 className="mb-1 text-[14px] font-bold text-[#222]">
-          City Escape: Tuscany Day Trip
+        <h4 className="mb-1 pt-1 text-[14px] font-bold text-[#222]">
+          City Escape: Tuscany
         </h4>
         <div className="flex items-center gap-2">
-          <h4 className=" text-[10px] font-bold text-[#222]">
-            From $2,420/<span className="font-medium">person</span>
+          <h4 className="text-[10px] font-bold text-[#222]">
+            From $20/<span className="font-medium">person</span>
           </h4>
           <h5 className="flex items-center gap-1 text-[10px] font-semibold">
-            {' '}
             <div className="svg_icon w-2 text-[#292D32]">
-              {' '}
-              <ClockIcon />{' '}
-            </div>{' '}
-            7 hours • Day Trip
+              <ClockIcon />
+            </div>
+            7 hours
           </h5>
         </div>
       </div>
-    </motion.a>
+    </a>
   </Link>
 );
 export default BookCardOffer;

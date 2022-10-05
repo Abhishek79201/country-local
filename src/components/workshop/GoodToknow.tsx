@@ -1,3 +1,6 @@
+/* eslint jsx-a11y/anchor-is-valid: "off" */
+/* eslint react/jsx-one-expression-per-line: "off" */
+
 import { motion } from 'framer-motion';
 import { FreeMode, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,8 +19,6 @@ import CancelMark from '../../../public/icons/purple-cancel.svg';
 import Checkmark from '../../../public/icons/checked-purple.svg';
 import UnderLine from '../common/UnderLine';
 
-/* eslint jsx-a11y/anchor-is-valid: "off" */
-/* eslint react/jsx-one-expression-per-line: "off" */
 const GoodToKnow = () => {
   const sliderItems = [
     {
@@ -118,7 +119,7 @@ const GoodToKnow = () => {
             </div>
           </motion.div>
         </div>
-        <div className="-mr-5 md:mr-0">
+        <div className="-mr-5 -ml-[10px] md:ml-0 md:mr-0">
           <Swiper
             slidesPerView="auto"
             spaceBetween={0}

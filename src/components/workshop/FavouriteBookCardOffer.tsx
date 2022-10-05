@@ -39,11 +39,8 @@ const FavouriteBookCardOffer = ({
   offer,
 }: bookCardOffersProps) => (
   <Link href="/">
-    <motion.a
-      variants={fadeInUp}
-      className="mx-1 mb-4 block  w-[250px] rounded-xl bg-white "
-    >
-      <div className="relative w-[250px] rounded">
+    <a className="mx-3 block rounded-xl bg-white">
+      <div className="relative rounded">
         <div className=" overflow-hidden rounded-lg">
           <Image src="/boat-girl.png" width={246} height={263} />
         </div>
@@ -109,29 +106,27 @@ const FavouriteBookCardOffer = ({
               <span className="  text-[#E71575]"> Olacorno</span>
             </p>
 
-            <div className="z-10 -ml-7 rounded-lg bg-[#E71575] px-3 py-1 text-[10px] font-bold text-[#fff]">
+            <div className="z-10 -ml-7 overflow-hidden text-ellipsis rounded-lg bg-[#E71575] px-3 py-1 text-[10px] font-bold text-[#fff]">
               Choose your favorite local
             </div>
           </div>
         </div>
-        <h4 className="text-[14px] font-bold text-[#222]">
-          City Escape: Tuscany Day Trip
+        <h4 className="pt-1 text-[14px] font-bold text-[#222]">
+          City Escape: Tuscany
         </h4>
-        <div className="item-center flex gap-2">
-          <h4 className="pb-1 text-[12px] font-bold text-[#222]">
-            From $2,420/<span className="font-medium">person</span>
+        <div className="item-center flex items-center gap-2">
+          <h4 className="text-[12px] font-bold text-[#222]">
+            From $24/<span className="font-medium">person</span>
           </h4>
           <h5 className="flex items-center gap-1 text-[10px] font-semibold">
-            {' '}
             <div className="svg_icon w-2 text-[#292D32]">
-              {' '}
-              <ClockIcon />{' '}
-            </div>{' '}
-            7 hours • Day Trip
+              <ClockIcon />
+            </div>
+            7 hours
           </h5>
         </div>
       </div>
-    </motion.a>
+    </a>
   </Link>
 );
 export default FavouriteBookCardOffer;

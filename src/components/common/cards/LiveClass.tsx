@@ -38,10 +38,7 @@ const LiveClass = ({
   offer,
 }: LiveClassProps) => (
   <Link href="/">
-    <motion.a
-      variants={fadeInUp}
-      className="mx-1 mb-4 block rounded-xl bg-white shadow-xl transition-shadow hover:shadow-xl"
-    >
+    <a className="mx-3 my-5 block rounded-xl bg-white shadow-lg transition-shadow">
       <div className="relative rounded">
         <div className="flex justify-center overflow-hidden rounded-lg">
           {/* <Image src={imgUrl} width={590} height={366} /> */}
@@ -62,7 +59,7 @@ const LiveClass = ({
           Only 2 Spots Left
         </div>
       </div>
-      <div className="px-5 pt-4 pb-2">
+      <div className="px-5 pt-6 pb-2">
         <div className="-mt-[52px] flex items-end justify-between">
           <div className="z-10 flex">
             <div className="z-[5] flex h-[60px] w-[60px] overflow-hidden rounded-full border-2 border-white">
@@ -120,7 +117,7 @@ const LiveClass = ({
             30%<span className="ml-1">off</span>
           </span>
         </div>
-        <div className="pt-2 pb-2 text-[11px] text-[#878787]">
+        <div className="pt-2 pb-3 text-[11px] text-[#878787]">
           Gerard, MSC, 5 Years of Experience
           <div className="flex">
             <div className="svg_icon mt-[3px] mr-[5px] inline-block w-[9px] text-[#0F6378]">
@@ -139,7 +136,7 @@ const LiveClass = ({
           <span className="ml-[3px] text-xs font-medium">/ class</span>
         </div>
       </div>
-    </motion.a>
+    </a>
   </Link>
 );
 export default LiveClass;

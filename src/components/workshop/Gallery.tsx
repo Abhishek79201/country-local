@@ -66,11 +66,13 @@ const Gallery = () => {
   };
 
   return (
-    <div className="flex h-[456px] w-full flex-wrap pb-11">
-      <div className="gallery-layout w-full gap-2">
+    <div className="flex w-full flex-wrap">
+      <div className="gallery-layout grid w-full grid-cols-4 grid-rows-2 gap-2 bg-black py-2">
         {bannerData.map((data, index) => (
           <div
-            className={`h-[223px] w-[345px] item${index + 1}`}
+            className={`item${index + 1} ${
+              index === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'
+            } relative`}
             key={data.id + Math.random()}
           >
             <img

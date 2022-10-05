@@ -37,13 +37,9 @@ const Workshop = ({
   offer,
 }: WorkshopProps) => (
   <Link href="/">
-    <motion.a
-      variants={fadeInUp}
-      className="mx-1 mb-4 block rounded-lg bg-white shadow-xl transition-shadow hover:shadow-xl"
-    >
+    <a className="mx-3 my-5 block rounded-lg bg-white shadow-lg transition-shadow">
       <div className="relative rounded">
         <div className="flex justify-center overflow-hidden rounded-lg">
-          {/* <Image src={imgUrl} width={590} height={366} /> */}
           <Image src="/workshop-1.jpg" width={590} height={366} />
         </div>
         <div className="z-1 absolute top-3 left-3 flex items-center rounded-full bg-[#565656] bg-opacity-90 px-2 py-[3px] text-[7px] font-bold text-white">
@@ -58,7 +54,7 @@ const Workshop = ({
           </button>
         </div>
       </div>
-      <div className="px-5 pt-4 pb-2">
+      <div className="px-5 pt-7 pb-2">
         <div className="-mt-[52px] flex items-end justify-between">
           <div className="z-10 flex h-[60px] w-[60px] items-center justify-center overflow-hidden rounded-full border-2 border-white">
             <Image src="/author-head.png" width={60} height={60} />
@@ -116,7 +112,7 @@ const Workshop = ({
           <span className="ml-[3px] text-xs font-medium">/ class</span>
         </div>
       </div>
-    </motion.a>
+    </a>
   </Link>
 );
 export default Workshop;

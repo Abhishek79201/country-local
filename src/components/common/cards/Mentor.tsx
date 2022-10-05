@@ -35,10 +35,7 @@ const MentorCard = ({
   offer = 20,
 }: MentorCardProps) => (
   <Link href="/">
-    <motion.a
-      variants={fadeInUp}
-      className="mx-1 mb-4 block rounded-xl bg-white shadow-xl transition-shadow hover:shadow-xl"
-    >
+    <a className="mx-3 my-5 block rounded-xl bg-white shadow-lg transition-shadow">
       <div className="relative rounded">
         <div className="flex justify-center overflow-hidden rounded-lg">
           <Image src={imgUrl} width={590} height={366} />
@@ -55,12 +52,12 @@ const MentorCard = ({
           </button>
         </div>
         {isNew && (
-          <div className="absolute -left-[5px] top-11 bg-[#E71575] px-3 py-1 text-[10px] font-bold text-black">
+          <div className="absolute -left-[5px] top-11 bg-[#E71575] px-3 py-1 text-[10px] font-bold text-white">
             New Mentor
           </div>
         )}
       </div>
-      <div className="px-5 pt-4 pb-2">
+      <div className="px-5 pt-3 pb-2">
         <h4 className="relative z-[1] -mt-16 -ml-[10px] text-lg font-bold text-white">
           {mentorName}
         </h4>
@@ -102,7 +99,7 @@ const MentorCard = ({
           <span className="ml-2 text-lg">${price}</span>
         </div>
       </div>
-    </motion.a>
+    </a>
   </Link>
 );
 export default MentorCard;
