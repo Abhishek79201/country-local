@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -6,7 +7,9 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable @next/next/no-img-element */
 
+import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import LightBox from './PopUp/LighBox';
 import PopUpScreen from './PopUp/PopUpScreen';
 
@@ -72,7 +75,7 @@ const Gallery = () => {
           <div
             className={`item${index + 1} ${
               index === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'
-            } relative`}
+            } relative overflow-hidden `}
             key={data.id + Math.random()}
           >
             <img
@@ -82,40 +85,51 @@ const Gallery = () => {
                 setActivePopUp(true);
                 handleLightBox(data, index);
               }}
-              className="cursor-pointer"
+              className="cursor-pointer duration-300 hover:scale-105"
             />
+
+            <AnimatePresence>
+              {activePopUp && (
+                <PopUpScreen activePopUp={setActivePopUp}>
+                  <LightBox
+                    img={lightImg}
+                    totalImgNum={totalImg}
+                    currentIndex={currentIndex}
+                    handleRight={handleRight}
+                    handleLeft={handleLeft}
+                  />
+
+                  <Swiper
+                    slidesPerView={'auto'}
+                    spaceBetween={8}
+                    className="gallerySwiper  bg-[#0D0A0A] px-4 "
+                  >
+                    {bannerData.map((items: { img: string }, _index: any) => (
+                      <SwiperSlide
+                        key={Math.random() * 10}
+                        className="galleryImg"
+                      >
+                        <img
+                          src={items.img}
+                          alt=""
+                          width={80}
+                          height={50}
+                          onClick={() => handleLightBox(items, _index)}
+                          className={
+                            items.img === lightImg
+                              ? ' cursor-pointer rounded  border-2 border-[#e25454]'
+                              : 'cursor-pointer rounded border-2 border-white'
+                          }
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </PopUpScreen>
+              )}
+            </AnimatePresence>
           </div>
         ))}
       </div>
-      {activePopUp && (
-        <PopUpScreen activePopUp={setActivePopUp}>
-          <LightBox
-            img={lightImg}
-            totalImgNum={totalImg}
-            currentIndex={currentIndex}
-            handleRight={handleRight}
-            handleLeft={handleLeft}
-          />
-          <div className="absolute bottom-5 left-5 z-[1060] flex gap-3">
-            {bannerData.map((items: { img: string }, index: any) => (
-              <div key={Math.random() * 10}>
-                <img
-                  src={items.img}
-                  alt=""
-                  width={80}
-                  height={50}
-                  onClick={() => handleLightBox(items, index)}
-                  className={
-                    items.img === lightImg
-                      ? ' cursor-pointer border border-[#e25454]'
-                      : 'cursor-pointer'
-                  }
-                />
-              </div>
-            ))}
-          </div>
-        </PopUpScreen>
-      )}
     </div>
   );
 };
