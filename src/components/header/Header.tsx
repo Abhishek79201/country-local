@@ -280,7 +280,7 @@ const Header = () => {
               }
             `}
           </style>
-          <header className="fixed top-0 left-0 z-[31] w-full">
+          <header className="mobile_header fixed top-0 left-0 z-[31] w-full">
             <div className="px-[15px]">
               <button
                 type="button"

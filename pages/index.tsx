@@ -2,6 +2,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { bookOffersData, serviceData } from '../src/utilities/dummy-api';
+import useViewport from '../src/hooks/useViewport';
 
 import TourismIntro from '../src/components/workshop/TourismIntro';
 import Gallery from '../src/components/workshop/Gallery';
@@ -19,83 +20,97 @@ import Plan from '../src/components/workshop/Plan';
 import GoodToKnow from '../src/components/workshop/GoodToknow';
 import TripDetails from '../src/components/workshop/TripDetails';
 import TripCalender from '../src/components/workshop/TripCalendar';
+import MobileGallery from '../src/components/workshop/MobileGallery';
 
-const Home: NextPage = () => (
-  <>
-    <Head>
-      <title>Country Locals</title>
-    </Head>
-    <div className=" bg-[#fff] pb-10">
-      <TourismIntro />
+const Home: NextPage = () => {
+  const { width } = useViewport();
+  return (
+    <>
+      <style>
+        {`header.mobile_header {
+            display: none;
+          }`}
+      </style>
+      <Head>
+        <title>Country Locals</title>
+      </Head>
+      <div className="bg-[#fff] pb-10">
+        {width < 768 && <MobileGallery />}
 
-      <Gallery />
+        <TourismIntro />
 
-      <Profiles />
+        {width > 767 && <Gallery />}
 
-      <TouringBanner />
+        <Profiles />
 
-      <div className="container pt-8">
-        <div className="w-full lg:max-w-[730px]">
-          <Plan />
+        <TouringBanner />
+
+        <div className="container pt-8">
+          <div className="w-full lg:max-w-[730px]">
+            <Plan />
+          </div>
         </div>
-      </div>
 
-      <GoodToKnow />
+        <GoodToKnow />
 
-      <div className="container">
-        <div className="w-full lg:max-w-[730px]">
-          <TripDetails />
+        <div className="container">
+          <div className="w-full lg:max-w-[730px]">
+            <TripDetails />
+          </div>
         </div>
+
+        <TripCalender />
+
+        <Review />
+
+        <AvailableDate />
+
+        <ServicesSlider
+          sliderId="other_services_slider"
+          title={
+            <h2 className="mr-7  text-2xl font-bold text-[#202124] lg:text-4xl">
+              Other Services by
+              <span className="purple_gradient_text_deep">
+                {' '}
+                Abdullah Farhan
+              </span>
+            </h2>
+          }
+          useLine={false}
+          data={serviceData}
+        />
+
+        <ServicesSlider
+          sliderId="similar_properties_slider"
+          title={
+            <h2 className="mr-7  text-2xl font-bold text-[#202124] lg:text-4xl">
+              Similar
+              <span className="purple_gradient_text_deep"> Properties</span>
+            </h2>
+          }
+          useLine
+          data={serviceData}
+        />
+
+        <BookOffers
+          sliderId="book_one_of_my_offers"
+          title={
+            <h2 className="mr-7  text-2xl font-bold text-[#202124] lg:text-4xl">
+              Book one of
+              <span className="purple_gradient_text_deep"> my offers</span>
+            </h2>
+          }
+          data={bookOffersData}
+        />
+
+        <ReviewSlider />
+
+        <WorkshopExperience />
+
+        <ThingsToKnow />
       </div>
-
-      <TripCalender />
-
-      <Review />
-
-      <AvailableDate />
-
-      <ServicesSlider
-        sliderId="other_services_slider"
-        title={
-          <h2 className="mr-7  text-2xl font-bold text-[#202124] lg:text-4xl">
-            Other Services by
-            <span className="purple_gradient_text_deep"> Abdullah Farhan</span>
-          </h2>
-        }
-        useLine={false}
-        data={serviceData}
-      />
-
-      <ServicesSlider
-        sliderId="similar_properties_slider"
-        title={
-          <h2 className="mr-7  text-2xl font-bold text-[#202124] lg:text-4xl">
-            Similar
-            <span className="purple_gradient_text_deep"> Properties</span>
-          </h2>
-        }
-        useLine
-        data={serviceData}
-      />
-
-      <BookOffers
-        sliderId="book_one_of_my_offers"
-        title={
-          <h2 className="mr-7  text-2xl font-bold text-[#202124] lg:text-4xl">
-            Book one of
-            <span className="purple_gradient_text_deep"> my offers</span>
-          </h2>
-        }
-        data={bookOffersData}
-      />
-
-      <ReviewSlider />
-
-      <WorkshopExperience />
-
-      <ThingsToKnow />
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 export default Home;
