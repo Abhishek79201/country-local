@@ -5,7 +5,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import RightArrow from '../../../../public/icons/iconmonstr-arrow-right-lined.svg';
 import LeftArrow from '../../../../public/icons/iconmonstr-arrow-left-lined.svg';
@@ -56,15 +55,7 @@ const LightBox = ({
           </div>
         </div>
         <div className="img_content">
-          <motion.img
-            whileInView={{
-              opacity: [0.1, 1],
-            }}
-            transition={{ duration: 0.6, ease: ['easeInOut'], delay: 0.1 }}
-            exit={{ opacity: 0 }}
-            src={lightImg}
-            alt="imgs"
-          />
+          <img src={lightImg} alt="imgs" />
         </div>
 
         <div className="right_arrow arrow">

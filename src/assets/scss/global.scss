@@ -476,6 +476,14 @@ body.active {
   height: 100%;
   width: 100%;
   object-fit: none;
+  transition: all 0.5s ease-in-out;
+}
+.fadeIn {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+.fadeOut {
+  opacity: 0;
 }
 .responsive_arrow {
   display: none;
@@ -518,9 +526,16 @@ body.active {
   bottom: 0 !important;
   left: 0 !important;
   padding: 0 40px !important;
+  transition: all 0.3s ease-in-out;
   .swiper-wrapper {
     align-items: center !important;
   }
+}
+.gallerySwiper.hide {
+  bottom: -11vh !important;
+}
+.gallerySwiper.show {
+  bottom: 0 !important;
 }
 .galleryImg {
   width: auto !important;

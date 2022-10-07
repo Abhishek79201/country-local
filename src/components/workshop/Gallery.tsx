@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/jsx-curly-brace-presence */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -12,12 +13,14 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import LightBox from './PopUp/LighBox';
 import PopUpScreen from './PopUp/PopUpScreen';
+import LayoutIcon from '../../../public/icons/gallery-layout.svg';
 
 const Gallery = () => {
   const [lightImg, setLightImg] = useState('');
   const [totalImg, setTotalImg] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activePopUp, setActivePopUp] = useState(false);
+  const [showBottomBar, setShowBottomBar] = useState(true);
 
   const bannerData = [
     { id: 1, img: 'img1.png' },
@@ -87,48 +90,51 @@ const Gallery = () => {
               }}
               className="cursor-pointer duration-300 hover:scale-105"
             />
-
-            <AnimatePresence>
-              {activePopUp && (
-                <PopUpScreen activePopUp={setActivePopUp}>
-                  <LightBox
-                    img={lightImg}
-                    totalImgNum={totalImg}
-                    currentIndex={currentIndex}
-                    handleRight={handleRight}
-                    handleLeft={handleLeft}
-                  />
-
-                  <Swiper
-                    slidesPerView={'auto'}
-                    spaceBetween={8}
-                    className="gallerySwiper  bg-[#0D0A0A] px-4 "
-                  >
-                    {bannerData.map((items: { img: string }, _index: any) => (
-                      <SwiperSlide
-                        key={Math.random() * 10}
-                        className="galleryImg"
-                      >
-                        <img
-                          src={items.img}
-                          alt=""
-                          width={80}
-                          height={50}
-                          onClick={() => handleLightBox(items, _index)}
-                          className={
-                            items.img === lightImg
-                              ? ' cursor-pointer rounded  border-2 border-[#e25454]'
-                              : 'cursor-pointer rounded border-2 border-white'
-                          }
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </PopUpScreen>
-              )}
-            </AnimatePresence>
           </div>
         ))}
+
+        {activePopUp && (
+          <PopUpScreen activePopUp={setActivePopUp}>
+            <LightBox
+              img={lightImg}
+              totalImgNum={totalImg}
+              currentIndex={currentIndex}
+              handleRight={handleRight}
+              handleLeft={handleLeft}
+            />
+
+            <Swiper
+              slidesPerView={'auto'}
+              spaceBetween={8}
+              className={` ${
+                showBottomBar ? 'show' : 'hide'
+              } gallerySwiper  bg-[#0D0A0A] `}
+            >
+              <div
+                className="svg_icon absolute -top-6 right-4 z-[1060]  w-12 cursor-pointer  rounded bg-[#0D0A0A] p-3 pt-1  text-[#999] duration-500 hover:text-[#fff] "
+                onClick={() => setShowBottomBar(!showBottomBar)}
+              >
+                <LayoutIcon />
+              </div>
+              {bannerData.map((items: { img: string }, _index: any) => (
+                <SwiperSlide key={Math.random() * 10} className="galleryImg">
+                  <img
+                    src={items.img}
+                    alt=""
+                    width={80}
+                    height={50}
+                    onClick={() => handleLightBox(items, _index)}
+                    className={
+                      items.img === lightImg
+                        ? ' cursor-pointer rounded  border-2 border-[#e25454]'
+                        : 'cursor-pointer rounded border-2 border-white'
+                    }
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </PopUpScreen>
+        )}
       </div>
     </div>
   );

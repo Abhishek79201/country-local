@@ -27,7 +27,7 @@ const PopUpScreen = ({ children, activePopUp }: PopUpScreenVal) => {
   };
   return (
     <div
-      className="fixed top-0 left-0 z-[1040] flex h-screen w-full select-none items-center justify-center bg-[#0000009d]"
+      className="fixed top-0 left-0 z-[1040] flex h-screen w-full select-none items-center justify-center bg-[#000000]"
       onMouseEnter={handleMouseOver}
       onMouseMove={handleMouseOver}
       onMouseLeave={handleMouseLeave}
