@@ -5,7 +5,7 @@ import HeartIcon from '../../../public/icons/heart-outline.svg';
 
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 const TourismIntro = () => (
-  <div className="pt-16 pb-10 sm:pb-12 sm:pt-28 xl:py-12">
+  <div className="pt-8 pb-0 sm:pb-12 sm:pt-28 xl:py-12">
     <div className="container">
       <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-3 md:flex-nowrap md:items-end">
         <div>

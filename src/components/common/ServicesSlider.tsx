@@ -68,7 +68,7 @@ const ServicesSlider = ({
         </motion.div>
       </div>
 
-      <div className={`${sliderId} relative -ml-3`}>
+      <div className={`${sliderId} relative -ml-3 -mr-4`}>
         <Swiper
           slidesPerView="auto"
           spaceBetween={0}

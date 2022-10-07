@@ -425,6 +425,10 @@ input:checked + .slider:before {
     linear-gradient(109.26deg, #6ae8d1 14.08%, rgba(216, 17, 172, 0.5) 62.34%);
 }
 
+.mobile_gallery_progressbar.swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill {
+  background-color: #fff;
+}
 .gallery-layout {
   .item5 {
     &::after {

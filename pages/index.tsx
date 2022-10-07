@@ -27,7 +27,7 @@ const Home: NextPage = () => {
   return (
     <>
       <style>
-        {`header.mobile_header {
+        {`header.mobile_header, .mobile_floating_header {
             display: none;
           }`}
       </style>
@@ -35,11 +35,11 @@ const Home: NextPage = () => {
         <title>Country Locals</title>
       </Head>
       <div className="bg-[#fff] pb-10">
-        {width < 768 && <MobileGallery />}
+        {width < 1064 && <MobileGallery />}
 
         <TourismIntro />
 
-        {width > 767 && <Gallery />}
+        {width > 1063 && <Gallery />}
 
         <Profiles />
 

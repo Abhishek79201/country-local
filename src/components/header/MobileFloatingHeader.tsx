@@ -5,7 +5,7 @@ import MessageIcon from '../../../public/icons/message-icon.svg';
 import MobileHeaderLogo from '../../../public/icons/mobile-header-logo.svg';
 
 const MobileFloatingHeader = () => (
-  <div className="fixed bottom-0 left-0 z-[3] w-full border-t-2 border-t-slate-100 bg-white px-[15px]">
+  <div className="mobile_floating_header fixed bottom-0 left-0 z-[3] w-full border-t-2 border-t-slate-100 bg-white px-[15px]">
     <div className="flex items-center justify-between py-3 text-[#777777]">
       <div className="w-1/5 text-center">
         <div className="mx-auto w-5">
