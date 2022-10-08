@@ -72,7 +72,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="flex w-full flex-wrap">
+    <div className="sticky_top_container flex w-full flex-wrap">
       <div className="gallery-layout grid w-full grid-cols-4 grid-rows-2 gap-2 bg-black py-2">
         {bannerData.map((data, index) => (
           <div

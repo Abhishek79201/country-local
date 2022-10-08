@@ -20,7 +20,7 @@ import BookingCard from './BookingCard';
 const Profiles = () => {
   const { width } = useViewport();
   return (
-    <div className="relative mt-8 bg-[#fff] md:mt-0  md:pt-14 lg:pt-12">
+    <div className="sticky_bottom_container relative mt-8 bg-[#fff]  md:mt-0 md:pt-14 lg:pt-12">
       <motion.div
         variants={animationWrapper}
         initial="initial"
@@ -69,7 +69,11 @@ const Profiles = () => {
             <StayBanner />
             <HouseRules />
           </div>
-          {width > 1063 && <BookingCard />}
+          {width > 1063 && (
+            <div className="w-[320px] xl:w-[400px]">
+              <BookingCard />
+            </div>
+          )}
         </div>
       </motion.div>
     </div>
