@@ -14,6 +14,7 @@ import Experience from './Experience';
 import StayBanner from './StayBanner';
 import HouseRules from './HouseRules';
 import BookingCard from './BookingCard';
+import BookingCardMobile from './popovers/BookingCardMobile';
 
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
@@ -69,10 +70,12 @@ const Profiles = () => {
             <StayBanner />
             <HouseRules />
           </div>
-          {width > 1063 && (
+          {width > 1063 ? (
             <div className="w-[320px] xl:w-[400px]">
               <BookingCard />
             </div>
+          ) : (
+            <BookingCardMobile />
           )}
         </div>
       </motion.div>
