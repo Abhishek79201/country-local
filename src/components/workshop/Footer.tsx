@@ -11,18 +11,18 @@ const Footer = () => (
     <div className="container py-[110px] pb-[350px] lg:pb-0">
       <div className="flex flex-wrap justify-between pt-10 pb-10 lg:px-10">
         <div className="pb-10 lg:w-[30%]">
-          <h1 className="pb-2 text-3xl font-bold text-[#fff] lg:text-[36px]">
+          <h3 className="pb-2 text-3xl font-bold text-[#fff] lg:text-[36px]">
             Countrylocals
-          </h1>
-          <h3 className="text-2xl font-medium text-[#fff]">
-            Fancy seeing you down here.
           </h3>
+          <p className="text-2xl font-medium text-[#fff]">
+            Fancy seeing you down here.
+          </p>
         </div>
         <div className="menu flex w-full flex-wrap justify-between gap-3 pb-10 sm:gap-10 lg:w-[60%]">
           <div className="lg:w-1/4 ">
-            <h3 className="mb-3 text-sm font-bold text-[#FFF]">
+            <p className="mb-3 text-sm font-bold text-[#FFF]">
               How does it work
-            </h3>
+            </p>
             <div>
               {[1, 2, 3, 4].map((item) => (
                 <a
@@ -135,12 +135,12 @@ const Footer = () => (
             </div>
           </button>
         </div>
-        <h1 className="pb-2 text-[20px] font-bold text-[#fff]">
+        <p className="pb-2 text-[20px] font-bold text-[#fff]">
           Country locals.com
-        </h1>
-        <h1 className="pb-14 text-[20px] font-thin text-[#fff] lg:pb-0">
+        </p>
+        <p className="pb-14 text-[20px] font-thin text-[#fff] lg:pb-0">
           Experience New Experiences
-        </h1>
+        </p>
       </div>
     </div>
   </div>

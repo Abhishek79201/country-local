@@ -5,9 +5,9 @@ import UnderLine from '../common/UnderLine';
 
 const HighlightsCarousel = () => (
   <div className="pt-11">
-    <h1 className="font-[22px] pb-3 font-semibold text-[#222] md:pb-5">
+    <h3 className="font-[22px] pb-3 font-semibold text-[#222] md:pb-5">
       Highlights
-    </h1>
+    </h3>
     <div className="relative mb-5 -mr-5  md:mr-0">
       <Swiper
         slidesPerView="auto"
@@ -33,7 +33,7 @@ const HighlightsCarousel = () => (
             <div className="svg_icon w-[36px] text-[#E71575]">
               <item.icon />
             </div>
-            <h1 className="text-sm font-semibold">{item.title}</h1>
+            <p className="text-sm font-semibold">{item.title}</p>
           </SwiperSlide>
         ))}
       </Swiper>

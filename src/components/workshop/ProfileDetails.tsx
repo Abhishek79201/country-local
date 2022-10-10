@@ -105,15 +105,15 @@ const ProfileDetails = () => {
         </div>
       </div>
       <div className="content">
-        <h1 className="text-[14px] font-bold text-[#575757] ">
+        <p className="text-[14px] font-bold text-[#575757] ">
           The Traveling Painters
-        </h1>
+        </p>
         <div className="flex items-center gap-2 pb-8">
           <Image src="/icons/global.png" alt="global" width={20} height={20} />
-          <h1 className="text-[12px] font-bold text-[#4A4A4A]">
+          <p className="text-[12px] font-bold text-[#4A4A4A]">
             <span className="font-thin"> I speak </span>
             Español, English, Português
-          </h1>
+          </p>
         </div>
 
         <button

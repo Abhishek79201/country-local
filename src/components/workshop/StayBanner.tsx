@@ -12,9 +12,9 @@ const StayBanner = () => (
     whileInView="animate"
     viewport={{ once: true }}
   >
-    <h1 className="mb-4 text-[22px] font-bold text-[#000] ">
+    <h3 className="mb-4 text-[22px] font-bold text-[#000] ">
       You will Stay her
-    </h1>
+    </h3>
     <motion.div
       variants={fadeInLeft}
       className="flex h-auto w-full flex-wrap items-center rounded-xl shadow-xl md:flex-nowrap lg:h-[198px] "
@@ -28,9 +28,7 @@ const StayBanner = () => (
         />
       </div>
       <div className="relative max-w-[505px]  p-4 pt-6 lg:pt-0 ">
-        <h1 className="text-[18px] font-bold text-[#4A4A4A]">
-          Where You Sleep
-        </h1>
+        <p className="text-[18px] font-bold text-[#4A4A4A]">Where You Sleep</p>
         {[1, 2, 3].map((item) => (
           <motion.div
             variants={fadeInLeft}

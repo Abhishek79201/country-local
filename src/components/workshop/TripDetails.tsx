@@ -139,14 +139,14 @@ const TripDetails = () => (
                                     key={item}
                                     className="ml-5 max-w-[590px] pt-3 md:ml-0"
                                   >
-                                    <h1 className="pb-2 text-base font-semibold text-[#222]">
+                                    <div className="pb-2 text-base font-semibold text-[#222]">
                                       <Image
                                         src="/icons/morning.png"
                                         width={30}
                                         height={18}
                                       />
                                       <span className="pl-2"> Morning :</span>
-                                    </h1>
+                                    </div>
                                     <p className="text-[14px] text-[#808080]">
                                       upon your arrival at the Lisu Lodge (9
                                       am.) you will be welcomed with a
@@ -222,14 +222,14 @@ const TripDetails = () => (
                                     key={item}
                                     className="ml-5 max-w-[590px] pt-3 md:ml-0"
                                   >
-                                    <h1 className="pb-2 text-base font-semibold text-[#222]">
+                                    <div className="pb-2 text-base font-semibold text-[#222]">
                                       <Image
                                         src="/icons/morning.png"
                                         width={30}
                                         height={18}
                                       />
                                       <span className="pl-2"> Morning :</span>
-                                    </h1>
+                                    </div>
                                     <p className="text-[14px] text-[#808080]">
                                       upon your arrival at the Lisu Lodge (9
                                       am.) you will be welcomed with a
@@ -311,14 +311,14 @@ const TripDetails = () => (
                                     key={item}
                                     className="ml-5 max-w-[590px] pt-3 md:ml-0"
                                   >
-                                    <h1 className="pb-2 text-base font-semibold text-[#222]">
+                                    <div className="pb-2 text-base font-semibold text-[#222]">
                                       <Image
                                         src="/icons/morning.png"
                                         width={30}
                                         height={18}
                                       />
                                       <span className="pl-2"> Morning :</span>
-                                    </h1>
+                                    </div>
                                     <p className="text-[14px] text-[#808080]">
                                       upon your arrival at the Lisu Lodge (9
                                       am.) you will be welcomed with a

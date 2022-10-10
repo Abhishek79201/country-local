@@ -15,9 +15,9 @@ const AboutProperty = () => (
     viewport={{ once: true }}
   >
     <div>
-      <h1 className="mb-2 text-[22px] font-bold text-[#222] ">
+      <h3 className="mb-2 text-[22px] font-bold text-[#222] ">
         Description about the Property
-      </h1>
+      </h3>
       <div className="mb-5 flex gap-2">
         {[1, 2, 3].map((item) => (
           <motion.div

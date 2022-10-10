@@ -15,7 +15,7 @@ const imgData = [
 
 const Plan = () => (
   <div>
-    <h1 className="mb-4 text-[22px] font-bold text-[#222]">This is the plan</h1>
+    <h3 className="mb-4 text-[22px] font-bold text-[#222]">This is the plan</h3>
 
     <p className="mb-8 text-base text-[#808080] md:text-[18px]">
       Check out the plan below to see what you will get up with your local host.
@@ -40,9 +40,9 @@ const Plan = () => (
               •
             </span>
 
-            <h1 className="pb-2 text-[18px] font-bold text-[#000]">
+            <p className="pb-2 text-[18px] font-bold text-[#000]">
               This is the plan
-            </h1>
+            </p>
             <p className="text-[14px] text-[#000]">
               Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
               condimentum. Nulla orci congue praesent nullam vitae nibh. Sed sit
@@ -58,18 +58,18 @@ const Plan = () => (
         <span className=" absolute -left-8 -top-8 z-10 text-[56px] text-[#E71575]">
           •
         </span>
-        <h1 className="text-[18px] font-bold text-[#222]">
+        <p className="text-[18px] font-bold text-[#222]">
           Excited?
           <span className="text-[#E71575]"> Book Now</span>
-        </h1>
+        </p>
       </div>
     </div>
     <UnderLine />
     <div>
       <motion.div className="w-full" variants={fadeInLeft}>
-        <h1 className="mb-4 text-[22px] font-bold text-[#222] ">
+        <p className="mb-4 text-[22px] font-bold text-[#222] ">
           I can personlize this tour for you
-        </h1>
+        </p>
         <motion.div
           variants={fadeInLeft}
           className="flex w-full flex-wrap items-start gap-4 rounded lg:min-h-[230px]  lg:flex-nowrap"

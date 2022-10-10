@@ -110,7 +110,7 @@ const GuestsPopoverMobile = ({
                     setGlobalOverflow(false);
                   }}
                 >
-                  <div className="svg_icon w-4 text-[#BCBCBC] group-hover:text-[#76F4BA]">
+                  <div className="svg_icon w-4 text-[#BCBCBC] group-hover:text-[#000]">
                     <CloseIcon />
                   </div>
                 </button>

@@ -32,10 +32,10 @@ const Profiles = () => {
         <div className="flex flex-wrap justify-between lg:flex-nowrap">
           <div className="w-full lg:max-w-[650px] xl:max-w-[730px]">
             <motion.div variants={fadeInUp}>
-              <h1 className="pb-4 text-2xl font-bold text-[#222] md:pb-6 md:text-[36px] md:leading-snug">
+              <p className="pb-4 text-2xl font-bold text-[#222] md:pb-6 md:text-[36px] md:leading-snug">
                 Aberdeen Fishermen Cultural Tour with Delicious Dim Sums Lunch{' '}
                 <span className="font-thin">(2D1N)</span>
-              </h1>
+              </p>
               <div className="flex flex-wrap items-start justify-between gap-4 sm:gap-0 lg:flex-nowrap">
                 <div className="flex w-[280px] items-center sm:w-1/2">
                   <div className="svg_icon mr-2 w-[26px] shrink-0 text-[#E71575]">

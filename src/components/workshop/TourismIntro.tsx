@@ -24,9 +24,9 @@ const TourismIntro = () => (
             <span>&gt;</span>
             <span className="text-[#808080]">Culture</span>
           </div>
-          <h1 className="my-4 text-[18px] font-semibold text-[#222] sm:text-2xl">
+          <h2 className="my-4 text-[18px] font-semibold text-[#222] sm:text-2xl">
             2235 GREAT 3BED / 2.5BATHS IN BRAND NEW BUILDING
-          </h1>
+          </h2>
           <div className="flex flex-wrap gap-y-1 text-xs sm:gap-y-0">
             <div className="svg_icon mr-1 w-4 text-[#FFD166]">
               <StarIcon />

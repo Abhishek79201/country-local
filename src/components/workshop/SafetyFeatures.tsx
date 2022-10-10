@@ -4,7 +4,7 @@ import UnderLine from '../common/UnderLine';
 
 const SafetyFeatures = () => (
   <div>
-    <h1 className="pb-8 text-[22px] font-bold text-[#222] ">Safety Features</h1>
+    <h3 className="pb-8 text-[22px] font-bold text-[#222] ">Safety Features</h3>
     <div className="flex w-full flex-wrap justify-start gap-y-5 md:gap-y-10">
       {safetyFeaturesData.map((item) => (
         <div
@@ -14,7 +14,7 @@ const SafetyFeatures = () => (
           <div className="flex w-[36px] shrink-0 items-center text-[#E71575]">
             <Image src={item.icon} alt="icon" width="26px" height="26px" />
           </div>
-          <h1 className="text-base font-semibold text-[#222] ">{item.title}</h1>
+          <p className="text-base font-semibold text-[#222] ">{item.title}</p>
         </div>
       ))}
     </div>

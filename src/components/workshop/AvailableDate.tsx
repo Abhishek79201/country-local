@@ -23,10 +23,10 @@ const AvailableDate = () => {
       whileInView="animate"
       viewport={{ once: true }}
     >
-      <h1 className="pb-3 text-2xl font-bold md:text-3xl lg:text-[38px]">
+      <h3 className="pb-3 text-2xl font-bold md:text-3xl lg:text-[38px]">
         Choose from
         <span className="purple_gradient_text"> available dates</span>
-      </h1>
+      </h3>
       <h5 className="text-base font-medium">4 available</h5>
       {width > 1063 ? (
         <div className="flex flex-wrap items-center justify-between pt-10 pb-10">
@@ -138,9 +138,9 @@ const AvailableDate = () => {
               />
               <div className="w-full p-5">
                 <div className="flex flex-wrap items-center justify-between">
-                  <h1 className="text-[18px] font-semibold text-[#000]">
+                  <p className="text-[18px] font-semibold text-[#000]">
                     Hosted by The
-                  </h1>
+                  </p>
                   <a
                     href="#"
                     className="flex items-center text-[12px] font-semibold text-[#E71575]"
