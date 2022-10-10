@@ -85,7 +85,7 @@ const BookInfoPopups = ({ status, onClose }: BookInfoPopupsPropsType) => (
             className="group absolute right-2 top-2 p-2"
             onClick={onClose}
           >
-            <div className="svg_icon w-4 text-[#BCBCBC] group-hover:text-[#76F4BA]">
+            <div className="svg_icon w-4 text-[#BCBCBC] group-hover:text-[#000]">
               <CloseIcon />
             </div>
           </button>
