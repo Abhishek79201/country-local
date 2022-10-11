@@ -9,7 +9,7 @@ const TouringBanner = () => {
   const { width } = useViewport();
 
   return (
-    <div className="purple_gradient_bg_1 mb-6 flex h-auto w-full items-center justify-center py-8 md:py-16">
+    <div className="purple_gradient_bg mb-6 flex h-auto w-full items-center justify-center py-8 md:py-16">
       <div className="container">
         <div className="mx-auto max-w-[753px] text-center">
           <p className="mb-0 text-base uppercase text-[#fff] md:pb-3 md:text-[22px]">

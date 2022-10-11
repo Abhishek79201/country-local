@@ -10,6 +10,7 @@ import { formatDate } from '../../utilities/helpers';
 import BookInfoPopups from './popovers/BookInfoPopups';
 import ReportPopup from '../common/popups/report-popups/ReportPopup';
 import GuestsPopover from './popovers/GuestsPopover';
+import OtherServicesPopover from './popovers/OtherServicesPopover';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -23,6 +24,7 @@ const BookingCard = () => {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
+  const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [endDate, setEndDate] = useState<Date | null>(new Date());
@@ -286,20 +288,26 @@ const BookingCard = () => {
             </div>
           </div>
         </div>
-        <div className="relative z-0 pb-20">
-          <button
-            type="button"
-            className="z-50 w-full rounded-xl border-4 border-[#fff] bg-[#002390] py-3 text-center text-[#fff] "
-          >
+        <button
+          type="button"
+          onClick={() => {
+            setShowMoreServices(true);
+          }}
+          className="relative z-0 w-full pb-20"
+        >
+          <div className="z-50 w-full rounded-xl border-4 border-[#fff] bg-[#002390] py-3 text-center text-[#fff] ">
             View All My Service
-          </button>
-          <button
-            type="button"
-            className="absolute left-0 top-11 -z-10 w-full rounded-xl border-4 border-[#fff] bg-[#23B4ED] py-3 text-center text-[#fff] "
-          >
+          </div>
+          <div className="absolute left-0 top-11 -z-10 w-full rounded-xl border-4 border-[#fff] bg-[#23B4ED] py-3 text-center text-[#fff] ">
             Total 10 Services
-          </button>
-        </div>
+          </div>
+        </button>
+        <OtherServicesPopover
+          status={showMoreServices}
+          onClose={() => {
+            setShowMoreServices(false);
+          }}
+        />
       </div>
     </Sticky>
   );

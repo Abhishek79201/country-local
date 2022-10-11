@@ -67,7 +67,7 @@ const HouseRulesPopover = ({ status, onClose }: HouseRulesPopoverTypes) => {
                 },
               },
             }}
-            className="fixed bottom-0 z-10 w-full md:relative md:w-11/12 md:max-w-[780px]"
+            className="fixed bottom-0 z-10 w-full md:w-11/12 lg:relative lg:max-w-[780px]"
           >
             <div className="relative overflow-hidden rounded-tl-lg rounded-tr-lg bg-white md:rounded-lg md:shadow-xl">
               <div className="flex h-12 items-center justify-center border-b border-b-[#E8E8E8] md:h-14">
@@ -91,7 +91,7 @@ const HouseRulesPopover = ({ status, onClose }: HouseRulesPopoverTypes) => {
               <div
                 className="custom_scrollbar overflow-y-auto bg-white px-6 pb-6 pt-3 md:max-h-[90vh]"
                 style={{
-                  height: width < 767 ? window.innerHeight - 70 : 'auto',
+                  height: width < 1064 ? window.innerHeight - 70 : 'auto',
                 }}
               >
                 <div>

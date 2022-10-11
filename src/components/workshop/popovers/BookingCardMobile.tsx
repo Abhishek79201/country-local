@@ -11,6 +11,7 @@ import BookInfoPopups from './BookInfoPopups';
 import ReportPopup from '../../common/popups/report-popups/ReportPopup';
 import BookingCalendarMobile from './BookingCalendarMobile';
 import GuestsPopoverMobile from './GuestsPopoverMobile';
+import OtherServicesPopover from './OtherServicesPopover';
 
 import StarIcon from '../../../../public/icons/star.svg';
 import QuestionMarkIcon from '../../../../public/icons/question-mark.svg';
@@ -24,6 +25,7 @@ const BookingCardMobile = () => {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
+  const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [endDate, setEndDate] = useState<Date | null>(new Date());
@@ -306,20 +308,26 @@ const BookingCardMobile = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="relative z-0 pb-10 text-sm">
-                    <button
-                      type="button"
-                      className="z-50 w-full rounded-xl border-4 border-[#fff] bg-[#002390] py-3 text-center text-[#fff] "
-                    >
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowMoreServices(true);
+                    }}
+                    className="relative z-0 w-full pb-10 text-sm"
+                  >
+                    <div className="z-50 w-full rounded-xl border-4 border-[#fff] bg-[#002390] py-3 text-center text-[#fff] ">
                       View All My Service
-                    </button>
-                    <button
-                      type="button"
-                      className="absolute left-0 top-11 -z-10 w-full rounded-xl border-4 border-[#fff] bg-[#23B4ED] py-3 text-center text-[#fff] "
-                    >
+                    </div>
+                    <div className="absolute left-0 top-11 -z-10 w-full rounded-xl border-4 border-[#fff] bg-[#23B4ED] py-3 text-center text-[#fff] ">
                       Total 10 Services
-                    </button>
-                  </div>
+                    </div>
+                  </button>
+                  <OtherServicesPopover
+                    status={showMoreServices}
+                    onClose={() => {
+                      setShowMoreServices(false);
+                    }}
+                  />
                 </div>
                 <div className="border-t border-t-[#EAEAEA] px-5 py-3">
                   <button
