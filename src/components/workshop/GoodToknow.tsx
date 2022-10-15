@@ -140,7 +140,10 @@ const GoodToKnow = () => {
                 key={item.id}
                 className="!w-[68%] md:!w-1/3 lg:!w-1/5"
               >
-                <div className="m-3 my-5 rounded-xl bg-white p-[15px] shadow-lg">
+                <div
+                  className="m-3 my-5 rounded-xl bg-white p-[15px]"
+                  style={{ boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)' }}
+                >
                   <div className="relative flex">
                     <Image
                       src={`/icons/${item.imgUrl}`}

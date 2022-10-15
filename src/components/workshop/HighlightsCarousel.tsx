@@ -23,7 +23,7 @@ const HighlightsCarousel = () => (
             spaceBetween: 20,
           },
         }}
-        className="!pr-5 md:!pr-0 lg:!mr-[80px] xl:!mr-[125px]"
+        className="!pr-5 md:!pr-0"
       >
         {highlightData?.map((item) => (
           <SwiperSlide

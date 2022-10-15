@@ -24,11 +24,11 @@ const TourismIntro = () => (
             <span>&gt;</span>
             <span className="text-[#808080]">Culture</span>
           </div>
-          <h2 className="my-4 text-[18px] font-semibold text-[#222] sm:text-2xl">
+          <h2 className="my-4 text-[18px] font-semibold text-[#222] md:text-2xl lg:text-3xl">
             2235 GREAT 3BED / 2.5BATHS IN BRAND NEW BUILDING
           </h2>
-          <div className="flex flex-wrap gap-y-1 text-xs sm:gap-y-0">
-            <div className="svg_icon mr-1 w-4 text-[#FFD166]">
+          <div className="flex flex-wrap gap-y-1 text-sm sm:gap-y-0 md:text-base">
+            <div className="svg_icon mr-1 w-4 text-[#FFD166] md:w-5">
               <StarIcon />
             </div>
             <span className="font-semibold text-[#222]">4.7</span>

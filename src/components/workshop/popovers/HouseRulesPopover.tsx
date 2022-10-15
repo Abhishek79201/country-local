@@ -97,10 +97,13 @@ const HouseRulesPopover = ({ status, onClose }: HouseRulesPopoverTypes) => {
                 <div>
                   {offersData.map((item) => (
                     <div
-                      className="flex w-full cursor-pointer items-center gap-x-1 py-3 text-[#4A4A4A]"
+                      className="flex w-full cursor-pointer items-center gap-x-1 border-b border-b-slate-200 py-6 text-[#4A4A4A]"
                       key={Math.random() * 10}
                     >
-                      <p className="text-[14px]">{item.title}</p>
+                      <div className="svg_icon w-[20px] ease-linear hover:bg-[#E71575] hover:text-[#fff]">
+                        <item.icon />
+                      </div>
+                      <p className="ml-4 text-[14px]">{item.title}</p>
                     </div>
                   ))}
                 </div>

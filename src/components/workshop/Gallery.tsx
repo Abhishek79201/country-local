@@ -11,6 +11,8 @@
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import ReactPlayer from 'react-player';
+
 import LightBox from './PopUp/LighBox';
 import PopUpScreen from './PopUp/PopUpScreen';
 import LayoutIcon from '../../../public/icons/gallery-layout.svg';
@@ -73,23 +75,35 @@ const Gallery = () => {
 
   return (
     <div className="sticky_top_container flex w-full flex-wrap">
-      <div className="gallery-layout grid w-full grid-cols-4 grid-rows-2 gap-2 bg-black py-2">
+      <div className="gallery-layout grid h-[534px] w-full grid-cols-4 grid-rows-2 gap-2 bg-black py-2">
         {bannerData.map((data, index) => (
           <div
             className={`item${index + 1} ${
-              index === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'
+              index === 0
+                ? 'video_player_wrapper col-span-2 row-span-2'
+                : 'col-span-1 row-span-1'
             } relative overflow-hidden `}
             key={data.id + Math.random()}
           >
-            <img
-              src={`/${data.img}`}
-              alt="img"
-              onClick={() => {
-                setActivePopUp(true);
-                handleLightBox(data, index);
-              }}
-              className="cursor-pointer duration-300 hover:scale-105"
-            />
+            {index === 0 ? (
+              <ReactPlayer
+                url="https://drive.google.com/uc?id=1ZMYDAQUIRuISS5ckSOVUtGE6dV5RRfW2"
+                width="100%"
+                height="100%"
+                controls
+                muted
+              />
+            ) : (
+              <img
+                src={`/${data.img}`}
+                alt="img"
+                onClick={() => {
+                  setActivePopUp(true);
+                  handleLightBox(data, index);
+                }}
+                className="cursor-pointer duration-300 hover:scale-105"
+              />
+            )}
           </div>
         ))}
 

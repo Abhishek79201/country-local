@@ -97,7 +97,7 @@ const BookingCard = () => {
               </div>
             </div>
             <div className="relative rounded-lg border border-[#808080]">
-              <div className="flex border-b border-b-[#808080]">
+              <div className="flex">
                 <button
                   type="button"
                   onClick={() => setShowDatePicker(!showDatePicker)}
@@ -125,11 +125,11 @@ const BookingCard = () => {
                         </p>
                       </div>
                       <div className="w-[280px] xl:w-[344px]">
-                        <div className="flex rounded-lg border border-[#808080]">
+                        <div className="flex rounded-lg border-2 border-[#808080]">
                           <button
                             type="button"
                             onClick={() => setShowDatePicker(!showDatePicker)}
-                            className="flex-1 border-r border-r-[#808080] px-4 py-4 text-left text-xs"
+                            className="flex-1 border-r-2 border-r-[#808080] px-4 py-4 text-left text-xs"
                           >
                             <span className="block font-semibold">
                               CHECK-IN
@@ -183,7 +183,11 @@ const BookingCard = () => {
                   </div>
                 )}
               </div>
-              <div className="relative flex px-4 py-4">
+              <div
+                className={`relative flex border-t border-[#808080] px-4 py-4 ${
+                  showGuests && 'rounded-lg border !border-t-2'
+                }`}
+              >
                 <button
                   type="button"
                   onClick={() => setShowGuests(!showGuests)}
@@ -265,10 +269,10 @@ const BookingCard = () => {
             <div className="mt-7 text-center">
               <button
                 type="button"
-                className="mx-auto flex items-center text-[10px] font-semibold text-[#222222]"
+                className="mx-auto flex items-center text-xs font-semibold text-[#222222]"
                 onClick={() => setOpenReport(true)}
               >
-                <div className="svg_icon mr-2 w-[10px]">
+                <div className="svg_icon mr-2 w-[12px]">
                   <FlagIcon />
                 </div>
                 <div className="underline">Report this listings</div>
@@ -281,7 +285,7 @@ const BookingCard = () => {
               />
               <button
                 type="button"
-                className="mt-3 rounded-full border-2 border-pink_primary px-5 py-[6px] text-[10px] text-pink_primary"
+                className="mt-3 rounded-full border-2 border-pink_primary px-5 py-[6px] text-xs text-pink_primary"
               >
                 Contact me to costumize this to your needs
               </button>
