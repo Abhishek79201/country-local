@@ -27,13 +27,13 @@ const Footer = () => (
               {[1, 2, 3, 4].map((item) => (
                 <a
                   href="#"
-                  className=" flex items-center gap-3 py-1"
+                  className="flex items-center gap-3 py-1 text-[#fff] hover:text-pink_primary"
                   key={item}
                 >
-                  <div className="svg_icon w-2 text-[#ffff]">
+                  <div className="svg_icon w-2">
                     <Arrow />
                   </div>
-                  <span className="text-[14px] text-[#fff]">Event</span>
+                  <span className="text-[14px]">Event</span>
                 </a>
               ))}
             </div>
@@ -44,13 +44,13 @@ const Footer = () => (
               {[1, 2, 3, 4, 5, 6].map((item) => (
                 <a
                   href="#"
-                  className=" flex items-center gap-3 py-1"
+                  className="flex items-center gap-3 py-1 text-[#fff] hover:text-pink_primary"
                   key={item}
                 >
-                  <div className="svg_icon w-2 text-[#ffff]">
+                  <div className="svg_icon w-2">
                     <Arrow />
                   </div>
-                  <span className="text-[14px] text-[#fff]">About </span>
+                  <span className="text-[14px]">About</span>
                 </a>
               ))}
             </div>
@@ -63,13 +63,13 @@ const Footer = () => (
               {[1, 2, 3].map((item) => (
                 <a
                   href="#"
-                  className=" flex items-center gap-3 py-1"
+                  className="flex items-center gap-3 py-1 text-[#fff] hover:text-pink_primary"
                   key={item}
                 >
-                  <div className="svg_icon w-2 text-[#ffff]">
+                  <div className="svg_icon w-2">
                     <Arrow />
                   </div>
-                  <span className="text-[14px] text-[#fff]">Rules </span>
+                  <span className="text-[14px]">Rules</span>
                 </a>
               ))}
             </div>

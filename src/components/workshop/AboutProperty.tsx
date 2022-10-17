@@ -4,17 +4,18 @@ import UnderLine from '../common/UnderLine';
 const AboutProperty = () => (
   <div>
     <div>
-      <h3 className="mb-2 text-[22px] font-bold text-[#222] ">
+      <h3 className="mb-3 text-[22px] font-bold text-[#222] ">
         Description about the Property
       </h3>
       <div className="mb-5 flex gap-2">
         {[1, 2, 3].map((item) => (
-          <div
+          <button
+            type="button"
             key={item}
-            className="w-[100px] rounded-md bg-[#f8f8f8] py-1 text-center  "
+            className="rounded-md bg-[#f8f8f8] py-1 px-3 text-center text-xs text-[#808080] hover:bg-pink_primary hover:text-white"
           >
-            <p className="text-[10px] text-[#808080]">History & Culture</p>
-          </div>
+            History & Culture
+          </button>
         ))}
       </div>
       <p className="mb-5 text-base text-[#808080] md:text-[18px]">

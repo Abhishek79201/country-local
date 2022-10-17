@@ -75,7 +75,7 @@ const Gallery = () => {
 
   return (
     <div className="sticky_top_container flex w-full flex-wrap">
-      <div className="gallery-layout grid h-[534px] w-full grid-cols-4 grid-rows-2 gap-2 bg-black py-2">
+      <div className="gallery-layout grid w-full grid-cols-4 grid-rows-2 gap-2 bg-black py-2">
         {bannerData.map((data, index) => (
           <div
             className={`item${index + 1} ${
@@ -92,6 +92,7 @@ const Gallery = () => {
                 height="100%"
                 controls
                 muted
+                playing
               />
             ) : (
               <img

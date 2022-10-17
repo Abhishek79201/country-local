@@ -1,25 +1,26 @@
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
-
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { FreeMode, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
-import {
-  animationWrapper,
-  fadeInRight,
-  fadeInLeft,
-  fadeInUp,
-} from '../../utilities/animations';
+import UnderLine from '../common/UnderLine';
+import NotIncludedPopover from './popovers/NotIncludedPopover';
+import CancellationPopover from './popovers/CancellationPopover';
+import MeetingLocationPopover from './popovers/MeetingLocationPopover';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import CancelMark from '../../../public/icons/purple-cancel.svg';
 import Checkmark from '../../../public/icons/checked-purple.svg';
-import UnderLine from '../common/UnderLine';
+import ArrowIcon from '../../../public/icons/chevron-right.svg';
 
 const GoodToKnow = () => {
+  const [notIncludedOpen, setNotIncludedOpen] = useState<boolean>(false);
+  const [cancellationOpen, setCancellationOpen] = useState<boolean>(false);
+  const [meetingOpen, setMeetingOpen] = useState<boolean>(false);
   const sliderItems = [
     {
       id: 1,
@@ -85,39 +86,24 @@ const GoodToKnow = () => {
 
   return (
     <div className="relative pb-5">
-      <motion.div
-        variants={animationWrapper}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="container"
-      >
-        <motion.h2
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="pb-5 text-2xl font-bold text-black md:text-[28px] lg:text-[32px]"
-        >
+      <div className="container">
+        <h2 className="pb-5 text-2xl font-bold text-black md:text-[28px] lg:text-[32px]">
           Good to know
-        </motion.h2>
+        </h2>
         <div className="flex flex-wrap items-center pb-6">
-          <motion.div variants={fadeInLeft} className="w-1/2">
+          <div className="w-1/2">
             <h2 className="flex items-center text-base font-bold text-black md:text-[20px]">
               Whats Included
             </h2>
-          </motion.div>
-          <motion.div
-            variants={fadeInRight}
-            className="hidden w-1/2 justify-end gap-5 md:flex md:pt-0"
-          >
+          </div>
+          <div className="hidden w-1/2 justify-end gap-5 md:flex md:pt-0">
             <div className="relative flex w-[140px] items-center gap-2">
               <div className="good_to_know_slider swiper-pagination !relative !top-0 !bottom-0 !w-[50px] text-[#666]" />
 
               <div className="good_to_know_slider swiper-button-prev !relative !top-0 !bottom-0 !-left-0 !mt-0 !h-[32px] !w-[32px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
               <div className="good_to_know_slider swiper-button-next !relative !top-0 !bottom-0 !-right-0 !mt-0 !h-[32px] !w-[32px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
             </div>
-          </motion.div>
+          </div>
         </div>
         <div className="-mr-5 -ml-[10px] md:ml-0 md:mr-0">
           <Swiper
@@ -168,72 +154,103 @@ const GoodToKnow = () => {
           </Swiper>
         </div>
         <UnderLine />
-      </motion.div>
 
-      <div className="container">
-        <motion.div
-          variants={animationWrapper}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="mt-0  border-t-0 border-[#EBEBEB]"
-        >
-          <motion.div variants={fadeInUp} className="mb-6">
-            <h3 className="pb-3 font-bold text-[#222] lg:text-2xl">
-              Whats not Included
-            </h3>
-            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
-              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                <CancelMark />
-              </span>
-              Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
-              condimentum.. Nulla Orci congue prasent
-            </p>
-            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
-              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                <CancelMark />
-              </span>
-              Tortor pellentesque nec sit nulla volutpat
-            </p>
-          </motion.div>
-          <motion.div variants={fadeInUp} className="mb-6">
-            <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
-              Where we will meet?
-            </h3>
-            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
-              <span className="svg_icon mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1">
-                <Checkmark />
-              </span>
-              Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
-              condimentum.. Nulla Orci congue prasent
-            </p>
-            <button
-              type="button"
-              className="purple_gradient_bg ml-6 mt-2 rounded-[10px] py-3 px-5 text-sm font-bold text-[#fff] "
-            >
-              View Meeting Location
-            </button>
-          </motion.div>
-          <motion.div variants={fadeInUp}>
-            <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
-              Cancelation
-            </h3>
-            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
-              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                <CancelMark />
-              </span>
-              Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
-              condimentum.. Nulla Orci congue prasent
-            </p>
-            <p className="mb-3 flex text-sm text-[#484848] md:text-base">
-              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                <CancelMark />
-              </span>
-              Tortor pellentesque nec sit nulla volutpat
-            </p>
-          </motion.div>
-        </motion.div>{' '}
-        <UnderLine />
+        <div className="w-full lg:max-w-[730px]">
+          <div className="mt-0  border-t-0 border-[#EBEBEB]">
+            <div className="mb-6">
+              <h3 className="pb-3 font-bold text-[#222] lg:text-2xl">
+                Whats not Included
+              </h3>
+              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                  <CancelMark />
+                </span>
+                Tortor pellentesque nec sit nulla volutpat curabitur mattis
+                fusce condimentum.. Nulla Orci congue prasent
+              </p>
+              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                  <CancelMark />
+                </span>
+                Tortor pellentesque nec sit nulla volutpat
+              </p>
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setNotIncludedOpen(true)}
+                  className="ml-auto flex items-center text-sm underline"
+                >
+                  <span>Show More</span>
+                  <span className="ml-2 w-3">
+                    <ArrowIcon />
+                  </span>
+                </button>
+                <NotIncludedPopover
+                  status={notIncludedOpen}
+                  onClose={() => setNotIncludedOpen(false)}
+                />
+              </div>
+            </div>
+            <div className="mb-6">
+              <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
+                Where we will meet?
+              </h3>
+              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                <span className="svg_icon mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1">
+                  <Checkmark />
+                </span>
+                Tortor pellentesque nec sit nulla volutpat curabitur mattis
+                fusce condimentum.. Nulla Orci congue prasent
+              </p>
+              <button
+                type="button"
+                onClick={() => setMeetingOpen(true)}
+                className="purple_gradient_bg ml-6 mt-2 rounded-[10px] py-3 px-5 text-sm font-bold text-[#fff] "
+              >
+                View Meeting Location
+              </button>
+              <MeetingLocationPopover
+                status={meetingOpen}
+                onClose={() => setMeetingOpen(false)}
+              />
+            </div>
+            <div>
+              <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
+                Cancelation
+              </h3>
+              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                  <CancelMark />
+                </span>
+                Tortor pellentesque nec sit nulla volutpat curabitur mattis
+                fusce condimentum.. Nulla Orci congue prasent
+              </p>
+              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                  <CancelMark />
+                </span>
+                Tortor pellentesque nec sit nulla volutpat
+              </p>
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setCancellationOpen(true)}
+                  className="ml-auto flex items-center text-sm underline"
+                >
+                  <span>Show More</span>
+                  <span className="ml-2 w-3">
+                    <ArrowIcon />
+                  </span>
+                </button>
+                <CancellationPopover
+                  status={cancellationOpen}
+                  onClose={() => setCancellationOpen(false)}
+                />
+              </div>
+            </div>
+          </div>
+          <UnderLine />
+        </div>
       </div>
     </div>
   );

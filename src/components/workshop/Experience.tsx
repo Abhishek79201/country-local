@@ -12,7 +12,8 @@ const Experience = () => (
       {[1, 2, 3, 4, 5, 6].map((item) => (
         <div
           key={item}
-          className="flex w-full items-center rounded-[5px] bg-[#fff] py-[6px] pl-2 pr-6 shadow-lg md:w-[45%]"
+          className="flex w-full items-center rounded-[5px] bg-[#fff] py-2 pl-2 pr-6 md:w-[45%]"
+          style={{ boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)' }}
         >
           <div className="svg_icon w-6 text-[#E71575]">
             <Checkmark />

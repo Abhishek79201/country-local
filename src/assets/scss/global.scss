@@ -576,3 +576,8 @@ body.active {
   width: auto !important;
   height: auto !important;
 }
+.stay_slider {
+  span.swiper-pagination-bullet {
+    background-color: #fff;
+  }
+}
