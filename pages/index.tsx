@@ -37,9 +37,12 @@ const Home: NextPage = () => {
       <div className="bg-[#fff] pb-10">
         {width < 1064 && <MobileGallery />}
 
-        <TourismIntro />
-
-        {width > 1063 && <Gallery />}
+        {width > 1063 && (
+          <>
+            <TourismIntro />
+            <Gallery />
+          </>
+        )}
 
         <Profiles />
 

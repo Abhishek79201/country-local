@@ -214,18 +214,21 @@ const TripDetails = () => (
                                 variants={slideToggle}
                                 className="md:ml-8"
                               >
-                                {[1, 2, 3].map((item) => (
+                                {['morning', 'noon', 'night'].map((item) => (
                                   <div
                                     key={item}
                                     className="ml-5 max-w-[590px] pt-3 md:ml-0"
                                   >
-                                    <div className="pb-2 text-base font-semibold text-[#222]">
+                                    <div className="flex items-center pb-2 text-base font-semibold text-[#222]">
                                       <Image
-                                        src="/icons/morning.png"
-                                        width={30}
-                                        height={18}
+                                        src={`/icons/${item}.png`}
+                                        width={24}
+                                        height={24}
                                       />
-                                      <span className="pl-2"> Morning :</span>
+                                      <span className="pl-2 capitalize">
+                                        {' '}
+                                        {item} :
+                                      </span>
                                     </div>
                                     <p className="text-[14px] text-[#808080]">
                                       upon your arrival at the Lisu Lodge (9
@@ -234,6 +237,22 @@ const TripDetails = () => (
                                       following a cycling tour around the
                                       village (13 kilometers or 8 miles).
                                     </p>
+                                    <div className="mt-3 flex flex-wrap items-center gap-x-3">
+                                      <div className="flex overflow-hidden rounded-lg">
+                                        <Image
+                                          src="/stay-banner-3.jpg"
+                                          width={200}
+                                          height={100}
+                                        />
+                                      </div>
+                                      <div className="flex overflow-hidden rounded-lg">
+                                        <Image
+                                          src="/stay-banner-4.jpg"
+                                          width={200}
+                                          height={100}
+                                        />
+                                      </div>
+                                    </div>
                                   </div>
                                 ))}
                               </Disclosure.Panel>
@@ -303,18 +322,21 @@ const TripDetails = () => (
                                 variants={slideToggle}
                                 className="md:ml-8"
                               >
-                                {[1, 2, 3].map((item) => (
+                                {['morning', 'noon', 'night'].map((item) => (
                                   <div
                                     key={item}
                                     className="ml-5 max-w-[590px] pt-3 md:ml-0"
                                   >
-                                    <div className="pb-2 text-base font-semibold text-[#222]">
+                                    <div className="flex items-center pb-2 text-base font-semibold text-[#222]">
                                       <Image
-                                        src="/icons/morning.png"
-                                        width={30}
-                                        height={18}
+                                        src={`/icons/${item}.png`}
+                                        width={24}
+                                        height={24}
                                       />
-                                      <span className="pl-2"> Morning :</span>
+                                      <span className="pl-2 capitalize">
+                                        {' '}
+                                        {item} :
+                                      </span>
                                     </div>
                                     <p className="text-[14px] text-[#808080]">
                                       upon your arrival at the Lisu Lodge (9

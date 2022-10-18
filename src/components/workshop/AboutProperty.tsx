@@ -8,13 +8,13 @@ const AboutProperty = () => (
         Description about the Property
       </h3>
       <div className="mb-5 flex gap-2">
-        {[1, 2, 3].map((item) => (
+        {['History & Culture', 'Art & Paint', 'Education'].map((item) => (
           <button
             type="button"
             key={item}
             className="rounded-md bg-[#f8f8f8] py-1 px-3 text-center text-xs text-[#808080] hover:bg-pink_primary hover:text-white"
           >
-            History & Culture
+            {item}
           </button>
         ))}
       </div>
