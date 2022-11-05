@@ -9,6 +9,8 @@ import UnderLine from '../common/UnderLine';
 
 const ProfileDetails = () => {
   const [openReport, setOpenReport] = useState(false);
+  const [showMoreText, setShowMoreText] = useState(false);
+
   return (
     <div className="">
       <div className="header flex flex-wrap items-start justify-between gap-y-3 pb-4 md:flex-nowrap md:gap-y-0">
@@ -128,7 +130,22 @@ const ProfileDetails = () => {
           eu lectus mi amet egestas massa. Nunc enim eleifend tellus tincidunt
           pharetra sagittis volutpat. Ut donec vitae ut viverra lacus lectus
           orci. Amet, consequat volutpat magna risus risus.
-          <span className=" font-semibold text-[#E71575] "> Read More...</span>
+          {showMoreText && (
+            <>
+              Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
+              condimentum. Nulla orci congue praesent nullam vitae nibh. Sed sit
+              sed eu lectus mi amet egestas massa. Nunc enim eleifend tellus
+              tincidunt pharetra sagittis volutpat. Ut donec vitae ut viverra
+              lacus lectus orci. Amet, consequat volutpat magna risus risus.
+            </>
+          )}
+          <button
+            type="button"
+            className="ml-1 inline-block font-semibold text-[#E71575] hover:text-[#a96ad8]"
+            onClick={() => setShowMoreText(!showMoreText)}
+          >
+            {showMoreText ? ' Show Less' : ' Show More...'}
+          </button>
         </p>
         <UnderLine />
       </div>
