@@ -48,7 +48,6 @@ const Experience = () => {
               >
                 <div className="flex w-full flex-col gap-4">
                   <div
-                    key={item}
                     className="flex w-full items-center rounded-[5px] bg-[#fff] py-2 pl-2 pr-6"
                     style={{ boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)' }}
                   >
@@ -60,7 +59,6 @@ const Experience = () => {
                     </div>
                   </div>
                   <div
-                    key={item}
                     className="flex w-full items-center rounded-[5px] bg-[#fff] py-2 pl-2 pr-6"
                     style={{ boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)' }}
                   >

@@ -1,10 +1,12 @@
 import type { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
 import Head from 'next/head';
+
 import { ViewportProvider } from '../src/context/ViewPortContext';
 import { OverflowProvider } from '../src/context/overflowContext';
+import { MobileBookingProvider } from '../src/context/mobileBookingContext';
+
 import Header from '../src/components/header/Header';
-// import Footer from '../src/components/Footer';
 import Footer from '../src/components/workshop/Footer';
 
 import '../src/assets/scss/global.scss';
@@ -20,13 +22,15 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ViewportProvider>
         <OverflowProvider>
-          <div id="page_container" className="overflow-hidden">
-            <Header />
-            <main id="main_content" className="pt-8 lg:pt-0">
-              <Component {...pageProps} />
-            </main>
-            <Footer />
-          </div>
+          <MobileBookingProvider>
+            <div id="page_container" className="overflow-hidden">
+              <Header />
+              <main id="main_content" className="pt-8 lg:pt-0">
+                <Component {...pageProps} />
+              </main>
+              <Footer />
+            </div>
+          </MobileBookingProvider>
         </OverflowProvider>
       </ViewportProvider>
     </>

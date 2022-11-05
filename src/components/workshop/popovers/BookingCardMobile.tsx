@@ -6,6 +6,7 @@ import { Dialog } from '@headlessui/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { formatDate } from '../../../utilities/helpers';
 import { OverflowContext } from '../../../context/overflowContext';
+import { MobileBookingContext } from '../../../context/mobileBookingContext';
 
 import BookInfoPopups from './BookInfoPopups';
 import ReportPopup from '../../common/popups/report-popups/ReportPopup';
@@ -21,7 +22,7 @@ import ChevronIcon from '../../../../public/icons/chevron-down.svg';
 import CloseIcon from '../../../../public/icons/xmark.svg';
 
 const BookingCardMobile = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const [isOpen, setShowMobileBooking] = useState<boolean>(false);
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
@@ -30,6 +31,8 @@ const BookingCardMobile = () => {
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [endDate, setEndDate] = useState<Date | null>(new Date());
   const { setGlobalOverflow } = useContext(OverflowContext);
+  const { showMobileBooking, setShowMobileBooking } =
+    useContext(MobileBookingContext);
 
   const onChange = (dates: [Date, Date]) => {
     const [start, end] = dates;
@@ -72,7 +75,7 @@ const BookingCardMobile = () => {
             <button
               type="button"
               onClick={() => {
-                setIsOpen(true);
+                setShowMobileBooking(true);
                 setGlobalOverflow(true);
               }}
               className="rounded-lg bg-pink_primary py-3 px-4 font-semibold text-white transition duration-300 hover:bg-[#A96AD8]"
@@ -83,7 +86,7 @@ const BookingCardMobile = () => {
         </div>
       </div>
       <AnimatePresence>
-        {isOpen && (
+        {showMobileBooking && (
           <Dialog
             static
             as={motion.div}
@@ -100,8 +103,8 @@ const BookingCardMobile = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
+            open={showMobileBooking}
+            onClose={() => setShowMobileBooking(false)}
             className="fixed inset-0 z-30"
           >
             <Dialog.Overlay
@@ -138,7 +141,7 @@ const BookingCardMobile = () => {
                     type="button"
                     className="group absolute right-4 top-2 p-2 md:top-3"
                     onClick={() => {
-                      setIsOpen(false);
+                      setShowMobileBooking(false);
                       setGlobalOverflow(false);
                     }}
                   >
