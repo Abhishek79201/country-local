@@ -1,13 +1,15 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { fadeInUp, fadeInLeft } from '../../utilities/animations';
 import { MobileBookingContext } from '../../context/mobileBookingContext';
+import useViewport from '../../hooks/useViewport';
 
 import UnderLine from '../common/UnderLine';
 
 import FillLocate from '../../../public/icons/fillLocation.svg';
 import TickMarkIcon from '../../../public/icons/check-lg.svg';
+import ContactMePopover from './popovers/ContactMePopover';
 
 const imgData = [
   'group-1.png',
@@ -18,7 +20,14 @@ const imgData = [
 ];
 
 const Plan = () => {
+  const { width } = useViewport();
   const { setShowMobileBooking } = useContext(MobileBookingContext);
+  const scrollToBookNow = () => {
+    const section = document.querySelector('.sticky_bottom_container');
+    section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  const [showContactMe, setShowContactMe] = useState(false);
+
   return (
     <div>
       <h3 className="mb-4 text-[22px] font-bold text-[#222]">
@@ -77,7 +86,11 @@ const Plan = () => {
             <button
               type="button"
               className="ml-1 text-[#E71575]"
-              onClick={() => setShowMobileBooking(true)}
+              onClick={
+                width < 1064
+                  ? () => setShowMobileBooking(true)
+                  : () => scrollToBookNow()
+              }
             >
               Book Now
             </button>
@@ -120,10 +133,15 @@ const Plan = () => {
               ))}
               <button
                 type="button"
-                className="purple_gradient_bg ml-2  mt-3 flex h-14 w-[182px] items-center justify-center rounded-lg text-base font-bold text-[#fff] "
+                onClick={() => setShowContactMe(true)}
+                className="purple_gradient_bg ml-2 mt-3 flex h-10 w-[182px] items-center justify-center rounded-lg text-base font-bold text-[#fff] md:h-14 "
               >
                 Contact me
               </button>
+              <ContactMePopover
+                status={showContactMe}
+                onClose={() => setShowContactMe(false)}
+              />
             </div>
           </motion.div>
           <UnderLine />

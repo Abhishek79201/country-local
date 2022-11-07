@@ -149,9 +149,6 @@ const BookingCardMobile = () => {
                       <CloseIcon />
                     </div>
                   </button>
-                  {/* <h4 className="text-center text-lg font-bold text-black">
-                    Filters
-                  </h4> */}
                 </div>
                 <div
                   className="custom_scrollbar overflow-y-auto bg-white px-6 pb-6 pt-3 md:max-h-[70vh]"

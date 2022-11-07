@@ -6,10 +6,12 @@ import HeartIcon from '../../../public/icons/purple-love.svg';
 import FlagIcon from '../../../public/icons/purple-flag.svg';
 import ReportPopup from '../common/popups/report-popups/ReportPopup';
 import UnderLine from '../common/UnderLine';
+import ContactMePopover from './popovers/ContactMePopover';
 
 const ProfileDetails = () => {
   const [openReport, setOpenReport] = useState(false);
   const [showMoreText, setShowMoreText] = useState(false);
+  const [showContactMe, setShowContactMe] = useState(false);
 
   return (
     <div className="">
@@ -121,9 +123,14 @@ const ProfileDetails = () => {
         <button
           className="purple_gradient_bg_light mb-8 rounded-lg py-4 px-8 text-base font-bold text-[#fff]"
           type="button"
+          onClick={() => setShowContactMe(true)}
         >
           Contact Host
         </button>
+        <ContactMePopover
+          status={showContactMe}
+          onClose={() => setShowContactMe(false)}
+        />
         <p className=" p-0 text-[17px]  text-[#808080] ">
           Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
           condimentum. Nulla orci congue praesent nullam vitae nibh. Sed sit sed

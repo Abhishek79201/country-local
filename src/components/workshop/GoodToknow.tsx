@@ -87,10 +87,10 @@ const GoodToKnow = () => {
   return (
     <div className="relative pb-5">
       <div className="container">
-        <h2 className="pb-5 text-2xl font-bold text-black md:text-[28px] lg:text-[32px]">
+        <h2 className="pb-3 text-2xl font-bold text-black md:pb-5 md:text-[28px] lg:text-[32px]">
           Good to know
         </h2>
-        <div className="flex flex-wrap items-center pb-6">
+        <div className="flex flex-wrap items-center pb-3 md:pb-6">
           <div className="w-1/2">
             <h2 className="flex items-center text-base font-bold text-black md:text-[20px]">
               Whats Included
@@ -124,7 +124,7 @@ const GoodToKnow = () => {
             {sliderItems.map((item) => (
               <SwiperSlide
                 key={item.id}
-                className="!w-[68%] md:!w-1/3 lg:!w-1/5"
+                className="!w-[58%] md:!w-1/3 lg:!w-1/5"
               >
                 <div
                   className="m-3 my-5 rounded-xl bg-white p-[15px]"
@@ -137,10 +137,10 @@ const GoodToKnow = () => {
                       height={33}
                     />
                   </div>
-                  <p className="pb-4 pt-4 text-base font-semibold text-black md:text-[20px]">
+                  <p className="pt-4 text-base font-semibold text-black md:text-[20px]">
                     {item.title}
                   </p>
-                  <p className="text-[13px]">
+                  <p className="hidden pt-4 text-[13px] md:block">
                     Tortor pellentesque nec sit nulla volutpat curabitur mattis
                     fusce condimentum. Nulla orci congue praesent nullam vitae
                     nibh. Sed sit sed eu lectus mi amet egestas{' '}

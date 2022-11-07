@@ -16,7 +16,7 @@ const TripDetails = () => (
       <p className="text-sm uppercase text-[#E71575] md:text-lg">
         WE’RE HERE To create wonderful memories
       </p>
-      <h2 className="pb-3 text-[24px] font-bold leading-tight md:text-[42px]">
+      <h2 className="pb-3 pt-4 text-[24px] font-bold leading-tight md:pt-2 md:text-[42px]">
         Here Are The Trip Details
       </h2>
     </div>

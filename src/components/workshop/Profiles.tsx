@@ -80,7 +80,7 @@ const Profiles = () => {
             <HouseRules />
           </div>
           {width > 1063 ? (
-            <div className="w-[320px] xl:w-[400px]">
+            <div className="z-[1] w-[320px] xl:w-[400px]">
               <BookingCard />
             </div>
           ) : (

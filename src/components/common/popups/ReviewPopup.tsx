@@ -57,16 +57,21 @@ const ReviewPopup = ({ status, onClose }: ReviewPopupPropsType) => {
           <Dialog.Panel
             as={motion.div}
             variants={{
-              initial: { opacity: 0, y: width > 767 ? 300 : 100 },
+              initial: { opacity: 0, y: 100 },
               animate: {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  duration: 0.2,
-                  ease: 'linear',
+                  duration: 0.3,
                 },
               },
-              exit: { opacity: 0, y: width > 767 ? 300 : 100 },
+              exit: {
+                opacity: 0,
+                y: 100,
+                transition: {
+                  duration: 0.3,
+                },
+              },
             }}
             className="fixed bottom-0 z-10 w-full md:relative md:w-11/12 md:max-w-[805px]"
           >
