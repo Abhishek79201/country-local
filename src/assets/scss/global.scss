@@ -295,15 +295,19 @@ svg {
     margin: 0 -5px 0 -5px;
   }
   .booking_calendar {
+    .react-datepicker__day-name {
+      font-size: 16px;
+    }
     .react-datepicker__week {
       justify-content: space-between;
     }
     .react-datepicker__day {
-      font-size: 14px;
+      font-size: 16px;
       color: #313131;
       height: 37px !important;
       width: 37px !important;
       flex: inherit !important;
+      border-radius: 100%;
     }
     .react-datepicker__day--selected,
     .react-datepicker__day--range-end,

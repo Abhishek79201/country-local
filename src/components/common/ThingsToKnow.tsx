@@ -13,7 +13,7 @@ import Checkmark from '../../../public/icons/checked-purple.svg';
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
 const ThingsToKnow = () => (
-  <div className="relative pt-10 pb-2 md:pt-14 md:pb-14  lg:pt-20 lg:pb-20">
+  <div className="relative hidden pt-10 pb-2 md:block md:pt-14 md:pb-14 lg:pt-20 lg:pb-20">
     <motion.div
       variants={animationWrapper}
       initial="initial"

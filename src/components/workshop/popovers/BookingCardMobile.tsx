@@ -13,6 +13,7 @@ import ReportPopup from '../../common/popups/report-popups/ReportPopup';
 import BookingCalendarMobile from './BookingCalendarMobile';
 import GuestsPopoverMobile from './GuestsPopoverMobile';
 import OtherServicesPopover from './OtherServicesPopover';
+import PriceBreakdownPopover from './PriceBreakdownPopover';
 
 import StarIcon from '../../../../public/icons/star.svg';
 import QuestionMarkIcon from '../../../../public/icons/question-mark.svg';
@@ -22,9 +23,9 @@ import ChevronIcon from '../../../../public/icons/chevron-down.svg';
 import CloseIcon from '../../../../public/icons/xmark.svg';
 
 const BookingCardMobile = () => {
-  // const [isOpen, setShowMobileBooking] = useState<boolean>(false);
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
+  const [openPriceBreakdown, setOpenPriceBreakdown] = useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
   const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
@@ -60,10 +61,10 @@ const BookingCardMobile = () => {
     <>
       <div className="fixed bottom-0 left-0 z-10 w-full border-t border-t-slate-200 bg-white">
         <div className="container">
-          <div className="flex items-center justify-between py-3 text-sm">
+          <div className="flex items-center justify-between py-3 text-lg">
             <div>
               <div className="font-semibold">
-                $458 <span className="text-xs font-medium">night</span>
+                $458 <span className="text-sm font-medium">night</span>
               </div>
               <div className="flex items-center">
                 <div className="svg_icon mr-1 w-[13px] shrink-0">
@@ -78,9 +79,9 @@ const BookingCardMobile = () => {
                 setShowMobileBooking(true);
                 setGlobalOverflow(true);
               }}
-              className="rounded-lg bg-pink_primary py-3 px-4 font-semibold text-white transition duration-300 hover:bg-[#A96AD8]"
+              className="rounded-lg bg-pink_primary py-3 px-4 text-sm font-semibold text-white transition duration-300 hover:bg-[#A96AD8]"
             >
-              Check availability
+              Reserve
             </button>
           </div>
         </div>
@@ -160,11 +161,11 @@ const BookingCardMobile = () => {
                     <h3 className="mb-2 text-center text-xl font-bold leading-snug xl:mt-6 xl:mb-3 xl:text-2xl">
                       The Best of Berling in a Convertible Car
                     </h3>
-                    <div className="flex items-center justify-center text-center text-lg xl:text-xl">
+                    <div className="flex items-center justify-center text-center text-lg">
                       <span className="mr-3">Hosted by</span>
                       <Image src="/miha.png" width={51} height={22} />
                     </div>
-                    <div className="mt-3 mb-5 flex items-center justify-center text-center text-xs xl:text-sm">
+                    <div className="mt-3 mb-5 flex items-center justify-center text-center text-sm">
                       <div className="font-semibold">
                         From $45 <span className="line-through">$567</span> /
                         night
@@ -182,7 +183,7 @@ const BookingCardMobile = () => {
                         <button
                           type="button"
                           onClick={() => setShowDatePicker(!showDatePicker)}
-                          className="flex-1 border-r border-r-[#808080] px-4 py-4 text-left text-xs"
+                          className="flex-1 border-r border-r-[#808080] px-4 py-4 text-left text-sm"
                         >
                           <span className="block font-semibold">CHECK-IN</span>
                           <span className="">{formatDate(startDate)}</span>
@@ -190,7 +191,7 @@ const BookingCardMobile = () => {
                         <button
                           type="button"
                           onClick={() => setShowDatePicker(!showDatePicker)}
-                          className="flex-1 px-4 py-4 text-left text-xs"
+                          className="flex-1 px-4 py-4 text-left text-sm"
                         >
                           <span className="block font-semibold">CHECK-OUT</span>
                           <span className="">{formatDate(endDate)}</span>
@@ -204,11 +205,11 @@ const BookingCardMobile = () => {
                           onDateChange={onChange}
                         />
                       </div>
-                      <div className="relative flex px-4 py-4">
+                      <div className="relative flex px-4 py-3">
                         <button
                           type="button"
                           onClick={() => setShowGuests(!showGuests)}
-                          className="flex flex-1 items-center justify-between text-left text-xs"
+                          className="flex flex-1 items-center justify-between text-left text-sm"
                         >
                           <div>
                             <span className="font-semibold">GUESTS</span>
@@ -236,7 +237,7 @@ const BookingCardMobile = () => {
                     </div>
                     <div className="mt-4 mb-3">
                       <div className="flex items-center">
-                        <div className="text-sm font-semibold">
+                        <div className="text-base font-semibold">
                           Book for Private Group
                         </div>
                         <button
@@ -256,10 +257,10 @@ const BookingCardMobile = () => {
                         />
                       </div>
                     </div>
-                    <p className="text-center text-xs">
+                    <p className="text-center text-sm">
                       You won’t be charged yet
                     </p>
-                    <div className="border-b border-b-[#DBDBDB] pt-3 pb-3 text-sm text-[#4A4A4A]">
+                    <div className="border-b border-b-[#DBDBDB] pt-3 pb-3 text-base text-[#4A4A4A]">
                       <div className="mb-3 flex justify-between">
                         <div className="underline">$315 x nights</div>
                         <div>$2,203</div>
@@ -270,15 +271,19 @@ const BookingCardMobile = () => {
                           <button
                             type="button"
                             className="svg_icon ml-2 w-[14px] rounded-full"
-                            onClick={() => setOpenPopup(true)}
+                            onClick={() => setOpenPriceBreakdown(true)}
                           >
                             <QuestionMarkIcon />
                           </button>
+                          <PriceBreakdownPopover
+                            status={openPriceBreakdown}
+                            onClose={() => setOpenPriceBreakdown(false)}
+                          />
                         </div>
                         <div>$203</div>
                       </div>
                     </div>
-                    <div className="flex justify-between pt-2 text-sm font-semibold text-[#222222]">
+                    <div className="flex justify-between pt-2 text-base font-semibold text-[#222222]">
                       <div>Total before taxes</div>
                       <div>$2,203</div>
                     </div>
@@ -286,10 +291,10 @@ const BookingCardMobile = () => {
                     <div className="mt-3 text-center">
                       <button
                         type="button"
-                        className="mx-auto flex items-center text-[10px] font-semibold text-[#222222]"
+                        className="mx-auto flex items-center text-xs font-semibold text-[#222222]"
                         onClick={() => setOpenReport(true)}
                       >
-                        <div className="svg_icon mr-2 w-[10px]">
+                        <div className="svg_icon mr-2 w-[12px]">
                           <FlagIcon />
                         </div>
                         <div className="underline">Report this listings</div>
@@ -302,7 +307,7 @@ const BookingCardMobile = () => {
                       />
                       <button
                         type="button"
-                        className="mt-3 rounded-full border-2 border-pink_primary px-5 py-[6px] text-[10px] text-pink_primary"
+                        className="mt-3 rounded-full border-2 border-pink_primary px-5 py-[6px] text-xs text-pink_primary"
                       >
                         Contact me to customize this to your needs
                       </button>
@@ -315,10 +320,10 @@ const BookingCardMobile = () => {
                     }}
                     className="relative z-0 w-full pb-10 text-sm"
                   >
-                    <div className="z-50 w-full rounded-xl border-4 border-[#fff] bg-[#002390] py-3 text-center text-[#fff] ">
+                    <div className="z-50 w-full rounded-xl border-b-4 border-[#fff] bg-[#002390] py-3 text-center text-[#fff] ">
                       View All My Service
                     </div>
-                    <div className="absolute left-0 top-11 -z-10 w-full rounded-xl border-4 border-[#fff] bg-[#23B4ED] py-3 text-center text-[#fff] ">
+                    <div className="absolute left-0 top-10 -z-10 w-full rounded-xl border-[#fff] bg-[#23B4ED] py-3 text-center text-[#fff] ">
                       Total 10 Services
                     </div>
                   </button>

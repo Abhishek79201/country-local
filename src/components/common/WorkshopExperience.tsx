@@ -44,7 +44,7 @@ const WorkshopExperience = () => {
   ];
 
   return (
-    <div className="relative pt-10 md:pt-14 lg:pt-20">
+    <div className="relative hidden pt-10 md:block md:pt-14 lg:pt-20">
       <motion.div
         variants={animationWrapper}
         initial="initial"

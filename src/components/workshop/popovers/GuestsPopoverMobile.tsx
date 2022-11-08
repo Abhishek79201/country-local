@@ -126,7 +126,7 @@ const GuestsPopoverMobile = ({
                       <p className="text-base font-semibold leading-none text-[#222]">
                         Adults
                       </p>
-                      <span className="mt-2 block text-[13px] leading-none text-[#717171]">
+                      <span className="mt-2 block text-base leading-none text-[#717171]">
                         Ages 13 or above
                       </span>
                     </div>
@@ -171,7 +171,7 @@ const GuestsPopoverMobile = ({
                       <p className="text-base font-semibold leading-none text-[#222]">
                         Children
                       </p>
-                      <span className="mt-2 block text-[13px] leading-none text-[#717171]">
+                      <span className="mt-2 block text-base leading-none text-[#717171]">
                         Ages 2-12
                       </span>
                     </div>
@@ -216,7 +216,7 @@ const GuestsPopoverMobile = ({
                       <p className="text-base font-semibold leading-none text-[#222]">
                         Infants
                       </p>
-                      <span className="mt-2 block text-[13px] leading-none text-[#717171]">
+                      <span className="mt-2 block text-base leading-none text-[#717171]">
                         Under 2
                       </span>
                     </div>
@@ -260,7 +260,7 @@ const GuestsPopoverMobile = ({
               <div className="flex items-center justify-between border-t border-t-[#EAEAEA] px-5 py-3 md:py-3">
                 <button
                   type="button"
-                  className="text-sm font-semibold text-[#959595] md:text-base"
+                  className="text-base font-semibold text-[#959595]"
                 >
                   Clear
                 </button>

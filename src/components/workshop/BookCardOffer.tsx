@@ -39,14 +39,14 @@ const BookCardOffer = ({
   offer,
 }: bookCardOffersProps) => (
   <Link href="/">
-    <a className="mx-3 block rounded-xl bg-white">
+    <a className="mx-2 block rounded-xl bg-white">
       <div className="relative rounded">
         <div className="overflow-hidden rounded-lg">
           <Image src="/boat-girl.png" width={246} height={263} />
         </div>
 
         <div className="z-1 absolute top-3 right-3 flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
-          <button type="button" className="svg_icon w-[15px] hover:shadow-lg">
+          <button type="button" className="svg_icon w-6 hover:shadow-lg">
             <HeartIcon />
           </button>
         </div>

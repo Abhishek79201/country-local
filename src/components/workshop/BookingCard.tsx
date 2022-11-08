@@ -19,10 +19,12 @@ import QuestionMarkIcon from '../../../public/icons/question-mark.svg';
 import FlagIcon from '../../../public/icons/purple-flag.svg';
 import UserIcon from '../../../public/icons/user-outline.svg';
 import ChevronIcon from '../../../public/icons/chevron-down.svg';
+import PriceBreakdownPopover from './popovers/PriceBreakdownPopover';
 
 const BookingCard = () => {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
+  const [openPriceBreakdown, setOpenPriceBreakdown] = useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
   const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
@@ -253,10 +255,14 @@ const BookingCard = () => {
                   <button
                     type="button"
                     className="svg_icon ml-2 w-[14px] rounded-full"
-                    onClick={() => setOpenPopup(true)}
+                    onClick={() => setOpenPriceBreakdown(true)}
                   >
                     <QuestionMarkIcon />
                   </button>
+                  <PriceBreakdownPopover
+                    status={openPriceBreakdown}
+                    onClose={() => setOpenPriceBreakdown(false)}
+                  />
                 </div>
                 <div>$203</div>
               </div>

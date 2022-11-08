@@ -5,11 +5,11 @@ import SocialIcon from '../../../public/icons/awesome-instagram.svg';
 
 const Footer = () => (
   <div className="footer relative min-h-[800px] w-[full] ">
-    <div className=" absolute -top-0 h-16 w-full rounded-bl-[50px] rounded-br-[50px] bg-[#fff] ">
+    <div className=" absolute -top-0 h-4 w-full rounded-bl-[20px] rounded-br-[20px] bg-[#fff] md:h-16 md:rounded-bl-[50px] md:rounded-br-[50px] ">
       {/* // */}
     </div>
-    <div className="container py-[110px] pb-[350px] lg:pb-0">
-      <div className="flex flex-wrap justify-between pt-10 pb-10 lg:px-10">
+    <div className="container pb-[350px] pt-4 md:pt-[110px] lg:pb-0">
+      <div className="flex flex-wrap justify-between pt-10 pb-2 md:pb-10 lg:px-10">
         <div className="pb-10 lg:w-[30%]">
           <h3 className="pb-2 text-3xl font-bold text-[#fff] lg:text-[36px]">
             Countrylocals
@@ -77,7 +77,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="lg:px-10">
-        <div className="mb-1 h-[1px] w-full bg-[#fff]">{/* // */}</div>
+        <div className="mb-3 h-[1px] w-full bg-[#fff] md:mb-1" />
         <div className="flex flex-wrap justify-between">
           <div className="flex flex-wrap items-center gap-2 lg:gap-4">
             <a href="#" className="text-[14px] uppercase text-[#fff]">

@@ -24,8 +24,8 @@ const ReviewSlider = () => (
         className="flex flex-wrap !pr-5 md:!pr-0"
       >
         {[...Array(9)].map((item, index) => (
-          <SwiperSlide key={index} className="!w-[68%] md:!w-1/3 lg:!w-1/4">
-            <div className="m-3 flex items-center gap-5 rounded-lg p-2 shadow-spread">
+          <SwiperSlide key={index} className="!w-[78%] md:!w-1/3 lg:!w-1/4">
+            <div className="m-3 flex items-center gap-2 rounded-lg p-2 shadow-spread md:gap-5">
               <div className="h-[78px] w-[66px] rounded border">
                 <Image src="/icons/tower.png" width={66} height={78} />
               </div>

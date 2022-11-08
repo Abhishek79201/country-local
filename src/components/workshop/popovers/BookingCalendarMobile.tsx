@@ -102,14 +102,14 @@ const BookingCalendarMobile = ({
               <div
                 className="custom_scrollbar overflow-y-auto bg-white px-6 pb-6 pt-3 md:max-h-[70vh]"
                 style={{
-                  height: window.innerHeight - 134,
+                  height: window.innerHeight - 140,
                 }}
               >
                 <div className="rounded-2xl bg-white">
                   <div className="flex justify-between">
                     <div className="w-full">
                       <h4 className="text-lg font-semibold">32 nights</h4>
-                      <p className="text-sm text-[#808080]">
+                      <p className="text-[#808080]">
                         {formatDate(startDate)} - {formatDate(endDate)}
                       </p>
                     </div>
@@ -121,7 +121,7 @@ const BookingCalendarMobile = ({
                       startDate={startDate}
                       endDate={endDate}
                       minDate={new Date()}
-                      monthsShown={3}
+                      monthsShown={4}
                       selectsRange
                       inline
                       isClearable
@@ -130,9 +130,9 @@ const BookingCalendarMobile = ({
                 </div>
               </div>
               <div className="flex items-center justify-between border-t border-t-[#EAEAEA] px-5 py-3 md:py-3">
-                <div>
+                <div className="text-lg">
                   <div className="font-semibold">
-                    $458 <span className="text-xs font-medium">night</span>
+                    $458 <span className="text-sm font-medium">night</span>
                   </div>
                   <div className="flex items-center">
                     <div className="svg_icon mr-1 w-[13px] shrink-0">
