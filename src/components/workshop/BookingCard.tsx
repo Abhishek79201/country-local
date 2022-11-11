@@ -20,31 +20,24 @@ import FlagIcon from '../../../public/icons/purple-flag.svg';
 import UserIcon from '../../../public/icons/user-outline.svg';
 import ChevronIcon from '../../../public/icons/chevron-down.svg';
 import PriceBreakdownPopover from './popovers/PriceBreakdownPopover';
+import PersonalizeExperiencePopover from './popovers/PersonalizeExpPopover';
 
 const BookingCard = () => {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
   const [openPriceBreakdown, setOpenPriceBreakdown] = useState<boolean>(false);
+  const [openPersonalizedExperience, setOpenPersonalizedExperience] =
+    useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
   const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [endDate, setEndDate] = useState<Date | null>(new Date());
-  // const [isSticky, setIsSticky] = useState<boolean>(false);
   const onChange = (dates: [Date, Date]) => {
     const [start, end] = dates;
     setStartDate(start);
     setEndDate(end);
   };
-
-  // const handleStickyChange = (status) => {
-  //   if (status.status === 1) {
-  //     setIsSticky(true);
-  //   } else {
-  //     setIsSticky(false);
-  //   }
-  //   console.log(status.status);
-  // };
 
   useEffect(() => {
     if (endDate) {
@@ -53,16 +46,7 @@ const BookingCard = () => {
   }, [endDate]);
 
   return (
-    <Sticky
-      top={30}
-      // onStateChange={handleStickyChange}
-      // top=".sticky_top_container"
-      bottomBoundary=".sticky_bottom_container"
-      // enableTransforms={false}
-      // className="h-full"
-      // innerClass={`${isSticky ? '!top-[30px] !fixed' : ''}`}
-      // innerActiveClass="!top-[30px]"
-    >
+    <Sticky top={30} bottomBoundary=".sticky_bottom_container">
       <div className="h-full">
         <div className="booking-card mb-5 w-full rounded-[20px] bg-white pb-8 shadow-spread ">
           <div className="relative overflow-hidden rounded-tl-[20px] rounded-tr-[20px] pb-[52%]">
@@ -291,10 +275,15 @@ const BookingCard = () => {
               />
               <button
                 type="button"
+                onClick={() => setOpenPersonalizedExperience(true)}
                 className="mt-3 rounded-full border-2 border-pink_primary px-5 py-[6px] text-xs text-pink_primary"
               >
                 Contact me to costumize this to your needs
               </button>
+              <PersonalizeExperiencePopover
+                status={openPersonalizedExperience}
+                onClose={() => setOpenPersonalizedExperience(false)}
+              />
             </div>
           </div>
         </div>

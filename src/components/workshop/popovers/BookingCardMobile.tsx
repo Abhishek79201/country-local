@@ -26,6 +26,8 @@ const BookingCardMobile = () => {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
   const [openPriceBreakdown, setOpenPriceBreakdown] = useState<boolean>(false);
+  const [openPersonalizedExperience, setOpenPersonalizedExperience] =
+    useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
   const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
@@ -40,16 +42,6 @@ const BookingCardMobile = () => {
     setStartDate(start);
     setEndDate(end);
   };
-
-  // const [isSticky, setIsSticky] = useState<boolean>(false);
-  // const handleStickyChange = (status) => {
-  //   if (status.status === 1) {
-  //     setIsSticky(true);
-  //   } else {
-  //     setIsSticky(false);
-  //   }
-  //   console.log(status.status);
-  // };
 
   useEffect(() => {
     if (endDate) {
@@ -307,10 +299,15 @@ const BookingCardMobile = () => {
                       />
                       <button
                         type="button"
+                        onClick={() => setOpenPersonalizedExperience(true)}
                         className="mt-3 rounded-full border-2 border-pink_primary px-5 py-[6px] text-xs text-pink_primary"
                       >
                         Contact me to customize this to your needs
                       </button>
+                      <PersonalizeExperiencePopover
+                        status={openPersonalizedExperience}
+                        onClose={() => setOpenPersonalizedExperience(false)}
+                      />
                     </div>
                   </div>
                   <button
