@@ -68,7 +68,7 @@ const ServicesSlider = ({
         </motion.div>
       </div>
 
-      <div className={`${sliderId} relative -ml-3 -mr-4`}>
+      <div className={`${sliderId} relative -ml-2 mt-3 -mr-4 md:-ml-3 md:mr-0`}>
         <Swiper
           slidesPerView="auto"
           spaceBetween={0}
@@ -78,13 +78,13 @@ const ServicesSlider = ({
             prevEl: `.${sliderId} .swiper-button-prev`,
             nextEl: `.${sliderId} .swiper-button-next`,
           }}
-          className="flex"
+          className="flex !pr-5 md:!pr-0"
         >
           {data &&
             data.map((item) => (
               <SwiperSlide
                 key={item.id}
-                className="!w-[85%] md:!w-[48.5%] lg:!w-[27%]"
+                className="!w-[93%] md:!w-[42%] lg:!w-[27%]"
               >
                 {item.type === 'mentor' ? <MentorCard {...item} /> : null}
                 {item.type === 'live-class' ? <LiveClass {...item} /> : null}
@@ -93,8 +93,8 @@ const ServicesSlider = ({
               </SwiperSlide>
             ))}
         </Swiper>
-        <div className="swiper-button-prev !-left-5 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
-        <div className="swiper-button-next !-right-5 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+        <div className="swiper-button-prev !-left-1.5 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+        <div className="swiper-button-next !-right-4 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
       </div>
     </motion.div>
   </div>

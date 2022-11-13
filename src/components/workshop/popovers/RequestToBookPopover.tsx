@@ -94,7 +94,7 @@ const RequestToBookPopover = ({
               <div
                 className="custom_scrollbar overflow-y-auto bg-white px-6 pb-6 pt-5 md:max-h-[90vh]"
                 style={{
-                  height: width < 1064 ? window.innerHeight - 70 : 'auto',
+                  height: width < 1064 ? window.innerHeight - 60 : 'auto',
                 }}
               >
                 <div>
@@ -121,7 +121,7 @@ const RequestToBookPopover = ({
                   </div>
                   <div className="pt-5 pb-4">Suggest suitable days & time</div>
                   <div className="flex flex-wrap justify-between md:gap-y-5">
-                    <div className="w-full md:mt-5 md:w-[48%]">
+                    <div className="w-full md:mt-0 md:w-[48%]">
                       <select
                         name="slots"
                         id="slots"
