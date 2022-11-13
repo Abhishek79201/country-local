@@ -14,6 +14,8 @@ import BookingCalendarMobile from './BookingCalendarMobile';
 import GuestsPopoverMobile from './GuestsPopoverMobile';
 import OtherServicesPopover from './OtherServicesPopover';
 import PriceBreakdownPopover from './PriceBreakdownPopover';
+import PersonalizeExperiencePopover from './PersonalizeExpPopover';
+import RequestToBookPopover from './RequestToBookPopover';
 
 import StarIcon from '../../../../public/icons/star.svg';
 import QuestionMarkIcon from '../../../../public/icons/question-mark.svg';
@@ -28,6 +30,7 @@ const BookingCardMobile = () => {
   const [openPriceBreakdown, setOpenPriceBreakdown] = useState<boolean>(false);
   const [openPersonalizedExperience, setOpenPersonalizedExperience] =
     useState<boolean>(false);
+  const [openRequestToBook, setOpenRequestToBook] = useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
   const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
@@ -335,9 +338,14 @@ const BookingCardMobile = () => {
                   <button
                     type="button"
                     className="w-full rounded-lg bg-pink_primary py-[10px] px-4 text-sm font-semibold text-white transition duration-300 hover:bg-[#A96AD8]"
+                    onClick={() => setOpenRequestToBook(true)}
                   >
                     Request To Book
                   </button>
+                  <RequestToBookPopover
+                    status={openRequestToBook}
+                    onClose={() => setOpenRequestToBook(false)}
+                  />
                 </div>
               </div>
             </Dialog.Panel>

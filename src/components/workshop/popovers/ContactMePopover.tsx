@@ -124,7 +124,7 @@ const ContactMePopover = ({ status, onClose }: ContactMePopoverTypes) => {
                       name="contact-text"
                       rows={7}
                       placeholder="Hi! Would it be possible to have an extended virtual tour with some extra stories about what life is currently like in your city?"
-                      className="w-full rounded-lg border border-[#E8E8E8] p-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary"
+                      className="w-full rounded-lg border-2 border-[#E8E8E8] p-3 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary"
                     />
                     <button
                       type="submit"

@@ -11,6 +11,9 @@ import BookInfoPopups from './popovers/BookInfoPopups';
 import ReportPopup from '../common/popups/report-popups/ReportPopup';
 import GuestsPopover from './popovers/GuestsPopover';
 import OtherServicesPopover from './popovers/OtherServicesPopover';
+import PriceBreakdownPopover from './popovers/PriceBreakdownPopover';
+import PersonalizeExperiencePopover from './popovers/PersonalizeExpPopover';
+import RequestToBookPopover from './popovers/RequestToBookPopover';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -19,8 +22,6 @@ import QuestionMarkIcon from '../../../public/icons/question-mark.svg';
 import FlagIcon from '../../../public/icons/purple-flag.svg';
 import UserIcon from '../../../public/icons/user-outline.svg';
 import ChevronIcon from '../../../public/icons/chevron-down.svg';
-import PriceBreakdownPopover from './popovers/PriceBreakdownPopover';
-import PersonalizeExperiencePopover from './popovers/PersonalizeExpPopover';
 
 const BookingCard = () => {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
@@ -28,6 +29,7 @@ const BookingCard = () => {
   const [openPriceBreakdown, setOpenPriceBreakdown] = useState<boolean>(false);
   const [openPersonalizedExperience, setOpenPersonalizedExperience] =
     useState<boolean>(false);
+  const [openRequestToBook, setOpenRequestToBook] = useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
   const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
@@ -224,9 +226,14 @@ const BookingCard = () => {
             <button
               type="button"
               className="mb-3 w-full rounded-xl bg-pink_primary py-3 text-base font-bold text-white transition duration-300 hover:bg-[#A96AD8]"
+              onClick={() => setOpenRequestToBook(true)}
             >
               Request To Book
             </button>
+            <RequestToBookPopover
+              status={openRequestToBook}
+              onClose={() => setOpenRequestToBook(false)}
+            />
             <p className="text-center text-xs">You won’t be charged yet</p>
             <div className="border-b border-b-[#DBDBDB] pt-6 pb-6 text-[#4A4A4A]">
               <div className="mb-3 flex justify-between">

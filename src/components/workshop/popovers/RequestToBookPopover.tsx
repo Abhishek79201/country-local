@@ -7,15 +7,15 @@ import useViewport from '../../../hooks/useViewport';
 
 import CloseIcon from '../../../../public/icons/xmark.svg';
 
-interface PersonalizeExperiencePopoverTypes {
+interface RequestToBookPopoverTypes {
   status: boolean;
   onClose: () => void;
 }
 
-const PersonalizeExperiencePopover = ({
+const RequestToBookPopover = ({
   status,
   onClose,
-}: PersonalizeExperiencePopoverTypes) => {
+}: RequestToBookPopoverTypes) => {
   const { width } = useViewport();
   const { setGlobalOverflow } = useContext(OverflowContext);
 
@@ -87,7 +87,7 @@ const PersonalizeExperiencePopover = ({
                   </div>
                 </button>
                 <h4 className="text-center text-lg font-bold text-black">
-                  Personalize your experience
+                  Request To Book
                 </h4>
               </div>
 
@@ -119,48 +119,9 @@ const PersonalizeExperiencePopover = ({
                       </button>
                     </div>
                   </div>
-                  <div className="pt-5">
-                    <h3 className="mb-2 text-xl font-semibold">
-                      Request another time
-                    </h3>
-                    <p className="text-sm">
-                      Please send the details of your request including date,
-                      time, number of learners, and budget.
-                    </p>
-                  </div>
-                  <div className="border-b border-b-[#E8E8E8] pt-5 pb-5">
-                    <h3 className="mb-1 text-lg font-semibold">
-                      Request a Slot
-                    </h3>
-                    <p className="text-sm">Suggest suitable days & time</p>
-                  </div>
-                  <div className="flex flex-wrap pb-5 md:pt-5">
-                    <div className="mt-5 w-full md:mt-0 md:w-1/2">
-                      <h4 className="mb-2">Type *</h4>
-                      <div className="flex flex-row flex-wrap gap-y-4 md:flex-nowrap md:gap-y-2">
-                        {['Group', 'Individual'].map((day) => (
-                          <div
-                            key={day}
-                            className="mr-4 flex w-full flex-row-reverse items-center md:flex-row"
-                          >
-                            <input
-                              type="radio"
-                              id={day}
-                              name="classStarting"
-                              className="h-6 w-6 shrink-0 cursor-pointer accent-black md:h-[18px] md:w-[18px]"
-                            />
-                            <label
-                              htmlFor={day}
-                              className="w-full cursor-pointer text-base md:ml-2 md:w-auto md:text-[13px]"
-                            >
-                              {day}
-                            </label>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="mt-5 w-full md:mt-0 md:w-1/2">
-                      <h4 className="mb-2">Slots *</h4>
+                  <div className="pt-5 pb-4">Suggest suitable days & time</div>
+                  <div className="flex flex-wrap justify-between md:gap-y-5">
+                    <div className="w-full md:mt-5 md:w-[48%]">
                       <select
                         name="slots"
                         id="slots"
@@ -172,17 +133,40 @@ const PersonalizeExperiencePopover = ({
                         <option value="4">Slot 4</option>
                       </select>
                     </div>
-                    <div className="mt-5 w-full md:mt-0 md:w-1/2">
-                      <h4 className="mb-2">Select Time *</h4>
+                    <div className="mt-5 w-full md:mt-0 md:w-[48%]">
                       <select
-                        name="times"
-                        id="times"
+                        name="slots"
+                        id="slots"
                         className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary"
                       >
-                        <option value="1">Morning</option>
-                        <option value="2">Noon</option>
-                        <option value="3">After Noon</option>
-                        <option value="4">Evening</option>
+                        <option value="1">Slot 1</option>
+                        <option value="2">Slot 2</option>
+                        <option value="3">Slot 3</option>
+                        <option value="4">Slot 4</option>
+                      </select>
+                    </div>
+                    <div className="mt-5 w-full md:mt-0 md:w-[48%]">
+                      <select
+                        name="slots"
+                        id="slots"
+                        className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary"
+                      >
+                        <option value="1">Slot 1</option>
+                        <option value="2">Slot 2</option>
+                        <option value="3">Slot 3</option>
+                        <option value="4">Slot 4</option>
+                      </select>
+                    </div>
+                    <div className="mt-5 w-full md:mt-0 md:w-[48%]">
+                      <select
+                        name="slots"
+                        id="slots"
+                        className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary"
+                      >
+                        <option value="1">Slot 1</option>
+                        <option value="2">Slot 2</option>
+                        <option value="3">Slot 3</option>
+                        <option value="4">Slot 4</option>
                       </select>
                     </div>
                   </div>
@@ -210,7 +194,7 @@ const PersonalizeExperiencePopover = ({
                       type="submit"
                       className="purple_gradient_bg mt-4 w-full rounded-full px-3 py-3 font-bold text-white"
                     >
-                      Request a personalized offer
+                      Book Now
                     </button>
                   </div>
                 </div>
@@ -222,4 +206,4 @@ const PersonalizeExperiencePopover = ({
     </AnimatePresence>
   );
 };
-export default PersonalizeExperiencePopover;
+export default RequestToBookPopover;
