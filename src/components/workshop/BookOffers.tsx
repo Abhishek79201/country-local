@@ -36,7 +36,7 @@ const BookOffers = ({ sliderId, title, data }: BookOffersProps) => (
         </motion.div>
       </div>
 
-      <div className={`${sliderId} relative -ml-3 -mr-3 px-0`}>
+      <div className={`${sliderId} relative -ml-2 -mr-4 px-0 md:-mr-2`}>
         <Swiper
           slidesPerView="auto"
           spaceBetween={0}
@@ -60,8 +60,8 @@ const BookOffers = ({ sliderId, title, data }: BookOffersProps) => (
               </SwiperSlide>
             ))}
         </Swiper>
-        <div className="swiper-button-prev !-left-1 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
-        <div className="swiper-button-next !-right-1 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+        <div className="swiper-button-prev !-left-2 !top-[30%] !mt-0 !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+        <div className="swiper-button-next !-right-2 !top-[30%] !mt-0 !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
       </div>
     </motion.div>
   </div>

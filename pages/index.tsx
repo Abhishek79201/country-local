@@ -11,7 +11,6 @@ import ThingsToKnow from '../src/components/common/ThingsToKnow';
 import WorkshopExperience from '../src/components/common/WorkshopExperience';
 import Profiles from '../src/components/workshop/Profiles';
 import Review from '../src/components/workshop/Review';
-// import SimilarProperties from '../src/components/workshop/SimilarProperties';
 import ReviewSlider from '../src/components/workshop/ReviewSlider';
 import AvailableDate from '../src/components/workshop/AvailableDate';
 import BookOffers from '../src/components/workshop/BookOffers';
@@ -21,6 +20,7 @@ import GoodToKnow from '../src/components/workshop/GoodToknow';
 import TripDetails from '../src/components/workshop/TripDetails';
 import TripCalender from '../src/components/workshop/TripCalendar';
 import MobileGallery from '../src/components/workshop/MobileGallery';
+import SimilarProperties from '../src/components/workshop/SimilarProperties';
 
 const Home: NextPage = () => {
   const { width } = useViewport();
@@ -83,17 +83,7 @@ const Home: NextPage = () => {
           data={serviceData}
         />
 
-        <ServicesSlider
-          sliderId="similar_properties_slider"
-          title={
-            <h2 className="mr-7  text-2xl font-bold text-[#202124] lg:text-4xl">
-              Similar
-              <span className="purple_gradient_text_deep"> Properties</span>
-            </h2>
-          }
-          useLine
-          data={serviceData}
-        />
+        <SimilarProperties />
 
         <BookOffers
           sliderId="book_one_of_my_offers"

@@ -39,7 +39,7 @@ const BookCardOffer = ({
   offer,
 }: bookCardOffersProps) => (
   <Link href="/">
-    <a className="mx-2 block rounded-xl bg-white">
+    <a className="block rounded-xl bg-white px-2">
       <div className="relative rounded">
         <div className="overflow-hidden rounded-lg">
           <Image src="/boat-girl.png" width={246} height={263} />
