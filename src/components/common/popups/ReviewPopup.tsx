@@ -97,19 +97,19 @@ const ReviewPopup = ({ status, onClose }: ReviewPopupPropsType) => {
               </div>
 
               <div
-                className="custom_scrollbar overflow-y-auto bg-white px-6 pb-6 pt-3 md:max-h-[70vh]"
+                className="custom_scrollbar overflow-y-auto bg-white px-6 pb-6 pt-3 md:max-h-[85vh]"
                 style={{
-                  height: width < 767 ? window.innerHeight - 120 : 'auto',
+                  height: width < 1064 ? window.innerHeight - 70 : 'auto',
                 }}
               >
-                <h3 className="mb-2 mt-2 flex items-center text-lg font-bold leading-tight text-black md:text-xl">
+                <h3 className="mt-2 flex items-center text-lg font-bold leading-tight text-black">
                   <div className="svg_icon mr-2 w-5">
                     <StarIcon />
                   </div>
                   4.99 (137 reviews)
                 </h3>
 
-                <div className="relative mt-6 mb-8">
+                <div className="relative mt-4 mb-5">
                   <div className="absolute top-[13px] left-5 w-5 text-[#A9A9A9]">
                     <SearchIcon />
                   </div>
@@ -118,6 +118,91 @@ const ReviewPopup = ({ status, onClose }: ReviewPopupPropsType) => {
                     className="h-12 w-full rounded-full border border-[#A9A9A9] pl-12 text-xs text-black placeholder:text-[#A9A9A9] focus-visible:border-black focus-visible:outline-none"
                     placeholder="Search any Topic or Mentor"
                   />
+                </div>
+
+                <div className="mb-4 flex flex-wrap">
+                  <div className="w-full">
+                    <div className="mb-3 flex items-center justify-between">
+                      <p className="text-xs font-bold text-[#737373]">
+                        Quality of activity
+                      </p>
+                      <div className="flex items-center">
+                        <div className="relative h-[6px] w-[154px] overflow-hidden rounded-full bg-[#D9D9D9]">
+                          <div className="absolute left-0 top-0 h-full w-[90%] bg-[#E71575]" />
+                        </div>
+                        <p className="ml-2 w-6 text-[11px] font-bold text-[#737373]">
+                          90%
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mb-3 flex items-center justify-between">
+                      <p className="text-xs font-bold text-[#737373]">
+                        Overall Impression
+                      </p>
+                      <div className="flex items-center">
+                        <div className="relative h-[6px] w-[154px] overflow-hidden rounded-full bg-[#D9D9D9]">
+                          <div className="absolute left-0 top-0 h-full w-[87%] bg-[#E71575]" />
+                        </div>
+                        <p className="ml-2 w-6 text-[11px] font-bold text-[#737373]">
+                          87%
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mb-3 flex items-center justify-between">
+                      <p className="text-xs font-bold text-[#737373]">
+                        Value for money
+                      </p>
+                      <div className="flex items-center">
+                        <div className="relative h-[6px] w-[154px] overflow-hidden rounded-full bg-[#D9D9D9]">
+                          <div className="absolute left-0 top-0 h-full w-[50%] bg-[#E71575]" />
+                        </div>
+                        <p className="ml-2 w-6 text-[11px] font-bold text-[#737373]">
+                          50%
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <div className="mb-3 flex items-center justify-between">
+                      <p className="text-xs font-bold text-[#737373]">
+                        Seller communication
+                      </p>
+                      <div className="flex items-center">
+                        <div className="relative h-[6px] w-[154px] overflow-hidden rounded-full bg-[#D9D9D9]">
+                          <div className="absolute left-0 top-0 h-full w-full bg-[#E71575]" />
+                        </div>
+                        <p className="ml-2 w-6 text-[11px] font-bold text-[#737373]">
+                          100%
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mb-3 flex items-center justify-between">
+                      <p className="text-xs font-bold text-[#737373]">
+                        Would Recommended
+                      </p>
+                      <div className="flex items-center">
+                        <div className="relative h-[6px] w-[154px] overflow-hidden rounded-full bg-[#D9D9D9]">
+                          <div className="absolute left-0 top-0 h-full w-[60%] bg-[#E71575]" />
+                        </div>
+                        <p className="ml-2 w-6 text-[11px] font-bold text-[#737373]">
+                          60%
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mb-3 flex items-center justify-between">
+                      <p className="text-xs font-bold text-[#737373]">
+                        Service as described
+                      </p>
+                      <div className="flex items-center">
+                        <div className="relative h-[6px] w-[154px] overflow-hidden rounded-full bg-[#D9D9D9]">
+                          <div className="absolute left-0 top-0 h-full w-[70%] bg-[#E71575]" />
+                        </div>
+                        <p className="ml-2 w-6 text-[11px] font-bold text-[#737373]">
+                          70%
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex flex-wrap justify-between gap-y-5">

@@ -7,8 +7,11 @@ interface ReviewCardProps {
 }
 
 const ReviewCard = ({ item }: ReviewCardProps) => (
-  <div className="mx-4 my-2 md:m-0 lg:w-[49%]">
-    <div className="flex flex-wrap overflow-hidden rounded-[10px] shadow-spread sm:flex-nowrap">
+  <div className="md:m-0 lg:w-[49%]">
+    <div
+      className="flex flex-wrap overflow-hidden rounded-[10px] sm:flex-nowrap"
+      style={{ boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)' }}
+    >
       <div
         className="flex h-[160px] w-full shrink-0 overflow-hidden rounded-[10px] bg-cover bg-center bg-no-repeat sm:h-auto sm:max-w-[202px]"
         style={{ backgroundImage: `url(/review-headshot-${item}.jpg)` }}
@@ -21,41 +24,41 @@ const ReviewCard = ({ item }: ReviewCardProps) => (
           className="w-full rounded-[10px] sm:w-auto"
         /> */}
       </div>
-      <div className="flex-auto px-2 py-2 xl:px-3">
-        <div className="flex items-center justify-between">
-          <div className="text-xs xl:text-[13px]">
+      <div className="flex-auto py-3 px-4">
+        <div className="flex justify-between">
+          <div className="text-base">
             Review by <strong>Annett Prudlo</strong> from Germany
           </div>
-          <div className="flex gap-[1px] text-[#FFCE31]">
-            <div className="svg_icon w-2">
+          <div className="flex gap-[1px] pt-1 text-[#FFCE31]">
+            <div className="svg_icon w-3.5">
               <StarIcon />
             </div>
-            <div className="svg_icon w-2">
+            <div className="svg_icon w-3.5">
               <StarIcon />
             </div>
-            <div className="svg_icon w-2">
+            <div className="svg_icon w-3.5">
               <StarIcon />
             </div>
-            <div className="svg_icon w-2">
+            <div className="svg_icon w-3.5">
               <StarIcon />
             </div>
-            <div className="svg_icon w-2 text-[#DADADA]">
+            <div className="svg_icon w-3.5 text-[#DADADA]">
               <StarIcon />
             </div>
           </div>
         </div>
-        <div className="text-[10px] xl:text-xs">April 22, 2020</div>
-        <div className="pb-2 pt-2 text-[10px] text-black opacity-70 xl:pb-4 xl:pt-3 xl:text-xs">
+        <div className="mt-2 text-xs">April 22, 2020</div>
+        <div className="pb-3 pt-3 text-sm text-black opacity-70">
           Sit et integer nisl diam malesuada. Sed cras natoque metus fermentum.
           Morbi morbi urna, molestie venenatis. Consectetur sit ac sed nunc
           interdum tortor ultrices vel pulvinar. Sit at hendrerit magna tempus,
           ac sem sagittis, nulla.
         </div>
         <div className="flex items-center">
-          <div className="mr-1 w-[22px]">
+          <div className="mr-1 w-5">
             <USFlag />
           </div>
-          <span className="text-[10px] text-black opacity-50">
+          <span className="text-xs text-black opacity-50">
             United States, NY
           </span>
         </div>

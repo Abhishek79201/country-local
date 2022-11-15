@@ -451,13 +451,37 @@ input:checked + .slider:before {
   }
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .footer {
-  background: radial-gradient(
-      42.95% 106.38% at 99.62% 53.61%,
-      rgba(0, 241, 198, 0.42) 15.16%,
-      rgba(203, 29, 29, 0) 100%
-    ),
-    linear-gradient(109.26deg, #6ae8d1 14.08%, rgba(216, 17, 172, 0.5) 62.34%);
+  // background: radial-gradient(
+  //     42.95% 106.38% at 99.62% 53.61%,
+  //     rgba(0, 241, 198, 0.42) 15.16%,
+  //     rgba(203, 29, 29, 0) 100%
+  //   ),
+  //   linear-gradient(109.26deg, #6ae8d1 14.08%, rgba(216, 17, 172, 0.5) 62.34%);
+  background: linear-gradient(
+    -45deg,
+    #6ae8d1,
+    rgba(216, 17, 172, 0.5),
+    #a0ffee,
+    rgb(216, 170, 206)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 .mobile_gallery_progressbar.swiper-pagination-progressbar

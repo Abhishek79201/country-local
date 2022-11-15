@@ -123,7 +123,7 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="absolute  bottom-0 left-1/2 w-[95%] max-w-[1200px] -translate-x-1/2  transform rounded-tl-[50px] rounded-tr-[50px] bg-black px-10 pt-6 pb-14">
+      <div className="absolute bottom-0 left-1/2 w-[95%] max-w-[1200px] -translate-x-1/2  transform rounded-tl-[20px] rounded-tr-[20px] bg-black px-5 pt-6 pb-14 md:rounded-tl-[50px] md:rounded-tr-[50px] md:px-10">
         <div className="flex items-center justify-between pb-5">
           <div className="svg_icon w-[110px] text-[#fff]">
             <Image src="/icons/logo.png" width="110px" height="48px" />

@@ -56,7 +56,7 @@ const FavouriteBookCardOffer = ({
           <div className="svg_icon w-3 text-[#808080]">
             <RocketIcon />
           </div>
-          <p className="semi-bold text-[12px]">Florence, Italy</p>
+          <p className="semi-bold text-sm">Florence, Italy</p>
         </div>
         <div className="mt-[2px] mb-1 flex items-center gap-0">
           <div className="z-10 flex">
@@ -101,7 +101,7 @@ const FavouriteBookCardOffer = ({
                 (231)
               </span>
             </div>
-            <p className="text-[10px] font-semibold text-[#222]">
+            <p className="text-xs font-semibold text-[#222]">
               Enjoy Florence with
               <span className="  text-[#E71575]"> Olacorno</span>
             </p>
@@ -111,15 +111,15 @@ const FavouriteBookCardOffer = ({
             </div>
           </div>
         </div>
-        <h4 className="pt-1 text-[14px] font-bold text-[#222]">
+        <h4 className="pt-1 pb-1 text-base font-bold text-[#222]">
           City Escape: Tuscany
         </h4>
         <div className="item-center flex items-center gap-2">
-          <h4 className="text-[12px] font-bold text-[#222]">
+          <h4 className="text-xs font-bold text-[#222]">
             From $24/<span className="font-medium">person</span>
           </h4>
-          <h5 className="flex items-center gap-1 text-[10px] font-semibold">
-            <div className="svg_icon w-2 text-[#292D32]">
+          <h5 className="flex items-center gap-1 text-xs font-semibold">
+            <div className="svg_icon w-3 text-[#292D32]">
               <ClockIcon />
             </div>
             7 hours

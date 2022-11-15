@@ -1,10 +1,8 @@
 /* eslint react/jsx-one-expression-per-line: "off" */
 /* eslint react/no-array-index-key: "off" */
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { fadeInUp, animationWrapper } from '../../utilities/animations';
 import useViewport from '../../hooks/useViewport';
 import ReviewPopup from '../common/popups/ReviewPopup';
 import ReviewCard from '../common/cards/ReviewCard';
@@ -28,28 +26,26 @@ const Review = () => {
   return (
     <div className="relative pt-11">
       <div className="container">
-        <motion.div
-          variants={animationWrapper}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="pb-6 md:pb-12"
-        >
-          <motion.h2
-            variants={fadeInUp}
-            className="pb-8 text-center text-[22px] font-bold leading-tight md:text-[36px]"
-          >
+        <div className="pb-6 md:pb-12">
+          <h2 className="pb-8 text-center text-2xl font-bold leading-tight md:text-[36px]">
             What people loved about{' '}
             <span className="purple_gradient_text">the course</span>
-          </motion.h2>
+          </h2>
 
-          <h4 className="mb-5 flex items-center text-2xl font-semibold">
+          <h4 className="mb-5 hidden items-center text-2xl font-semibold lg:flex">
             Ratings
             <span className="svg_icon ml-2 block w-[26px] text-transparent">
               <DoubleStarIcon />
             </span>
           </h4>
-          <div className="flex flex-wrap items-center gap-10 xl:gap-20">
+
+          <h4 className="flex items-center text-lg font-semibold lg:hidden">
+            <span className="svg_icon mr-2 block w-5 text-black">
+              <StarIcon />
+            </span>
+            4.70 · 132 reviews
+          </h4>
+          <div className="hidden flex-wrap items-center gap-10 lg:flex xl:gap-20">
             <div className="relative flex w-full max-w-[400px] items-center justify-between lg:max-w-[332px]">
               <div>
                 <div className="flex items-center text-2xl font-bold text-[#FFCE31] sm:text-[36px]">
@@ -187,8 +183,8 @@ const Review = () => {
             </div>
           </div>
 
-          {width < 768 ? (
-            <div className="review_slider relative -mr-4 -ml-4 mt-8 md:mr-0 md:ml-0">
+          {width < 1064 ? (
+            <div className="review_slider relative -mr-4 -ml-3 md:-mr-3">
               <Swiper
                 freeMode
                 modules={[FreeMode]}
@@ -200,8 +196,10 @@ const Review = () => {
                 spaceBetween={0}
               >
                 {[1, 2, 3, 4].map((item, index) => (
-                  <SwiperSlide key={index}>
-                    <ReviewCard item={item} />
+                  <SwiperSlide key={index} className="!w-[90%] md:!w-[85%]">
+                    <div className="m-3">
+                      <ReviewCard item={item} />
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -213,17 +211,17 @@ const Review = () => {
               ))}
             </div>
           )}
-          <div className="pt-6 text-center md:pt-12">
+          <div className="pt-4 text-center lg:pt-8">
             <button
               type="button"
               onClick={handlePopupOpen}
-              className="purple_gradient_bg h-[44px] w-[160px] rounded-lg py-1 px-2 text-[13px] font-bold uppercase text-white transition-shadow hover:shadow-lg"
+              className="purple_gradient_bg h-[44px] w-[160px] rounded-lg py-1 px-2 text-xs font-bold uppercase text-white transition-shadow hover:shadow-lg"
             >
               VIEW ALL
             </button>
             <ReviewPopup status={isOpen} onClose={handlePopupClose} />
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

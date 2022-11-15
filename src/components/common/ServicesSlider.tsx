@@ -35,7 +35,7 @@ const ServicesSlider = ({
       viewport={{ once: true }}
       className="container"
     >
-      <div className="pb-5">
+      <div className="pb-3">
         <motion.div
           variants={fadeInLeft}
           className="flex flex-wrap items-center justify-between gap-4 md:flex-nowrap"
@@ -68,7 +68,7 @@ const ServicesSlider = ({
         </motion.div>
       </div>
 
-      <div className={`${sliderId} relative -ml-2 mt-3 -mr-4 md:-ml-3 md:mr-0`}>
+      <div className={`${sliderId} relative -ml-2 -mr-4 md:-ml-3 md:mr-0`}>
         <Swiper
           slidesPerView="auto"
           spaceBetween={0}
