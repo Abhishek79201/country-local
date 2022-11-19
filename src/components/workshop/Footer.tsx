@@ -18,62 +18,64 @@ const Footer = () => (
           <h3 className="pb-2 text-3xl font-bold text-[#fff] lg:text-[36px]">
             Countrylocals
           </h3>
-          <p className="text-2xl font-medium text-[#fff]">
+          <p className="text-xl font-medium text-[#fff] md:text-2xl">
             Fancy seeing you down here.
           </p>
         </div>
-        <div className="menu flex w-full flex-wrap justify-between gap-3 pb-10 sm:gap-10 lg:w-[60%]">
-          <div className="lg:w-1/4 ">
-            <p className="mb-3 text-sm font-bold text-[#FFF]">
-              How does it work
+        <div className="menu flex w-full flex-wrap gap-y-5 pb-10 sm:justify-between sm:gap-10 lg:w-[60%]">
+          <div className="w-1/2 sm:w-1/4">
+            <p className="mb-3 text-sm font-bold uppercase text-[#FFF]">
+              How it works
             </p>
             <div>
               {['Sale', 'Events', 'Sale', 'Events'].map((item, index) => (
                 <a
                   href="#"
-                  className="flex items-center gap-3 py-1 text-[#fff] hover:text-pink_primary"
+                  className="flex items-center gap-3 py-1 font-normal text-[#fff] hover:text-pink_primary"
                   key={index}
                 >
-                  <div className="svg_icon w-2">
+                  <div className="svg_icon hidden w-2 sm:block">
                     <Arrow />
                   </div>
-                  <span className="text-[14px]">{item}</span>
+                  <span className="text-base sm:text-[14px]">{item}</span>
                 </a>
               ))}
             </div>
           </div>
-          <div className="lg:w-1/4 ">
-            <h3 className="mb-3 text-sm font-bold text-[#FFF]">ABOUT</h3>
+          <div className="w-1/2 sm:w-1/4">
+            <h3 className="mb-3 text-sm font-bold uppercase text-[#FFF]">
+              ABOUT
+            </h3>
             <div>
               {['Sale', 'Events', 'Sale', 'Events'].map((item, index) => (
                 <a
                   href="#"
-                  className="flex items-center gap-3 py-1 text-[#fff] hover:text-pink_primary"
+                  className="flex items-center gap-3 py-1 font-normal text-[#fff] hover:text-pink_primary"
                   key={index}
                 >
-                  <div className="svg_icon w-2">
+                  <div className="svg_icon hidden w-2 sm:block">
                     <Arrow />
                   </div>
-                  <span className="text-[14px]">{item}</span>
+                  <span className="text-base sm:text-[14px]">{item}</span>
                 </a>
               ))}
             </div>
           </div>
-          <div className="lg:w-1/4 ">
-            <h3 className="mb-3 text-sm font-bold text-[#FFF]">
+          <div className="w-1/2 sm:w-1/4">
+            <h3 className="mb-3 text-sm font-bold uppercase text-[#FFF]">
               OUR INITIATIVES
             </h3>
             <div>
               {['ToS', 'Rules', 'Sale'].map((item, index) => (
                 <a
                   href="#"
-                  className="flex items-center gap-3 py-1 text-[#fff] hover:text-pink_primary"
+                  className="flex items-center gap-3 py-1 font-normal text-[#fff] hover:text-pink_primary"
                   key={index}
                 >
-                  <div className="svg_icon w-2">
+                  <div className="svg_icon hidden w-2 sm:block">
                     <Arrow />
                   </div>
-                  <span className="text-[14px]">{item}</span>
+                  <span className="text-base sm:text-[14px]">{item}</span>
                 </a>
               ))}
             </div>
@@ -81,40 +83,97 @@ const Footer = () => (
         </div>
       </div>
       <div className="lg:px-10">
-        <div className="mb-3 h-[1px] w-full bg-[#fff] md:mb-1" />
-        <div className="flex flex-wrap justify-between">
-          <div className="flex flex-wrap items-center gap-2 lg:gap-3 xl:gap-4">
-            <a href="#" className="text-[14px] uppercase text-[#fff]">
-              PRIVACY POLICY
+        <div className="flex items-center justify-center gap-7 pb-5 lg:hidden">
+          <a
+            href="#"
+            className="text-[14px] uppercase text-[#fff] hover:text-pink_primary"
+          >
+            <div className="svg_icon w-5">
+              <InstagramIcon />
+            </div>
+          </a>
+          <a
+            href="#"
+            className="text-[14px] uppercase text-[#fff] hover:text-pink_primary"
+          >
+            <div className="svg_icon w-5">
+              <FacebookIcon />
+            </div>
+          </a>
+          <a
+            href="#"
+            className="text-[14px] uppercase text-[#fff] hover:text-pink_primary"
+          >
+            <div className="svg_icon w-5">
+              <TwitterIcon />
+            </div>
+          </a>
+          <a
+            href="#"
+            className="text-[14px] uppercase text-[#fff] hover:text-pink_primary"
+          >
+            <div className="svg_icon w-5">
+              <SnapchatIcon />
+            </div>
+          </a>
+        </div>
+        <div className="mb-4 h-[1px] w-full bg-[#fff]" />
+        <div className="flex flex-wrap items-center justify-center lg:justify-between">
+          <div className="flex flex-wrap items-center gap-2 lg:gap-4 xl:gap-5">
+            <a
+              href="#"
+              className="w-full text-center text-sm font-normal text-[#fff] hover:text-pink_primary md:w-auto md:text-left"
+            >
+              Privacy Policy
             </a>
-            <a href="#" className="text-[14px] uppercase text-[#fff]">
-              TERMS OF USER
+            <a
+              href="#"
+              className="w-full text-center text-sm font-normal text-[#fff] hover:text-pink_primary md:w-auto md:text-left"
+            >
+              Terms of Users
             </a>
-            <a href="#" className="text-[14px] uppercase text-[#fff]">
-              NEWSLETTER
+            <a
+              href="#"
+              className="w-full text-center text-sm font-normal text-[#fff] hover:text-pink_primary md:w-auto md:text-left"
+            >
+              Newsletter
             </a>
-            <span className="text-[14px] uppercase text-[#fff]">•</span>
-            <a href="#" className="text-[14px] uppercase text-[#fff]">
+            <span className="hidden text-center text-sm font-normal text-[#fff] md:block md:text-left">
+              •
+            </span>
+            <p className="mt-2 w-full text-center text-[11px] font-normal text-[#fff] md:mt-0 md:w-auto md:text-left md:text-sm">
               Copyright CountryLocals 2022. All Rights Reserved.
-            </a>
+            </p>
           </div>
-          <div className="flex items-center gap-3 pt-3 lg:gap-2 lg:pt-1 xl:gap-3">
-            <a href="#" className="text-[14px] uppercase text-[#fff]">
+          <div className="hidden items-center gap-2 lg:flex">
+            <a
+              href="#"
+              className="text-[14px] uppercase text-[#fff] hover:text-pink_primary"
+            >
               <div className="svg_icon w-5">
                 <InstagramIcon />
               </div>
             </a>
-            <a href="#" className="text-[14px] uppercase text-[#fff]">
+            <a
+              href="#"
+              className="text-[14px] uppercase text-[#fff] hover:text-pink_primary"
+            >
               <div className="svg_icon w-5">
                 <FacebookIcon />
               </div>
             </a>
-            <a href="#" className="text-[14px] uppercase text-[#fff]">
+            <a
+              href="#"
+              className="text-[14px] uppercase text-[#fff] hover:text-pink_primary"
+            >
               <div className="svg_icon w-5">
                 <TwitterIcon />
               </div>
             </a>
-            <a href="#" className="text-[14px] uppercase text-[#fff]">
+            <a
+              href="#"
+              className="text-[14px] uppercase text-[#fff] hover:text-pink_primary"
+            >
               <div className="svg_icon w-5">
                 <SnapchatIcon />
               </div>
@@ -123,7 +182,7 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-1/2 w-[95%] max-w-[1200px] -translate-x-1/2  transform rounded-tl-[20px] rounded-tr-[20px] bg-black px-5 pt-6 pb-14 md:rounded-tl-[50px] md:rounded-tr-[50px] md:px-10">
+      <div className="absolute bottom-0 left-1/2 w-[95%] max-w-[1500px] -translate-x-1/2  transform rounded-tl-[20px] rounded-tr-[20px] bg-black px-5 pt-6 pb-14 md:rounded-tl-[50px] md:rounded-tr-[50px] md:px-10">
         <div className="flex items-center justify-between pb-5">
           <div className="svg_icon w-[110px] text-[#fff]">
             <Image src="/icons/logo.png" width="110px" height="48px" />
