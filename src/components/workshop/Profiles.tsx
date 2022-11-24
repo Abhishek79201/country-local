@@ -22,7 +22,7 @@ import HeartIcon from '../../../public/icons/heart-outline.svg';
 const Profiles = () => {
   const { width } = useViewport();
   return (
-    <div className="sticky_bottom_container relative mt-8 bg-[#fff]  md:mt-0 md:pt-14 lg:pt-12">
+    <div className="relative mt-8 bg-[#fff]  md:mt-0 md:pt-14 lg:pt-12">
       <div className="container">
         <div className="flex flex-wrap justify-between lg:flex-nowrap">
           <div className="w-full lg:max-w-[650px] xl:max-w-[730px]">

@@ -82,7 +82,7 @@ const Gallery = () => {
               index === 0
                 ? 'video_player_wrapper col-span-2 row-span-2'
                 : 'col-span-1 row-span-1'
-            } relative overflow-hidden `}
+            } relative overflow-hidden after:duration-300 hover:after:scale-110`}
             key={data.id + Math.random()}
           >
             {index === 0 ? (

@@ -1,12 +1,11 @@
 /* eslint react/jsx-wrap-multilines: "off" */
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { bookOffersData, serviceData } from '../src/utilities/dummy-api';
+import { bookOffersData } from '../src/utilities/dummy-api';
 import useViewport from '../src/hooks/useViewport';
 
 import TourismIntro from '../src/components/workshop/TourismIntro';
 import Gallery from '../src/components/workshop/Gallery';
-import ServicesSlider from '../src/components/common/ServicesSlider';
 import ThingsToKnow from '../src/components/common/ThingsToKnow';
 import WorkshopExperience from '../src/components/common/WorkshopExperience';
 import Profiles from '../src/components/workshop/Profiles';
@@ -49,15 +48,9 @@ const Home: NextPage = () => {
         <TouringBanner />
 
         <div className="container pt-8">
-          <div className="w-full lg:max-w-[730px]">
+          <div className="w-full lg:max-w-[650px] xl:max-w-[730px]">
             <Plan />
-          </div>
-        </div>
-
-        <GoodToKnow />
-
-        <div className="container">
-          <div className="w-full lg:max-w-[730px]">
+            <GoodToKnow />
             <TripDetails />
           </div>
         </div>
@@ -67,21 +60,6 @@ const Home: NextPage = () => {
         <Review />
 
         <AvailableDate />
-
-        <ServicesSlider
-          sliderId="other_services_slider"
-          title={
-            <h2 className="mr-7  text-2xl font-bold text-[#202124] lg:text-4xl">
-              Other Services by
-              <span className="purple_gradient_text_deep">
-                {' '}
-                Abdullah Farhan
-              </span>
-            </h2>
-          }
-          useLine={false}
-          data={serviceData}
-        />
 
         <SimilarProperties />
 

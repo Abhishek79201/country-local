@@ -86,171 +86,162 @@ const GoodToKnow = () => {
 
   return (
     <div className="relative pb-5">
-      <div className="container">
-        <h2 className="pb-3 text-2xl font-bold text-black md:pb-5 md:text-[28px] lg:text-[32px]">
-          Good to know
-        </h2>
-        <div className="flex flex-wrap items-center pb-3 md:pb-6">
-          <div className="w-1/2">
-            <h2 className="flex items-center text-base font-bold text-black md:text-[20px]">
-              Whats Included
-            </h2>
-          </div>
-          <div className="hidden w-1/2 justify-end gap-5 md:flex md:pt-0">
-            <div className="relative flex w-[140px] items-center gap-2">
-              <div className="good_to_know_slider swiper-pagination !relative !top-0 !bottom-0 !w-[50px] text-[#666]" />
+      <h2 className="pb-3 text-2xl font-bold text-black md:pb-5 md:text-[28px] lg:text-[32px]">
+        Good to know
+      </h2>
+      <div className="flex flex-wrap items-center pb-3 md:pb-6">
+        <div className="w-1/2">
+          <h2 className="flex items-center text-base font-bold text-black md:text-[20px]">
+            Whats Included
+          </h2>
+        </div>
+        <div className="hidden w-1/2 justify-end gap-5 md:flex md:pt-0">
+          <div className="relative flex w-[140px] items-center gap-2">
+            <div className="good_to_know_slider swiper-pagination !relative !top-0 !bottom-0 !w-[50px] text-[#666]" />
 
-              <div className="good_to_know_slider swiper-button-prev !relative !top-0 !bottom-0 !-left-0 !mt-0 !h-[32px] !w-[32px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
-              <div className="good_to_know_slider swiper-button-next !relative !top-0 !bottom-0 !-right-0 !mt-0 !h-[32px] !w-[32px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
-            </div>
+            <div className="good_to_know_slider swiper-button-prev !relative !top-0 !bottom-0 !-left-0 !mt-0 !h-[32px] !w-[32px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
+            <div className="good_to_know_slider swiper-button-next !relative !top-0 !bottom-0 !-right-0 !mt-0 !h-[32px] !w-[32px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
           </div>
         </div>
-        <div className="-mr-5 -ml-[10px] md:ml-0 md:mr-0">
-          <Swiper
-            slidesPerView="auto"
-            spaceBetween={0}
-            freeMode
-            modules={[Navigation, Pagination, FreeMode]}
-            navigation={{
-              prevEl: '.good_to_know_slider.swiper-button-prev',
-              nextEl: '.good_to_know_slider.swiper-button-next',
-            }}
-            pagination={{
-              type: 'fraction',
-              el: '.good_to_know_slider.swiper-pagination',
-            }}
-            className="flex flex-wrap !pr-5 md:!pr-0"
-          >
-            {sliderItems.map((item) => (
-              <SwiperSlide
-                key={item.id}
-                className="!w-[58%] md:!w-1/3 lg:!w-1/5"
+      </div>
+      <div className="-mr-5 -ml-[10px] md:ml-0 md:mr-0">
+        <Swiper
+          slidesPerView="auto"
+          spaceBetween={0}
+          freeMode
+          modules={[Navigation, Pagination, FreeMode]}
+          navigation={{
+            prevEl: '.good_to_know_slider.swiper-button-prev',
+            nextEl: '.good_to_know_slider.swiper-button-next',
+          }}
+          pagination={{
+            type: 'fraction',
+            el: '.good_to_know_slider.swiper-pagination',
+          }}
+          className="flex flex-wrap !pr-5 md:!pr-0"
+        >
+          {sliderItems.map((item) => (
+            <SwiperSlide key={item.id} className="!w-[58%] md:!w-1/2 lg:!w-1/3">
+              <div
+                className="m-3 my-5 rounded-xl bg-white p-[15px]"
+                style={{ boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)' }}
               >
-                <div
-                  className="m-3 my-5 rounded-xl bg-white p-[15px]"
-                  style={{ boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)' }}
-                >
-                  <div className="relative flex">
-                    <Image
-                      src={`/icons/${item.imgUrl}`}
-                      width={33}
-                      height={33}
-                    />
-                  </div>
-                  <p className="pt-4 text-base font-semibold text-black md:text-[20px]">
-                    {item.title}
-                  </p>
-                  <p className="hidden pt-4 text-[13px] md:block">
-                    Tortor pellentesque nec sit nulla volutpat curabitur mattis
-                    fusce condimentum. Nulla orci congue praesent nullam vitae
-                    nibh. Sed sit sed eu lectus mi amet egestas{' '}
-                    <a href="#" className="font-semibold text-[#E71575]">
-                      Read More
-                    </a>
-                  </p>
+                <div className="relative flex">
+                  <Image src={`/icons/${item.imgUrl}`} width={33} height={33} />
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-        <UnderLine />
-
-        <div className="w-full lg:max-w-[730px]">
-          <div className="mt-0  border-t-0 border-[#EBEBEB]">
-            <div className="mb-6">
-              <h3 className="pb-3 font-bold text-[#222] lg:text-2xl">
-                Whats not Included
-              </h3>
-              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                  <CancelMark />
-                </span>
-                Tortor pellentesque nec sit nulla volutpat curabitur mattis
-                fusce condimentum.. Nulla Orci congue prasent
-              </p>
-              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                  <CancelMark />
-                </span>
-                Tortor pellentesque nec sit nulla volutpat
-              </p>
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setNotIncludedOpen(true)}
-                  className="ml-auto flex items-center text-sm underline"
-                >
-                  <span>Show More</span>
-                  <span className="ml-2 w-3">
-                    <ArrowIcon />
-                  </span>
-                </button>
-                <NotIncludedPopover
-                  status={notIncludedOpen}
-                  onClose={() => setNotIncludedOpen(false)}
-                />
+                <p className="pt-4 text-base font-semibold text-black md:text-[20px]">
+                  {item.title}
+                </p>
+                <p className="hidden pt-4 text-[13px] md:block">
+                  Tortor pellentesque nec sit nulla volutpat curabitur mattis
+                  fusce condimentum. Nulla orci congue praesent nullam vitae
+                  nibh. Sed sit sed eu lectus mi amet egestas{' '}
+                  <a href="#" className="font-semibold text-[#E71575]">
+                    Read More
+                  </a>
+                </p>
               </div>
-            </div>
-            <div className="mb-6">
-              <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
-                Where we will meet?
-              </h3>
-              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                <span className="svg_icon mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1">
-                  <Checkmark />
-                </span>
-                Tortor pellentesque nec sit nulla volutpat curabitur mattis
-                fusce condimentum.. Nulla Orci congue prasent
-              </p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <UnderLine />
+
+      <div className="w-full lg:max-w-[730px]">
+        <div className="mt-0  border-t-0 border-[#EBEBEB]">
+          <div className="mb-6">
+            <h3 className="pb-3 font-bold text-[#222] lg:text-2xl">
+              Whats not Included
+            </h3>
+            <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                <CancelMark />
+              </span>
+              Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
+              condimentum.. Nulla Orci congue prasent
+            </p>
+            <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                <CancelMark />
+              </span>
+              Tortor pellentesque nec sit nulla volutpat
+            </p>
+            <div>
               <button
                 type="button"
-                onClick={() => setMeetingOpen(true)}
-                className="purple_gradient_bg ml-6 mt-2 rounded-[10px] py-3 px-5 text-sm font-bold text-[#fff] "
+                onClick={() => setNotIncludedOpen(true)}
+                className="ml-auto flex items-center text-sm underline"
               >
-                View Meeting Location
+                <span>Show More</span>
+                <span className="ml-2 w-3">
+                  <ArrowIcon />
+                </span>
               </button>
-              <MeetingLocationPopover
-                status={meetingOpen}
-                onClose={() => setMeetingOpen(false)}
+              <NotIncludedPopover
+                status={notIncludedOpen}
+                onClose={() => setNotIncludedOpen(false)}
               />
             </div>
+          </div>
+          <div className="mb-6">
+            <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
+              Where we will meet?
+            </h3>
+            <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+              <span className="svg_icon mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1">
+                <Checkmark />
+              </span>
+              Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
+              condimentum.. Nulla Orci congue prasent
+            </p>
+            <button
+              type="button"
+              onClick={() => setMeetingOpen(true)}
+              className="purple_gradient_bg ml-6 mt-2 rounded-[10px] py-3 px-5 text-sm font-bold text-[#fff] "
+            >
+              View Meeting Location
+            </button>
+            <MeetingLocationPopover
+              status={meetingOpen}
+              onClose={() => setMeetingOpen(false)}
+            />
+          </div>
+          <div>
+            <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
+              Cancelation
+            </h3>
+            <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                <CancelMark />
+              </span>
+              Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
+              condimentum.. Nulla Orci congue prasent
+            </p>
+            <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+              <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                <CancelMark />
+              </span>
+              Tortor pellentesque nec sit nulla volutpat
+            </p>
             <div>
-              <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
-                Cancelation
-              </h3>
-              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                  <CancelMark />
+              <button
+                type="button"
+                onClick={() => setCancellationOpen(true)}
+                className="ml-auto flex items-center text-sm underline"
+              >
+                <span>Show More</span>
+                <span className="ml-2 w-3">
+                  <ArrowIcon />
                 </span>
-                Tortor pellentesque nec sit nulla volutpat curabitur mattis
-                fusce condimentum.. Nulla Orci congue prasent
-              </p>
-              <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                  <CancelMark />
-                </span>
-                Tortor pellentesque nec sit nulla volutpat
-              </p>
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setCancellationOpen(true)}
-                  className="ml-auto flex items-center text-sm underline"
-                >
-                  <span>Show More</span>
-                  <span className="ml-2 w-3">
-                    <ArrowIcon />
-                  </span>
-                </button>
-                <CancellationPopover
-                  status={cancellationOpen}
-                  onClose={() => setCancellationOpen(false)}
-                />
-              </div>
+              </button>
+              <CancellationPopover
+                status={cancellationOpen}
+                onClose={() => setCancellationOpen(false)}
+              />
             </div>
           </div>
-          <UnderLine />
         </div>
+        <UnderLine />
       </div>
     </div>
   );
