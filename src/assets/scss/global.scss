@@ -484,10 +484,6 @@ input:checked + .slider:before {
   animation: gradient 15s ease infinite;
 }
 
-.mobile_gallery_progressbar.swiper-pagination-progressbar
-  .swiper-pagination-progressbar-fill {
-  background-color: #fff;
-}
 .gallery-layout {
   .item5 {
     &::after {

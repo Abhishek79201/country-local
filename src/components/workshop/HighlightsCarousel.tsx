@@ -15,8 +15,8 @@ const HighlightsCarousel = () => (
         modules={[Navigation, FreeMode]}
         spaceBetween={15}
         navigation={{
-          prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next',
+          prevEl: '.highlight_carousel.swiper-button-prev',
+          nextEl: '.highlight_carousel.swiper-button-next',
         }}
         breakpoints={{
           768: {
@@ -37,8 +37,8 @@ const HighlightsCarousel = () => (
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="swiper-button-prev !-left-5 !-mt-[14px]  !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
-      <div className="swiper-button-next !-right-5 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+      <div className="highlight_carousel swiper-button-prev !-left-5 !-mt-[14px]  !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+      <div className="highlight_carousel swiper-button-next !-right-5 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
     </div>
 
     <UnderLine />
