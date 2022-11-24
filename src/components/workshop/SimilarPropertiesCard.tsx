@@ -1,17 +1,25 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import Image from 'next/image';
-import Link from 'next/link';
-
-import HeartIcon from '../../../public/icons/heart.svg';
-import RocketIcon from '../../../public/telegram.svg';
-
+/* eslint @next/next/no-img-element: "off" */
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
 /* eslint @typescript-eslint/no-unused-vars: "off" */
 /* eslint react/require-default-props: "off" */
-/* eslint prettier/prettier: "off" */
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { EffectFade, Navigation, Autoplay, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
+import HeartIcon from '../../../public/icons/heart.svg';
+import RocketIcon from '../../../public/telegram.svg';
 
 interface SimilarPropertiesCardTypes {
+  id?: number;
   spotsLeft?: number;
   imgUrl?: string;
   authorImg?: string;
@@ -24,6 +32,7 @@ interface SimilarPropertiesCardTypes {
 }
 
 const SimilarPropertiesCard = ({
+  id,
   spotsLeft,
   imgUrl,
   authorImg,
@@ -33,18 +42,60 @@ const SimilarPropertiesCard = ({
   authors,
   rating,
   offer,
-}: SimilarPropertiesCardTypes) => (
-  <Link href="/">
-    <a
+}: SimilarPropertiesCardTypes) => {
+  const bannerImages = [
+    { id: 5, img: 'img4.png' },
+    { id: 2, img: 'img2.png' },
+    { id: 1, img: 'img1.png' },
+    { id: 3, img: 'img3.png' },
+    { id: 4, img: 'img5.png' },
+  ];
+
+  return (
+    <div
       className="mx-3 my-5 block rounded-xl bg-white"
       style={{ boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)' }}
     >
-      <div className="relative rounded">
-        <div className="flex overflow-hidden rounded-lg">
-          <Image src="/boat-girl.png" width={314} height={300} />
-        </div>
+      <div className="group relative rounded">
+        <Swiper
+          modules={[EffectFade, Navigation, Autoplay, Pagination]}
+          slidesPerView={1}
+          spaceBetween={0}
+          navigation={{
+            prevEl: `.similar_prop_inner-${id}.swiper-button-prev`,
+            nextEl: `.similar_prop_inner-${id}.swiper-button-next`,
+          }}
+          pagination={{
+            el: `.similar_prop_inner-${id}.swiper-pagination`,
+          }}
+          effect="fade"
+          fadeEffect={{
+            crossFade: true,
+          }}
+        >
+          {bannerImages.map((item) => (
+            <SwiperSlide key={item.id}>
+              <div className="relative h-[270px] overflow-hidden rounded-lg">
+                <img
+                  src={item.img}
+                  alt="slide"
+                  className="absolute h-full w-auto object-cover"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div
+          className={`similar_prop_inner-${id} swiper-button-prev !top-[50%] !left-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
+        />
+        <div
+          className={`similar_prop_inner-${id} swiper-button-next !top-[50%] !right-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
+        />
+        <div
+          className={`similar_prop_inner-${id} similar_prop_inner_pagination swiper-pagination !bottom-1 text-[#666]`}
+        />
 
-        <div className="z-1 absolute top-3 right-3 flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
+        <div className="absolute top-3 right-3 z-[2] flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
           <button type="button" className="svg_icon w-6 hover:shadow-lg">
             <HeartIcon />
           </button>
@@ -59,9 +110,11 @@ const SimilarPropertiesCard = ({
             Florence, <span className="text-pink_primary">Italy</span>
           </p>
         </div>
-        <h4 className="pt-1 pb-1 text-lg font-bold leading-normal">
-          Beautiful Family Friendly 3BR Condo
-        </h4>
+        <Link href="/">
+          <a className="block pt-1 pb-1 text-lg font-bold leading-normal">
+            Beautiful Family Friendly 3BR Condo
+          </a>
+        </Link>
         <p className="text-sm text-[#4B4B4B]">Sleeps 8 . 3 bedrooms . 6 beds</p>
 
         <div className="item-center mt-4 flex justify-between border-t-2 border-dashed border-t-slate-200 pt-3 text-base">
@@ -74,7 +127,7 @@ const SimilarPropertiesCard = ({
           </div>
         </div>
       </div>
-    </a>
-  </Link>
-);
+    </div>
+  );
+};
 export default SimilarPropertiesCard;

@@ -48,7 +48,7 @@ const SimilarProperties = () => (
               key={item}
               className="!w-[300px] sm:!w-[33.33%] lg:!w-[25%]"
             >
-              <SimilarPropertiesCard />
+              <SimilarPropertiesCard id={item} />
             </SwiperSlide>
           ))}
         </Swiper>
