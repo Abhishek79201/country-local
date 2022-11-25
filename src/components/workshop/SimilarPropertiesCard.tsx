@@ -7,7 +7,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { EffectFade, Navigation, Autoplay, Pagination } from 'swiper';
+import { Navigation, Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -58,7 +58,7 @@ const SimilarPropertiesCard = ({
     >
       <div className="group relative rounded">
         <Swiper
-          modules={[EffectFade, Navigation, Autoplay, Pagination]}
+          modules={[Navigation, Autoplay, Pagination]}
           slidesPerView={1}
           spaceBetween={0}
           navigation={{
@@ -67,10 +67,6 @@ const SimilarPropertiesCard = ({
           }}
           pagination={{
             el: `.similar_prop_inner-${id}.swiper-pagination`,
-          }}
-          effect="fade"
-          fadeEffect={{
-            crossFade: true,
           }}
         >
           {bannerImages.map((item) => (
@@ -86,10 +82,10 @@ const SimilarPropertiesCard = ({
           ))}
         </Swiper>
         <div
-          className={`similar_prop_inner-${id} swiper-button-prev !top-[50%] !left-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
+          className={`similar_prop_inner-${id} similar_prop_inner_nav swiper-button-prev !top-[50%] !left-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white bg-opacity-90 !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
         />
         <div
-          className={`similar_prop_inner-${id} swiper-button-next !top-[50%] !right-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
+          className={`similar_prop_inner-${id} similar_prop_inner_nav swiper-button-next !top-[50%] !right-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white bg-opacity-90 !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
         />
         <div
           className={`similar_prop_inner-${id} similar_prop_inner_pagination swiper-pagination !bottom-1 text-[#666]`}
