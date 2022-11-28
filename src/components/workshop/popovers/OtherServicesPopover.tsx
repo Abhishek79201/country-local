@@ -108,24 +108,30 @@ const OtherServicesPopover = ({
                     </button>
                   </div>
 
-                  <div className="mt-4 flex max-w-[400px] items-center justify-between rounded-full bg-white p-[5px] text-xs lg:mt-6 lg:text-sm">
+                  <div className="other-services-nav mt-4 flex max-w-[400px] items-center justify-between rounded-full bg-white p-[5px] text-xs lg:mt-6 lg:text-sm">
                     <button
                       type="button"
-                      className="h-[34px] w-full rounded-full bg-[#224F9C] px-1 text-center text-white lg:h-[40px] lg:px-3"
+                      className="active relative h-[34px] w-full rounded-full px-1 text-center lg:h-[40px] lg:px-3"
                     >
-                      Classes
+                      <span className="ease relative z-[2] text-[#64748B] transition duration-300">
+                        Classes
+                      </span>
                     </button>
                     <button
                       type="button"
-                      className="h-[34px] w-full rounded-full px-1 text-center text-[#64748B] hover:bg-[#224F9C] hover:text-white lg:h-[40px] lg:px-3"
+                      className="relative h-[34px] w-full rounded-full px-1 text-center text-[#64748B] lg:h-[40px] lg:px-3"
                     >
-                      Experiences
+                      <span className="ease relative z-[2] text-[#64748B] transition duration-300">
+                        Experiences
+                      </span>
                     </button>
                     <button
                       type="button"
-                      className="h-[34px] w-full rounded-full px-1 text-center text-[#64748B] hover:bg-[#224F9C] hover:text-white lg:h-[40px] lg:px-3"
+                      className="relative h-[34px] w-full rounded-full px-1 text-center text-[#64748B] lg:h-[40px] lg:px-3"
                     >
-                      Prime Packs
+                      <span className="ease relative z-[2] text-[#64748B] transition duration-300">
+                        Prime Packs
+                      </span>
                     </button>
                   </div>
                 </div>

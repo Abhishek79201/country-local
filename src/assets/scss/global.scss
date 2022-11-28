@@ -614,3 +614,34 @@ body.active {
     transform: scale(1.2);
   }
 }
+
+.other-services-nav button:last-child::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: block;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 35px;
+  pointer-events: none;
+}
+.other-services-nav button:hover span,
+.other-services-nav button.active span {
+  color: #fff;
+}
+.other-services-nav button:nth-child(1):hover ~ button:last-child::after,
+.other-services-nav button:nth-child(1).active ~ button:last-child::after {
+  left: -200%;
+  background-color: #224f9c;
+}
+.other-services-nav button:nth-child(2):hover ~ button:last-child::after {
+  left: -100%;
+  background-color: #224f9c;
+}
+.other-services-nav button:nth-child(3):hover::after {
+  background-color: #224f9c;
+  left: 0 !important;
+}
