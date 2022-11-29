@@ -60,8 +60,8 @@ const TripDetails = () => (
                     <Disclosure>
                       {({ open }) => (
                         <div className="relative mb-4 flex flex-col items-center justify-center">
-                          <div className="absolute -left-0 top-6 z-10 h-[100%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] " />
-                          <div className=" svg_icon absolute -left-3 top-2 z-10 w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
+                          <div className="absolute -left-0 top-6 z-[1] h-[100%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] " />
+                          <div className=" svg_icon absolute -left-3 top-2 z-[1] w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
                             <LocationIcon />
                           </div>
                           <Disclosure.Button className="focus-purple relative w-[90%] text-left text-[16px] font-bold ">
@@ -162,8 +162,8 @@ const TripDetails = () => (
                     <Disclosure>
                       {({ open }) => (
                         <div className=" relative mb-4 flex flex-col items-center justify-center">
-                          <div className="absolute -left-0 top-6 z-10 h-[100%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] " />
-                          <div className=" svg_icon absolute -left-3 top-2 z-10 w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
+                          <div className="absolute -left-0 top-6 z-[1] h-[100%] w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] " />
+                          <div className=" svg_icon absolute -left-3 top-2 z-[1] w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
                             <LocationIcon />
                           </div>
                           <Disclosure.Button className="focus-purple relative w-[90%] text-left text-[16px] font-bold ">
@@ -265,13 +265,13 @@ const TripDetails = () => (
                       {({ open }) => (
                         <div className=" relative mb-4 flex flex-col items-center justify-center">
                           <div
-                            className={`absolute -left-0 top-6 z-10 ${
+                            className={`absolute -left-0 top-6 z-[1] ${
                               open ? 'h-[100%]' : 'h-0'
                             }  w-[1px] border-[1px] border-dashed border-r-[#E71575] md:left-[10px] `}
                           >
                             {/**/}
                           </div>
-                          <div className=" svg_icon absolute -left-3 top-2 z-10 w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
+                          <div className=" svg_icon absolute -left-3 top-2 z-[1] w-[26px] shrink-0 text-[#E71575] md:-left-[1px]">
                             <LocationIcon />
                           </div>
                           <Disclosure.Button className="focus-purple relative w-[90%] text-left text-[16px] font-bold ">
