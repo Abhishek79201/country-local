@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import { FreeMode, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,9 +10,17 @@ import Arrow from '../../../public/icons/purple-arrow.svg';
 import StarIcon from '../../../public/icons/star.svg';
 import Verify from '../../../public/icons/black-verify.svg';
 import Shield from '../../../public/icons/shield.svg';
+import ReviewPopup from '../common/popups/ReviewPopup';
 
 const AvailableDate = () => {
   const { width } = useViewport();
+  const [isOpen, setIsOpen] = useState(false);
+  const handlePopupOpen = () => {
+    setIsOpen(true);
+  };
+  const handlePopupClose = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div className="container pb-10 pt-4 md:pb-20">
@@ -82,6 +91,17 @@ const AvailableDate = () => {
         </Swiper>
         <div className="available_dates swiper-button-prev !-left-1 !-mt-[14px]  !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
         <div className="available_dates swiper-button-next !-right-1 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+      </div>
+
+      <div className="pt-4 text-center lg:pt-5">
+        <button
+          type="button"
+          onClick={handlePopupOpen}
+          className="purple_gradient_bg h-[44px] w-[160px] rounded-lg py-1 px-2 text-xs font-bold uppercase text-white transition-shadow hover:shadow-lg"
+        >
+          SHOW MORE
+        </button>
+        <ReviewPopup status={isOpen} onClose={handlePopupClose} />
       </div>
 
       <h3 className="mt-8 block pb-3 text-2xl font-bold md:text-3xl lg:hidden lg:text-[38px]">

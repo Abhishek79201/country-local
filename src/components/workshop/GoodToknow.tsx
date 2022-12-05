@@ -16,11 +16,14 @@ import 'swiper/css/pagination';
 import CancelMark from '../../../public/icons/purple-cancel.svg';
 import Checkmark from '../../../public/icons/checked-purple.svg';
 import ArrowIcon from '../../../public/icons/chevron-right.svg';
+import WhatsIncludedPopover from './popovers/WhatsIncludedPopover';
 
 const GoodToKnow = () => {
   const [notIncludedOpen, setNotIncludedOpen] = useState<boolean>(false);
   const [cancellationOpen, setCancellationOpen] = useState<boolean>(false);
   const [meetingOpen, setMeetingOpen] = useState<boolean>(false);
+  const [openGoodToKnowModal, setOpenGoodToKnowModal] =
+    useState<boolean>(false);
   const sliderItems = [
     {
       id: 1,
@@ -144,6 +147,19 @@ const GoodToKnow = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+      <div className="pt-3 text-center md:hidden">
+        <button
+          type="button"
+          onClick={() => setOpenGoodToKnowModal(true)}
+          className="purple_gradient_bg h-[44px] w-[160px] rounded-lg py-1 px-2 text-xs font-bold uppercase text-white transition-shadow hover:shadow-lg"
+        >
+          SHOW Details
+        </button>
+        <WhatsIncludedPopover
+          status={openGoodToKnowModal}
+          onClose={() => setOpenGoodToKnowModal(false)}
+        />
       </div>
       <UnderLine />
 

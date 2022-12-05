@@ -135,7 +135,7 @@ const TripDetails = () => (
                                       following a cycling tour around the
                                       village (13 kilometers or 8 miles).
                                     </p>
-                                    <div className="mt-3 flex flex-wrap items-center gap-x-3">
+                                    <div className="mt-3 flex items-center gap-x-3">
                                       <div className="flex overflow-hidden rounded-lg">
                                         <Image
                                           src="/stay-banner-3.jpg"

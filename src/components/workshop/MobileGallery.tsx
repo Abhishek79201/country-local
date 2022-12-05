@@ -62,7 +62,7 @@ const MobileGallery = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="absolute top-3 z-10 flex w-full items-center justify-between px-3">
+      <div className="fixed top-3 z-10 flex w-full items-center justify-between px-3">
         <button
           type="button"
           className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-small"
