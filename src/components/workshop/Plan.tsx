@@ -1,82 +1,71 @@
 /* eslint @next/next/no-img-element: "off" */
+/* eslint @typescript-eslint/indent: "off" */
 import { useContext, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Dialog } from '@headlessui/react';
 import Image from 'next/image';
-import { fadeInUp, fadeInLeft } from '../../utilities/animations';
 import { MobileBookingContext } from '../../context/mobileBookingContext';
-import { OverflowContext } from '../../context/overflowContext';
 import useViewport from '../../hooks/useViewport';
 
 import ContactMePopover from './popovers/ContactMePopover';
 import UnderLine from '../common/UnderLine';
+import LightBoxWithGallery from './popovers/LightBoxWithGallery';
 
 import FillLocate from '../../../public/icons/fillLocation.svg';
 import TickMarkIcon from '../../../public/icons/check-lg.svg';
-import CloseIcon from '../../../public/icons/xmark.svg';
 
 const Plan = () => {
   const { width } = useViewport();
   const { setShowMobileBooking } = useContext(MobileBookingContext);
-  const { setGlobalOverflow } = useContext(OverflowContext);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const scrollToBookNow = () => {
     const section = document.querySelector('.sticky_bottom_container');
     section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
   const [showContactMe, setShowContactMe] = useState(false);
-  const [imgData, setImageData] = useState([
+  const [images, setImages] = useState<
+    { id: number; thumbnail: string; fullSize: string; current: boolean }[]
+  >([
     {
       id: 1,
       thumbnail: 'group-1.png',
       fullSize: 'plan-fullsize-1.jpg',
-      isOpen: false,
+      current: true,
     },
     {
       id: 2,
       thumbnail: 'group-2.png',
       fullSize: 'plan-fullsize-2.jpg',
-      isOpen: false,
+      current: false,
     },
     {
       id: 3,
       thumbnail: 'group-3.png',
       fullSize: 'plan-fullsize-3.jpg',
-      isOpen: false,
+      current: false,
     },
     {
       id: 4,
       thumbnail: 'group-4.png',
       fullSize: 'plan-fullsize-4.jpg',
-      isOpen: false,
+      current: false,
     },
     {
       id: 5,
       thumbnail: 'group-5.png',
       fullSize: 'plan-fullsize-5.jpg',
-      isOpen: false,
+      current: false,
     },
   ]);
 
   const showLargeImage = (id: number) => {
-    const newData = imgData.map((data) => {
-      if (data.id === id) {
-        return { ...data, isOpen: true };
-      }
-      return data;
-    });
-
-    setImageData(newData);
-  };
-
-  const handleClosePopup = (id: number) => {
-    const newData = imgData.map((data) => {
-      if (data.id === id) {
-        return { ...data, isOpen: false };
-      }
-      return data;
-    });
-
-    setImageData(newData);
+    setImages(
+      images.map((image) => {
+        if (image.id === id) {
+          return { ...image, current: true };
+        }
+        return { ...image, current: false };
+      }),
+    );
+    setIsOpen(true);
   };
 
   return (
@@ -98,7 +87,7 @@ const Plan = () => {
 
       <div className="relative z-0 mb-0 h-full pt-10 lg:pt-[70px]">
         <div className="absolute -left-[1px] -top-2 -z-10 h-full w-[1px] border-[1px] border-dashed border-r-[#E71575]" />
-        {imgData.map((item) => (
+        {images.map((item) => (
           <div
             className="relative ml-6 flex flex-wrap justify-between gap-5 pt-3 pb-8"
             key={item.id}
@@ -131,97 +120,14 @@ const Plan = () => {
                 className="rounded"
               />
             </button>
-
-            <AnimatePresence>
-              {item.isOpen && (
-                <Dialog
-                  static
-                  as={motion.div}
-                  variants={{
-                    initial: { opacity: 0 },
-                    animate: {
-                      opacity: 1,
-                      transition: {
-                        duration: 0.2,
-                      },
-                    },
-                    exit: { opacity: 0 },
-                  }}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  open={item.isOpen}
-                  onClose={() => handleClosePopup(item.id)}
-                  className="fixed inset-0 z-30 md:flex md:items-center md:justify-center"
-                >
-                  <Dialog.Overlay
-                    onClick={() => {
-                      if (width < 768) {
-                        setGlobalOverflow(false);
-                      }
-                    }}
-                    className="absolute top-0 left-0 h-full w-full bg-black opacity-40"
-                  />
-
-                  <Dialog.Panel
-                    as={motion.div}
-                    variants={{
-                      initial: {
-                        opacity: 0,
-                        y: 100,
-                      },
-                      animate: {
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          duration: 0.3,
-                        },
-                      },
-                      exit: {
-                        opacity: 0,
-                        y: 100,
-                        transition: {
-                          duration: 0.3,
-                        },
-                      },
-                    }}
-                    className="fixed bottom-[38%] z-10 w-full md:bottom-0 lg:relative lg:w-11/12 lg:max-w-[1200px]"
-                  >
-                    <div className="relative overflow-hidden rounded-tl-lg rounded-tr-lg bg-white md:rounded-lg md:shadow-xl">
-                      <div className="flex items-center justify-center">
-                        <button
-                          type="button"
-                          className="group absolute right-3 top-3 bg-white bg-opacity-70 p-3"
-                          onClick={() => {
-                            handleClosePopup(item.id);
-                            setGlobalOverflow(false);
-                          }}
-                        >
-                          <div className="svg_icon w-3 text-black">
-                            <CloseIcon />
-                          </div>
-                        </button>
-                      </div>
-
-                      <div
-                        className="custom_scrollbar overflow-y-auto bg-white md:p-3 lg:max-h-[90vh]"
-                        // style={{
-                        //   height:
-                        //     width < 1064 ? window.innerHeight - 70 : 'auto',
-                        // }}
-                      >
-                        <img
-                          src={`/${item.fullSize}`}
-                          alt={`/${item.fullSize}`}
-                        />
-                      </div>
-                    </div>
-                  </Dialog.Panel>
-                </Dialog>
-              )}
-            </AnimatePresence>
           </div>
         ))}
+
+        <LightBoxWithGallery
+          status={isOpen}
+          onClose={() => setIsOpen(false)}
+          images={images}
+        />
 
         <div className="relative ml-6">
           <span className=" absolute -left-8 -top-8 z-10 text-[56px] text-[#E71575]">
@@ -243,16 +149,15 @@ const Plan = () => {
           </p>
         </div>
       </div>
+
       <UnderLine />
+
       <div>
-        <motion.div className="w-full" variants={fadeInLeft}>
+        <div className="w-full">
           <p className="mb-4 text-[22px] font-bold text-[#222] ">
             I can personlize this tour for you
           </p>
-          <motion.div
-            variants={fadeInLeft}
-            className="flex w-full flex-wrap items-start gap-4 rounded lg:min-h-[230px]  lg:flex-nowrap"
-          >
+          <div className="flex w-full flex-wrap items-start gap-4 rounded lg:min-h-[230px]  lg:flex-nowrap">
             <div className="banner w-full p-0 lg:w-[40%] ">
               <Image
                 src="/girl.png"
@@ -263,11 +168,7 @@ const Plan = () => {
             </div>
             <div className="relative w-full lg:w-[60%]">
               {[1, 2, 3].map((item) => (
-                <motion.div
-                  variants={fadeInUp}
-                  className="flex items-center gap-3 pb-[10px] "
-                  key={item}
-                >
+                <div className="flex items-center gap-3 pb-[10px] " key={item}>
                   <div className="svg_icon w-6 text-[#E71575] md:w-8">
                     <TickMarkIcon />
                   </div>
@@ -275,7 +176,7 @@ const Plan = () => {
                     Vehicula faucibus ultrices gravida tincidunt dolor. Ut
                     ultricies nunc congue id eget malesuada.
                   </p>
-                </motion.div>
+                </div>
               ))}
               <button
                 type="button"
@@ -289,9 +190,9 @@ const Plan = () => {
                 onClose={() => setShowContactMe(false)}
               />
             </div>
-          </motion.div>
+          </div>
           <UnderLine />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -100,8 +100,8 @@ const MeetingLocationPopover = ({
                   height: width < 1064 ? window.innerHeight - 70 : 'auto',
                 }}
               >
-                <div className="flex items-center py-3">
-                  <div className="w-1/3">
+                <div className="flex flex-wrap-reverse items-center py-3 md:flex-nowrap">
+                  <div className="w-full md:w-1/3">
                     <h3 className="mb-6 text-2xl font-bold text-[#222]">
                       Where you’ll be
                     </h3>
@@ -134,7 +134,7 @@ const MeetingLocationPopover = ({
                       </p>
                     </div>
                   </div>
-                  <div className="w-2/3 pl-10">
+                  <div className="mb-5 w-full md:mb-0 md:w-2/3 md:pl-10">
                     <div className="w-full">
                       <iframe
                         title="map"

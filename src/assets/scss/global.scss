@@ -640,3 +640,17 @@ body.active {
 .other-services-nav button:nth-child(3).active::after {
   background-color: #224f9c;
 }
+
+.lightBox_gallery_slider {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 100%;
+    &::after {
+      font-size: 14px;
+      color: #000;
+    }
+  }
+}

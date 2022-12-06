@@ -1,25 +1,69 @@
 /* eslint @next/next/no-img-element: "off" */
-import { useContext, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Dialog } from '@headlessui/react';
+/* eslint @typescript-eslint/indent: "off" */
+import { useState } from 'react';
 import Image from 'next/image';
 import { FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { OverflowContext } from '../../context/overflowContext';
 import useViewport from '../../hooks/useViewport';
 
 import 'swiper/css';
 
-import CloseIcon from '../../../public/icons/xmark.svg';
+import LightBoxWithGallery from './popovers/LightBoxWithGallery';
 
 const TouringBanner = () => {
   const { width } = useViewport();
-  const { setGlobalOverflow } = useContext(OverflowContext);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [imageUrl, setImageUrl] = useState<string>('');
 
-  const showLargeImage = (url: string) => {
-    setImageUrl(url);
+  const [images, setImages] = useState<
+    { id: number; thumbnail: string; fullSize: string; current: boolean }[]
+  >([
+    {
+      id: 1,
+      thumbnail: '/banner1.png',
+      fullSize: '/plan-fullsize-1.jpg',
+      current: true,
+    },
+    {
+      id: 2,
+      thumbnail: '/banner2.png',
+      fullSize: '/plan-fullsize-2.jpg',
+      current: false,
+    },
+    {
+      id: 3,
+      thumbnail: '/banner3.png',
+      fullSize: '/plan-fullsize-3.jpg',
+      current: false,
+    },
+    {
+      id: 4,
+      thumbnail: '/banner4.png',
+      fullSize: '/plan-fullsize-4.jpg',
+      current: false,
+    },
+    {
+      id: 5,
+      thumbnail: '/banner5.png',
+      fullSize: '/plan-fullsize-5.jpg',
+      current: false,
+    },
+    {
+      id: 6,
+      thumbnail: '/banner6.png',
+      fullSize: '/plan-fullsize-6.jpg',
+      current: false,
+    },
+  ]);
+
+  const showLargeImage = (id: number) => {
+    setImages(
+      images.map((image) => {
+        if (image.id === id) {
+          return { ...image, current: true };
+        }
+        return { ...image, current: false };
+      }),
+    );
     setIsOpen(true);
   };
 
@@ -45,7 +89,7 @@ const TouringBanner = () => {
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();
-                    showLargeImage('plan-fullsize-1.jpg');
+                    showLargeImage(1);
                   }}
                 >
                   <Image src="/banner1.png" width="232px" height="140px" />
@@ -54,7 +98,7 @@ const TouringBanner = () => {
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();
-                    showLargeImage('plan-fullsize-2.jpg');
+                    showLargeImage(2);
                   }}
                 >
                   <Image src="/banner2.png" width="232px" height="223px" />
@@ -65,7 +109,7 @@ const TouringBanner = () => {
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();
-                    showLargeImage('plan-fullsize-3.jpg');
+                    showLargeImage(3);
                   }}
                 >
                   <Image src="/banner3.png" width="232px" height="223px" />
@@ -74,7 +118,7 @@ const TouringBanner = () => {
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();
-                    showLargeImage('plan-fullsize-4.jpg');
+                    showLargeImage(4);
                   }}
                 >
                   <Image src="/banner4.png" width="232px" height="140px" />
@@ -85,7 +129,7 @@ const TouringBanner = () => {
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();
-                    showLargeImage('plan-fullsize-5.jpg');
+                    showLargeImage(5);
                   }}
                 >
                   <Image src="/banner5.png" width="232px" height="140px" />
@@ -94,7 +138,7 @@ const TouringBanner = () => {
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();
-                    showLargeImage('plan-fullsize-1.jpg');
+                    showLargeImage(6);
                   }}
                 >
                   <Image src="/banner6.png" width="232px" height="223px" />
@@ -105,7 +149,7 @@ const TouringBanner = () => {
             <div className="-mr-5 -ml-[10px] md:ml-0 md:mr-0">
               <Swiper
                 slidesPerView="auto"
-                spaceBetween={0}
+                spaceBetween={10}
                 freeMode
                 modules={[FreeMode]}
                 className="flex flex-wrap !pr-5 md:!pr-0"
@@ -115,19 +159,23 @@ const TouringBanner = () => {
                     key={item}
                     className="!w-[68%] md:!w-1/3 lg:!w-1/5"
                   >
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        showLargeImage(`plan-fullsize-${item}.jpg`);
+                    <div
+                      role="button"
+                      onClick={() => {
+                        showLargeImage(item);
                       }}
+                      onKeyDown={() => {
+                        showLargeImage(item);
+                      }}
+                      tabIndex={0}
+                      className="relative flex overflow-hidden rounded-lg pb-[60%]"
                     >
-                      <Image
+                      <img
                         src={`/banner${item}.png`}
-                        width="232px"
-                        height="223px"
+                        alt={`/banner${item}.png`}
+                        className="absolute w-full object-cover"
                       />
-                    </button>
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -135,91 +183,11 @@ const TouringBanner = () => {
           )}
         </div>
       </div>
-      <AnimatePresence>
-        {isOpen && (
-          <Dialog
-            static
-            as={motion.div}
-            variants={{
-              initial: { opacity: 0 },
-              animate: {
-                opacity: 1,
-                transition: {
-                  duration: 0.2,
-                },
-              },
-              exit: { opacity: 0 },
-            }}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
-            className="fixed inset-0 z-30 md:flex md:items-center md:justify-center"
-          >
-            <Dialog.Overlay
-              onClick={() => {
-                if (width < 768) {
-                  setGlobalOverflow(false);
-                }
-              }}
-              className="absolute top-0 left-0 h-full w-full bg-black opacity-40"
-            />
-
-            <Dialog.Panel
-              as={motion.div}
-              variants={{
-                initial: {
-                  opacity: 0,
-                  y: 100,
-                },
-                animate: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.3,
-                  },
-                },
-                exit: {
-                  opacity: 0,
-                  y: 100,
-                  transition: {
-                    duration: 0.3,
-                  },
-                },
-              }}
-              className="fixed bottom-[38%] z-10 w-full md:bottom-0 lg:relative lg:w-11/12 lg:max-w-[1200px]"
-            >
-              <div className="relative overflow-hidden rounded-tl-lg rounded-tr-lg bg-white md:rounded-lg md:shadow-xl">
-                <div className="flex items-center justify-center">
-                  <button
-                    type="button"
-                    className="group absolute right-3 top-3 bg-white bg-opacity-70 p-3"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setGlobalOverflow(false);
-                    }}
-                  >
-                    <div className="svg_icon w-3 text-black">
-                      <CloseIcon />
-                    </div>
-                  </button>
-                </div>
-
-                <div
-                  className="custom_scrollbar overflow-y-auto bg-white md:p-3 lg:max-h-[90vh]"
-                  // style={{
-                  //   height:
-                  //     width < 1064 ? window.innerHeight - 70 : 'auto',
-                  // }}
-                >
-                  <img src={`/${imageUrl}`} alt={`/${imageUrl}`} />
-                </div>
-              </div>
-            </Dialog.Panel>
-          </Dialog>
-        )}
-      </AnimatePresence>
+      <LightBoxWithGallery
+        status={isOpen}
+        onClose={() => setIsOpen(false)}
+        images={images}
+      />
     </div>
   );
 };

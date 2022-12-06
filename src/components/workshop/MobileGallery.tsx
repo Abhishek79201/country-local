@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { EffectFade, Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -26,6 +26,13 @@ const MobileGallery = () => {
     { id: 10, img: 'img4.png' },
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setScroll(window.scrollY > 400);
+    });
+  }, []);
 
   return (
     <div className="relative -mt-8">
@@ -62,7 +69,11 @@ const MobileGallery = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="fixed top-3 z-10 flex w-full items-center justify-between px-3">
+      <div
+        className={`${
+          scroll && 'border-b border-b-slate-200 bg-white'
+        } fixed top-0 z-20 flex w-full items-center justify-between py-3 px-3`}
+      >
         <button
           type="button"
           className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-small"
