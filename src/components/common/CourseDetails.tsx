@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { animationWrapper, fadeIn, fadeInUp } from '../../utilities/animations';
 import useViewport from '../../hooks/useViewport';
-import MultiDayDetailsPopup from '../multi-day-workshop/popups/MultiDayInfoPopup';
+import MultiDayInfoPopup from './popups/MultiDayInfoPopup';
 
 import Checkmark from '../../../public/icons/circle-check-yellow.svg';
 import PersonWorkspaceIcon from '../../../public/icons/person-workspace.svg';
@@ -98,7 +98,7 @@ const CourseDetails = () => {
                       <QuestionMarkIcon />
                     </button>
                   </div>
-                  <MultiDayDetailsPopup
+                  <MultiDayInfoPopup
                     status={openMultiDayDetails}
                     onClose={handleOpenMultiDayDetails}
                   />
