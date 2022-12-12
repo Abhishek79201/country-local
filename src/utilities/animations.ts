@@ -30,7 +30,8 @@ export const fadeInUp = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.5,
+      ease: 'easeInOut',
     },
   },
 };
@@ -79,9 +80,14 @@ export const fadeInRight = {
 };
 
 export const slideToggle = {
-  initial: { height: 0, opacity: 0 },
-  animate: { height: 'auto', opacity: 1 },
-  exit: { opacity: 0, height: 0 },
+  initial: {
+    height: 0,
+    opacity: 0,
+  },
+  animate: {
+    height: 'auto',
+    opacity: 1,
+  },
 };
 
 export const overlayAnimation = {

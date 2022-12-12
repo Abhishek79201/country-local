@@ -1,9 +1,7 @@
-import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { animationWrapper, fadeInUp } from '../../utilities/animations';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 /* eslint react/jsx-one-expression-per-line: "off" */
 const WorkshopExperience = () => {
@@ -45,27 +43,17 @@ const WorkshopExperience = () => {
 
   return (
     <div className="relative hidden pt-10 md:block md:pt-14 lg:pt-20">
-      <motion.div
-        variants={animationWrapper}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="container"
-      >
-        <motion.h2
-          variants={fadeInUp}
-          className="mb-8 text-center text-2xl font-bold text-black md:mb-10 md:text-3xl lg:mb-12 lg:text-4xl"
-        >
+      <div className="container">
+        <h2 className="mb-8 text-center text-2xl font-bold text-black md:mb-10 md:text-3xl lg:mb-12 lg:text-4xl">
           <span className="purple_gradient_text mr-2">Country Locals</span>
           Workshop Experience
-        </motion.h2>
+        </h2>
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-5 lg:gap-7">
           {workshopItems &&
             workshopItems.map((item) => (
-              <motion.div
+              <div
                 key={item.id}
-                variants={fadeInUp}
                 className="purple_gradient_bg_light flex w-full rounded-2xl p-3 sm:w-[48%] lg:mb-0 lg:w-[380px] lg:p-4 xl:w-[368px] xl:p-5"
               >
                 <div className="mr-3 flex h-[66px] w-[66px] flex-shrink-0 items-center justify-center rounded-[10px] bg-white">
@@ -86,10 +74,10 @@ const WorkshopExperience = () => {
                     {item.description}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

@@ -98,7 +98,7 @@ const BookCardOffer = ({
             ))}
           </Swiper>
 
-          <div className="z-1 absolute top-3 right-3 flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
+          <div className="absolute top-3 right-3 z-[2] flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
             <button type="button" className="svg_icon w-6 hover:shadow-lg">
               <HeartIcon />
             </button>
@@ -121,20 +121,23 @@ const BookCardOffer = ({
                   initial: { opacity: 0, x: -40 },
                   animate: {
                     opacity: 1,
-                    x: -15,
+                    x: 0,
                     transition: {
                       duration: 0.5,
                       delay: 1,
                     },
                   },
                 }}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
                 className="z-[4] -ml-5 flex h-[54px] w-[54px] overflow-hidden rounded-full border-2 border-white"
               >
                 <Image src="/user-2.png" width={50} height={50} alt="user-2" />
               </motion.span>
             </div>
-            <div className=" -ml-2 flex flex-col items-center justify-start gap-1 text-[#E71575]">
-              <div className="-ml-7 flex items-center gap-1 ">
+            <div className="ml-1 flex flex-col items-center justify-start gap-1 text-[#E71575]">
+              <div className="-ml-2 flex items-center gap-1 ">
                 <span className="svg_icon inline-block w-[12px]">
                   <StarIcon />
                 </span>

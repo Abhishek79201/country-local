@@ -62,6 +62,17 @@ const FavouriteBookCardOffer = ({
     swiper?.autoplay.stop();
   };
 
+  const variants = {
+    hidden: { opacity: 0, scale: 0.3 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 1,
+      },
+    },
+  };
+
   return (
     <Link href="/">
       <a
@@ -95,7 +106,7 @@ const FavouriteBookCardOffer = ({
             ))}
           </Swiper>
 
-          <div className="z-1 absolute top-3 right-3 flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
+          <div className="absolute top-3 right-3 z-[2] flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
             <button type="button" className="svg_icon w-6 hover:shadow-lg">
               <HeartIcon />
             </button>
@@ -118,20 +129,23 @@ const FavouriteBookCardOffer = ({
                   initial: { opacity: 0, x: -40 },
                   animate: {
                     opacity: 1,
-                    x: -15,
+                    x: 0,
                     transition: {
                       duration: 0.5,
                       delay: 1,
                     },
                   },
                 }}
-                className="z-[4] -ml-5 flex h-[54px] w-[54px] overflow-hidden rounded-full border-2 border-white"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="z-[4] -ml-6 flex h-[54px] w-[54px] overflow-hidden rounded-full border-2 border-white"
               >
                 <Image src="/user-2.png" width={50} height={50} alt="user-2" />
               </motion.span>
             </div>
-            <div className=" -ml-2 flex flex-col items-center justify-start gap-1 text-[#E71575]">
-              <div className="-ml-7 flex items-center gap-1 ">
+            <div className="ml-1 flex flex-col items-center justify-start gap-1 text-[#E71575]">
+              <div className="-ml-3 flex items-center gap-1 ">
                 <span className="svg_icon inline-block w-[12px]">
                   <StarIcon />
                 </span>
@@ -153,12 +167,17 @@ const FavouriteBookCardOffer = ({
               </div>
               <p className="text-xs font-semibold text-[#222]">
                 Enjoy Florence with
-                <span className="  text-[#E71575]"> Olacorno</span>
+                <span className="text-[#E71575]"> Olacorno</span>
               </p>
-
-              <div className="z-10 -ml-7 overflow-hidden text-ellipsis rounded-lg bg-[#E71575] px-3 py-1 text-[10px] font-bold text-[#fff]">
+              <motion.div
+                variants={variants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="z-10 -ml-8 overflow-hidden text-ellipsis rounded-lg bg-[#E71575] px-3 py-1 text-[10px] font-bold text-[#fff]"
+              >
                 Choose your favorite local
-              </div>
+              </motion.div>
             </div>
           </div>
           <h4 className="pt-1 pb-1 text-base font-bold text-[#222]">

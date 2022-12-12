@@ -35,7 +35,7 @@ const StayBanner = () => (
         {[1, 2, 3, 4, 5, 6].map((item) => (
           <SwiperSlide key={item}>
             <div className="flex h-auto w-full flex-wrap items-center bg-white md:flex-nowrap">
-              <div className="banner overflow-hidden rounded-[10px] bg-black p-0 md:h-[210px] md:w-[244px] ">
+              <div className="banner flex overflow-hidden rounded-[10px] bg-black p-0 md:h-[210px] md:w-[244px] ">
                 <Image
                   src={`/stay-banner-${item}.jpg`}
                   width={225 * 2}

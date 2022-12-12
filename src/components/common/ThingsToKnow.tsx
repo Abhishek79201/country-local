@@ -1,41 +1,24 @@
-import { motion } from 'framer-motion';
+/* eslint jsx-a11y/anchor-is-valid: "off" */
+/* eslint react/jsx-one-expression-per-line: "off" */
 import Link from 'next/link';
-import { animationWrapper, fadeInUp } from '../../utilities/animations';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 import IdCardIcon from '../../../public/icons/id-card.svg';
 import UserIcon from '../../../public/icons/user.svg';
 import MaskIcon from '../../../public/icons/mask-face.svg';
 import Checkmark from '../../../public/icons/checked-purple.svg';
 
-/* eslint jsx-a11y/anchor-is-valid: "off" */
-/* eslint react/jsx-one-expression-per-line: "off" */
 const ThingsToKnow = () => (
   <div className="relative hidden pt-10 pb-2 md:block md:pt-14 md:pb-14 lg:pt-20 lg:pb-20">
-    <motion.div
-      variants={animationWrapper}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-      className="container"
-    >
+    <div className="container">
       <div className="border-t-2 border-b-2 border-[#EBEBEB] pt-12 pb-12">
         <div className="pb-8">
-          <motion.h3
-            variants={fadeInUp}
-            className="text-2xl font-bold text-black  lg:text-[28px]"
-          >
+          <h3 className="text-2xl font-bold text-black  lg:text-[28px]">
             Things to know
-          </motion.h3>
+          </h3>
         </div>
 
         <div className="flex flex-wrap justify-between">
-          <motion.div
-            variants={fadeInUp}
-            className="mb-8 lg:mb-0 lg:w-[380px] xl:w-[432px]"
-          >
+          <div className="mb-8 lg:mb-0 lg:w-[380px] xl:w-[432px]">
             <h4 className="pb-4 text-base font-bold text-[#262626] lg:text-lg">
               Whats not Included
             </h4>
@@ -59,12 +42,9 @@ const ThingsToKnow = () => (
               All participants must wear a protective face covering and practice
               social distancing
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={fadeInUp}
-            className="mb-8 flex-shrink-0 lg:mb-0"
-          >
+          <div className="mb-8 flex-shrink-0 lg:mb-0">
             <h4 className="pb-4 text-base font-bold text-[#262626] lg:text-lg">
               What to bring
             </h4>
@@ -92,9 +72,9 @@ const ThingsToKnow = () => (
               </span>
               Hand Sanitizer
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div variants={fadeInUp} className="lg:w-[350px] xl:w-[432px]">
+          <div className="lg:w-[350px] xl:w-[432px]">
             <h4 className="pb-4 text-base font-bold text-[#262626] lg:text-lg">
               Cancellation Policy
             </h4>
@@ -109,10 +89,10 @@ const ThingsToKnow = () => (
             <Link href="/">
               <a className="font-semibold  text-[#E71575]">Read More &gt;</a>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   </div>
 );
 export default ThingsToKnow;
