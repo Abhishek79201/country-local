@@ -55,14 +55,11 @@ const BookCardOffer = ({
 
   const onMouseOver = () => {
     swiper.slideNext(1000, true);
-    // if (slideReady) {
     swiper.autoplay.start({ delay: 4000 });
-    // }
   };
 
   const onmouseleave = () => {
     swiper?.autoplay.stop();
-    // setSlideReady(true);
   };
 
   return (

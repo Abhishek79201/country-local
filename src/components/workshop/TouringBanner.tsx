@@ -91,8 +91,14 @@ const TouringBanner = () => {
                     e.preventDefault();
                     showLargeImage(1);
                   }}
+                  className="overflow-hidden"
                 >
-                  <Image src="/banner1.png" width="232px" height="140px" />
+                  <Image
+                    src="/banner1.png"
+                    width="232px"
+                    height="140px"
+                    className="transition-all duration-[2s] ease-in-out hover:scale-[1.2]"
+                  />
                 </button>
                 <button
                   type="button"
@@ -100,8 +106,14 @@ const TouringBanner = () => {
                     e.preventDefault();
                     showLargeImage(2);
                   }}
+                  className="overflow-hidden"
                 >
-                  <Image src="/banner2.png" width="232px" height="223px" />
+                  <Image
+                    src="/banner2.png"
+                    width="232px"
+                    height="223px"
+                    className="transition-all duration-[2s] ease-in-out hover:scale-[1.2]"
+                  />
                 </button>
               </div>
               <div className="flex w-[232px] flex-col gap-4">
@@ -111,8 +123,14 @@ const TouringBanner = () => {
                     e.preventDefault();
                     showLargeImage(3);
                   }}
+                  className="overflow-hidden"
                 >
-                  <Image src="/banner3.png" width="232px" height="223px" />
+                  <Image
+                    src="/banner3.png"
+                    width="232px"
+                    height="223px"
+                    className="transition-all duration-[2s] ease-in-out hover:scale-[1.2]"
+                  />
                 </button>
                 <button
                   type="button"
@@ -120,8 +138,14 @@ const TouringBanner = () => {
                     e.preventDefault();
                     showLargeImage(4);
                   }}
+                  className="overflow-hidden"
                 >
-                  <Image src="/banner4.png" width="232px" height="140px" />
+                  <Image
+                    src="/banner4.png"
+                    width="232px"
+                    height="140px"
+                    className="transition-all duration-[2s] ease-in-out hover:scale-[1.2]"
+                  />
                 </button>
               </div>
               <div className="flex w-[232px] flex-col gap-4">
@@ -131,8 +155,14 @@ const TouringBanner = () => {
                     e.preventDefault();
                     showLargeImage(5);
                   }}
+                  className="overflow-hidden"
                 >
-                  <Image src="/banner5.png" width="232px" height="140px" />
+                  <Image
+                    src="/banner5.png"
+                    width="232px"
+                    height="140px"
+                    className="transition-all duration-[2s] ease-in-out hover:scale-[1.2]"
+                  />
                 </button>
                 <button
                   type="button"
@@ -140,8 +170,14 @@ const TouringBanner = () => {
                     e.preventDefault();
                     showLargeImage(6);
                   }}
+                  className="overflow-hidden"
                 >
-                  <Image src="/banner6.png" width="232px" height="223px" />
+                  <Image
+                    src="/banner6.png"
+                    width="232px"
+                    height="223px"
+                    className="transition-all duration-[2s] ease-in-out hover:scale-[1.2]"
+                  />
                 </button>
               </div>
             </div>
@@ -173,7 +209,7 @@ const TouringBanner = () => {
                       <img
                         src={`/banner${item}.png`}
                         alt={`/banner${item}.png`}
-                        className="absolute w-full object-cover"
+                        className="absolute w-full object-cover transition-all duration-[2s] ease-in-out hover:scale-[1.2]"
                       />
                     </div>
                   </SwiperSlide>

@@ -26,32 +26,32 @@ const Plan = () => {
   >([
     {
       id: 1,
-      thumbnail: 'group-1.png',
-      fullSize: 'plan-fullsize-1.jpg',
+      thumbnail: 'img1.png',
+      fullSize: 'img1.png',
       current: true,
     },
     {
       id: 2,
-      thumbnail: 'group-2.png',
-      fullSize: 'plan-fullsize-2.jpg',
+      thumbnail: 'img2.png',
+      fullSize: 'img2.png',
       current: false,
     },
     {
       id: 3,
-      thumbnail: 'group-3.png',
-      fullSize: 'plan-fullsize-3.jpg',
+      thumbnail: 'img3.png',
+      fullSize: 'img3.png',
       current: false,
     },
     {
       id: 4,
-      thumbnail: 'group-4.png',
-      fullSize: 'plan-fullsize-4.jpg',
+      thumbnail: 'img4.png',
+      fullSize: 'img4.png',
       current: false,
     },
     {
       id: 5,
-      thumbnail: 'group-5.png',
-      fullSize: 'plan-fullsize-5.jpg',
+      thumbnail: 'img5.png',
+      fullSize: 'img5.png',
       current: false,
     },
   ]);
@@ -89,10 +89,10 @@ const Plan = () => {
         <div className="absolute -left-[1px] -top-2 -z-10 h-full w-[1px] border-[1px] border-dashed border-r-[#E71575]" />
         {images.map((item) => (
           <div
-            className="relative ml-6 flex flex-wrap justify-between gap-5 pt-3 pb-8"
+            className="relative ml-6 flex flex-wrap justify-between gap-5 pt-3 pb-8 lg:flex-nowrap"
             key={item.id}
           >
-            <div className=" max-w-[373px]">
+            <div className="max-w-[373px]">
               <span className=" absolute -left-8 -top-5 z-10 text-[56px] text-[#E71575]">
                 •
               </span>
@@ -107,19 +107,23 @@ const Plan = () => {
               </p>
             </div>
 
-            <button
-              type="button"
+            <div
+              role="button"
+              tabIndex={0}
               onClick={() => {
                 showLargeImage(item.id);
               }}
+              onKeyDown={() => {
+                showLargeImage(item.id);
+              }}
+              className="relative flex w-full overflow-hidden rounded-lg pb-[18%]"
             >
-              <Image
+              <img
                 src={`/${item.thumbnail}`}
-                width={289}
-                height={99}
-                className="rounded"
+                alt={`/${item.thumbnail}`}
+                className="absolute w-full object-cover transition-all duration-[2s] ease-in-out hover:scale-[1.2]"
               />
-            </button>
+            </div>
           </div>
         ))}
 
@@ -158,12 +162,13 @@ const Plan = () => {
             I can personlize this tour for you
           </p>
           <div className="flex w-full flex-wrap items-start gap-4 rounded lg:min-h-[230px]  lg:flex-nowrap">
-            <div className="banner w-full p-0 lg:w-[40%] ">
+            <div className="banner flex w-full overflow-hidden rounded-lg p-0 lg:w-[40%]">
               <Image
                 src="/girl.png"
                 width="362px"
                 height="270px"
                 alt="staybanner"
+                className="transition-all duration-[2s] ease-in-out hover:scale-[1.2]"
               />
             </div>
             <div className="relative w-full lg:w-[60%]">
