@@ -43,14 +43,14 @@ const AvailableDate = () => {
           className="flex flex-wrap !pr-5 md:!pr-0"
         >
           {[1, 2, 3, 4, 5].map((item) => (
-            <SwiperSlide key={item} className="!w-[97%] md:!w-1/2 lg:!w-1/3">
+            <SwiperSlide key={item} className="!w-[98%] md:!w-1/2 lg:!w-1/3">
               <div
                 className="m-3 flex flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px] bg-white"
                 style={{
                   boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)',
                 }}
               >
-                <div className="w-2/3 p-5">
+                <div className="w-[55%] p-5 pr-2 md:w-[60%] md:pr-5">
                   <h3 className="py-0 text-base font-semibold text-[#222]">
                     Tue, 2 Jul
                   </h3>
@@ -77,7 +77,7 @@ const AvailableDate = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-1/3 shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[#1C1C25]">
+                <div className="flex w-[45%] shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[#1C1C25] sm:w-[40%]">
                   <Image
                     src="/icons/yellow-love.png"
                     width={70}

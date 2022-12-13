@@ -22,7 +22,7 @@ const DaysAccordion = ({ title }: { title: string }) => (
           <div className="mb-3 flex w-full items-center justify-between rounded bg-[#F8F8F8] p-2 px-5 pl-3 text-[#4A4A4A]">
             <h3 className="pl-1">{title}</h3>
             <span
-              className={`svg_icon absolute right-3 top-3 inline-block w-[15px] text-transparent transition-all duration-300 ease-in-out md:w-[18px] ${
+              className={`svg_icon absolute right-3 top-3 mt-1 inline-block w-[15px] text-transparent transition-all duration-300 ease-in-out md:mt-[2px] md:w-[18px] ${
                 open && 'rotate-180'
               }`}
             >
