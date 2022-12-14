@@ -654,3 +654,25 @@ body.active {
     }
   }
 }
+
+@keyframes upDown {
+  0%,
+  35%,
+  62% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  48% {
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+  52% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+}
+
+.up_down_animation {
+  animation: upDown 1.8s infinite alternate
+    cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}

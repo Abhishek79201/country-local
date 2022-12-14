@@ -39,6 +39,9 @@ const ProfileDetails = () => {
                   },
                 },
               }}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
               className="-ml-4 flex items-center overflow-hidden rounded-full"
             >
               <Image

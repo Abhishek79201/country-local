@@ -46,6 +46,8 @@ const BookingCardMobile = () => {
     setEndDate(end);
   };
 
+  const [bookingDate, setBookingDate] = useState<Date | null>(new Date());
+
   useEffect(() => {
     if (endDate) {
       setShowDatePicker(false);
@@ -345,6 +347,8 @@ const BookingCardMobile = () => {
                   <RequestToBookPopover
                     status={openRequestToBook}
                     onClose={() => setOpenRequestToBook(false)}
+                    date={bookingDate}
+                    onDateChange={(date: Date | null) => setBookingDate(date)}
                   />
                 </div>
               </div>

@@ -40,6 +40,7 @@ const BookingCard = () => {
     setStartDate(start);
     setEndDate(end);
   };
+  const [bookingDate, setBookingDate] = useState<Date | null>(new Date());
 
   useEffect(() => {
     if (endDate) {
@@ -48,10 +49,10 @@ const BookingCard = () => {
   }, [endDate]);
 
   return (
-    <Sticky top={30} bottomBoundary=".sticky_bottom_container">
+    <Sticky top={5} bottomBoundary=".sticky_bottom_container">
       <div className="h-full">
-        <div className="booking-card mb-5 w-full rounded-[20px] bg-white pb-8 shadow-spread ">
-          <div className="relative overflow-hidden rounded-tl-[20px] rounded-tr-[20px] pb-[52%]">
+        <div className="booking-card mb-3 w-full rounded-[20px] bg-white pb-5 shadow-spread ">
+          <div className="relative overflow-hidden rounded-tl-[20px] rounded-tr-[20px] pb-[38%]">
             <img
               src="/book-card.jpg"
               alt="book-card-bg"
@@ -62,17 +63,17 @@ const BookingCard = () => {
             </div>
           </div>
           <div className="px-5 xl:px-7">
-            <div className="relative mx-auto -mt-[42px] h-[84px] w-[84px] overflow-hidden rounded-full border-[3px] border-white">
+            <div className="relative mx-auto -mt-[40px] h-[75px] w-[75px] overflow-hidden rounded-full border-[3px] border-white">
               <Image src="/book-card-author.jpg" alt="avatar" layout="fill" />
             </div>
-            <h3 className="mt-4 mb-2 text-center text-xl font-bold leading-snug xl:mt-6 xl:mb-3 xl:text-2xl">
+            <h3 className="mt-4 mb-2 text-center text-xl font-bold leading-snug xl:mt-2 xl:mb-1 xl:text-2xl">
               The Best of Berling in a Convertible Car
             </h3>
             <div className="flex items-center justify-center text-center text-lg xl:text-xl">
               <span className="mr-3">Hosted by</span>
               <Image src="/miha.png" width={51} height={22} />
             </div>
-            <div className="mt-3 mb-5 flex items-center justify-center text-center text-xs xl:text-sm">
+            <div className="mt-3 mb-3 flex items-center justify-center text-center text-xs xl:text-sm">
               <div className="font-semibold">
                 From $45 <span className="line-through">$567</span> / night
               </div>
@@ -201,7 +202,7 @@ const BookingCard = () => {
                 {showGuests && <GuestsPopover />}
               </div>
             </div>
-            <div className="mt-5 mb-7">
+            <div className="my-4">
               <div className="flex items-center">
                 <div className="text-sm font-semibold">
                   Book for Private Group
@@ -233,9 +234,11 @@ const BookingCard = () => {
             <RequestToBookPopover
               status={openRequestToBook}
               onClose={() => setOpenRequestToBook(false)}
+              date={bookingDate}
+              onDateChange={(date: Date | null) => setBookingDate(date)}
             />
             <p className="text-center text-xs">You won’t be charged yet</p>
-            <div className="border-b border-b-[#DBDBDB] pt-6 pb-6 text-[#4A4A4A]">
+            <div className="border-b border-b-[#DBDBDB] pt-3 pb-4 text-[#4A4A4A]">
               <div className="mb-3 flex justify-between">
                 <div className="underline">$315 x nights</div>
                 <div>$2,203</div>
@@ -258,12 +261,12 @@ const BookingCard = () => {
                 <div>$203</div>
               </div>
             </div>
-            <div className="flex justify-between pt-5 font-semibold text-[#222222]">
+            <div className="flex justify-between pt-3 font-semibold text-[#222222]">
               <div>Total before taxes</div>
               <div>$2,203</div>
             </div>
 
-            <div className="mt-7 text-center">
+            <div className="mt-4 text-center">
               <button
                 type="button"
                 className="mx-auto flex items-center text-xs font-semibold text-[#222222]"
@@ -299,7 +302,7 @@ const BookingCard = () => {
           onClick={() => {
             setShowMoreServices(true);
           }}
-          className="relative z-0 w-full pb-20"
+          className="relative z-0 w-full pb-12"
         >
           <div className="z-50 w-full rounded-xl border-4 border-[#fff] bg-[#002390] py-3 text-center text-[#fff] ">
             View All My Service

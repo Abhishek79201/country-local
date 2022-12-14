@@ -116,7 +116,7 @@ const Plan = () => {
               onKeyDown={() => {
                 showLargeImage(item.id);
               }}
-              className="relative flex w-full overflow-hidden rounded-lg pb-[18%]"
+              className="relative flex w-full overflow-hidden rounded-lg pb-[38%] md:pb-[18%]"
             >
               <img
                 src={`/${item.thumbnail}`}

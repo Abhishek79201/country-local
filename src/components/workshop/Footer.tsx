@@ -12,7 +12,7 @@ const Footer = () => (
     <div className=" absolute -top-0 h-4 w-full rounded-bl-[20px] rounded-br-[20px] bg-[#fff] md:h-16 md:rounded-bl-[50px] md:rounded-br-[50px] ">
       {/* // */}
     </div>
-    <div className="container pb-[350px] pt-4 md:pt-[110px] lg:pb-0">
+    <div className="container pb-[270px] pt-4 md:pb-[350px] md:pt-[110px] lg:pb-0">
       <div className="flex flex-wrap justify-between pt-10 pb-2 md:pb-10 lg:px-10">
         <div className="pb-10 lg:w-[30%]">
           <h3 className="pb-2 text-3xl font-bold text-[#fff] lg:text-[36px]">
@@ -183,23 +183,25 @@ const Footer = () => (
       </div>
 
       <div className="absolute bottom-0 left-1/2 w-[95%] max-w-[1500px] -translate-x-1/2  transform rounded-tl-[20px] rounded-tr-[20px] bg-black px-5 pt-6 pb-14 md:rounded-tl-[50px] md:rounded-tr-[50px] md:px-10">
-        <div className="flex items-center justify-between pb-5">
-          <div className="svg_icon w-[110px] text-[#fff]">
+        <div className="flex items-center justify-between pb-3 md:pb-5">
+          <div className="w-[110px] text-[#fff]">
             <Image src="/icons/logo.png" width="110px" height="48px" />
           </div>
           <button
             type="button"
-            className="flex h-[33px] w-[33px] items-center justify-center rounded border"
+            className="flex h-[33px] w-[33px] items-center justify-center rounded-lg border-2 border-gray-600 md:h-[40px] md:w-[40px]"
           >
-            <div className="svg_icon w-2 rotate-90 text-[#fff]">
-              <Arrow />
+            <div className="up_down_animation">
+              <div className="svg_icon w-2 rotate-90 text-[#fff]">
+                <Arrow />
+              </div>
             </div>
           </button>
         </div>
-        <p className="pb-2 text-[20px] font-bold text-[#fff]">
+        <p className="pb-1 text-base font-bold text-[#fff] md:pb-2 md:text-[20px]">
           Country locals.com
         </p>
-        <p className="pb-14 text-[20px] font-thin text-[#fff] lg:pb-0">
+        <p className="pb-10 text-sm font-thin text-[#fff] md:pb-14 md:text-[20px] lg:pb-0">
           Experience New Experiences
         </p>
       </div>
