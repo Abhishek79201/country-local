@@ -295,7 +295,9 @@ const BookingCard = () => {
               </button>
               <PersonalizeExperiencePopover
                 status={openPersonalizedExperience}
+                time={bookingTime}
                 onClose={() => setOpenPersonalizedExperience(false)}
+                onTimeChange={(time: string) => setBookingTime(time)}
               />
             </div>
           </div>
