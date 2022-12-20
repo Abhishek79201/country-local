@@ -34,8 +34,9 @@ const BookingCardMobile = () => {
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
   const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
-  const [startDate, setStartDate] = useState<Date | null>(new Date());
-  const [endDate, setEndDate] = useState<Date | null>(new Date());
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+  const [clickedDate, setClickedDate] = useState<string>('');
   const { setGlobalOverflow } = useContext(OverflowContext);
   const { showMobileBooking, setShowMobileBooking } =
     useContext(MobileBookingContext);
@@ -47,12 +48,26 @@ const BookingCardMobile = () => {
   };
 
   const [bookingDate, setBookingDate] = useState<Date | null>(new Date());
+  const [bookingTime, setBookingTime] = useState<string>('10:00 pm');
 
   useEffect(() => {
     if (endDate) {
       setShowDatePicker(false);
     }
   }, [endDate]);
+
+  useEffect(() => {
+    if (clickedDate === 'start') {
+      setStartDate(null);
+      setEndDate(null);
+    }
+
+    if (clickedDate === 'end') {
+      setEndDate(null);
+    }
+
+    setClickedDate('');
+  }, [clickedDate]);
 
   return (
     <>
@@ -179,7 +194,10 @@ const BookingCardMobile = () => {
                       <div className="flex border-b border-b-[#808080]">
                         <button
                           type="button"
-                          onClick={() => setShowDatePicker(!showDatePicker)}
+                          onClick={() => {
+                            setClickedDate('start');
+                            setShowDatePicker(!showDatePicker);
+                          }}
                           className="flex-1 border-r border-r-[#808080] px-4 py-4 text-left text-sm"
                         >
                           <span className="block font-semibold">CHECK-IN</span>
@@ -187,7 +205,10 @@ const BookingCardMobile = () => {
                         </button>
                         <button
                           type="button"
-                          onClick={() => setShowDatePicker(!showDatePicker)}
+                          onClick={() => {
+                            setClickedDate('end');
+                            setShowDatePicker(!showDatePicker);
+                          }}
                           className="flex-1 px-4 py-4 text-left text-sm"
                         >
                           <span className="block font-semibold">CHECK-OUT</span>
@@ -348,7 +369,9 @@ const BookingCardMobile = () => {
                     status={openRequestToBook}
                     onClose={() => setOpenRequestToBook(false)}
                     date={bookingDate}
+                    time={bookingTime}
                     onDateChange={(date: Date | null) => setBookingDate(date)}
+                    onTimeChange={(time: string) => setBookingTime(time)}
                   />
                 </div>
               </div>

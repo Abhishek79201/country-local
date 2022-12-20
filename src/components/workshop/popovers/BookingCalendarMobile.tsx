@@ -120,7 +120,7 @@ const BookingCalendarMobile = ({
                       onChange={onDateChange}
                       startDate={startDate}
                       endDate={endDate}
-                      minDate={new Date()}
+                      minDate={startDate || new Date()}
                       monthsShown={4}
                       selectsRange
                       inline

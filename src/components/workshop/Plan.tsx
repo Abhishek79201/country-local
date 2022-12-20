@@ -17,7 +17,7 @@ const Plan = () => {
   const { setShowMobileBooking } = useContext(MobileBookingContext);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const scrollToBookNow = () => {
-    const section = document.querySelector('.sticky_bottom_container');
+    const section = document.querySelector('.sticky_top_container');
     section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
   const [showContactMe, setShowContactMe] = useState(false);
@@ -80,7 +80,7 @@ const Plan = () => {
       </p>
 
       <div className="relative h-5 w-12">
-        <div className="svg_icon absolute top-0 -left-3 z-10 w-6 text-[#E71575] ">
+        <div className="svg_icon absolute top-0 -left-3 z-[1] w-6 text-[#E71575] ">
           <FillLocate />
         </div>
       </div>
@@ -93,7 +93,7 @@ const Plan = () => {
             key={item.id}
           >
             <div className="max-w-[373px]">
-              <span className=" absolute -left-8 -top-5 z-10 text-[56px] text-[#E71575]">
+              <span className="absolute -left-8 -top-5 z-[1] text-[56px] text-[#E71575]">
                 •
               </span>
 

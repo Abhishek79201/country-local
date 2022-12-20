@@ -7,27 +7,38 @@ import { formatDate } from '../../../utilities/helpers';
 import useViewport from '../../../hooks/useViewport';
 
 import RequestToBookCalenderPopover from './RequestToBookCalenderPopover';
+import RequestToBookTimePopover from './RequestToBookTimePopover';
 
 import CloseIcon from '../../../../public/icons/xmark.svg';
 import CalendarIcon from '../../../../public/icons/calendar.svg';
+import ClockIcon from '../../../../public/icons/clock-1.svg';
+import UserIcon from '../../../../public/icons/user-outline.svg';
 import ArrowDownIcon from '../../../../public/icons/chevron-right.svg';
+import GuestsPopover from './GuestsPopover';
+import GuestsPopoverMobile from './GuestsPopoverMobile';
 
 interface RequestToBookPopoverTypes {
   status: boolean;
   onClose: () => void;
   date: Date | null;
+  time: string;
   onDateChange: (date: Date | null) => void;
+  onTimeChange: (time: string) => void;
 }
 
 const RequestToBookPopover = ({
   status,
   onClose,
   date,
+  time,
   onDateChange,
+  onTimeChange,
 }: RequestToBookPopoverTypes) => {
   const { width } = useViewport();
   const { setGlobalOverflow } = useContext(OverflowContext);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
+  const [showTimePicker, setShowTimePicker] = useState<boolean>(false);
+  const [showGuestsPicker, setShowGuestsPicker] = useState<boolean>(false);
 
   return (
     <>
@@ -135,46 +146,65 @@ const RequestToBookPopover = ({
                     </div>
                     <div className="flex flex-wrap justify-between md:gap-y-5">
                       <div className="relative w-full md:mt-0 md:w-[48%]">
-                        <span className="svg_icon absolute top-3 left-3 flex w-4 text-gray-500 md:top-[11px]">
-                          <CalendarIcon />
-                        </span>
-                        <input
-                          type="text"
-                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-9 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
+                        <button
+                          type="button"
+                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-9 text-left text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
                           onClick={() => setShowDatePicker(!showDatePicker)}
-                          value={formatDate(date)}
-                        />
-                        <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
-                          <ArrowDownIcon />
-                        </span>
+                        >
+                          <span className="svg_icon absolute top-3 left-3 flex w-4 text-gray-500 md:top-[11px]">
+                            <CalendarIcon />
+                          </span>
+                          {formatDate(date)}
+                          <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
                       </div>
                       <div className="relative mt-5 w-full md:mt-0 md:w-[48%]">
-                        <span className="svg_icon absolute top-3 left-3 flex w-4 text-gray-500 md:top-[11px]">
-                          <CalendarIcon />
-                        </span>
-                        <input
-                          type="text"
-                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-9 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
-                          onClick={() => setShowDatePicker(!showDatePicker)}
-                          value={formatDate(date)}
-                        />
-                        <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
-                          <ArrowDownIcon />
-                        </span>
+                        <button
+                          type="button"
+                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-9 text-left text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
+                          onClick={() => setShowTimePicker(!showTimePicker)}
+                        >
+                          <span className="svg_icon absolute top-3 left-3 flex w-4 text-transparent md:top-[11px]">
+                            <ClockIcon />
+                          </span>
+                          {time}
+                          <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
                       </div>
+
                       <div className="relative mt-5 w-full md:mt-0">
-                        <span className="svg_icon absolute top-3 left-3 flex w-4 text-gray-500 md:top-[11px]">
-                          <CalendarIcon />
-                        </span>
-                        <input
-                          type="text"
-                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-9 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
-                          onClick={() => setShowDatePicker(!showDatePicker)}
-                          value={formatDate(date)}
-                        />
-                        <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
-                          <ArrowDownIcon />
-                        </span>
+                        <button
+                          type="button"
+                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-9 text-left text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
+                          onClick={() => setShowGuestsPicker(!showGuestsPicker)}
+                        >
+                          <span className="svg_icon absolute top-3 left-3 flex w-4 text-gray-500 md:top-[11px]">
+                            <UserIcon />
+                          </span>
+                          2 Guests
+                          <span
+                            className={`svg_icon absolute top-[14px] right-3 flex w-4 transform text-gray-500 md:top-[11px] ${
+                              showGuestsPicker ? 'rotate-[270deg]' : 'rotate-90'
+                            }`}
+                          >
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
+                        {showGuestsPicker &&
+                          (width > 1063 ? (
+                            <div className="absolute -top-5 w-full">
+                              <GuestsPopover />
+                            </div>
+                          ) : (
+                            <GuestsPopoverMobile
+                              status={showGuestsPicker}
+                              onClose={() => setShowGuestsPicker(false)}
+                            />
+                          ))}
                       </div>
                     </div>
                     <div className="pt-5">
@@ -216,6 +246,13 @@ const RequestToBookPopover = ({
         onClose={() => setShowDatePicker(false)}
         date={date}
         onDateChange={onDateChange}
+      />
+
+      <RequestToBookTimePopover
+        status={showTimePicker}
+        onClose={() => setShowTimePicker(false)}
+        time={time}
+        onTimeChange={onTimeChange}
       />
     </>
   );

@@ -1,3 +1,4 @@
+/* eslint react/jsx-one-expression-per-line: "off" */
 import useViewport from '../../hooks/useViewport';
 
 import HighlightsCarousel from './HighlightsCarousel';
@@ -17,12 +18,10 @@ import StarIcon from '../../../public/icons/star.svg';
 import ShareIcon from '../../../public/icons/upload.svg';
 import HeartIcon from '../../../public/icons/heart-outline.svg';
 
-/* eslint jsx-a11y/anchor-is-valid: "off" */
-/* eslint react/jsx-one-expression-per-line: "off" */
 const Profiles = () => {
   const { width } = useViewport();
   return (
-    <div className="relative mt-8 bg-[#fff]  md:mt-0 md:pt-14 lg:pt-12">
+    <div className="sticky_top_container relative mt-8 bg-[#fff]  md:mt-0 md:pt-14 lg:pt-12">
       <div className="container">
         <div className="flex flex-wrap justify-between lg:flex-nowrap">
           <div className="w-full lg:max-w-[650px] xl:max-w-[730px]">

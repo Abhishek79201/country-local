@@ -182,25 +182,22 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-1/2 w-[95%] max-w-[1500px] -translate-x-1/2  transform rounded-tl-[20px] rounded-tr-[20px] bg-black px-5 pt-6 pb-14 md:rounded-tl-[50px] md:rounded-tr-[50px] md:px-10">
-        <div className="flex items-center justify-between pb-3 md:pb-5">
+      <div className="absolute bottom-0 left-1/2 w-[95%] max-w-[1500px] -translate-x-1/2  transform rounded-tl-[20px] rounded-tr-[20px] bg-black px-5 pt-5 pb-16 md:rounded-tl-[50px] md:rounded-tr-[50px] md:px-14 md:pt-14">
+        <div className="flex items-center justify-between pb-0 md:pb-5">
           <div className="w-[110px] text-[#fff]">
             <Image src="/icons/logo.png" width="110px" height="48px" />
           </div>
           <button
             type="button"
-            className="flex h-[33px] w-[33px] items-center justify-center rounded-lg border-2 border-gray-600 md:h-[40px] md:w-[40px]"
+            className="flex h-[40px] w-[40px] items-center justify-center rounded-lg border-2 border-gray-600 md:h-[50px] md:w-[50px]"
           >
             <div className="up_down_animation">
-              <div className="svg_icon w-2 rotate-90 text-[#fff]">
+              <div className="svg_icon w-2 rotate-90 text-[#fff] md:w-[10px]">
                 <Arrow />
               </div>
             </div>
           </button>
         </div>
-        <p className="pb-1 text-base font-bold text-[#fff] md:pb-2 md:text-[20px]">
-          Country locals.com
-        </p>
         <p className="pb-10 text-sm font-thin text-[#fff] md:pb-14 md:text-[20px] lg:pb-0">
           Experience New Experiences
         </p>

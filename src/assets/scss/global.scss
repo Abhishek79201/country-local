@@ -251,7 +251,7 @@ svg {
   }
   .react-datepicker__day--in-range,
   .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
-    background-color: #f7f7f7;
+    background-color: #efefef;
   }
   .react-datepicker__day--selected,
   .react-datepicker__day--range-end,
@@ -475,10 +475,10 @@ input:checked + .slider:before {
   //   linear-gradient(109.26deg, #6ae8d1 14.08%, rgba(216, 17, 172, 0.5) 62.34%);
   background: linear-gradient(
     -45deg,
-    #6ae8d1,
-    rgba(216, 17, 172, 0.5),
-    #a0ffee,
-    rgb(216, 170, 206)
+    #ac6ad6,
+    #9527c8,
+    #c864b1,
+    rgba(216, 17, 172, 0.5)
   );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -675,4 +675,30 @@ body.active {
 .up_down_animation {
   animation: upDown 1.8s infinite alternate
     cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.booking_time {
+  .react-timekeeper {
+    box-shadow: none;
+    .react-timekeeper__top-bar {
+      .react-timekeeper__tb-hour--active,
+      .react-timekeeper__tb-minute--active {
+        color: #e71676;
+      }
+    }
+    .react-timekeeper__clock-wrapper {
+      padding-top: 0;
+      background-color: #fff;
+      .react-timekeeper__hand-circle-outer,
+      .react-timekeeper__hand-circle-center {
+        fill: rgb(231 22 118 / 20%);
+      }
+      .react-timekeeper__clock-hand {
+        stroke: rgb(231 22 118 / 20%);
+      }
+      .react-timekeeper__meridiem--active {
+        background-color: rgb(231 22 118 / 20%);
+      }
+    }
+  }
 }

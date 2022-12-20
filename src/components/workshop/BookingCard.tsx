@@ -41,6 +41,7 @@ const BookingCard = () => {
     setEndDate(end);
   };
   const [bookingDate, setBookingDate] = useState<Date | null>(new Date());
+  const [bookingTime, setBookingTime] = useState<string>('10:00 pm');
 
   useEffect(() => {
     if (endDate) {
@@ -49,7 +50,7 @@ const BookingCard = () => {
   }, [endDate]);
 
   return (
-    <Sticky top={5} bottomBoundary=".sticky_bottom_container">
+    <Sticky top={15} bottomBoundary=".sticky_bottom_container">
       <div className="h-full">
         <div className="booking-card mb-3 w-full rounded-[20px] bg-white pb-5 shadow-spread ">
           <div className="relative overflow-hidden rounded-tl-[20px] rounded-tr-[20px] pb-[38%]">
@@ -235,7 +236,9 @@ const BookingCard = () => {
               status={openRequestToBook}
               onClose={() => setOpenRequestToBook(false)}
               date={bookingDate}
+              time={bookingTime}
               onDateChange={(date: Date | null) => setBookingDate(date)}
+              onTimeChange={(time: string) => setBookingTime(time)}
             />
             <p className="text-center text-xs">You won’t be charged yet</p>
             <div className="border-b border-b-[#DBDBDB] pt-3 pb-4 text-[#4A4A4A]">

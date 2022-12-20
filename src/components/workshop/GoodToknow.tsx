@@ -139,9 +139,13 @@ const GoodToKnow = () => {
                   Tortor pellentesque nec sit nulla volutpat curabitur mattis
                   fusce condimentum. Nulla orci congue praesent nullam vitae
                   nibh. Sed sit sed eu lectus mi amet egestas{' '}
-                  <a href="#" className="font-semibold text-[#E71575]">
+                  <button
+                    type="button"
+                    className="font-semibold text-[#E71575]"
+                    onClick={() => setOpenGoodToKnowModal(true)}
+                  >
                     Read More
-                  </a>
+                  </button>
                 </p>
               </div>
             </SwiperSlide>
