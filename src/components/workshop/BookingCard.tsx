@@ -39,6 +39,26 @@ const BookingCard = () => {
   const [bookingTime, setBookingTime] = useState<string>('10:00 pm');
   const [clickedDate, setClickedDate] = useState<string>('');
 
+  const [guestsCount, setGuestsCount] = useState<{
+    adults: number;
+    children: number;
+    infants: number;
+  }>({
+    adults: 2,
+    children: 0,
+    infants: 0,
+  });
+
+  const handleGuestCount = (type: string, count: number) => {
+    if (type === 'adults') {
+      setGuestsCount({ ...guestsCount, adults: count });
+    } else if (type === 'children') {
+      setGuestsCount({ ...guestsCount, children: count });
+    } else if (type === 'infants') {
+      setGuestsCount({ ...guestsCount, infants: count });
+    }
+  };
+
   useEffect(() => {
     if (endDate) {
       setShowDatePicker(false);
@@ -51,7 +71,7 @@ const BookingCard = () => {
 
   return (
     <Sticky top={15} bottomBoundary=".sticky_bottom_container">
-      <div className="h-full">
+      <div className="booking-card-wrapper h-full transition-opacity duration-300 ease-in-out">
         <div className="booking-card mb-3 w-full rounded-[20px] bg-white pb-5 shadow-spread ">
           <div className="relative overflow-hidden rounded-tl-[20px] rounded-tr-[20px] pb-[38%]">
             <img
@@ -225,7 +245,12 @@ const BookingCard = () => {
                       <div className="svg_icon w-4">
                         <UserIcon />
                       </div>
-                      <span className="ml-2">2 guests</span>
+                      <span className="ml-2">
+                        {guestsCount.adults +
+                          guestsCount.children +
+                          guestsCount.infants}{' '}
+                        guests
+                      </span>
                     </div>
                   </div>
                   <div
@@ -236,7 +261,14 @@ const BookingCard = () => {
                     <ChevronIcon />
                   </div>
                 </button>
-                {showGuests && <GuestsPopover />}
+                {showGuests && (
+                  <GuestsPopover
+                    guests={guestsCount}
+                    onChange={(type: string, count: number) => {
+                      handleGuestCount(type, count);
+                    }}
+                  />
+                )}
               </div>
             </div>
             <div className="my-4">
@@ -275,6 +307,10 @@ const BookingCard = () => {
               time={bookingTime}
               onDateChange={(date: Date | null) => setBookingDate(date)}
               onTimeChange={(time: string) => setBookingTime(time)}
+              guests={guestsCount}
+              onGuestsChange={(type: string, count: number) => {
+                handleGuestCount(type, count);
+              }}
             />
             <p className="text-center text-xs">You won’t be charged yet</p>
             <div className="border-b border-b-[#DBDBDB] pt-3 pb-4 text-[#4A4A4A]">

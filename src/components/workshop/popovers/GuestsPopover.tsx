@@ -1,35 +1,38 @@
 /* eslint @next/next/no-img-element: "off" */
-import { useState } from 'react';
 import { decrementItem, incrementItem } from '../../../utilities/helpers';
 
-const GuestsPopover = () => {
-  const [totalAdults, setTotalAdults] = useState<number>(0);
-  const [totalChildren, setTotalChildren] = useState<number>(0);
-  const [totalInfants, setTotalInfants] = useState<number>(0);
+const GuestsPopover = ({
+  guests,
+  onChange,
+}: {
+  guests: { adults: number; children: number; infants: number };
+  onChange: (type: string, count: number) => void;
+}) => {
+  const { adults, children, infants } = guests;
 
   const handleIncrement = (type: string) => {
     if (type === 'adults') {
-      const value = incrementItem(totalAdults);
-      setTotalAdults(value);
-    } else if (type === 'child') {
-      const value = incrementItem(totalChildren);
-      setTotalChildren(value);
+      const value = incrementItem(adults);
+      onChange('adults', value);
+    } else if (type === 'children') {
+      const value = incrementItem(children);
+      onChange('children', value);
     } else if (type === 'infants') {
-      const value = incrementItem(totalInfants);
-      setTotalInfants(value);
+      const value = incrementItem(infants);
+      onChange('infants', value);
     }
   };
 
   const handleDecrement = (type: string) => {
     if (type === 'adults') {
-      const value = decrementItem(totalAdults);
-      setTotalAdults(value);
-    } else if (type === 'child') {
-      const value = decrementItem(totalChildren);
-      setTotalChildren(value);
+      const value = decrementItem(adults);
+      onChange('adults', value);
+    } else if (type === 'children') {
+      const value = decrementItem(children);
+      onChange('children', value);
     } else if (type === 'infants') {
-      const value = decrementItem(totalInfants);
-      setTotalInfants(value);
+      const value = decrementItem(infants);
+      onChange('infants', value);
     }
   };
 
@@ -52,7 +55,7 @@ const GuestsPopover = () => {
               handleDecrement('adults');
             }}
             className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ddd] text-2xl text-[#5E5E5E] disabled:opacity-50"
-            disabled={totalAdults === 0}
+            disabled={adults === 0}
           >
             <img
               src="https://img.icons8.com/material-outlined/96/000000/minus.png"
@@ -61,7 +64,7 @@ const GuestsPopover = () => {
             />
           </button>
           <div className="min-w-[35px] text-center font-medium text-[#222]">
-            {totalAdults}
+            {adults}
           </div>
           <button
             type="button"
@@ -94,10 +97,10 @@ const GuestsPopover = () => {
             type="button"
             onClick={(e) => {
               e.preventDefault();
-              handleDecrement('child');
+              handleDecrement('children');
             }}
             className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ddd] text-2xl text-[#5E5E5E] disabled:opacity-50"
-            disabled={totalChildren === 0}
+            disabled={children === 0}
           >
             <img
               src="https://img.icons8.com/material-outlined/96/000000/minus.png"
@@ -106,13 +109,13 @@ const GuestsPopover = () => {
             />
           </button>
           <div className="min-w-[35px] text-center font-medium text-[#222]">
-            {totalChildren}
+            {children}
           </div>
           <button
             type="button"
             onClick={(e) => {
               e.preventDefault();
-              handleIncrement('child');
+              handleIncrement('children');
             }}
             className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ddd] text-2xl text-[#5E5E5E]"
           >
@@ -142,7 +145,7 @@ const GuestsPopover = () => {
               handleDecrement('infants');
             }}
             className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ddd] text-2xl text-[#5E5E5E] disabled:opacity-50"
-            disabled={totalInfants === 0}
+            disabled={infants === 0}
           >
             <img
               src="https://img.icons8.com/material-outlined/96/000000/minus.png"
@@ -151,7 +154,7 @@ const GuestsPopover = () => {
             />
           </button>
           <div className="min-w-[35px] text-center font-medium text-[#222]">
-            {totalInfants}
+            {infants}
           </div>
           <button
             type="button"

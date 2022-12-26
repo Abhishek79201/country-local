@@ -44,9 +44,29 @@ const BookingCardMobile = () => {
   const [bookingDate, setBookingDate] = useState<Date | null>(new Date());
   const [bookingTime, setBookingTime] = useState<string>('10:00 pm');
 
+  const [guestsCount, setGuestsCount] = useState<{
+    adults: number;
+    children: number;
+    infants: number;
+  }>({
+    adults: 2,
+    children: 0,
+    infants: 0,
+  });
+
+  const handleGuestCount = (type: string, count: number) => {
+    if (type === 'adults') {
+      setGuestsCount({ ...guestsCount, adults: count });
+    } else if (type === 'children') {
+      setGuestsCount({ ...guestsCount, children: count });
+    } else if (type === 'infants') {
+      setGuestsCount({ ...guestsCount, infants: count });
+    }
+  };
+
   return (
     <>
-      <div className="fixed bottom-0 left-0 z-10 w-full border-t border-t-slate-200 bg-white">
+      <div className="fixed bottom-0 left-0 z-[20] w-full border-t border-t-slate-200 bg-white">
         <div className="container">
           <div className="flex items-center justify-between py-3 text-lg">
             <div>
@@ -219,7 +239,12 @@ const BookingCardMobile = () => {
                               <div className="svg_icon w-4">
                                 <UserIcon />
                               </div>
-                              <span className="ml-2">2 guests</span>
+                              <span className="ml-2">
+                                {guestsCount.adults +
+                                  guestsCount.children +
+                                  guestsCount.infants}{' '}
+                                guests
+                              </span>
                             </div>
                           </div>
                           <div
@@ -234,6 +259,10 @@ const BookingCardMobile = () => {
                         <GuestsPopoverMobile
                           status={showGuests}
                           onClose={() => setShowGuests(false)}
+                          guests={guestsCount}
+                          onChange={(type: string, count: number) => {
+                            handleGuestCount(type, count);
+                          }}
                         />
                       </div>
                     </div>
@@ -358,6 +387,10 @@ const BookingCardMobile = () => {
                     time={bookingTime}
                     onDateChange={(date: Date | null) => setBookingDate(date)}
                     onTimeChange={(time: string) => setBookingTime(time)}
+                    guests={guestsCount}
+                    onGuestsChange={(type: string, count: number) => {
+                      handleGuestCount(type, count);
+                    }}
                   />
                 </div>
               </div>

@@ -1,6 +1,8 @@
 /* eslint react/jsx-wrap-multilines: "off" */
+import { useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import VisibilitySensor from 'react-visibility-sensor';
 import { bookOffersData } from '../src/utilities/dummy-api';
 import useViewport from '../src/hooks/useViewport';
 
@@ -23,11 +25,20 @@ import SimilarProperties from '../src/components/workshop/SimilarProperties';
 
 const Home: NextPage = () => {
   const { width } = useViewport();
+  const [sectionVisible, setSectionVisible] = useState<boolean>(false);
+
+  const onChange = (isVisible: boolean) => {
+    setSectionVisible(isVisible);
+  };
+
   return (
     <>
       <style>
         {`header.mobile_header, .mobile_floating_header {
             display: none;
+          }
+          .booking-card-wrapper {
+            opacity: ${sectionVisible ? '0' : '1'};
           }`}
       </style>
       <Head>
@@ -45,7 +56,9 @@ const Home: NextPage = () => {
 
         <Profiles />
 
-        <TouringBanner />
+        <VisibilitySensor onChange={onChange} partialVisibility>
+          <TouringBanner />
+        </VisibilitySensor>
 
         <div className="container pt-8">
           <div className="w-full lg:max-w-[650px] xl:max-w-[730px]">

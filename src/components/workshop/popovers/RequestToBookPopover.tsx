@@ -1,3 +1,4 @@
+/* eslint react/jsx-one-expression-per-line: "off" */
 import { useContext, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import Image from 'next/image';
@@ -24,6 +25,8 @@ interface RequestToBookPopoverTypes {
   time: string;
   onDateChange: (date: Date | null) => void;
   onTimeChange: (time: string) => void;
+  guests: { adults: number; children: number; infants: number };
+  onGuestsChange: (type: string, count: number) => void;
 }
 
 const RequestToBookPopover = ({
@@ -33,6 +36,8 @@ const RequestToBookPopover = ({
   time,
   onDateChange,
   onTimeChange,
+  guests,
+  onGuestsChange,
 }: RequestToBookPopoverTypes) => {
   const { width } = useViewport();
   const { setGlobalOverflow } = useContext(OverflowContext);
@@ -185,7 +190,8 @@ const RequestToBookPopover = ({
                           <span className="svg_icon absolute top-3 left-3 flex w-4 text-gray-500 md:top-[11px]">
                             <UserIcon />
                           </span>
-                          2 Guests
+                          {guests.adults + guests.children + guests.infants}{' '}
+                          Guests
                           <span
                             className={`svg_icon absolute top-[14px] right-3 flex w-4 transform text-gray-500 md:top-[11px] ${
                               showGuestsPicker ? 'rotate-[270deg]' : 'rotate-90'
@@ -197,12 +203,21 @@ const RequestToBookPopover = ({
                         {showGuestsPicker &&
                           (width > 1063 ? (
                             <div className="absolute -top-5 w-full">
-                              <GuestsPopover />
+                              <GuestsPopover
+                                guests={guests}
+                                onChange={(type: string, count: number) => {
+                                  onGuestsChange(type, count);
+                                }}
+                              />
                             </div>
                           ) : (
                             <GuestsPopoverMobile
                               status={showGuestsPicker}
                               onClose={() => setShowGuestsPicker(false)}
+                              guests={guests}
+                              onChange={(type: string, count: number) => {
+                                onGuestsChange(type, count);
+                              }}
                             />
                           ))}
                       </div>
