@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { EffectFade, Autoplay } from 'swiper';
+import { EffectFade, Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
 
 import StarIcon from '../../../public/icons/star.svg';
 import HeartIcon from '../../../public/icons/heart.svg';
@@ -70,14 +71,18 @@ const BookCardOffer = ({
         onMouseOver={onMouseOver}
         onMouseLeave={onmouseleave}
       >
-        <div className="relative rounded">
+        <div className="group relative rounded">
           <Swiper
-            modules={[EffectFade, Autoplay]}
+            modules={[EffectFade, Autoplay, Navigation]}
             slidesPerView={1}
             spaceBetween={0}
             effect="fade"
             fadeEffect={{
               crossFade: true,
+            }}
+            navigation={{
+              prevEl: `.book_card_inner-${id}.swiper-button-prev`,
+              nextEl: `.book_card_inner-${id}.swiper-button-next`,
             }}
             loop
             onSwiper={setSwiper}
@@ -94,6 +99,12 @@ const BookCardOffer = ({
               </SwiperSlide>
             ))}
           </Swiper>
+          <div
+            className={`book_card_inner-${id} similar_prop_inner_nav swiper-button-prev !top-[50%] !left-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white bg-opacity-90 !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
+          />
+          <div
+            className={`book_card_inner-${id} similar_prop_inner_nav swiper-button-next !top-[50%] !right-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white bg-opacity-90 !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
+          />
 
           <div className="absolute top-3 right-3 z-[2] flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
             <button type="button" className="svg_icon w-6 hover:shadow-lg">

@@ -9,14 +9,14 @@ import useViewport from '../../../hooks/useViewport';
 
 import RequestToBookCalenderPopover from './RequestToBookCalenderPopover';
 import RequestToBookTimePopover from './RequestToBookTimePopover';
+import GuestsPopover from './GuestsPopover';
+import GuestsPopoverMobile from './GuestsPopoverMobile';
 
 import CloseIcon from '../../../../public/icons/xmark.svg';
 import CalendarIcon from '../../../../public/icons/calendar.svg';
 import ClockIcon from '../../../../public/icons/clock-1.svg';
 import UserIcon from '../../../../public/icons/user-outline.svg';
 import ArrowDownIcon from '../../../../public/icons/chevron-right.svg';
-import GuestsPopover from './GuestsPopover';
-import GuestsPopoverMobile from './GuestsPopoverMobile';
 
 interface RequestToBookPopoverTypes {
   status: boolean;

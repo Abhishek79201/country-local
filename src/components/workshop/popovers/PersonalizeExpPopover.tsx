@@ -1,31 +1,49 @@
+/* eslint react/jsx-one-expression-per-line: "off" */
 import { useContext, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OverflowContext } from '../../../context/overflowContext';
+import { formatDate } from '../../../utilities/helpers';
 import useViewport from '../../../hooks/useViewport';
 
 import RequestToBookTimePopover from './RequestToBookTimePopover';
+import RequestToBookCalenderPopover from './RequestToBookCalenderPopover';
+import GuestsPopoverMobile from './GuestsPopoverMobile';
+import GuestsPopover from './GuestsPopover';
 
-import ArrowDownIcon from '../../../../public/icons/chevron-right.svg';
 import CloseIcon from '../../../../public/icons/xmark.svg';
+import CalendarIcon from '../../../../public/icons/calendar.svg';
+import ClockIcon from '../../../../public/icons/clock-1.svg';
+import UserIcon from '../../../../public/icons/user-outline.svg';
+import ArrowDownIcon from '../../../../public/icons/chevron-right.svg';
 
 interface PersonalizeExperiencePopoverTypes {
   status: boolean;
-  time: string;
   onClose: () => void;
+  date: Date | null;
+  time: string;
+  onDateChange: (date: Date | null) => void;
   onTimeChange: (time: string) => void;
+  guests: { adults: number; children: number; infants: number };
+  onGuestsChange: (type: string, count: number) => void;
 }
 
 const PersonalizeExperiencePopover = ({
   status,
-  time,
   onClose,
+  date,
+  time,
+  onDateChange,
   onTimeChange,
+  guests,
+  onGuestsChange,
 }: PersonalizeExperiencePopoverTypes) => {
   const { width } = useViewport();
   const { setGlobalOverflow } = useContext(OverflowContext);
   const [showTimePicker, setShowTimePicker] = useState<boolean>(false);
+  const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
+  const [showGuestsPicker, setShowGuestsPicker] = useState<boolean>(false);
 
   return (
     <>
@@ -143,56 +161,77 @@ const PersonalizeExperiencePopover = ({
                       </h3>
                       <p className="text-sm">Suggest suitable days & time</p>
                     </div>
-                    <div className="flex flex-wrap pb-5 md:pt-5">
-                      <div className="mt-5 w-full md:mt-0 md:w-1/2">
-                        <h4 className="mb-2">Type *</h4>
-                        <div className="flex flex-row flex-wrap gap-y-4 md:flex-nowrap md:gap-y-2">
-                          {['Group', 'Individual'].map((day) => (
-                            <div
-                              key={day}
-                              className="mr-4 flex w-full flex-row-reverse items-center md:flex-row"
-                            >
-                              <input
-                                type="radio"
-                                id={day}
-                                name="classStarting"
-                                className="h-6 w-6 shrink-0 cursor-pointer accent-black md:h-[18px] md:w-[18px]"
-                              />
-                              <label
-                                htmlFor={day}
-                                className="w-full cursor-pointer text-base md:ml-2 md:w-auto md:text-[13px]"
-                              >
-                                {day}
-                              </label>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="mt-5 w-full md:mt-0 md:w-1/2">
-                        <h4 className="mb-2">Slots *</h4>
-                        <select
-                          name="slots"
-                          id="slots"
-                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary"
-                        >
-                          <option value="1">Morning</option>
-                          <option value="2">Noon</option>
-                          <option value="3">After Noon</option>
-                          <option value="4">Evening</option>
-                        </select>
-                      </div>
-                      <div className="mt-5 w-full md:mt-0 md:w-1/2">
-                        <h4 className="mb-2">Select Time *</h4>
+                    <div className="flex flex-wrap justify-between md:gap-y-5">
+                      <div className="relative w-full md:mt-0 md:w-[48%]">
                         <button
                           type="button"
-                          className="relative w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-4 text-left text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
+                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-9 text-left text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
+                          onClick={() => setShowDatePicker(!showDatePicker)}
+                        >
+                          <span className="svg_icon absolute top-3 left-3 flex w-4 text-gray-500 md:top-[11px]">
+                            <CalendarIcon />
+                          </span>
+                          {formatDate(date)}
+                          <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
+                      </div>
+                      <div className="relative mt-5 w-full md:mt-0 md:w-[48%]">
+                        <button
+                          type="button"
+                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-9 text-left text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
                           onClick={() => setShowTimePicker(!showTimePicker)}
                         >
+                          <span className="svg_icon absolute top-3 left-3 flex w-4 text-transparent md:top-[11px]">
+                            <ClockIcon />
+                          </span>
                           {time}
                           <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
                             <ArrowDownIcon />
                           </span>
                         </button>
+                      </div>
+
+                      <div className="relative mt-5 w-full md:mt-0">
+                        <button
+                          type="button"
+                          className="w-full rounded-lg border-2 border-[#E8E8E8] p-2 pl-9 text-left text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-pink_primary md:text-sm"
+                          onClick={() => setShowGuestsPicker(!showGuestsPicker)}
+                        >
+                          <span className="svg_icon absolute top-3 left-3 flex w-4 text-gray-500 md:top-[11px]">
+                            <UserIcon />
+                          </span>
+                          {guests.adults + guests.children + guests.infants}{' '}
+                          Guests
+                          <span
+                            className={`svg_icon absolute top-[14px] right-3 flex w-4 transform text-gray-500 md:top-[11px] ${
+                              showGuestsPicker ? 'rotate-[270deg]' : 'rotate-90'
+                            }`}
+                          >
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
+                        {showGuestsPicker &&
+                          (width > 1063 ? (
+                            <div className="absolute -top-5 w-full">
+                              <GuestsPopover
+                                guests={guests}
+                                onChange={(type: string, count: number) => {
+                                  onGuestsChange(type, count);
+                                }}
+                              />
+                            </div>
+                          ) : (
+                            <GuestsPopoverMobile
+                              status={showGuestsPicker}
+                              onClose={() => setShowGuestsPicker(false)}
+                              guests={guests}
+                              onChange={(type: string, count: number) => {
+                                onGuestsChange(type, count);
+                              }}
+                            />
+                          ))}
                       </div>
                     </div>
                     <div className="pt-5">
@@ -229,6 +268,13 @@ const PersonalizeExperiencePopover = ({
           </Dialog>
         )}
       </AnimatePresence>
+
+      <RequestToBookCalenderPopover
+        status={showDatePicker}
+        onClose={() => setShowDatePicker(false)}
+        date={date}
+        onDateChange={onDateChange}
+      />
 
       <RequestToBookTimePopover
         status={showTimePicker}

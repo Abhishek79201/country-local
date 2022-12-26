@@ -1,5 +1,6 @@
 /* eslint react/jsx-one-expression-per-line: "off" */
 /* eslint jsx-a11y/label-has-associated-control: "off" */
+/* eslint implicit-arrow-linebreak: "off" */
 import { useState, useContext } from 'react';
 import Image from 'next/image';
 import { Dialog } from '@headlessui/react';
@@ -25,6 +26,7 @@ import ChevronIcon from '../../../../public/icons/chevron-down.svg';
 import CloseIcon from '../../../../public/icons/xmark.svg';
 
 const BookingCardMobile = () => {
+  const { setGlobalOverflow } = useContext(OverflowContext);
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
   const [openPriceBreakdown, setOpenPriceBreakdown] = useState<boolean>(false);
@@ -37,7 +39,6 @@ const BookingCardMobile = () => {
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [endDate, setEndDate] = useState<Date | null>(new Date());
   const [clickedDate, setClickedDate] = useState<string>('');
-  const { setGlobalOverflow } = useContext(OverflowContext);
   const { showMobileBooking, setShowMobileBooking } =
     useContext(MobileBookingContext);
 
@@ -345,9 +346,17 @@ const BookingCardMobile = () => {
                       </button>
                       <PersonalizeExperiencePopover
                         status={openPersonalizedExperience}
-                        time={bookingTime}
                         onClose={() => setOpenPersonalizedExperience(false)}
+                        date={bookingDate}
+                        time={bookingTime}
+                        onDateChange={(date: Date | null) => {
+                          setBookingDate(date);
+                        }}
                         onTimeChange={(time: string) => setBookingTime(time)}
+                        guests={guestsCount}
+                        onGuestsChange={(type: string, count: number) => {
+                          handleGuestCount(type, count);
+                        }}
                       />
                     </div>
                   </div>

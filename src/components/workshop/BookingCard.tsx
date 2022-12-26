@@ -231,7 +231,7 @@ const BookingCard = () => {
               </div>
               <div
                 className={`relative flex border-t border-[#808080] px-4 py-4 ${
-                  showGuests && 'rounded-lg border !border-t-2'
+                  showGuests && 'rounded-lg border !border-t-2 border-[#000]'
                 }`}
               >
                 <button
@@ -367,9 +367,15 @@ const BookingCard = () => {
               </button>
               <PersonalizeExperiencePopover
                 status={openPersonalizedExperience}
-                time={bookingTime}
                 onClose={() => setOpenPersonalizedExperience(false)}
+                date={bookingDate}
+                time={bookingTime}
+                onDateChange={(date: Date | null) => setBookingDate(date)}
                 onTimeChange={(time: string) => setBookingTime(time)}
+                guests={guestsCount}
+                onGuestsChange={(type: string, count: number) => {
+                  handleGuestCount(type, count);
+                }}
               />
             </div>
           </div>
