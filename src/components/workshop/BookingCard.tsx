@@ -35,19 +35,19 @@ const BookingCard = () => {
   const [showGuests, setShowGuests] = useState<boolean>(false);
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [endDate, setEndDate] = useState<Date | null>(new Date());
-  const onChange = (dates: [Date, Date]) => {
-    const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
-  };
   const [bookingDate, setBookingDate] = useState<Date | null>(new Date());
   const [bookingTime, setBookingTime] = useState<string>('10:00 pm');
+  const [clickedDate, setClickedDate] = useState<string>('');
 
   useEffect(() => {
     if (endDate) {
       setShowDatePicker(false);
     }
   }, [endDate]);
+
+  useEffect(() => {
+    setShowGuests(false);
+  }, [showDatePicker]);
 
   return (
     <Sticky top={15} bottomBoundary=".sticky_bottom_container">
@@ -90,7 +90,10 @@ const BookingCard = () => {
               <div className="flex">
                 <button
                   type="button"
-                  onClick={() => setShowDatePicker(!showDatePicker)}
+                  onClick={() => {
+                    setClickedDate('start');
+                    setShowDatePicker(!showDatePicker);
+                  }}
                   className="flex-1 border-r border-r-[#808080] px-4 py-4 text-left text-xs"
                 >
                   <span className="block font-semibold">CHECK-IN</span>
@@ -98,7 +101,10 @@ const BookingCard = () => {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setShowDatePicker(!showDatePicker)}
+                  onClick={() => {
+                    setClickedDate('end');
+                    setShowDatePicker(!showDatePicker);
+                  }}
                   className="flex-1 px-4 py-4 text-left text-xs"
                 >
                   <span className="block font-semibold">CHECK-OUT</span>
@@ -115,11 +121,16 @@ const BookingCard = () => {
                         </p>
                       </div>
                       <div className="w-[280px] xl:w-[344px]">
-                        <div className="flex rounded-lg border-2 border-[#808080]">
+                        <div className="flex overflow-hidden rounded-lg border border-[#000]">
                           <button
                             type="button"
-                            onClick={() => setShowDatePicker(!showDatePicker)}
-                            className="flex-1 border-r-2 border-r-[#808080] px-4 py-4 text-left text-xs"
+                            onClick={() => {
+                              setClickedDate('start');
+                            }}
+                            className={`flex-1 rounded-lg ${
+                              clickedDate === 'start' &&
+                              'border border-r-2 border-[#000]'
+                            } px-4 py-4 text-left text-xs`}
                           >
                             <span className="block font-semibold">
                               CHECK-IN
@@ -128,8 +139,13 @@ const BookingCard = () => {
                           </button>
                           <button
                             type="button"
-                            onClick={() => setShowDatePicker(!showDatePicker)}
-                            className="flex-1 px-4 py-4 text-left text-xs"
+                            onClick={() => {
+                              setClickedDate('end');
+                            }}
+                            className={`flex-1 rounded-lg ${
+                              clickedDate === 'end' &&
+                              'border border-l-2 border-[#000]'
+                            } px-4 py-4 text-left text-xs`}
                           >
                             <span className="block font-semibold">
                               CHECK-OUT
@@ -140,22 +156,42 @@ const BookingCard = () => {
                       </div>
                     </div>
                     <div className="booking_calendar mt-8 mb-4">
-                      <DatePicker
-                        selected={startDate}
-                        onChange={onChange}
-                        startDate={startDate}
-                        endDate={endDate}
-                        monthsShown={2}
-                        selectsRange
-                        inline
-                        isClearable
-                      />
+                      {clickedDate === 'start' && (
+                        <DatePicker
+                          selected={startDate}
+                          onChange={(date) => {
+                            setClickedDate('end');
+                            setStartDate(date);
+                          }}
+                          selectsStart
+                          startDate={startDate}
+                          endDate={endDate}
+                          minDate={new Date()}
+                          monthsShown={2}
+                          inline
+                        />
+                      )}
+                      {clickedDate === 'end' && (
+                        <DatePicker
+                          selected={endDate}
+                          onChange={(date) => {
+                            setEndDate(date);
+                            setShowDatePicker(false);
+                          }}
+                          selectsEnd
+                          startDate={startDate}
+                          endDate={endDate}
+                          minDate={startDate}
+                          monthsShown={2}
+                          inline
+                        />
+                      )}
                     </div>
                     <div className="flex items-center justify-between">
                       <button
                         type="button"
                         onClick={() => {
-                          setStartDate(null);
+                          setStartDate(new Date());
                           setEndDate(null);
                         }}
                         className="text-xs underline"

@@ -1,6 +1,6 @@
 /* eslint react/jsx-one-expression-per-line: "off" */
 /* eslint jsx-a11y/label-has-associated-control: "off" */
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import Image from 'next/image';
 import { Dialog } from '@headlessui/react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -34,40 +34,15 @@ const BookingCardMobile = () => {
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
   const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
   const [showGuests, setShowGuests] = useState<boolean>(false);
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
+  const [startDate, setStartDate] = useState<Date | null>(new Date());
+  const [endDate, setEndDate] = useState<Date | null>(new Date());
   const [clickedDate, setClickedDate] = useState<string>('');
   const { setGlobalOverflow } = useContext(OverflowContext);
   const { showMobileBooking, setShowMobileBooking } =
     useContext(MobileBookingContext);
 
-  const onChange = (dates: [Date, Date]) => {
-    const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
-  };
-
   const [bookingDate, setBookingDate] = useState<Date | null>(new Date());
   const [bookingTime, setBookingTime] = useState<string>('10:00 pm');
-
-  useEffect(() => {
-    if (endDate) {
-      setShowDatePicker(false);
-    }
-  }, [endDate]);
-
-  useEffect(() => {
-    if (clickedDate === 'start') {
-      setStartDate(null);
-      setEndDate(null);
-    }
-
-    if (clickedDate === 'end') {
-      setEndDate(null);
-    }
-
-    setClickedDate('');
-  }, [clickedDate]);
 
   return (
     <>
@@ -220,7 +195,16 @@ const BookingCardMobile = () => {
                           onClose={() => setShowDatePicker(false)}
                           startDate={startDate}
                           endDate={endDate}
-                          onDateChange={onChange}
+                          clickedDate={clickedDate}
+                          onStartDateChange={(date) => {
+                            setClickedDate('end');
+                            setStartDate(date);
+                          }}
+                          onEndDateChange={(date) => {
+                            setEndDate(date);
+                            setShowDatePicker(false);
+                          }}
+                          onClickedDateChange={(type) => setClickedDate(type)}
                         />
                       </div>
                       <div className="relative flex px-4 py-3">

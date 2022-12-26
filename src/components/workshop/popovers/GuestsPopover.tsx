@@ -34,7 +34,7 @@ const GuestsPopover = () => {
   };
 
   return (
-    <div className="absolute left-0 top-[70px] z-10 w-full rounded-xl bg-white px-5 py-8 shadow-spread">
+    <div className="absolute left-0 top-[70px] z-10 -ml-[2px] w-[101.5%] rounded-xl bg-white px-5 py-8 shadow-spread">
       <div className="flex items-center justify-between border-b border-[#ddd] pb-5">
         <div>
           <p className="text-base font-semibold leading-none text-[#222]">

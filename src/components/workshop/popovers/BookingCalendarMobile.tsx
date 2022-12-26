@@ -18,7 +18,10 @@ interface BookingCalendarMobileTypes {
   onClose: () => void;
   startDate: Date | null;
   endDate: Date | null;
-  onDateChange: (dates: [Date, Date]) => void;
+  clickedDate: string;
+  onStartDateChange: (date: Date | null) => void;
+  onEndDateChange: (date: Date | null) => void;
+  onClickedDateChange: (type: string) => void;
 }
 
 const BookingCalendarMobile = ({
@@ -26,7 +29,10 @@ const BookingCalendarMobile = ({
   onClose,
   startDate,
   endDate,
-  onDateChange,
+  clickedDate,
+  onStartDateChange,
+  onEndDateChange,
+  onClickedDateChange,
 }: BookingCalendarMobileTypes) => {
   const { setGlobalOverflow } = useContext(OverflowContext);
 
@@ -115,17 +121,36 @@ const BookingCalendarMobile = ({
                     </div>
                   </div>
                   <div className="booking_calendar mt-8 mb-4">
-                    <DatePicker
-                      selected={startDate}
-                      onChange={onDateChange}
-                      startDate={startDate}
-                      endDate={endDate}
-                      minDate={startDate || new Date()}
-                      monthsShown={4}
-                      selectsRange
-                      inline
-                      isClearable
-                    />
+                    {clickedDate === 'start' && (
+                      <DatePicker
+                        selected={startDate}
+                        onChange={(date) => {
+                          onStartDateChange(date);
+                          onClickedDateChange('end');
+                        }}
+                        selectsStart
+                        startDate={startDate}
+                        endDate={endDate}
+                        minDate={new Date()}
+                        monthsShown={4}
+                        inline
+                      />
+                    )}
+                    {clickedDate === 'end' && (
+                      <DatePicker
+                        selected={endDate}
+                        onChange={(date) => {
+                          onEndDateChange(date);
+                          onClose();
+                        }}
+                        selectsEnd
+                        startDate={startDate}
+                        endDate={endDate}
+                        minDate={startDate}
+                        monthsShown={4}
+                        inline
+                      />
+                    )}
                   </div>
                 </div>
               </div>
