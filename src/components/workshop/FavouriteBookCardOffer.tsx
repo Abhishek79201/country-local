@@ -111,10 +111,10 @@ const FavouriteBookCardOffer = ({
             ))}
           </Swiper>
           <div
-            className={`book_card_inner-${id} similar_prop_inner_nav swiper-button-prev !top-[50%] !left-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white bg-opacity-90 !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
+            className={`book_card_inner-${id} similar_prop_inner_nav swiper-button-prev !top-[50%] !left-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white bg-opacity-90 !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100 md:!hidden`}
           />
           <div
-            className={`book_card_inner-${id} similar_prop_inner_nav swiper-button-next !top-[50%] !right-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white bg-opacity-90 !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100`}
+            className={`book_card_inner-${id} similar_prop_inner_nav swiper-button-next !top-[50%] !right-1 !mt-0 !h-[30px] !w-[30px] -translate-y-[50%] transform rounded-full bg-white bg-opacity-90 !text-[#000] opacity-0 transition duration-300 after:!text-[12px] group-hover:opacity-100 md:!hidden`}
           />
 
           <div className="absolute top-3 right-3 z-[2] flex items-center rounded-md bg-opacity-20 px-2 py-[3px] text-[8px] font-bold text-transparent">
