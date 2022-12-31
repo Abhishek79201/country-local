@@ -3,28 +3,31 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
-import useViewport from '../src/hooks/useViewport';
+// import useViewport from '../src/hooks/useViewport';
 import { bookOffersData } from '../src/utilities/dummy-api';
 
 import ThingsToKnow from '../src/components/common/ThingsToKnow';
 import WorkshopExperience from '../src/components/common/WorkshopExperience';
 import AvailableDate from '../src/components/workshop/AvailableDate';
 import BookOffers from '../src/components/workshop/BookOffers';
-import Gallery from '../src/components/workshop/Gallery';
+// import Gallery from '../src/components/workshop/Gallery';
 import GoodToKnow from '../src/components/workshop/GoodToknow';
-import MobileGallery from '../src/components/workshop/MobileGallery';
+// import MobileGallery from '../src/components/workshop/MobileGallery';
 import Plan from '../src/components/workshop/Plan';
 import Profiles from '../src/components/workshop/Profiles';
 import Review from '../src/components/workshop/Review';
 import ReviewSlider from '../src/components/workshop/ReviewSlider';
 import SimilarProperties from '../src/components/workshop/SimilarProperties';
 import TouringBanner from '../src/components/workshop/TouringBanner';
-import TourismIntro from '../src/components/workshop/TourismIntro';
+// import TourismIntro from '../src/components/workshop/TourismIntro';
+import Intro from '../src/components/celebrity/Intro';
 import TripCalender from '../src/components/workshop/TripCalendar';
 import TripDetails from '../src/components/workshop/TripDetails';
+import PinkPurpleGradient from '../src/components/celebrity/PinkPurpleGradient';
+import SessionInfoGrid from '../src/components/celebrity/SessionInfoGrid';
 
-const Home: NextPage = () => {
-  const { width } = useViewport();
+const Celebrity: NextPage = () => {
+  // const { width } = useViewport();
   const [sectionVisible, setSectionVisible] = useState<boolean>(false);
 
   const onChange = (isVisible: boolean) => {
@@ -42,17 +45,23 @@ const Home: NextPage = () => {
           }`}
       </style>
       <Head>
-        <title>Country Locals</title>
+        <title>Celebrity: Country Locals</title>
       </Head>
       <div className="bg-[#fff] pb-10">
-        {width < 1064 && <MobileGallery />}
+        <Intro />
+
+        <PinkPurpleGradient />
+
+        <SessionInfoGrid />
+
+        {/* {width < 1064 && <MobileGallery />}
 
         {width > 1063 && (
           <>
-            <TourismIntro />
+            <Intro />
             <Gallery />
           </>
-        )}
+        )} */}
 
         <Profiles />
 
@@ -97,4 +106,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Celebrity;
