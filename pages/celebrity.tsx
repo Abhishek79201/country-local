@@ -14,17 +14,18 @@ import BookOffers from '../src/components/workshop/BookOffers';
 import GoodToKnow from '../src/components/workshop/GoodToknow';
 // import MobileGallery from '../src/components/workshop/MobileGallery';
 import Plan from '../src/components/workshop/Plan';
-import Profiles from '../src/components/workshop/Profiles';
+// import Profiles from '../src/components/workshop/Profiles';
 import Review from '../src/components/workshop/Review';
 import ReviewSlider from '../src/components/workshop/ReviewSlider';
 import SimilarProperties from '../src/components/workshop/SimilarProperties';
 import TouringBanner from '../src/components/workshop/TouringBanner';
 // import TourismIntro from '../src/components/workshop/TourismIntro';
 import Intro from '../src/components/celebrity/Intro';
+import PinkPurpleGradient from '../src/components/celebrity/PinkPurpleGradient';
+import Profiles from '../src/components/celebrity/Profiles';
+import SessionInfoGrid from '../src/components/celebrity/SessionInfoGrid';
 import TripCalender from '../src/components/workshop/TripCalendar';
 import TripDetails from '../src/components/workshop/TripDetails';
-import PinkPurpleGradient from '../src/components/celebrity/PinkPurpleGradient';
-import SessionInfoGrid from '../src/components/celebrity/SessionInfoGrid';
 
 const Celebrity: NextPage = () => {
   // const { width } = useViewport();
