@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { animationWrapper, fadeInUp } from '../../utilities/animations';
 
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 /* eslint operator-linebreak: "off" */
