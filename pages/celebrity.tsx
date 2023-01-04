@@ -48,7 +48,7 @@ const Celebrity: NextPage = () => {
       <Head>
         <title>Celebrity: Country Locals</title>
       </Head>
-      <div className="bg-[#fff] pb-10">
+      <div className="bg-[#FBFBFB] pb-10">
         <Intro />
 
         <PinkPurpleGradient />

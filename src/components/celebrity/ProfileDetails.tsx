@@ -59,7 +59,7 @@ const ProfileDetails = () => {
           </span>
         </div>
       </div>
-      <div className="content mt-2">
+      <div className="content mt-5">
         <div className="flex flex-wrap gap-3 sm:flex-nowrap">
           <button
             type="button"
@@ -90,7 +90,7 @@ const ProfileDetails = () => {
           status={showContactMe}
           onClose={() => setShowContactMe(false)}
         />
-        <p className="pt-6 text-[#808080] ">
+        <p className="pt-8 text-[#808080]">
           Tortor pellentesque nec sit nulla volutpat curabitur mattis fusce
           condimentum. Nulla orci congue praesent nullam vitae nibh. Sed sit sed
           eu lectus mi amet egestas massa. Nunc enim eleifend tellus tincidunt

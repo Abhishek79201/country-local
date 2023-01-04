@@ -47,7 +47,17 @@ svg {
 
 .purple_gradient_text {
   background: linear-gradient(90deg, #e71575 -16.54%, #6f01f0 167.58%);
-  // background: -webkit-linear-gradient(0deg, #e45f8c 0%, #a96ad8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.orange_purple_gradient_text {
+  background: rgb(232, 161, 123);
+  background: linear-gradient(
+    90deg,
+    rgba(232, 161, 123, 1) 0%,
+    rgba(202, 126, 194, 1) 50%,
+    rgba(123, 155, 219, 1) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -63,27 +73,41 @@ svg {
   background: linear-gradient(90deg, #e71575 -16.54%, #6f01f0 167.58%)
     var(--x, 0) / 200%;
   transition: all 0.5s;
-}
-.purple_gradient_bg:hover {
-  --x: 100%;
+  &:hover {
+    --x: 100%;
+  }
 }
 .purple_gradient_bg_light {
   background: rgb(228, 95, 140);
   background: linear-gradient(90.29deg, #e45f8c 0.27%, #a96ad8 103.4%)
     var(--x, 0) / 200%;
   transition: all 0.5s;
+  &:hover {
+    --x: 100%;
+  }
 }
-.purple_gradient_bg_light:hover {
-  --x: 100%;
+
+.orange_purple_gradient_bg {
+  background: rgb(232, 161, 123);
+  background: linear-gradient(
+      90deg,
+      rgba(232, 161, 123, 1) 0%,
+      rgba(202, 126, 194, 1) 50%,
+      rgba(123, 155, 219, 1) 100%
+    )
+    var(--x, 0) / 200%;
+  &:hover {
+    --x: 100%;
+  }
 }
 .purple_btn_2 {
   background: #1740a9;
   background: linear-gradient(90deg, #6c53b4, #1740a9 50%, #6c53b4) var(--x, 0) /
     200%;
   transition: all 0.5s;
-}
-.purple_btn_2:hover {
-  --x: 100%;
+  &:hover {
+    --x: 100%;
+  }
 }
 
 .dark_shadow {
