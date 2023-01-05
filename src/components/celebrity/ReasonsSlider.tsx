@@ -1,60 +1,42 @@
 /* eslint @next/next/no-img-element: "off" */
-import { Navigation, FreeMode } from 'swiper';
+import { Pagination, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ReasonsSlider = () => (
   <div className="pb-14">
-    <div className="flex flex-wrap items-center pb-3 md:pb-6">
-      <div className="w-2/3">
-        <h3 className="orange_purple_gradient_text flex items-center text-base font-bold md:text-[22px]">
-          Brands & Project I have worked with
-        </h3>
-      </div>
-      <div className="hidden w-1/3 justify-end gap-5 md:flex md:pt-0">
-        <div className="relative flex w-[140px] items-center gap-2">
-          <div className="brand_logo_slider swiper-pagination !relative !top-0 !bottom-0 !w-[50px] text-[#666]" />
-
-          <div className="brand_logo_slider swiper-button-prev !relative !top-0 !bottom-0 !-left-0 !mt-0 !h-[32px] !w-[32px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
-          <div className="brand_logo_slider swiper-button-next !relative !top-0 !bottom-0 !-right-0 !mt-0 !h-[32px] !w-[32px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
-        </div>
-      </div>
-    </div>
-    <div className="relative mb-5 -mr-5 md:mr-0">
+    <div className="relative">
       <Swiper
-        slidesPerView={2}
+        slidesPerView={1}
         freeMode
-        modules={[Navigation, FreeMode]}
-        spaceBetween={15}
-        navigation={{
-          prevEl: '.brand_logo_slider.swiper-button-prev',
-          nextEl: '.brand_logo_slider.swiper-button-next',
+        modules={[Pagination, EffectFade, Autoplay]}
+        spaceBetween={0}
+        effect="fade"
+        fadeEffect={{
+          crossFade: true,
         }}
-        breakpoints={{
-          768: {
-            spaceBetween: 20,
-            slidesPerView: 3,
-          },
+        pagination={{
+          el: '.reason_slider.swiper-pagination',
         }}
-        className="!pr-5 md:!pr-0"
+        className="purple_gradient_bg rounded-3xl !pt-10 !pb-16"
       >
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+        {[1, 2, 3, 4, 5, 6].map((item) => (
           <SwiperSlide key={item}>
-            <div className="mb-3 flex h-[139px] items-center justify-center rounded-xl border border-[#EBEBEB] bg-white">
-              <img
-                src="/icons/nike-logo.png"
-                alt="logo"
-                className="max-w-[120px]"
-              />
-            </div>
-            <div className="flex h-[139px] items-center justify-center rounded-xl border border-[#EBEBEB] bg-white">
-              <img
-                src="/icons/nike-logo.png"
-                alt="logo"
-                className="max-w-[120px]"
-              />
+            <div className="mx-auto max-w-[650px] px-4 text-center text-white">
+              <p className="text-uppercase text-base leading-normal md:text-lg">
+                7 REASONS TO BOOK THIS EXPERIENCE
+              </p>
+              <h4 className="py-2 text-2xl font-bold md:text-3xl">
+                A better kind of online class
+              </h4>
+              <div className="text-sm leading-normal">
+                Monthly classes go beyond a playlist of videos. The classroom
+                has been fully digitzied, allowing you to get a hands-on
+                learning experience and community from anywhere.
+              </div>
             </div>
           </SwiperSlide>
         ))}
+        <div className="reason_slider swiper-pagination !bottom-4 !left-[50%] !w-[225px] !translate-x-[-50%] transform text-[#666]" />
       </Swiper>
     </div>
   </div>

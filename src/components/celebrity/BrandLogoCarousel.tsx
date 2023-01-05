@@ -3,7 +3,7 @@ import { Navigation, FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const BrandLogoCarousel = () => (
-  <div className="pb-14">
+  <div className="pb-10">
     <div className="flex flex-wrap items-center pb-3 md:pb-6">
       <div className="w-2/3">
         <h3 className="orange_purple_gradient_text flex items-center text-base font-bold md:text-[22px]">
