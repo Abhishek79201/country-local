@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const PinkPurpleGradient = () => (
-  <div className="bg-[#17A966]">
+  <div className="bg-[#E71575]">
     <div className="pointer-events-none flex">
       <Image
         src="/pink-purple-gradient-bg.jpg"
