@@ -1,16 +1,17 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import WorkshopExperience from '../src/components/common/WorkshopExperience';
-import Review from '../src/components/workshop/Review';
+import CelebrityFaq from '../src/components/celebrity/CelebrityFaq';
+import DeliverySlider from '../src/components/celebrity/DeliverySlider';
+import GoodToKnow from '../src/components/celebrity/GoodToknow';
 import Intro from '../src/components/celebrity/Intro';
 import PinkPurpleGradient from '../src/components/celebrity/PinkPurpleGradient';
+import PreviewAccordion from '../src/components/celebrity/PreviewAccordion';
 import Profiles from '../src/components/celebrity/Profiles';
 import SessionInfoGrid from '../src/components/celebrity/SessionInfoGrid';
 import ThingsToKnow from '../src/components/celebrity/ThingsToKnow';
-import GoodToKnow from '../src/components/celebrity/GoodToknow';
-import DeliverySlider from '../src/components/celebrity/DeliverySlider';
-import CelebrityFaq from '../src/components/celebrity/CelebrityFaq';
+import WorkshopExperience from '../src/components/common/WorkshopExperience';
+import Review from '../src/components/workshop/Review';
 
 const Celebrity: NextPage = () => (
   <>
@@ -25,6 +26,8 @@ const Celebrity: NextPage = () => (
       <SessionInfoGrid />
 
       <Profiles />
+
+      <PreviewAccordion />
 
       <ThingsToKnow />
 
