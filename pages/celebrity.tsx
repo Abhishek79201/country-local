@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import CelebrityFaq from '../src/components/celebrity/CelebrityFaq';
+import CelebrityProfile from '../src/components/celebrity/CelebrityProfile';
 import DeliverySlider from '../src/components/celebrity/DeliverySlider';
 import GoodToKnow from '../src/components/celebrity/GoodToknow';
 import Intro from '../src/components/celebrity/Intro';
@@ -30,6 +31,8 @@ const Celebrity: NextPage = () => (
       <PreviewAccordion />
 
       <ThingsToKnow />
+
+      <CelebrityProfile />
 
       <GoodToKnow />
 
