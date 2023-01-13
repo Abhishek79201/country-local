@@ -109,6 +109,14 @@ svg {
     --x: 100%;
   }
 }
+.purple_orange_bg {
+  background: rgb(102, 114, 224);
+  background: linear-gradient(
+    90deg,
+    rgba(102, 114, 224, 1) 50%,
+    rgba(196, 129, 136, 1) 90%
+  );
+}
 
 .dark_shadow {
   box-shadow: 0 1px 1px rgb(0 0 0 / 5%), 0 2px 2px rgb(0 0 0 / 5%),
