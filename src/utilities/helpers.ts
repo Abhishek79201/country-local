@@ -26,3 +26,13 @@ export const formatDate = (date: Date | null) => {
 
   return [year, month, day].join('-');
 };
+
+export const formatDayMonth = (date: Date | null) => {
+  if (date === null) {
+    return '';
+  }
+
+  const day = date.getDate();
+  const month = date.toLocaleString('default', { month: 'short' });
+  return `${day} ${month}`;
+};

@@ -22,7 +22,7 @@ interface PersonalizeExperiencePopoverTypes {
   status: boolean;
   onClose: () => void;
   date: Date | null;
-  time: string;
+  time: string | null;
   onDateChange: (date: Date | null) => void;
   onTimeChange: (time: string) => void;
   guests: { adults: number; children: number; infants: number };

@@ -397,8 +397,8 @@ svg {
 .switch {
   position: relative;
   display: inline-block;
-  width: 34px;
-  height: 18px;
+  width: 36px;
+  height: 20px;
 }
 /* Hide default HTML checkbox */
 .switch input {
@@ -421,19 +421,18 @@ svg {
 .slider:before {
   position: absolute;
   content: '';
-  height: 13px;
-  width: 13px;
+  height: 16px;
+  width: 16px;
   left: 3px;
-  bottom: 3px;
+  bottom: 2px;
   background-color: #fff;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 input:checked + .slider {
-  background-color: #e71575;
+  background-color: #000;
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #e71575;
+  box-shadow: 0 0 1px #000;
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(15px);

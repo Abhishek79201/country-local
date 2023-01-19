@@ -10,7 +10,7 @@ import CloseIcon from '../../../../public/icons/xmark.svg';
 interface RequestToBookTimePopoverTypes {
   status: boolean;
   onClose: () => void;
-  time: string;
+  time: string | null;
   onTimeChange: (time: string) => void;
 }
 
