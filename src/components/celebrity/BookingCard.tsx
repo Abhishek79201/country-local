@@ -39,6 +39,13 @@ const BookingCard = () => {
     { id: 3, title: 'Book Appointment', icon: <CalendarIcon />, active: false },
     { id: 4, title: 'Brand Enquiry', icon: <TagIcon />, active: false },
   ]);
+
+  const [typeTabs, setTypeTabs] = useState([
+    { id: 1, title: 'Basic', price: 300, active: true },
+    { id: 2, title: 'Standard', price: 400, active: false },
+    { id: 3, title: 'Premium', price: 500, active: false },
+  ]);
+
   const [bookMode, setBookMode] = useState([
     { id: 1, title: 'Video Call', icon: <VideoIcon />, active: false },
     { id: 2, title: 'Voice Call', icon: <VoiceIcon />, active: false },
@@ -95,6 +102,21 @@ const BookingCard = () => {
     setTabs(newTabs);
   };
 
+  const getActiveTypeTabPrice = () => {
+    const activeTab = typeTabs.find((tab) => tab.active);
+    return activeTab?.price;
+  };
+
+  const handleTypeChange = (id: number) => {
+    const newType = typeTabs.map((tab) => {
+      if (tab.id === id) {
+        return { ...tab, active: true };
+      }
+      return { ...tab, active: false };
+    });
+    setTypeTabs(newType);
+  };
+
   const handleModeChange = (id: number) => {
     const newMode = bookMode.map((mode) => {
       if (mode.id === id) {
@@ -146,10 +168,27 @@ const BookingCard = () => {
           ))}
         </div>
 
-        <div className="pt-6">
+        <div className="services-packages-tab mt-5 flex items-center justify-between rounded-full border border-[#F4F3F4] bg-white p-[5px] text-xs lg:text-sm">
+          {typeTabs.map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              className={`${
+                tab.active ? 'active text-white' : 'text-[#272731]'
+              } relative h-[34px] w-full rounded-full px-1 text-center text-sm font-bold lg:h-[40px] lg:px-3`}
+              onClick={() => handleTypeChange(tab.id)}
+            >
+              <span className="ease relative z-[2] transition duration-300">
+                {tab.title}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <div className="pt-4">
           <div className="flex items-center justify-between font-bold text-black">
             <span>Video Shortcut</span>
-            <span>$500</span>
+            <span>${getActiveTypeTabPrice()}</span>
           </div>
           <p className="pt-3 pb-4 text-[13px]">
             Web application consist of 2-4 database table and also 2-4 web page.
