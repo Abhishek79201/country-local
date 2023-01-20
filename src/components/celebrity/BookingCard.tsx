@@ -12,8 +12,6 @@ import GuestsPopover from './popovers/GuestsPopover';
 import OtherServicesPopover from './popovers/OtherServicesPopover';
 import PersonalizeExperiencePopover from './popovers/PersonalizeExpPopover';
 import RequestToBookPopover from './popovers/RequestToBookPopover';
-// import GuestsPopoverMobile from './popovers/GuestsPopoverMobile';
-// import RequestToBookTimePopover from './popovers/RequestToBookTimePopover';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -23,10 +21,10 @@ import VoiceIcon from '../../../public/icons/call-calling.svg';
 import CheckmarkIcon from '../../../public/icons/check-lg.svg';
 import ArrowDownIcon from '../../../public/icons/chevron-right.svg';
 import ClockIcon from '../../../public/icons/clock-1.svg';
+import FlagIcon from '../../../public/icons/flag-2.svg';
 import InstagramIcon from '../../../public/icons/instagram-2.svg';
 import PeopleIcon from '../../../public/icons/people.svg';
-import FlagIcon from '../../../public/icons/purple-flag.svg';
-import QuestionMarkIcon from '../../../public/icons/question-mark.svg';
+import QuestionMarkIcon from '../../../public/icons/question-mark-2.svg';
 import TagIcon from '../../../public/icons/tag-2.svg';
 import UndoIcon from '../../../public/icons/undo.svg';
 import UserIcon from '../../../public/icons/user-outline.svg';
@@ -58,6 +56,16 @@ const BookingCard = () => {
     { id: 3, title: '45 Min', active: false },
     { id: 4, title: '60 Min', active: false },
   ]);
+
+  const [plans, setPlans] = useState([
+    { id: 1, title: 'Corporate Events', active: false },
+    { id: 2, title: 'Studio Shoot', active: false },
+    { id: 3, title: 'Brand Video', active: false },
+    { id: 4, title: 'Star Hour', active: false },
+    { id: 5, title: 'Experiences', active: false },
+    { id: 6, title: 'Photo Shoot', active: false },
+  ]);
+
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
   const [openPersonalizedExperience, setOpenPersonalizedExperience] =
@@ -102,6 +110,11 @@ const BookingCard = () => {
     setTabs(newTabs);
   };
 
+  const getActiveTab = () => {
+    const activeTab = tabs.find((tab) => tab.active);
+    return activeTab?.id;
+  };
+
   const getActiveTypeTabPrice = () => {
     const activeTab = typeTabs.find((tab) => tab.active);
     return activeTab?.price;
@@ -135,6 +148,16 @@ const BookingCard = () => {
       return { ...duration, active: false };
     });
     setBookDuration(newDuration);
+  };
+
+  const handlePlanChange = (id: number) => {
+    const newPlan = plans.map((plan) => {
+      if (plan.id === id) {
+        return { ...plan, active: true };
+      }
+      return { ...plan, active: false };
+    });
+    setPlans(newPlan);
   };
 
   const handleGuestCount = (type: string, count: number) => {
@@ -225,449 +248,513 @@ const BookingCard = () => {
             Whats Included
           </div>
 
-          <div className="relative rounded-lg border border-[#DFDFDF]">
-            <div className="flex">
-              <button
-                type="button"
-                onClick={() => {
-                  setShowTimePicker(false);
-                  setShowGuests(false);
-                  setShowDatePicker(true);
-                }}
-                className="flex flex-1 items-center justify-between border-r border-r-[#DFDFDF] px-4 py-4 text-left text-xs"
-              >
-                <div className="flex items-center">
-                  <span className="svg_icon mr-2 block w-5 text-transparent">
-                    <CalendarEditIcon />
+          {getActiveTab() !== 4 && (
+            <div className="relative rounded-lg border border-[#DFDFDF]">
+              <div className="flex">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowTimePicker(false);
+                    setShowGuests(false);
+                    setShowDatePicker(true);
+                  }}
+                  className="flex flex-1 items-center justify-between border-r border-r-[#DFDFDF] px-4 py-4 text-left text-xs"
+                >
+                  <div className="flex items-center">
+                    <span className="svg_icon mr-2 block w-5 text-transparent">
+                      <CalendarEditIcon />
+                    </span>
+                    <span>
+                      {startDate ? formatDayMonth(startDate) : 'Date'}
+                      {endDate && ` - ${formatDayMonth(endDate)}`}
+                    </span>
+                  </div>
+                  <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                    <ArrowDownIcon />
                   </span>
-                  <span>
-                    {startDate ? formatDayMonth(startDate) : 'Date'}
-                    {endDate && ` - ${formatDayMonth(endDate)}`}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowDatePicker(false);
+                    setShowGuests(false);
+                    setShowTimePicker(true);
+                  }}
+                  className="flex flex-1 items-center justify-between px-4 py-4 text-left text-xs"
+                >
+                  <div className="flex items-center">
+                    <span className="svg_icon mr-2 block w-5 text-transparent">
+                      <ClockIcon />
+                    </span>
+                    <span>{bookingTime || 'Time'}</span>
+                  </div>
+                  <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                    <ArrowDownIcon />
                   </span>
-                </div>
-                <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
-                  <ArrowDownIcon />
-                </span>
-              </button>
+                </button>
+              </div>
+
               <button
                 type="button"
                 onClick={() => {
                   setShowDatePicker(false);
-                  setShowGuests(false);
-                  setShowTimePicker(true);
+                  setShowTimePicker(false);
+                  setShowGuests(true);
                 }}
-                className="flex flex-1 items-center justify-between px-4 py-4 text-left text-xs"
+                className="flex w-full flex-1 items-center justify-between border-t border-[#DFDFDF] px-4 py-4 text-left text-xs"
               >
                 <div className="flex items-center">
-                  <span className="svg_icon mr-2 block w-5 text-transparent">
-                    <ClockIcon />
+                  <div className="svg_icon w-4">
+                    <UserIcon />
+                  </div>
+                  <span className="ml-2">
+                    {guestsCount.adults +
+                      guestsCount.children +
+                      guestsCount.infants}{' '}
+                    guests
                   </span>
-                  <span>{bookingTime || 'Time'}</span>
                 </div>
-                <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                <div
+                  className={`svg_icon flex w-4 rotate-90 transform text-[#C4C4C4] ${
+                    showGuests ? 'rotate-180' : ''
+                  }`}
+                >
                   <ArrowDownIcon />
-                </span>
+                </div>
               </button>
+
+              {showDatePicker && (
+                <div className="absolute -top-[40px] -right-[40px] z-[11] w-[660px] rounded-2xl bg-white p-10 shadow-spread">
+                  <div className="flex items-center justify-between">
+                    <div className="">
+                      <h4 className="text-lg font-semibold">Add Dates</h4>
+                    </div>
+                    <div className="w-[280px] rounded-lg border border-[#666] xl:w-[350px]">
+                      <div className="flex overflow-hidden">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowTimePicker(false);
+                            setShowGuests(false);
+                            setShowDatePicker(true);
+                          }}
+                          className={`flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs ${
+                            showDatePicker &&
+                            'border-b-1 rounded-bl-none border border-r-2 border-[#666]'
+                          }`}
+                        >
+                          <div className="flex items-center">
+                            <span className="svg_icon mr-2 block w-5 text-transparent">
+                              <CalendarEditIcon />
+                            </span>
+                            <span>
+                              {startDate ? formatDayMonth(startDate) : 'Date'}
+                              {endDate && ` - ${formatDayMonth(endDate)}`}
+                            </span>
+                          </div>
+                          <span className="svg_icon flex w-4 -rotate-90 transform text-[#C4C4C4]">
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowDatePicker(false);
+                            setShowGuests(false);
+                            setShowTimePicker(true);
+                          }}
+                          className="flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs"
+                        >
+                          <div className="flex items-center">
+                            <span className="svg_icon mr-2 block w-5 text-transparent">
+                              <ClockIcon />
+                            </span>
+                            <span>{bookingTime || 'Time'}</span>
+                          </div>
+                          <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setShowDatePicker(false);
+                          setShowTimePicker(false);
+                          setShowGuests(true);
+                        }}
+                        className="flex h-[50px] w-full flex-1 items-center justify-between border-t border-[#666] px-4 text-left text-xs"
+                      >
+                        <div className="flex items-center">
+                          <div className="svg_icon w-4">
+                            <UserIcon />
+                          </div>
+                          <span className="ml-2">
+                            {guestsCount.adults +
+                              guestsCount.children +
+                              guestsCount.infants}{' '}
+                            guests
+                          </span>
+                        </div>
+                        <div className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                          <ArrowDownIcon />
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="booking_calendar mt-8 mb-4">
+                    <DatePicker
+                      selected={startDate}
+                      onChange={handleDateChange}
+                      startDate={startDate}
+                      endDate={endDate}
+                      minDate={new Date()}
+                      monthsShown={2}
+                      selectsRange
+                      inline
+                      isClearable
+                    />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setStartDate(null);
+                        setEndDate(null);
+                      }}
+                      className="text-xs underline"
+                    >
+                      Clear dates
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowDatePicker(false)}
+                      className="rounded-lg bg-[#222] px-5 py-2 text-xs text-white"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {showTimePicker && (
+                <div className="absolute -top-[40px] -right-[40px] z-[11] w-[430px] rounded-2xl bg-white p-10 shadow-spread">
+                  <div className="flex items-center justify-between">
+                    <div className="" />
+                    <div className="w-[280px] rounded-lg border border-[#666] xl:w-[350px]">
+                      <div className="flex overflow-hidden">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowGuests(false);
+                            setShowTimePicker(false);
+                            setShowDatePicker(true);
+                          }}
+                          className={`flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs ${
+                            showDatePicker &&
+                            'border-b-1 rounded-bl-none border border-r-2 border-[#666]'
+                          }`}
+                        >
+                          <div className="flex items-center">
+                            <span className="svg_icon mr-2 block w-5 text-transparent">
+                              <CalendarEditIcon />
+                            </span>
+                            <span>
+                              {startDate ? formatDayMonth(startDate) : 'Date'}
+                              {endDate && ` - ${formatDayMonth(endDate)}`}
+                            </span>
+                          </div>
+                          <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowGuests(false);
+                            setShowDatePicker(false);
+                            setShowTimePicker(true);
+                          }}
+                          className={`flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs ${
+                            showTimePicker &&
+                            'border-b-1 rounded-br-none border border-l-2 border-[#666]'
+                          }`}
+                        >
+                          <div className="flex items-center">
+                            <span className="svg_icon mr-2 block w-5 text-transparent">
+                              <ClockIcon />
+                            </span>
+                            <span>{bookingTime || 'Time'}</span>
+                          </div>
+                          <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setShowDatePicker(false);
+                          setShowTimePicker(false);
+                          setShowGuests(true);
+                        }}
+                        className="flex h-[50px] w-full flex-1 items-center justify-between border-t border-[#666] px-4 text-left text-xs"
+                      >
+                        <div className="flex items-center">
+                          <div className="svg_icon w-4">
+                            <UserIcon />
+                          </div>
+                          <span className="ml-2">
+                            {guestsCount.adults +
+                              guestsCount.children +
+                              guestsCount.infants}{' '}
+                            guests
+                          </span>
+                        </div>
+                        <div
+                          className={`svg_icon flex w-4 rotate-90 transform text-[#C4C4C4] ${
+                            showGuests ? 'rotate-180' : ''
+                          }`}
+                        >
+                          <ArrowDownIcon />
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="booking_time ml-auto mt-4 mb-4 w-[280px] text-center xl:w-[344px]">
+                    <TimeKeeper
+                      time={bookingTime}
+                      switchToMinuteOnHourSelect
+                      onChange={(updatedTime) => {
+                        setBookingTime(updatedTime.formatted12);
+                      }}
+                    />
+                  </div>
+                  <div className="flex items-center justify-end">
+                    <button
+                      type="button"
+                      onClick={() => setShowTimePicker(false)}
+                      className="rounded-lg bg-[#222] px-5 py-2 text-xs text-white"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {showGuests && (
+                <div className="absolute -top-[40px] -right-[40px] z-[11] w-[430px] rounded-2xl bg-white p-10 shadow-spread">
+                  <div className="flex items-center justify-between">
+                    <div />
+                    <div className="w-[280px] rounded-lg border border-[#666] xl:w-[350px]">
+                      <div className="flex overflow-hidden">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowGuests(false);
+                            setShowTimePicker(false);
+                            setShowDatePicker(true);
+                          }}
+                          className="flex h-[50px] flex-1 items-center justify-between rounded-lg rounded-tr-none rounded-br-none border-r border-r-[#666] px-4 text-left text-xs"
+                        >
+                          <div className="flex items-center">
+                            <span className="svg_icon mr-2 block w-5 text-transparent">
+                              <CalendarEditIcon />
+                            </span>
+                            <span>
+                              {startDate ? formatDayMonth(startDate) : 'Date'}
+                              {endDate && ` - ${formatDayMonth(endDate)}`}
+                            </span>
+                          </div>
+                          <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowGuests(false);
+                            setShowDatePicker(false);
+                            setShowTimePicker(true);
+                          }}
+                          className="flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs"
+                        >
+                          <div className="flex items-center">
+                            <span className="svg_icon mr-2 block w-5 text-transparent">
+                              <ClockIcon />
+                            </span>
+                            <span>{bookingTime || 'Time'}</span>
+                          </div>
+                          <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                            <ArrowDownIcon />
+                          </span>
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setShowDatePicker(false);
+                          setShowTimePicker(false);
+                          setShowGuests(true);
+                        }}
+                        className={`flex h-[50px] w-full flex-1 items-center justify-between rounded-lg border-t border-[#666] px-4 text-left text-xs ${
+                          showGuests ? 'border border-t-2' : ''
+                        }`}
+                      >
+                        <div className="flex items-center">
+                          <div className="svg_icon w-4">
+                            <UserIcon />
+                          </div>
+                          <span className="ml-2">
+                            {guestsCount.adults +
+                              guestsCount.children +
+                              guestsCount.infants}{' '}
+                            guests
+                          </span>
+                        </div>
+                        <div className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                          <ArrowDownIcon />
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="ml-auto mt-4 mb-4 w-[280px] xl:w-[350px]">
+                    <GuestsPopover
+                      guests={guestsCount}
+                      onChange={(type: string, count: number) => {
+                        handleGuestCount(type, count);
+                      }}
+                    />
+                  </div>
+                  <div className="flex items-center justify-end">
+                    <button
+                      type="button"
+                      onClick={() => setShowGuests(false)}
+                      className="rounded-lg bg-[#222] px-5 py-2 text-xs text-white"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
+          )}
 
-            <button
-              type="button"
-              onClick={() => {
-                setShowDatePicker(false);
-                setShowTimePicker(false);
-                setShowGuests(true);
-              }}
-              className="flex w-full flex-1 items-center justify-between border-t border-[#DFDFDF] px-4 py-4 text-left text-xs"
-            >
-              <div className="flex items-center">
-                <div className="svg_icon w-4">
-                  <UserIcon />
-                </div>
-                <span className="ml-2">
-                  {guestsCount.adults +
-                    guestsCount.children +
-                    guestsCount.infants}{' '}
-                  guests
-                </span>
-              </div>
-              <div
-                className={`svg_icon flex w-4 rotate-90 transform text-[#C4C4C4] ${
-                  showGuests ? 'rotate-180' : ''
-                }`}
-              >
-                <ArrowDownIcon />
-              </div>
-            </button>
-
-            {showDatePicker && (
-              <div className="absolute -top-[40px] -right-[40px] z-[11] w-[660px] rounded-2xl bg-white p-10 shadow-spread">
-                <div className="flex items-center justify-between">
-                  <div className="">
-                    <h4 className="text-lg font-semibold">Add Dates</h4>
+          {getActiveTab() !== 4 && (
+            <>
+              <div className="mt-5 mb-6 border-b border-b-[#DFDFDF] pb-4">
+                <div className="flex items-center">
+                  <div className="text-sm font-semibold">
+                    Book for Private Group
                   </div>
-                  <div className="w-[280px] rounded-lg border border-[#666] xl:w-[350px]">
-                    <div className="flex overflow-hidden">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setShowTimePicker(false);
-                          setShowGuests(false);
-                          setShowDatePicker(true);
-                        }}
-                        className={`flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs ${
-                          showDatePicker &&
-                          'border-b-1 rounded-bl-none border border-r-2 border-[#666]'
-                        }`}
-                      >
-                        <div className="flex items-center">
-                          <span className="svg_icon mr-2 block w-5 text-transparent">
-                            <CalendarEditIcon />
-                          </span>
-                          <span>
-                            {startDate ? formatDayMonth(startDate) : 'Date'}
-                            {endDate && ` - ${formatDayMonth(endDate)}`}
-                          </span>
-                        </div>
-                        <span className="svg_icon flex w-4 -rotate-90 transform text-[#C4C4C4]">
-                          <ArrowDownIcon />
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setShowDatePicker(false);
-                          setShowGuests(false);
-                          setShowTimePicker(true);
-                        }}
-                        className="flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs"
-                      >
-                        <div className="flex items-center">
-                          <span className="svg_icon mr-2 block w-5 text-transparent">
-                            <ClockIcon />
-                          </span>
-                          <span>{bookingTime || 'Time'}</span>
-                        </div>
-                        <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
-                          <ArrowDownIcon />
-                        </span>
-                      </button>
+                  <button
+                    type="button"
+                    className="svg_icon ml-2 w-[14px] rounded-full"
+                    onClick={() => setOpenPopup(true)}
+                  >
+                    <QuestionMarkIcon />
+                  </button>
+                  <label className="switch ml-auto">
+                    <input type="checkbox" />
+                    <span className="slider round" />
+                  </label>
+                </div>
+              </div>
+
+              <div className="pb-4 text-sm font-semibold">Select Mode</div>
+              <div className="flex justify-between">
+                {bookMode.map((mode) => (
+                  <button
+                    key={mode.id}
+                    type="button"
+                    className={`flex w-[32%] items-end rounded-lg border border-[#EF5DA8] py-2 px-2 text-[13px] ${
+                      mode.active ? 'bg-[#EF5DA8] text-white' : 'text-[#EF5DA8]'
+                    }`}
+                    onClick={() => handleModeChange(mode.id)}
+                  >
+                    <div className="svg_icon mr-1 w-5 flex-shrink-0">
+                      {mode.icon}
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setShowDatePicker(false);
-                        setShowTimePicker(false);
-                        setShowGuests(true);
-                      }}
-                      className="flex h-[50px] w-full flex-1 items-center justify-between border-t border-[#666] px-4 text-left text-xs"
-                    >
-                      <div className="flex items-center">
-                        <div className="svg_icon w-4">
-                          <UserIcon />
-                        </div>
-                        <span className="ml-2">
-                          {guestsCount.adults +
-                            guestsCount.children +
-                            guestsCount.infants}{' '}
-                          guests
-                        </span>
-                      </div>
-                      <div className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
-                        <ArrowDownIcon />
-                      </div>
-                    </button>
-                  </div>
-                </div>
-                <div className="booking_calendar mt-8 mb-4">
-                  <DatePicker
-                    selected={startDate}
-                    onChange={handleDateChange}
-                    startDate={startDate}
-                    endDate={endDate}
-                    minDate={new Date()}
-                    monthsShown={2}
-                    selectsRange
-                    inline
-                    isClearable
-                  />
-                </div>
-                <div className="flex items-center justify-between">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setStartDate(null);
-                      setEndDate(null);
-                    }}
-                    className="text-xs underline"
-                  >
-                    Clear dates
+                    <span>{mode.title}</span>
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => setShowDatePicker(false)}
-                    className="rounded-lg bg-[#222] px-5 py-2 text-xs text-white"
-                  >
-                    Close
-                  </button>
-                </div>
+                ))}
               </div>
-            )}
 
-            {showTimePicker && (
-              <div className="absolute -top-[40px] -right-[40px] z-[11] w-[430px] rounded-2xl bg-white p-10 shadow-spread">
-                <div className="flex items-center justify-between">
-                  <div className="" />
-                  <div className="w-[280px] rounded-lg border border-[#666] xl:w-[350px]">
-                    <div className="flex overflow-hidden">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setShowGuests(false);
-                          setShowTimePicker(false);
-                          setShowDatePicker(true);
-                        }}
-                        className={`flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs ${
-                          showDatePicker &&
-                          'border-b-1 rounded-bl-none border border-r-2 border-[#666]'
-                        }`}
+              <div className="pb-4 pt-5 text-sm font-semibold">
+                Select Duration
+              </div>
+              <div className="mb-5 flex justify-between">
+                {bookDuration.map((time) => (
+                  <button
+                    key={time.id}
+                    type="button"
+                    className={`w-[23.5%] items-end rounded-lg border border-[#EF5DA8] py-2 px-2 text-[13px] ${
+                      time.active ? 'bg-[#EF5DA8] text-white' : 'text-[#EF5DA8]'
+                    }`}
+                    onClick={() => handleDurationChange(time.id)}
+                  >
+                    <span>{time.title}</span>
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+
+          {getActiveTab() === 4 && (
+            <>
+              <div className="border-b border-b-[#DFDFDF] pb-4">
+                <div className="flex items-center pb-4 text-sm font-semibold">
+                  <span>Choose your Mode</span>
+                  <button
+                    type="button"
+                    className="svg_icon ml-2 w-[14px] rounded-full"
+                    onClick={() => setOpenPopup(true)}
+                  >
+                    <QuestionMarkIcon />
+                  </button>
+                </div>
+                <div className="flex flex-wrap gap-y-5 md:gap-y-2 lg:flex-nowrap">
+                  {['Online', 'Physical'].map((day) => (
+                    <div
+                      key={day}
+                      className="flex w-full items-center lg:w-1/3"
+                    >
+                      <input
+                        type="radio"
+                        id={day}
+                        name="classStarting"
+                        className="h-6 w-6 shrink-0 cursor-pointer accent-[#EF5DA8] md:h-[18px] md:w-[18px]"
+                      />
+                      <label
+                        htmlFor={day}
+                        className="ml-2 w-full cursor-pointer text-base md:w-auto md:text-[12px]"
                       >
-                        <div className="flex items-center">
-                          <span className="svg_icon mr-2 block w-5 text-transparent">
-                            <CalendarEditIcon />
-                          </span>
-                          <span>
-                            {startDate ? formatDayMonth(startDate) : 'Date'}
-                            {endDate && ` - ${formatDayMonth(endDate)}`}
-                          </span>
-                        </div>
-                        <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
-                          <ArrowDownIcon />
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setShowGuests(false);
-                          setShowDatePicker(false);
-                          setShowTimePicker(true);
-                        }}
-                        className={`flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs ${
-                          showTimePicker &&
-                          'border-b-1 rounded-br-none border border-l-2 border-[#666]'
-                        }`}
-                      >
-                        <div className="flex items-center">
-                          <span className="svg_icon mr-2 block w-5 text-transparent">
-                            <ClockIcon />
-                          </span>
-                          <span>{bookingTime || 'Time'}</span>
-                        </div>
-                        <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
-                          <ArrowDownIcon />
-                        </span>
-                      </button>
+                        {day}
+                      </label>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setShowDatePicker(false);
-                        setShowTimePicker(false);
-                        setShowGuests(true);
-                      }}
-                      className="flex h-[50px] w-full flex-1 items-center justify-between border-t border-[#666] px-4 text-left text-xs"
-                    >
-                      <div className="flex items-center">
-                        <div className="svg_icon w-4">
-                          <UserIcon />
-                        </div>
-                        <span className="ml-2">
-                          {guestsCount.adults +
-                            guestsCount.children +
-                            guestsCount.infants}{' '}
-                          guests
-                        </span>
-                      </div>
-                      <div
-                        className={`svg_icon flex w-4 rotate-90 transform text-[#C4C4C4] ${
-                          showGuests ? 'rotate-180' : ''
-                        }`}
-                      >
-                        <ArrowDownIcon />
-                      </div>
-                    </button>
-                  </div>
+                  ))}
                 </div>
-                <div className="booking_time ml-auto mt-4 mb-4 w-[280px] text-center xl:w-[344px]">
-                  <TimeKeeper
-                    time={bookingTime}
-                    switchToMinuteOnHourSelect
-                    onChange={(updatedTime) => {
-                      setBookingTime(updatedTime.formatted12);
-                    }}
-                  />
-                </div>
-                <div className="flex items-center justify-end">
+              </div>
+
+              <div className="pb-4 pt-5 text-sm font-semibold">
+                Select Duration
+              </div>
+              <div className="mb-5 flex flex-wrap gap-2">
+                {plans.map((plan) => (
                   <button
+                    key={plan.id}
                     type="button"
-                    onClick={() => setShowTimePicker(false)}
-                    className="rounded-lg bg-[#222] px-5 py-2 text-xs text-white"
+                    className={`items-end rounded-lg border border-[#EF5DA8] py-2 px-2 text-[13px] ${
+                      plan.active ? 'bg-[#EF5DA8] text-white' : 'text-[#EF5DA8]'
+                    }`}
+                    onClick={() => handlePlanChange(plan.id)}
                   >
-                    Close
+                    <span>{plan.title}</span>
                   </button>
-                </div>
+                ))}
               </div>
-            )}
-
-            {showGuests && (
-              <div className="absolute -top-[40px] -right-[40px] z-[11] w-[430px] rounded-2xl bg-white p-10 shadow-spread">
-                <div className="flex items-center justify-between">
-                  <div />
-                  <div className="w-[280px] rounded-lg border border-[#666] xl:w-[350px]">
-                    <div className="flex overflow-hidden">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setShowGuests(false);
-                          setShowTimePicker(false);
-                          setShowDatePicker(true);
-                        }}
-                        className="flex h-[50px] flex-1 items-center justify-between rounded-lg rounded-tr-none rounded-br-none border-r border-r-[#666] px-4 text-left text-xs"
-                      >
-                        <div className="flex items-center">
-                          <span className="svg_icon mr-2 block w-5 text-transparent">
-                            <CalendarEditIcon />
-                          </span>
-                          <span>
-                            {startDate ? formatDayMonth(startDate) : 'Date'}
-                            {endDate && ` - ${formatDayMonth(endDate)}`}
-                          </span>
-                        </div>
-                        <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
-                          <ArrowDownIcon />
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setShowGuests(false);
-                          setShowDatePicker(false);
-                          setShowTimePicker(true);
-                        }}
-                        className="flex h-[50px] flex-1 items-center justify-between rounded-lg px-4 text-left text-xs"
-                      >
-                        <div className="flex items-center">
-                          <span className="svg_icon mr-2 block w-5 text-transparent">
-                            <ClockIcon />
-                          </span>
-                          <span>{bookingTime || 'Time'}</span>
-                        </div>
-                        <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
-                          <ArrowDownIcon />
-                        </span>
-                      </button>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setShowDatePicker(false);
-                        setShowTimePicker(false);
-                        setShowGuests(true);
-                      }}
-                      className={`flex h-[50px] w-full flex-1 items-center justify-between rounded-lg border-t border-[#666] px-4 text-left text-xs ${
-                        showGuests ? 'border border-t-2' : ''
-                      }`}
-                    >
-                      <div className="flex items-center">
-                        <div className="svg_icon w-4">
-                          <UserIcon />
-                        </div>
-                        <span className="ml-2">
-                          {guestsCount.adults +
-                            guestsCount.children +
-                            guestsCount.infants}{' '}
-                          guests
-                        </span>
-                      </div>
-                      <div className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
-                        <ArrowDownIcon />
-                      </div>
-                    </button>
-                  </div>
-                </div>
-                <div className="ml-auto mt-4 mb-4 w-[280px] xl:w-[350px]">
-                  <GuestsPopover
-                    guests={guestsCount}
-                    onChange={(type: string, count: number) => {
-                      handleGuestCount(type, count);
-                    }}
-                  />
-                </div>
-                <div className="flex items-center justify-end">
-                  <button
-                    type="button"
-                    onClick={() => setShowGuests(false)}
-                    className="rounded-lg bg-[#222] px-5 py-2 text-xs text-white"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div className="mt-5 mb-6 border-b border-b-[#DFDFDF] pb-4">
-            <div className="flex items-center">
-              <div className="text-sm font-semibold">
-                Book for Private Group
-              </div>
-              <button
-                type="button"
-                className="svg_icon ml-2 w-[14px] rounded-full bg-black text-white"
-                onClick={() => setOpenPopup(true)}
-              >
-                <QuestionMarkIcon />
-              </button>
-              <label className="switch ml-auto">
-                <input type="checkbox" />
-                <span className="slider round" />
-              </label>
-            </div>
-          </div>
-
-          <div className="pb-4 text-sm font-semibold">Select Mode</div>
-          <div className="flex justify-between">
-            {bookMode.map((mode) => (
-              <button
-                key={mode.id}
-                type="button"
-                className={`flex w-[32%] items-end rounded-lg border border-[#EF5DA8] py-2 px-2 text-[13px] ${
-                  mode.active ? 'bg-[#EF5DA8] text-white' : 'text-[#EF5DA8]'
-                }`}
-                onClick={() => handleModeChange(mode.id)}
-              >
-                <div className="svg_icon mr-1 w-5 flex-shrink-0">
-                  {mode.icon}
-                </div>
-                <span>{mode.title}</span>
-              </button>
-            ))}
-          </div>
-
-          <div className="pb-4 pt-5 text-sm font-semibold">Select Duration</div>
-          <div className="mb-5 flex justify-between">
-            {bookDuration.map((time) => (
-              <button
-                key={time.id}
-                type="button"
-                className={`w-[23.5%] items-end rounded-lg border border-[#EF5DA8] py-2 px-2 text-[13px] ${
-                  time.active ? 'bg-[#EF5DA8] text-white' : 'text-[#EF5DA8]'
-                }`}
-                onClick={() => handleDurationChange(time.id)}
-              >
-                <span>{time.title}</span>
-              </button>
-            ))}
-          </div>
+            </>
+          )}
 
           <button
             type="button"
@@ -688,17 +775,11 @@ const BookingCard = () => {
               className="mx-auto flex items-center text-xs font-semibold text-[#222222]"
               onClick={() => setOpenReport(true)}
             >
-              <div className="svg_icon mr-2 w-[12px]">
+              <div className="svg_icon mr-1 w-4">
                 <FlagIcon />
               </div>
               <div className="underline">Report this listings</div>
             </button>
-            <ReportPopup
-              status={openReport}
-              onClose={() => {
-                setOpenReport(false);
-              }}
-            />
             <button
               type="button"
               onClick={() => setOpenPersonalizedExperience(true)}
@@ -706,18 +787,6 @@ const BookingCard = () => {
             >
               Contact me to costumize this to your needs
             </button>
-            <PersonalizeExperiencePopover
-              status={openPersonalizedExperience}
-              onClose={() => setOpenPersonalizedExperience(false)}
-              date={bookingDate}
-              time={bookingTime}
-              onDateChange={(date: Date | null) => setBookingDate(date)}
-              onTimeChange={(time: string) => setBookingTime(time)}
-              guests={guestsCount}
-              onGuestsChange={(type: string, count: number) => {
-                handleGuestCount(type, count);
-              }}
-            />
           </div>
         </div>
       </div>
@@ -732,6 +801,26 @@ const BookingCard = () => {
           View one-off sessions
         </div>
       </button>
+
+      <ReportPopup
+        status={openReport}
+        onClose={() => {
+          setOpenReport(false);
+        }}
+      />
+
+      <PersonalizeExperiencePopover
+        status={openPersonalizedExperience}
+        onClose={() => setOpenPersonalizedExperience(false)}
+        date={bookingDate}
+        time={bookingTime}
+        onDateChange={(date: Date | null) => setBookingDate(date)}
+        onTimeChange={(time: string) => setBookingTime(time)}
+        guests={guestsCount}
+        onGuestsChange={(type: string, count: number) => {
+          handleGuestCount(type, count);
+        }}
+      />
 
       <RequestToBookPopover
         status={openRequestToBook}
