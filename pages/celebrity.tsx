@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Banner from '../src/components/celebrity/Banner';
 
 import CelebrityFaq from '../src/components/celebrity/CelebrityFaq';
 import CelebrityProfile from '../src/components/celebrity/CelebrityProfile';
@@ -16,11 +17,18 @@ import Review from '../src/components/workshop/Review';
 
 const Celebrity: NextPage = () => (
   <>
+    <style>
+      {`header.mobile_header, .mobile_floating_header {
+            display: none;
+          }`}
+    </style>
     <Head>
       <title>Celebrity: Country Locals</title>
     </Head>
     <div className="bg-[#FBFBFB] pb-10">
       <Intro />
+
+      <Banner />
 
       <PinkPurpleGradient />
 

@@ -172,13 +172,13 @@ const BookingCard = () => {
 
   return (
     <div className="booking-card-wrapper h-full transition-opacity duration-300 ease-in-out">
-      <div className="booking-card mb-3 w-full rounded-[20px] border border-[#ebebeb] bg-white p-6 shadow-small">
-        <div className="flex flex-wrap gap-3">
+      <div className="booking-card mb-3 w-full rounded-[20px] border border-[#ebebeb] bg-white p-3 shadow-small xl:p-6">
+        <div className="flex flex-wrap justify-between gap-y-3">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               type="button"
-              className={`w-[48.2%] rounded-2xl border border-[#ebebeb] p-3 text-left ${
+              className={`w-[48%] rounded-2xl border border-[#ebebeb] p-3 text-left ${
                 tab.active
                   ? 'purple_orange_bg text-white'
                   : 'bg-[#F5F5F5] text-[#9C9C9C]'

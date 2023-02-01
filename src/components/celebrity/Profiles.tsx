@@ -1,7 +1,7 @@
 import useViewport from '../../hooks/useViewport';
 import BookingCard from './BookingCard';
-
 import BrandLogoCarousel from './BrandLogoCarousel';
+import BookingCardMobile from './popovers/BookingCardMobile';
 import ProfileDetails from './ProfileDetails';
 import ReasonsSlider from './ReasonsSlider';
 
@@ -23,8 +23,7 @@ const Profiles = () => {
               <BookingCard />
             </div>
           ) : (
-            // <BookingCardMobile />
-            <div> The sidebar would be here.</div>
+            <BookingCardMobile />
           )}
         </div>
       </div>
