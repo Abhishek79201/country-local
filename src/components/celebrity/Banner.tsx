@@ -14,16 +14,16 @@ const Banner = () => {
               <div className="-ml-6 max-w-[200px] sm:-ml-8 sm:max-w-[250px]">
                 <img src="/live-session.png" alt="Live Session" />
               </div>
-              <h1 className="-mt-3 text-3xl font-bold text-white sm:-mt-9 sm:text-[58px]">
+              <h1 className="-mt-3 text-3xl font-bold text-white sm:-mt-3 sm:text-[58px]">
                 GET THE BEST
               </h1>
-              <div className="-ml-4 -mt-2 max-w-[270px] sm:-mt-8 sm:-ml-6 sm:max-w-[400px]">
+              <div className="-ml-4 -mt-2 max-w-[270px] sm:-mt-2 sm:-ml-6 sm:max-w-[400px]">
                 <img src="/celebrity-gold.png" alt="Live Session" />
               </div>
-              <h1 className="-mt-2 text-3xl font-bold text-white sm:-mt-8 sm:text-[58px]">
+              <h1 className="-mt-2 text-3xl font-bold text-white sm:-mt-0 sm:text-[58px]">
                 EXPERIENCE
               </h1>
-              <div className="max-w-[450px] sm:-mt-2">
+              <div className="mt-4 max-w-[450px]">
                 <img src="/celebrity-name.png" alt="Live Session" />
               </div>
               <div className="max-w-[440px]">
