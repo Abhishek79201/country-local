@@ -7,9 +7,11 @@ import CelebrityProfile from '../src/components/celebrity/CelebrityProfile';
 import DeliverySlider from '../src/components/celebrity/DeliverySlider';
 import GoodToKnow from '../src/components/celebrity/GoodToknow';
 import Intro from '../src/components/celebrity/Intro';
+import PersonSlider from '../src/components/celebrity/PersonSlider';
 import PinkPurpleGradient from '../src/components/celebrity/PinkPurpleGradient';
 import PreviewAccordion from '../src/components/celebrity/PreviewAccordion';
 import Profiles from '../src/components/celebrity/Profiles';
+import ServicesSlider from '../src/components/celebrity/ServicesSlider';
 import SessionInfoGrid from '../src/components/celebrity/SessionInfoGrid';
 import ThingsToKnow from '../src/components/celebrity/ThingsToKnow';
 import WorkshopExperience from '../src/components/common/WorkshopExperience';
@@ -51,6 +53,10 @@ const Celebrity: NextPage = () => (
       <CelebrityFaq />
 
       <WorkshopExperience />
+
+      <PersonSlider />
+
+      <ServicesSlider />
     </div>
   </>
 );

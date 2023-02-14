@@ -20,8 +20,8 @@ const Intro = () => {
     <>
       <div
         className={`${
-          scroll && 'border-b border-b-slate-200 bg-white'
-        } duration-400 fixed top-0 z-20 flex w-full items-center justify-between py-3 px-3 transition lg:hidden`}
+          scroll ? 'border-b border-b-slate-200 bg-white ' : ''
+        }duration-400 fixed top-0 z-20 flex w-full items-center justify-between py-3 px-3 transition lg:hidden`}
       >
         <button
           type="button"
@@ -53,7 +53,7 @@ const Intro = () => {
         </div>
       </div>
 
-      <div className="-mt-8 pt-20 pb-8 sm:pb-12 lg:mt-0 xl:py-12">
+      <div className="-mt-8 hidden pt-20 pb-8 sm:pb-12 lg:mt-0 lg:block xl:py-12">
         <div className="container">
           <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-3 md:flex-nowrap">
             <div>

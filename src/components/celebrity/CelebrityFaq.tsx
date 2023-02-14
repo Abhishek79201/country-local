@@ -1,14 +1,13 @@
 import { Disclosure } from '@headlessui/react';
-import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import { slideToggle } from '../../utilities/animations';
+import Image from 'next/image';
 import useViewport from '../../hooks/useViewport';
+import { slideToggle } from '../../utilities/animations';
 
 import ArrowDownIcon from '../../../public/icons/chevron-down.svg';
 import CloseIcon from '../../../public/icons/xmark.svg';
 
 import 'swiper/css';
-import DaysAccordion from './accordions/DaysAccordion';
 import FaqAccordion from './accordions/FaqAccordion';
 import FaqMobileSlider from './accordions/FaqMobileSlider';
 
@@ -30,56 +29,6 @@ const CelebrityFaq = () => {
         <div className="mx-auto pb-8 lg:max-w-[820px]">
           <Disclosure as="div" className="mb-4">
             {({ open }) => (
-              <div className="rounded-xl bg-white px-2 pt-2 pb-2 shadow-spread md:px-4">
-                <Disclosure.Button className="focus-purple relative flex w-full gap-3 px-1 pb-3 pt-3 text-left text-base font-bold focus-visible:ring-offset-0 md:px-3 md:text-[20px]">
-                  <span className="flex">
-                    <Image
-                      src="/icons/purple-calendar.png"
-                      width={22}
-                      height={22}
-                    />
-                  </span>
-                  Program
-                  {open ? (
-                    <span className="svg_icon absolute right-3 top-4 inline-block w-[15px] md:w-[18px]">
-                      <CloseIcon />
-                    </span>
-                  ) : (
-                    <span className="svg_icon absolute right-3 top-5 inline-block w-[15px] text-transparent md:w-[18px]">
-                      <ArrowDownIcon />
-                    </span>
-                  )}
-                </Disclosure.Button>
-
-                <AnimatePresence>
-                  {open && (
-                    <Disclosure.Panel
-                      static
-                      as={motion.div}
-                      initial="initial"
-                      animate="animate"
-                      exit="initial"
-                      variants={slideToggle}
-                      transition={{
-                        duration: 0.3,
-                        ease: 'easeInOut',
-                      }}
-                      className="overflow-hidden"
-                    >
-                      <div className="mt-4 mb-4 px-3">
-                        <DaysAccordion title="Day 1" />
-                        <DaysAccordion title="Day 2" />
-                        <DaysAccordion title="Day 3" />
-                      </div>
-                    </Disclosure.Panel>
-                  )}
-                </AnimatePresence>
-              </div>
-            )}
-          </Disclosure>
-
-          <Disclosure as="div" className="mb-4">
-            {({ open }) => (
               <div className="rounded-xl px-2 pt-2 pb-2 shadow-spread md:px-4">
                 <Disclosure.Button className="focus-purple relative flex w-full gap-3 px-1 pb-3 pt-3 text-left text-base font-bold focus-visible:ring-offset-0 md:px-3 md:text-[20px]">
                   <span className="flex">
@@ -95,7 +44,7 @@ const CelebrityFaq = () => {
                       <CloseIcon />
                     </span>
                   ) : (
-                    <span className="svg_icon absolute right-3 top-5 inline-block w-[15px] text-transparent md:w-[18px]">
+                    <span className="svg_icon absolute right-3 top-[18px] inline-block w-[15px] text-transparent md:w-[18px]">
                       <ArrowDownIcon />
                     </span>
                   )}

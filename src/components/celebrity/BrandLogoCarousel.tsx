@@ -37,7 +37,7 @@ const BrandLogoCarousel = () => (
         }}
         className="!pr-5 md:!pr-0"
       >
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item) => (
           <SwiperSlide key={item}>
             <div className="mb-3 flex h-[139px] items-center justify-center rounded-xl border border-[#EBEBEB] bg-white">
               <img
@@ -46,7 +46,7 @@ const BrandLogoCarousel = () => (
                 className="max-w-[120px]"
               />
             </div>
-            <div className="flex h-[139px] items-center justify-center rounded-xl border border-[#EBEBEB] bg-white">
+            <div className="!hidden h-[139px] items-center justify-center rounded-xl border border-[#EBEBEB] bg-white lg:!flex">
               <img
                 src="/icons/nike-logo.png"
                 alt="logo"

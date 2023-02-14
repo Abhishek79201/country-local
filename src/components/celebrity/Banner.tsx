@@ -7,9 +7,9 @@ const Banner = () => {
 
   return (
     <>
-      <div className="relative bg-[#1C1C25]">
+      <div className="relative -mt-8 bg-[#1C1C25] pt-8 lg:mt-0 lg:pt-0">
         <div className="container">
-          <div className="relative z-[2] flex flex-wrap-reverse lg:flex-nowrap">
+          <div className="relative z-[2] flex flex-wrap lg:flex-nowrap">
             <div className="mt-8 mb-4 w-full lg:w-1/2">
               <div className="-ml-6 max-w-[200px] sm:-ml-8 sm:max-w-[250px]">
                 <img src="/live-session.png" alt="Live Session" />
@@ -31,12 +31,12 @@ const Banner = () => {
               </div>
               <button
                 type="button"
-                className="purple_gradient_bg_light relative z-[1] flex h-[56px] w-full items-center rounded-[10px] px-5 sm:w-auto"
+                className="purple_gradient_bg_light relative z-[1] flex h-[46px] w-auto items-center rounded-[10px] px-5 lg:h-[56px] lg:px-10"
               >
-                <span className="block w-full text-base font-semibold text-white">
+                <span className="block w-full text-sm font-semibold text-white lg:text-base">
                   GET STARTED
                 </span>
-                <span className="ml-2 block max-w-[25px]">
+                <span className="ml-2 block max-w-[20px] lg:max-w-[25px]">
                   <img src="/icons/arrow-right.png" className="w-full" alt="" />
                 </span>
               </button>
