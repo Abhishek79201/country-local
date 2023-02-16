@@ -1,7 +1,14 @@
+/* eslint @next/next/no-img-element: "off" */
+/* eslint react/no-array-index-key: "off" */
 import { useState } from 'react';
+import { Autoplay, EffectCube } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import BannerVideoPopover from './popovers/BannerVideoPopover';
 
-/* eslint @next/next/no-img-element: "off" */
+import 'swiper/css';
+import 'swiper/css/effect-cube';
+
 const Banner = () => {
   const [showVideo, setShowVideo] = useState(false);
 
@@ -45,16 +52,35 @@ const Banner = () => {
               </div>
             </div>
             <div className="flex w-full items-center justify-end lg:w-1/2">
-              <div className="relative lg:-mb-[20%] lg:max-w-[550px] xl:-mb-[15%]">
-                <img src="/banner-video-group.png" alt="" />
-                <button
-                  type="button"
-                  className="absolute left-[50%] top-[50%] max-w-[65px] translate-x-[-50%] translate-y-[-50%] transform"
-                  onClick={() => setShowVideo(true)}
-                >
-                  <img src="/banner-play.png" alt="Play" />
-                </button>
-              </div>
+              <Swiper
+                slidesPerView="auto"
+                spaceBetween={0}
+                modules={[Autoplay, EffectCube]}
+                autoplay
+                effect="cube"
+                cubeEffect={{
+                  shadow: true,
+                  slideShadows: true,
+                  shadowOffset: 20,
+                  shadowScale: 0.94,
+                }}
+                className="flex flex-wrap !pr-5 md:!pr-0 lg:-mb-[20%] lg:max-w-[550px] xl:-mb-[15%]"
+              >
+                {[...Array(6)].map((info, index) => (
+                  <SwiperSlide key={index} className="!w-full">
+                    <div className="relative">
+                      <img src="/banner-video-group.png" alt="" />
+                      <button
+                        type="button"
+                        className="absolute left-[50%] top-[50%] max-w-[65px] translate-x-[-50%] translate-y-[-50%] transform"
+                        onClick={() => setShowVideo(true)}
+                      >
+                        <img src="/banner-play.png" alt="Play" />
+                      </button>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

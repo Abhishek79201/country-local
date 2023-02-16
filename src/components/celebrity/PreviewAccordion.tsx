@@ -15,6 +15,7 @@ const PreviewAccordion = () => {
   const [accordions, setAccordions] = useState([
     {
       id: 1,
+      badge: 'Part One',
       title: 'Accordion 1',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium ex illo dolores eos, incidunt, ad perspiciatis tempora dolorum velit aut reprehenderit in? Animi maxime ea ipsum, quis doloremque ducimus nemo officiis, fugit nam consequatur et nesciunt culpa minima soluta nobis architecto maiores iure ipsam sapiente cumque, repellat laudantium. Nulla.',
@@ -24,6 +25,7 @@ const PreviewAccordion = () => {
     },
     {
       id: 2,
+      badge: 'Part Two',
       title: 'Accordion 2',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium ex illo dolores eos, incidunt, ad perspiciatis tempora dolorum velit aut reprehenderit in? Animi maxime ea ipsum, quis doloremque ducimus nemo officiis, fugit nam consequatur et nesciunt culpa minima soluta nobis architecto maiores iure ipsam sapiente cumque, repellat laudantium. Nulla.',
@@ -33,6 +35,7 @@ const PreviewAccordion = () => {
     },
     {
       id: 3,
+      badge: 'Part Three',
       title: 'Accordion 3',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium ex illo dolores eos, incidunt, ad perspiciatis tempora dolorum velit aut reprehenderit in? Animi maxime ea ipsum, quis doloremque ducimus nemo officiis, fugit nam consequatur',
@@ -89,7 +92,7 @@ const PreviewAccordion = () => {
       <div className="container">
         <div className="flex">
           <div className="w-full lg:w-1/2">
-            {accordions.map(({ id, title, content, open }) => (
+            {accordions.map(({ id, badge, title, content, open }) => (
               <div
                 key={id}
                 className={`relative flex flex-col items-center justify-center px-4 pt-3 pb-3 lg:px-6 ${
@@ -100,18 +103,22 @@ const PreviewAccordion = () => {
               >
                 <button
                   type="button"
-                  className="focus-purple relative w-full py-4 text-left text-[16px] font-bold"
+                  className="focus-purple relative w-full py-2 text-left text-[16px] font-bold lg:py-4"
                   onClick={() => handleAccordionClick(id)}
                 >
-                  <div className="flex w-full items-center text-[#4A4A4A]">
-                    <div className="block rounded-full bg-black px-[13px] py-[6px] text-white">
-                      Part {` ${id}`}
+                  <div className="flex w-full flex-wrap items-center text-[#4A4A4A] lg:flex-nowrap">
+                    <div
+                      className={`block rounded-full border bg-black px-2 py-1 text-xs font-medium text-white lg:px-[13px] lg:py-[6px] lg:text-base lg:font-semibold ${
+                        open ? 'border-[#F9E171]' : 'border-black'
+                      }`}
+                    >
+                      {badge}
                     </div>
-                    <h3 className="ml-3 text-[26px] font-bold text-black">
+                    <h3 className="mt-3 w-full text-[20px] font-bold text-black lg:mt-0 lg:ml-3 lg:w-auto lg:text-[26px]">
                       {title}
                     </h3>
                     <span
-                      className={`svg_icon absolute right-3 inline-block w-[15px] text-transparent transition-all duration-300 ease-in-out md:w-[18px] ${
+                      className={`svg_icon absolute right-3 hidden w-[15px] text-transparent transition-all duration-300 ease-in-out md:w-[18px] lg:inline-block ${
                         open && 'rotate-180'
                       }`}
                     >
@@ -133,7 +140,9 @@ const PreviewAccordion = () => {
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-4 leading-relaxed">{content}</div>
+                      <div className="pb-4 text-sm leading-relaxed lg:text-base">
+                        {content}
+                      </div>
                       {width < 1064 && (
                         <div className="relative mb-2 overflow-hidden rounded-xl">
                           <ReactPlayer
@@ -141,6 +150,7 @@ const PreviewAccordion = () => {
                             controls={playerState.controls}
                             playing={playerState.playing}
                             width="100%"
+                            height={width < 1064 ? '200px' : '100%'}
                           />
                           <div
                             aria-label="Play Pause"

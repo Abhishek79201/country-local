@@ -1,9 +1,10 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
-import Link from 'next/link';
 import { animationWrapper, fadeInUp } from '../../utilities/animations';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -85,6 +86,7 @@ const DeliverySlider = () => {
             }}
             pagination={{
               el: '.image_gallery.swiper-pagination',
+              // dynamicBullets: true,
             }}
             breakpoints={{
               // when window width is >= 768px
@@ -104,7 +106,7 @@ const DeliverySlider = () => {
                 className="image_gallery_rotate_slide py-7 px-2 text-center"
                 key={item.id}
               >
-                <div className="-rotate-[15deg] scale-[.8] transform rounded-2xl bg-white p-[10px] opacity-80 shadow transition-all">
+                <div className="mx-auto w-[260px] -rotate-[15deg] scale-[.8] transform rounded-2xl bg-white p-[10px] opacity-80 shadow transition-all lg:mx-0 lg:w-auto">
                   <div className="relative flex overflow-hidden rounded-2xl">
                     <Image
                       src={`/${item.imgUrl}`}
@@ -113,7 +115,7 @@ const DeliverySlider = () => {
                     />
                   </div>
                 </div>
-                <div className="mx-auto mt-6 hidden h-[72px] w-[184px] items-center rounded-full border-2 border-[#F2F2F2] bg-white">
+                <div className="mx-auto mt-4 hidden h-[72px] w-[230px] items-center rounded-full border-2 border-[#F2F2F2] bg-white lg:mt-6 lg:w-[200px]">
                   <div className="ml-2 flex w-[56px] shrink-0 items-center  overflow-hidden rounded-full">
                     <Image
                       src="/image-gallery-user.jpg"
@@ -136,7 +138,7 @@ const DeliverySlider = () => {
 
           <div className="relative mx-auto flex items-center justify-center gap-3">
             <div className="image_gallery swiper-button-prev !relative !top-0 !bottom-0 !-left-0 !mt-0 !h-[30px] !w-[30px] shrink-0 rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
-            <div className="image_gallery swiper-pagination !relative !top-0 !bottom-0 flex !w-[180px] shrink-0 justify-between !text-[#666] sm:!w-[160px]" />
+            <div className="image_gallery swiper-pagination !relative !top-0 !bottom-0 flex !w-[150px] shrink-0 justify-between !text-[#666]" />
             <div className="image_gallery swiper-button-next !relative !top-0 !bottom-0 !-right-0 !mt-0 !h-[30px] !w-[30px] shrink-0 rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
           </div>
         </div>

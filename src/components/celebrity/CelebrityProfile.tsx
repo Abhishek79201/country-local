@@ -24,7 +24,7 @@ const CelebrityProfile = () => {
             <h3 className="pb-2 pt-2 text-lg font-bold uppercase text-[#fff] md:pb-6 md:text-xl lg:pt-6 lg:pb-12 lg:text-[42px]">
               JADE WARREN
             </h3>
-            <div className="rounded-[20px] border-[#2F343E] text-[#fff] md:border md:bg-[#1F2229] md:py-4 md:px-6 lg:py-6 lg:px-8">
+            <div className="rounded-[20px] border-[#2F343E] bg-[#1F2229] p-4 text-[#fff] md:border md:py-4 md:px-6 lg:py-6 lg:px-8">
               <div className="text-sm leading-relaxed md:text-base lg:text-lg">
                 <span className="mr-1">
                   Monthly classes go beyond a playlist of videos. The classroom

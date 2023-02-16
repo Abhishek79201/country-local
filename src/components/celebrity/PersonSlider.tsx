@@ -1,3 +1,4 @@
+/* eslint react/no-array-index-key: "off" */
 import { FreeMode, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -60,8 +61,8 @@ const PersonSlider = () => (
                     <div className="max-w-[150px] text-white">
                       <div className="flex items-center">
                         <div className="mr-2 flex gap-x-1">
-                          {[...Array(5)].map((star) => (
-                            <div key={star} className="svg_icon w-3">
+                          {[...Array(5)].map((star, index) => (
+                            <div key={index} className="svg_icon w-3">
                               <StarIcon />
                             </div>
                           ))}
