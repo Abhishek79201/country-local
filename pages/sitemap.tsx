@@ -8,7 +8,7 @@ const Sitemap: NextPage = () => (
       <Link href="/">
         <a className="mb-3 block">Country Locals</a>
       </Link>
-      <Link href="/home">
+      <Link href="/home-page">
         <a className="mb-3 block">Old Home</a>
       </Link>
       <Link href="/one-day-workshop">
