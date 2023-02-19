@@ -1,3 +1,4 @@
+/* eslint @next/next/no-img-element: "off" */
 import Image from 'next/image';
 import { useState } from 'react';
 import ContactMePopover from './popovers/ContactMePopover';
@@ -10,53 +11,64 @@ const ProfileDetails = () => {
 
   return (
     <div className="pb-14">
-      <div className="header flex flex-col flex-wrap items-start justify-between gap-y-3 pb-4 md:flex-nowrap md:gap-y-0">
-        <div className="flex flex-wrap items-center gap-4 sm:flex-nowrap">
-          <div className="relative mb-3 flex shrink-0 sm:mb-0">
-            <div className="relative z-[1] flex items-center overflow-hidden rounded-full">
-              <Image
-                src="/mentor-card-1.jpg"
-                width={68}
-                height={68}
-                alt="Mentor 1"
-              />
+      <div className="header flex flex-wrap items-center justify-between gap-y-5 pb-4 md:flex-nowrap md:gap-y-0">
+        <div>
+          <div className="flex flex-wrap items-center gap-4 sm:flex-nowrap">
+            <div className="relative mb-3 flex shrink-0 sm:mb-0">
+              <div className="relative z-[1] flex items-center overflow-hidden rounded-full">
+                <Image
+                  src="/mentor-card-1.jpg"
+                  width={68}
+                  height={68}
+                  alt="Mentor 1"
+                />
+              </div>
+            </div>
+            <div className="text">
+              <p className="text-[18px] font-bold text-[#4A4A4A]">
+                Martin Alexa
+              </p>
+              <p className="py-1 text-[14px] font-semibold">
+                The Traveling Painters
+              </p>
+              <div className="text-sm text-[#1c1c1c]">
+                <strong>I Speak:</strong>
+                <span className="ml-1">English, Indonesia, Germany</span>
+              </div>
             </div>
           </div>
-          <div className="text">
-            <p className="text-[18px] font-bold text-[#4A4A4A]">Martin Alexa</p>
-            <p className="py-1 text-[14px] font-semibold">
-              The Traveling Painters
-            </p>
-            <div className="text-sm text-[#1c1c1c]">
-              <strong>I Speak:</strong>
-              <span className="ml-1">English, Indonesia, Germany</span>
+          <div className="mt-3 flex flex-wrap items-center">
+            <div className="flex items-center gap-[2px] text-[#EF5DA8]">
+              <div className="svg_icon w-[18px] shrink-0">
+                <StarIcon />
+              </div>
+              <div className="svg_icon w-[18px] shrink-0">
+                <StarIcon />
+              </div>
+              <div className="svg_icon w-[18px] shrink-0">
+                <StarIcon />
+              </div>
+              <div className="svg_icon w-[18px] shrink-0">
+                <StarIcon />
+              </div>
+              <div className="svg_icon w-[18px] shrink-0">
+                <StarIcon />
+              </div>
+              <span className="ml-2 mt-[2px] text-xs font-semibold lg:text-[17px]">
+                5.0
+              </span>
             </div>
-          </div>
-        </div>
-        <div className="mt-3 flex flex-wrap items-center">
-          <div className="flex items-center gap-[2px] text-[#EF5DA8]">
-            <div className="svg_icon w-[18px] shrink-0">
-              <StarIcon />
-            </div>
-            <div className="svg_icon w-[18px] shrink-0">
-              <StarIcon />
-            </div>
-            <div className="svg_icon w-[18px] shrink-0">
-              <StarIcon />
-            </div>
-            <div className="svg_icon w-[18px] shrink-0">
-              <StarIcon />
-            </div>
-            <div className="svg_icon w-[18px] shrink-0">
-              <StarIcon />
-            </div>
-            <span className="ml-2 mt-[2px] text-xs font-semibold lg:text-[17px]">
-              5.0
+            <span className="mt-[2px] ml-2 text-xs font-semibold text-[#9F9F9F] lg:text-[16px]">
+              ( 920 Review for this Teacher )
             </span>
           </div>
-          <span className="mt-[2px] ml-2 text-xs font-semibold text-[#9F9F9F] lg:text-[16px]">
-            ( 920 Review for this Teacher )
-          </span>
+        </div>
+        <div>
+          <img
+            src="/super-celebrity.png"
+            alt="Super Celebrity"
+            className="max-w-[250px]"
+          />
         </div>
       </div>
       <div className="content mt-5">

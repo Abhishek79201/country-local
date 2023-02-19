@@ -4,10 +4,14 @@ import { useState } from 'react';
 import { FreeMode, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
+import { Disclosure } from '@headlessui/react';
+import { AnimatePresence, motion } from 'framer-motion';
+
 import UnderLine from '../common/UnderLine';
 import NotIncludedPopover from './popovers/NotIncludedPopover';
 import CancellationPopover from './popovers/CancellationPopover';
 import MeetingLocationPopover from './popovers/MeetingLocationPopover';
+import WhatsIncludedPopover from './popovers/WhatsIncludedPopover';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -16,7 +20,7 @@ import 'swiper/css/pagination';
 import CancelMark from '../../../public/icons/purple-cancel.svg';
 import Checkmark from '../../../public/icons/checked-purple.svg';
 import ArrowIcon from '../../../public/icons/chevron-right.svg';
-import WhatsIncludedPopover from './popovers/WhatsIncludedPopover';
+import ArrowDownIcon from '../../../public/icons/arrow-square-up.svg';
 
 const GoodToKnow = () => {
   const [notIncludedOpen, setNotIncludedOpen] = useState<boolean>(false);
@@ -177,99 +181,219 @@ const GoodToKnow = () => {
           <UnderLine />
 
           <div className="w-full lg:max-w-[730px]">
-            <div className="mt-0  border-t-0 border-[#EBEBEB]">
-              <div className="mb-6">
-                <h3 className="pb-3 font-bold text-[#222] lg:text-2xl">
-                  Whats not Included
-                </h3>
-                <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                  <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                    <CancelMark />
-                  </span>
-                  Tortor pellentesque nec sit nulla volutpat curabitur mattis
-                  fusce condimentum.. Nulla Orci congue prasent
-                </p>
-                <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                  <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                    <CancelMark />
-                  </span>
-                  Tortor pellentesque nec sit nulla volutpat
-                </p>
-                <div>
-                  <button
-                    type="button"
-                    onClick={() => setNotIncludedOpen(true)}
-                    className="ml-auto flex items-center text-sm underline"
+            <Disclosure>
+              {({ open }) => (
+                <div className="mb-8 flex flex-col items-center justify-center">
+                  <Disclosure.Button
+                    as="div"
+                    role="button"
+                    className="relative w-full"
                   >
-                    <span>Show More</span>
-                    <span className="ml-2 w-3">
-                      <ArrowIcon />
-                    </span>
-                  </button>
-                  <NotIncludedPopover
-                    status={notIncludedOpen}
-                    onClose={() => setNotIncludedOpen(false)}
-                  />
+                    <div className="flex w-full items-center justify-between">
+                      <h3 className="font-bold text-[#222] lg:text-2xl">
+                        Whats not Included
+                      </h3>
+                      <span
+                        className={`svg_icon absolute right-0 inline-block w-6 transition-all duration-300 ease-in-out md:w-8 ${
+                          open && 'rotate-180'
+                        }`}
+                      >
+                        <ArrowDownIcon />
+                      </span>
+                    </div>
+                  </Disclosure.Button>
+
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <Disclosure.Panel
+                        static
+                        as={motion.div}
+                        initial="collapsed"
+                        animate="open"
+                        exit="collapsed"
+                        variants={{
+                          open: { opacity: 1, height: 'auto' },
+                          collapsed: { opacity: 0, height: 0 },
+                        }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pt-6 text-sm leading-relaxed">
+                          <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                            <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                              <CancelMark />
+                            </span>
+                            Tortor pellentesque nec sit nulla volutpat curabitur
+                            mattis fusce condimentum.. Nulla Orci congue prasent
+                          </p>
+                          <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                            <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                              <CancelMark />
+                            </span>
+                            Tortor pellentesque nec sit nulla volutpat
+                          </p>
+                          <div>
+                            <button
+                              type="button"
+                              onClick={() => setNotIncludedOpen(true)}
+                              className="ml-auto flex items-center text-sm underline"
+                            >
+                              <span>Show More</span>
+                              <span className="ml-2 w-3">
+                                <ArrowIcon />
+                              </span>
+                            </button>
+                            <NotIncludedPopover
+                              status={notIncludedOpen}
+                              onClose={() => setNotIncludedOpen(false)}
+                            />
+                          </div>
+                        </div>
+                      </Disclosure.Panel>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </div>
-              <div className="mb-6">
-                <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
-                  Where we will meet?
-                </h3>
-                <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                  <span className="svg_icon mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1">
-                    <Checkmark />
-                  </span>
-                  Tortor pellentesque nec sit nulla volutpat curabitur mattis
-                  fusce condimentum.. Nulla Orci congue prasent
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setMeetingOpen(true)}
-                  className="purple_gradient_bg ml-6 mt-2 rounded-[10px] py-3 px-5 text-sm font-bold text-[#fff] "
-                >
-                  View Meeting Location
-                </button>
-                <MeetingLocationPopover
-                  status={meetingOpen}
-                  onClose={() => setMeetingOpen(false)}
-                />
-              </div>
-              <div>
-                <h3 className="pb-3 font-bold text-[#222] lg:text-[22px]">
-                  Cancelation
-                </h3>
-                <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                  <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                    <CancelMark />
-                  </span>
-                  Tortor pellentesque nec sit nulla volutpat curabitur mattis
-                  fusce condimentum.. Nulla Orci congue prasent
-                </p>
-                <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
-                  <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
-                    <CancelMark />
-                  </span>
-                  Tortor pellentesque nec sit nulla volutpat
-                </p>
-                <div>
-                  <button
-                    type="button"
-                    onClick={() => setCancellationOpen(true)}
-                    className="ml-auto flex items-center text-sm underline"
+              )}
+            </Disclosure>
+
+            <Disclosure>
+              {({ open }) => (
+                <div className="mb-8 flex flex-col items-center justify-center">
+                  <Disclosure.Button
+                    as="div"
+                    role="button"
+                    className="relative w-full"
                   >
-                    <span>Show More</span>
-                    <span className="ml-2 w-3">
-                      <ArrowIcon />
-                    </span>
-                  </button>
-                  <CancellationPopover
-                    status={cancellationOpen}
-                    onClose={() => setCancellationOpen(false)}
-                  />
+                    <div className="flex w-full items-center justify-between">
+                      <h3 className="font-bold text-[#222] lg:text-2xl">
+                        Where we will meet?
+                      </h3>
+                      <span
+                        className={`svg_icon absolute right-0 inline-block w-6 transition-all duration-300 ease-in-out md:w-8 ${
+                          open && 'rotate-180'
+                        }`}
+                      >
+                        <ArrowDownIcon />
+                      </span>
+                    </div>
+                  </Disclosure.Button>
+
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <Disclosure.Panel
+                        static
+                        as={motion.div}
+                        initial="collapsed"
+                        animate="open"
+                        exit="collapsed"
+                        variants={{
+                          open: { opacity: 1, height: 'auto' },
+                          collapsed: { opacity: 0, height: 0 },
+                        }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pt-6 text-sm leading-relaxed">
+                          <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                            <span className="svg_icon mr-2 inline-block w-[22px] flex-shrink-0 text-[#E61D51] xl:pt-1">
+                              <Checkmark />
+                            </span>
+                            Tortor pellentesque nec sit nulla volutpat curabitur
+                            mattis fusce condimentum.. Nulla Orci congue prasent
+                          </p>
+                          <button
+                            type="button"
+                            onClick={() => setMeetingOpen(true)}
+                            className="purple_gradient_bg ml-6 mt-2 rounded-[10px] py-3 px-5 text-sm font-bold text-[#fff] "
+                          >
+                            View Meeting Location
+                          </button>
+                          <MeetingLocationPopover
+                            status={meetingOpen}
+                            onClose={() => setMeetingOpen(false)}
+                          />
+                        </div>
+                      </Disclosure.Panel>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </div>
-            </div>
+              )}
+            </Disclosure>
+
+            <Disclosure>
+              {({ open }) => (
+                <div className="mb-8 flex flex-col items-center justify-center">
+                  <Disclosure.Button
+                    as="div"
+                    role="button"
+                    className="relative w-full"
+                  >
+                    <div className="flex w-full items-center justify-between">
+                      <h3 className="font-bold text-[#222] lg:text-2xl">
+                        Cancelation
+                      </h3>
+                      <span
+                        className={`svg_icon absolute right-0 inline-block w-6 transition-all duration-300 ease-in-out md:w-8 ${
+                          open && 'rotate-180'
+                        }`}
+                      >
+                        <ArrowDownIcon />
+                      </span>
+                    </div>
+                  </Disclosure.Button>
+
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <Disclosure.Panel
+                        static
+                        as={motion.div}
+                        initial="collapsed"
+                        animate="open"
+                        exit="collapsed"
+                        variants={{
+                          open: { opacity: 1, height: 'auto' },
+                          collapsed: { opacity: 0, height: 0 },
+                        }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pt-6 text-sm leading-relaxed">
+                          <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                            <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                              <CancelMark />
+                            </span>
+                            Tortor pellentesque nec sit nulla volutpat curabitur
+                            mattis fusce condimentum.. Nulla Orci congue prasent
+                          </p>
+                          <p className="mb-3 flex items-start text-sm text-[#484848] md:text-base">
+                            <span className="mr-2 inline-flex w-[22px] flex-shrink-0 items-center">
+                              <CancelMark />
+                            </span>
+                            Tortor pellentesque nec sit nulla volutpat
+                          </p>
+                          <div>
+                            <button
+                              type="button"
+                              onClick={() => setCancellationOpen(true)}
+                              className="ml-auto flex items-center text-sm underline"
+                            >
+                              <span>Show More</span>
+                              <span className="ml-2 w-3">
+                                <ArrowIcon />
+                              </span>
+                            </button>
+                            <CancellationPopover
+                              status={cancellationOpen}
+                              onClose={() => setCancellationOpen(false)}
+                            />
+                          </div>
+                        </div>
+                      </Disclosure.Panel>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )}
+            </Disclosure>
           </div>
         </div>
       </div>

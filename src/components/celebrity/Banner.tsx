@@ -1,5 +1,6 @@
 /* eslint @next/next/no-img-element: "off" */
 /* eslint react/no-array-index-key: "off" */
+/* eslint react/jsx-one-expression-per-line: "off" */
 import { useState } from 'react';
 import { Autoplay, EffectCube } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -64,11 +65,14 @@ const Banner = () => {
                   shadowOffset: 20,
                   shadowScale: 0.94,
                 }}
-                className="flex flex-wrap !pr-5 md:!pr-0 lg:-mb-[20%] lg:max-w-[550px] xl:-mb-[15%]"
+                className="flex flex-wrap lg:-mb-[20%] lg:max-w-[550px] xl:-mb-[15%]"
               >
                 {[...Array(6)].map((info, index) => (
                   <SwiperSlide key={index} className="!w-full">
                     <div className="relative">
+                      <p className="absolute top-4 left-10 text-lg text-white opacity-80">
+                        From <strong>US$254</strong>
+                      </p>
                       <img src="/banner-video-group.png" alt="" />
                       <button
                         type="button"

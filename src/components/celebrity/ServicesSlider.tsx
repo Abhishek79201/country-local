@@ -52,21 +52,23 @@ const PersonSlider = () => (
           {[1, 2, 3, 4, 5, 6, 7].map((item) => (
             <SwiperSlide
               key={item}
-              className="!w-[320px] md:!w-[33.33%] lg:!w-[29%]"
+              className="!w-[260px] md:!w-[33.33%] lg:!w-[22%]"
             >
               <div className="mx-3 my-5">
-                <div className="dark_shadow block rounded-2xl bg-white transition-shadow hover:shadow-lg">
+                <div className="dark_shadow group block rounded-2xl bg-white transition-shadow hover:shadow-lg">
                   <div className="relative rounded">
                     <div className="flex justify-center overflow-hidden rounded-lg">
-                      <Image
-                        src="/more-services-thumb.jpg"
-                        width={590}
-                        height={366}
-                        alt="Mentor Name"
-                      />
+                      <div className="flex transition duration-1000 ease-in-out group-hover:scale-105">
+                        <Image
+                          src="/more-services-thumb.jpg"
+                          width={590}
+                          height={366}
+                          alt="Mentor Name"
+                        />
+                      </div>
                     </div>
 
-                    <div className="absolute top-3 left-3 flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-bold text-black">
+                    <div className="absolute top-3 left-3 flex items-center rounded-full bg-white px-3 py-1.5 text-[9px] font-bold text-black">
                       4-Week Class
                     </div>
 
@@ -80,34 +82,34 @@ const PersonSlider = () => (
                     </button>
                   </div>
 
-                  <div className="px-4 pt-4 pb-2">
+                  <div className="px-4 pt-3 pb-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-[#E91E63]">
-                        <div className="svg_icon mr-1 w-4">
+                        <div className="svg_icon mr-1 w-[14px]">
                           <ClockIcon />
                         </div>
-                        <span className="text-xs font-bold">
+                        <span className="text-[10px] font-bold">
                           2 days left to join
                         </span>
                       </div>
                       <div className="flex items-center">
-                        <div className="svg_icon mr-1 w-4 text-[#FFCE31]">
+                        <div className="svg_icon mr-1 w-3 text-[#FFCE31]">
                           <StarIcon />
                         </div>
-                        <span className="mr-1 text-sm font-bold text-[#FFCE31]">
+                        <span className="mr-1 text-[10px] font-bold text-[#FFCE31]">
                           4.9
                         </span>
-                        <div className="text-xs opacity-50">(42)</div>
+                        <div className="text-[10px] opacity-50">(42)</div>
                       </div>
                     </div>
 
-                    <div className="mt-3 flex items-center">
+                    <div className="mt-2 flex">
                       <div className="z-10 flex">
-                        <div className="z-[5] flex h-[44px] w-[44px] overflow-hidden rounded-full border-2 border-white">
+                        <div className="z-[5] flex h-[34px] w-[34px] overflow-hidden rounded-full border-2 border-white">
                           <Image
                             src="/author-head.png"
-                            width={44}
-                            height={44}
+                            width={34}
+                            height={34}
                           />
                         </div>
                         <motion.span
@@ -125,17 +127,17 @@ const PersonSlider = () => (
                           initial="initial"
                           whileInView="animate"
                           viewport={{ once: true }}
-                          className="z-[4] -ml-2 flex h-[44px] w-[44px] overflow-hidden rounded-full border-2 border-white"
+                          className="z-[4] -ml-2 flex h-[34px] w-[34px] overflow-hidden rounded-full border-2 border-white"
                         >
                           <Image
                             src="/user-2.png"
-                            width={44}
-                            height={44}
+                            width={34}
+                            height={34}
                             alt="user-2"
                           />
                         </motion.span>
                       </div>
-                      <div className="ml-3 text-base font-bold leading-tight">
+                      <div className="ml-2 text-xs font-bold leading-tight">
                         <p>Richard Seil</p>
                         <motion.p
                           variants={{
@@ -155,30 +157,33 @@ const PersonSlider = () => (
                         >
                           Clarisa Bru
                         </motion.p>
+                        <div className="mt-1 w-[60px] rounded-md bg-[#CCCCCC] py-[2px] px-2 text-center text-[10px] text-white">
+                          Celebrity
+                        </div>
                       </div>
-                      <div className="ml-3 flex h-6 w-6 items-center justify-center rounded-full bg-[#FED501]">
-                        <div className="svg_icon w-4">
+                      <div className="ml-3 flex h-5 w-5 items-center justify-center rounded-full bg-[#FED501]">
+                        <div className="svg_icon w-3">
                           <CheckmarkIcon />
                         </div>
                       </div>
                     </div>
 
-                    <p className="py-3 text-lg font-bold leading-normal">
+                    <p className="pt-1 pb-2 text-base font-bold leading-normal">
                       Designing Desserts with Richard Seil
                     </p>
 
                     <div className="flex">
                       <button
                         type="button"
-                        className="mr-2 rounded-full bg-[#EBEDFC] px-4 py-2 text-xs font-bold text-[#202124] transition duration-300 hover:bg-black hover:text-white"
+                        className="mr-2 rounded-full bg-[#EBEDFC] px-3 py-[6px] text-[8px] font-bold text-[#202124] transition duration-300 hover:bg-black hover:text-white"
                       >
                         Backing
                       </button>
                       <button
                         type="button"
-                        className="mr-2 flex items-center rounded-full bg-[#e6e6e6] px-4 py-2 text-xs font-bold text-[#767676] transition duration-300 hover:bg-black hover:text-white"
+                        className="mr-2 flex items-center rounded-full bg-[#e6e6e6] px-3 py-[6px] text-[8px] font-bold text-[#767676] transition duration-300 hover:bg-black hover:text-white"
                       >
-                        <div className="svg_icon -mt-[2px] mr-1 w-4">
+                        <div className="svg_icon -mt-[2px] mr-1 w-[14px]">
                           <CalendarIcon />
                         </div>
                         Start Oct 31
@@ -186,11 +191,11 @@ const PersonSlider = () => (
                     </div>
                   </div>
 
-                  <div className="mt-3 flex items-center justify-between border-t border-t-slate-200 px-4 pt-2 pb-3">
-                    <div className="text-sm text-[#C7C7C7]">
+                  <div className="mt-1 flex items-center justify-between border-t border-t-slate-200 px-4 pt-1 pb-2">
+                    <div className="text-[10px] leading-tight text-[#C7C7C7]">
                       From
                       <div>
-                        <span className="text-2xl font-bold text-black">
+                        <span className="text-base font-bold text-black">
                           $50
                         </span>
                         <span> / class</span>
@@ -198,7 +203,7 @@ const PersonSlider = () => (
                     </div>
                     <a
                       href="#"
-                      className="rounded-lg border-2 border-black bg-black px-4 py-2 text-xs text-white transition duration-300 hover:bg-transparent hover:text-black"
+                      className="rounded-lg border-2 border-black bg-black px-3 py-1.5 text-xs font-bold text-white transition duration-300 hover:bg-transparent hover:text-black"
                     >
                       Learn More
                     </a>

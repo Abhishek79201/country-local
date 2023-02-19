@@ -5,10 +5,12 @@ import BackIcon from '../../../public/icons/arrow-left.svg';
 import HeartIcon from '../../../public/icons/heart-outline.svg';
 import StarIcon from '../../../public/icons/star.svg';
 import ShareIcon from '../../../public/icons/upload.svg';
+import SharePopup from './popovers/SharePopup';
 
 /* eslint jsx-a11y/anchor-is-valid: "off" */
 const Intro = () => {
   const [scroll, setScroll] = useState(false);
+  const [showShare, setShowShare] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -34,6 +36,7 @@ const Intro = () => {
         <div className="flex gap-x-3">
           <button
             type="button"
+            onClick={() => setShowShare(true)}
             className="flex h-8 items-center justify-center rounded-full bg-white px-3 shadow-small"
           >
             <div className="svg_icon w-4 text-transparent">
@@ -79,7 +82,11 @@ const Intro = () => {
               </div>
             </div>
             <div className="flex gap-x-5 text-sm text-black sm:text-base">
-              <button type="button" className="flex items-center">
+              <button
+                type="button"
+                className="flex items-center"
+                onClick={() => setShowShare(true)}
+              >
                 <div className="w-4 sm:w-[22px]">
                   <ShareIcon />
                 </div>
@@ -95,6 +102,7 @@ const Intro = () => {
           </div>
         </div>
       </div>
+      <SharePopup status={showShare} onClose={() => setShowShare(false)} />
     </>
   );
 };

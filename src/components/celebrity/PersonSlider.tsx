@@ -1,4 +1,5 @@
 /* eslint react/no-array-index-key: "off" */
+/* eslint @next/next/no-img-element: "off" */
 import { FreeMode, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -50,13 +51,19 @@ const PersonSlider = () => (
               className="!w-[300px] md:!w-[33.33%] lg:!w-[25%]"
             >
               <div
-                className="mx-3 my-5 rounded-xl bg-white bg-cover bg-center bg-no-repeat"
+                className="group relative mx-3 my-5 overflow-hidden rounded-xl bg-white"
                 style={{
                   boxShadow: '0 3px 10px -1px rgba(0,0,0,.2)',
-                  backgroundImage: 'url(/similar-services-bg.jpg)',
                 }}
               >
-                <div className="flex min-h-[340px] flex-col justify-between p-4 md:min-h-[390px]">
+                <div className="absolute left-0 top-0 h-full w-full transition-all duration-1000 ease-in-out group-hover:scale-110">
+                  <img
+                    src="/similar-services-bg.jpg"
+                    alt="Person"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="relative z-[1] flex min-h-[340px] flex-col justify-between p-4 md:min-h-[390px]">
                   <div className="flex items-center justify-between">
                     <div className="max-w-[150px] text-white">
                       <div className="flex items-center">

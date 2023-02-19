@@ -9,7 +9,7 @@ import { formatDate } from '../../../utilities/helpers';
 import { OverflowContext } from '../../../context/overflowContext';
 import { MobileBookingContext } from '../../../context/mobileBookingContext';
 
-import BookInfoPopups from './BookInfoPopups';
+import BookInfoPopups from './BookInfoPopup';
 import ReportPopup from '../../common/popups/report-popups/ReportPopup';
 import BookingCalendarMobile from './BookingCalendarMobile';
 import GuestsPopoverMobile from './GuestsPopoverMobile';

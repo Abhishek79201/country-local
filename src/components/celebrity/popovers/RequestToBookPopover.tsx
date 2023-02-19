@@ -174,7 +174,7 @@ const RequestToBookPopover = ({
                           <span className="svg_icon absolute top-3 left-3 flex w-4 text-transparent md:top-[11px]">
                             <ClockIcon />
                           </span>
-                          {time}
+                          {time || '9:00 AM'}
                           <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
                             <ArrowDownIcon />
                           </span>

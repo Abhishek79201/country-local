@@ -11,6 +11,7 @@ import PersonSlider from '../src/components/celebrity/PersonSlider';
 import PinkPurpleGradient from '../src/components/celebrity/PinkPurpleGradient';
 import PreviewAccordion from '../src/components/celebrity/PreviewAccordion';
 import Profiles from '../src/components/celebrity/Profiles';
+import RecentVideoSlider from '../src/components/celebrity/RecentVideoSlider';
 import ServicesSlider from '../src/components/celebrity/ServicesSlider';
 import SessionInfoGrid from '../src/components/celebrity/SessionInfoGrid';
 import ThingsToKnow from '../src/components/celebrity/ThingsToKnow';
@@ -57,6 +58,8 @@ const Celebrity: NextPage = () => (
       <PersonSlider />
 
       <ServicesSlider />
+
+      <RecentVideoSlider />
     </div>
   </>
 );
