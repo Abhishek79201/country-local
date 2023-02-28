@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { EffectFade, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
-import Image from 'next/image';
 
 const Hero = () => (
   <div>
@@ -45,33 +43,6 @@ const Hero = () => (
         With Country Locals experiences are always
       </h1>
       <div className=" flex flex-wrap items-center justify-center">
-        {/* <div className="flex max-w-[370px] items-center	">
-          <img src="/review-popup-2.jpg" alt="" />
-          <div>
-            <h2>1 | Alaways private & personal</h2>
-            <p>
-              No strangers,just you. Fully costomize your trip to your needs
-            </p>
-          </div>
-        </div>
-        <div className="flex max-w-[370px] items-center	">
-          <img src="/review-popup-2.jpg" alt="" />
-          <div>
-            <h2>1 | Alaways private & personal</h2>
-            <p>
-              No strangers,just you. Fully costomize your trip to your needs
-            </p>
-          </div>
-        </div>
-        <div className="flex max-w-[370px] items-center	">
-          <img src="/review-popup-2.jpg" alt="" />
-          <div>
-            <h2>1 | Alaways private & personal</h2>
-            <p>
-              No strangers,just you. Fully costomize your trip to your needs
-            </p>
-          </div>
-        </div> */}
         <div className="m-3 flex  flex-col	flex-nowrap justify-center gap-2 overflow-hidden  rounded-[10px] border border-white bg-white/20	backdrop-blur-xl lg:flex-row	">
           <div className="flex ">
             <div className="flex min-w-[45%]  overflow-hidden  rounded-[10px] ">
