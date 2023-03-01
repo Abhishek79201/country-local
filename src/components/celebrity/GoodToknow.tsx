@@ -150,8 +150,7 @@ const GoodToKnow = () => {
                     </p>
                     <p className="hidden pt-4 text-[13px] md:block">
                       Tortor pellentesque nec sit nulla volutpat curabitur
-                      mattis fusce condimentum. Nulla orci congue praesent
-                      nullam vitae nibh. Sed sit sed eu lectus mi amet egestas{' '}
+                      mattis fusce condimentum.{' '}
                       <button
                         type="button"
                         className="font-semibold text-[#E71575]"
@@ -395,6 +394,7 @@ const GoodToKnow = () => {
               )}
             </Disclosure>
           </div>
+          <UnderLine />
         </div>
       </div>
     </div>

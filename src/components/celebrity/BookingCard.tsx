@@ -184,9 +184,9 @@ const BookingCard = () => {
             <button
               key={tab.id}
               type="button"
-              className={`w-[48%] rounded-2xl border border-[#ebebeb] p-3 text-left ${
+              className={`w-[48%] rounded-2xl border-2 border-[#ebebeb] p-3 text-left ${
                 tab.active
-                  ? 'purple_orange_bg border-[#888888] text-white'
+                  ? 'purple_orange_bg border-[#303030] text-white'
                   : 'bg-[#F5F5F5] text-[#9C9C9C]'
               }`}
               onClick={() => handleTabChange(tab.id)}

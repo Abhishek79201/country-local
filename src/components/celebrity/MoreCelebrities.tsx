@@ -4,12 +4,13 @@ import { FreeMode, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import StarIcon from '../../../public/icons/star.svg';
+import HeartIcon from '../../../public/icons/heart.svg';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const PersonSlider = () => (
+const MoreCelebrities = () => (
   <div className="relative pt-14">
     <div className="container">
       <div className="flex items-center justify-between gap-4 pb-2">
@@ -58,47 +59,77 @@ const PersonSlider = () => (
               >
                 <div className="absolute left-0 top-0 h-full w-full transition-all duration-1000 ease-in-out group-hover:scale-110">
                   <img
-                    src="/similar-services-bg.jpg"
+                    src="/more-celebrities-slider.jpeg"
                     alt="Person"
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="relative z-[1] flex min-h-[340px] flex-col justify-between p-4 md:min-h-[390px]">
+                <div className="relative z-[1] flex min-h-[340px] flex-col justify-between p-4 md:min-h-[350px]">
                   <div className="flex justify-between">
-                    <div className="max-w-[150px] text-white">
-                      <div className="flex items-center">
-                        <div className="mr-2 flex gap-x-1">
-                          {[...Array(5)].map((star, index) => (
-                            <div key={index} className="svg_icon w-3">
-                              <StarIcon />
-                            </div>
-                          ))}
-                        </div>
-                        <div className="text-xs font-light">(284)</div>
-                      </div>
-                      <div className="mt-2 text-xs leading-normal">
-                        <strong>I Speak:</strong>
-                        <span className="ml-1">English, Francis Portugis</span>
-                      </div>
-                    </div>
-                    <div className="-mt-[3px] flex h-[23px] items-center rounded-full bg-white bg-opacity-30 px-[6px]">
+                    <div className="flex h-[23px] items-center rounded-full bg-white bg-opacity-30 px-[6px]">
                       <div className="mr-1 h-[10px] w-[10px] rounded-full bg-pink_primary" />
                       <span className="text-[11px] font-bold text-white">
                         Available
                       </span>
                     </div>
+                    <button type="button" className="text-transparent">
+                      <div className="svg_icon w-6">
+                        <HeartIcon />
+                      </div>
+                    </button>
                   </div>
 
-                  <div className="pb-4 text-center text-white">
-                    <p>Hello I am</p>
-                    <p className="my-1 text-2xl font-bold">Jade Warren</p>
-                    <p>The Cool Actor</p>
-                    <a
-                      href="#"
-                      className="mx-auto mt-4 block max-w-[160px] rounded-full border-2 border-white px-3 py-2 text-center text-sm transition-all duration-300 ease-in-out hover:bg-white hover:text-black"
-                    >
-                      More About Me
-                    </a>
+                  <div className="border-white text-center text-white">
+                    <div className="mb-2 border-b border-dashed pb-2">
+                      <p className="my-1 text-2xl font-bold">Jade Warren</p>
+                      <p>The Cool Actor</p>
+                    </div>
+                    <div className="flex flex-wrap justify-between gap-y-2">
+                      <div className="flex items-center text-base text-white">
+                        <img
+                          src="/icons/instagram.png"
+                          alt="Instagram"
+                          className="mr-1 w-6"
+                        />
+                        <span>8.6k</span>
+                      </div>
+                      <div className="flex items-center text-base text-white">
+                        <img
+                          src="/icons/youtube.png"
+                          alt="spotify"
+                          className="mr-1 w-6"
+                        />
+                        <span>8.6k</span>
+                      </div>
+                      <div className="flex items-center text-base text-white">
+                        <img
+                          src="/icons/facebook.png"
+                          alt="spotify"
+                          className="mr-1 w-6"
+                        />
+                        <span>8.6k</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap justify-between gap-y-2 pt-2">
+                      <div className="flex items-center">
+                        <div className="mr-1 flex gap-x-[2px] text-[#EF5DA8]">
+                          {[...Array(5)].map((star, index) => (
+                            <div key={index} className="svg_icon w-[14px]">
+                              <StarIcon />
+                            </div>
+                          ))}
+                        </div>
+                        <div className="mt-[1px] text-xs font-light">(28)</div>
+                      </div>
+                      <div>
+                        <span className="mr-1 text-[14px] text-[#EF5DA8]">
+                          From
+                        </span>
+                        <span className="text-lg font-bold text-white">
+                          $2420
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -109,4 +140,4 @@ const PersonSlider = () => (
     </div>
   </div>
 );
-export default PersonSlider;
+export default MoreCelebrities;

@@ -1,5 +1,6 @@
 /* eslint @next/next/no-img-element: "off" */
-import { Pagination, EffectFade, Autoplay } from 'swiper';
+/* eslint react/jsx-one-expression-per-line: "off" */
+import { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ReasonsSlider = () => (
@@ -8,16 +9,21 @@ const ReasonsSlider = () => (
       <Swiper
         slidesPerView={1}
         freeMode
-        modules={[Pagination, EffectFade, Autoplay]}
+        modules={[Pagination, Autoplay]}
         spaceBetween={0}
-        effect="fade"
-        fadeEffect={{
-          crossFade: true,
+        // effect="fade"
+        // fadeEffect={{
+        //   crossFade: true,
+        // }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
         }}
         pagination={{
           el: '.reason_slider.swiper-pagination',
+          clickable: true,
         }}
-        className="purple_gradient_bg rounded-3xl !pt-10 !pb-16"
+        className="purple_gradient_bg rounded-xl !pt-10 !pb-16 lg:rounded-3xl"
       >
         {[1, 2, 3, 4, 5, 6].map((item) => (
           <SwiperSlide key={item}>
@@ -26,7 +32,7 @@ const ReasonsSlider = () => (
                 7 REASONS TO BOOK THIS EXPERIENCE
               </p>
               <h4 className="py-2 text-2xl font-bold md:text-3xl">
-                A better kind of online class
+                A better kind of online class - {item}
               </h4>
               <div className="text-sm leading-normal">
                 Monthly classes go beyond a playlist of videos. The classroom
@@ -38,6 +44,14 @@ const ReasonsSlider = () => (
         ))}
         <div className="reason_slider swiper-pagination !bottom-4 !left-[50%] !w-[225px] !translate-x-[-50%] transform text-[#666]" />
       </Swiper>
+    </div>
+    <div className="pt-4 text-center lg:pt-5">
+      <button
+        type="button"
+        className="purple_gradient_bg h-[44px] w-[160px] rounded-lg py-1 px-2 text-xs font-bold uppercase text-white transition-shadow hover:shadow-lg"
+      >
+        More Reasons...
+      </button>
     </div>
   </div>
 );
