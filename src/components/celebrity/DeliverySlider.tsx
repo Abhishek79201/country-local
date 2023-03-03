@@ -112,6 +112,7 @@ const DeliverySlider = () => {
                       src={`/${item.imgUrl}`}
                       width={165 * 2}
                       height={180 * 2}
+                      className="transition-all duration-1000 ease-in-out hover:scale-110"
                     />
                   </div>
                 </div>

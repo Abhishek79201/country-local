@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Banner from '../src/components/celebrity/Banner';
+import useViewport from '../src/hooks/useViewport';
 
+import Banner from '../src/components/celebrity/Banner';
 import CelebrityFaq from '../src/components/celebrity/CelebrityFaq';
 import CelebrityProfile from '../src/components/celebrity/CelebrityProfile';
 import DeliverySlider from '../src/components/celebrity/DeliverySlider';
@@ -18,52 +19,57 @@ import SessionInfoGrid from '../src/components/celebrity/SessionInfoGrid';
 import ThingsToKnow from '../src/components/celebrity/ThingsToKnow';
 import WorkshopExperience from '../src/components/common/WorkshopExperience';
 import Review from '../src/components/workshop/Review';
+import BannerMobile from '../src/components/celebrity/BannerMobile';
 
-const Celebrity: NextPage = () => (
-  <>
-    <style>
-      {`header.mobile_header, .mobile_floating_header {
+const Celebrity: NextPage = () => {
+  const { width } = useViewport();
+
+  return (
+    <>
+      <style>
+        {`header.mobile_header, .mobile_floating_header {
             display: none;
           }`}
-    </style>
-    <Head>
-      <title>Celebrity: Country Locals</title>
-    </Head>
-    <div className="bg-[#FBFBFB] pb-10">
-      <Intro />
+      </style>
+      <Head>
+        <title>Celebrity: Country Locals</title>
+      </Head>
+      <div className="bg-[#FBFBFB] pb-10">
+        <Intro />
 
-      <Banner />
+        {width > 1023 ? <Banner /> : <BannerMobile />}
 
-      <PinkPurpleGradient />
+        <PinkPurpleGradient />
 
-      <SessionInfoGrid />
+        <SessionInfoGrid />
 
-      <Profiles />
+        <Profiles />
 
-      <PreviewAccordion />
+        <PreviewAccordion />
 
-      <ThingsToKnow />
+        <ThingsToKnow />
 
-      <CelebrityProfile />
+        <CelebrityProfile />
 
-      <GoodToKnow />
+        <GoodToKnow />
 
-      <Review />
+        <Review />
 
-      <DeliverySlider />
+        <DeliverySlider />
 
-      <CelebrityFaq />
+        <CelebrityFaq />
 
-      <WorkshopExperience />
+        <WorkshopExperience />
 
-      <PersonSlider />
+        <PersonSlider />
 
-      <ServicesSlider />
+        <ServicesSlider />
 
-      <MoreCelebrities />
+        <MoreCelebrities />
 
-      <RecentVideoSlider />
-    </div>
-  </>
-);
+        <RecentVideoSlider />
+      </div>
+    </>
+  );
+};
 export default Celebrity;
