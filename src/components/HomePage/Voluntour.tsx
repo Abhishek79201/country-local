@@ -7,11 +7,12 @@ const Voluntour = () => (
       Voluntour
       </div>
     <div>
-        <a className="text-[#E71575] text-[24px]  hidden  md:block">All things to do ></a>
+        <a className="text-[#E71575] text-[24px]  hidden  lg:block cursor-pointer">All things to do ></a>
     </div>
     </div>
-    <p className="sm:text-[12px] md:text-[22px]  font-medium pb-[32px]">Let’s making your trip full of meaningful stories</p>
+    <p className="sm:text-[12px] lg:text-[22px]  font-medium pb-[32px]">Let’s making your trip full of meaningful stories</p>
   <Cityescape/>
+  <a className="sea text-[#E71575] text-[16px] font-bold pt-[15px] lg:hidden cursor-pointer">See all ></a>
   </div>
 
 
