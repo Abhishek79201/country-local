@@ -19,7 +19,7 @@ const Hero = () => (
         <SwiperSlide>
           <img
             className="object-position:  left min-h-[740px] w-[full] object-cover lg:h-screen lg:w-screen"
-            src="/list-page-slider.jpg"
+            src="/heroimg.png"
           />
         </SwiperSlide>
         <SwiperSlide>

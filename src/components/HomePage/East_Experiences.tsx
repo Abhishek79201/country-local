@@ -8,12 +8,15 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { PrData } from '../PrData/PrData';
 
-const East_Experiences = ({ sliderId, title, data }: DestinationProps) => (
+const East_Experiences = () => (
   <div className="relative pb-14">
     <div className="container my-6">
       <h3 className=" text-lg font-bold text-black md:text-[20px]">
-        Choose Destination By
-        <span className="purple_gradient_text_deep "> Theme</span>
+        Get Inspired By
+        <span className="purple_gradient_text_deep ">
+          {' '}
+          Best North East Experiences
+        </span>
       </h3>
       <div className="relative -mr-5 -ml-2 mt-3 md:-mr-3 md:-ml-3">
         <Swiper

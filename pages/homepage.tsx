@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import Header from '../src/components/header/Header';
 import Camping from '../src/components/HomePage/Camping';
 import Consumised from '../src/components/HomePage/Consumised';
