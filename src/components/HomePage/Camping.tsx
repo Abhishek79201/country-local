@@ -1,7 +1,7 @@
 import Cityescape from './components/Cityescape';
 
 const Camping = () => (
-  <div className="p-8  font-bold">
+  <div className="lg:p-[60px] p-[20px]  font-bold">
     <div className="flex justify-between">
       <div className=" lg:text-[38px] text-[24px]">
         Local<span className=" purple_gradient_text_deep"> Homestay and Camping </span>

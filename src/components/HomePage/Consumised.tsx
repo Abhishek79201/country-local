@@ -1,7 +1,7 @@
 import { statisticsCardsData } from '../PrData/statisticsCardsData';
 
 const Consumised = () => (
-  <div className="bg-[#F8F8F8]  p-8 font-bold">
+  <div className="bg-[#F8F8F8] p-[20px] font-bold lg:p-[60px]">
     <div className="flex justify-between">
       <div className=" text-[24px] lg:text-[38px]">
         Looking For{' '}

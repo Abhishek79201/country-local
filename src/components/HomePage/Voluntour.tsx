@@ -1,7 +1,7 @@
 import Cityescape from './components/Cityescape';
 
 const Voluntour = () => (
-  <div className="p-8  font-bold">
+  <div className="lg:p-[60px] p-[20px] font-bold">
     <div className="flex justify-between">
       <div className="whitespace-pre lg:text-[38px] text-[24px]">
       Voluntour

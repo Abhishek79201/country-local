@@ -1,7 +1,7 @@
 const TravelBag = () => (
-  <div className="bg-white  p-8 font-bold">
-    <div className="relative h-full h-[470px] w-full rounded-[33px] bg-[url('../../../public/travel.jpg')] bg-cover bg-no-repeat">
-      <div className="absolute top-[54px] left-[38px] max-h-[430px] max-w-[744px] rounded-[33px] border border-white  pt-[46px] pl-[40px] text-white backdrop-blur-[80px]">
+  <div className="bg-white p-[20px] font-bold lg:p-[60px]">
+    <div className="relative flex  h-[278px] w-full items-center rounded-[33px] bg-[url('../../../public/travel.jpg')] bg-cover bg-no-repeat md:h-[470px]">
+      <div className="absolute m-[15px] rounded-[33px] border border-white pt-[20px] pl-[20px] text-white backdrop-blur-[80px] md:max-w-[744px]  md:pt-[46px] md:pl-[40px] lg:top-[54px] lg:left-[38px]">
         <h3 className="text-[24px] font-bold leading-[60px] lg:text-[38px]">
           How does it work
         </h3>

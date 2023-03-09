@@ -1,7 +1,7 @@
 import { CampingData } from '../../PrData/CampingData';
 
 const Cityescape = () => (
-  <div className="flex gap-5 overflow-auto">
+  <div className="flex gap-[22px] overflow-auto">
     {CampingData.map((item) => (
       <div className="alll min-w-[246px]">
         <div>
