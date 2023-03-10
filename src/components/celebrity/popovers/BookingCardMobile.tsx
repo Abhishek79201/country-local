@@ -2,10 +2,9 @@
 /* eslint jsx-a11y/label-has-associated-control: "off" */
 /* eslint implicit-arrow-linebreak: "off" */
 import { useState, useContext } from 'react';
-import Image from 'next/image';
 import { Dialog } from '@headlessui/react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { formatDate } from '../../../utilities/helpers';
+import { formatDayMonth } from '../../../utilities/helpers';
 import { OverflowContext } from '../../../context/overflowContext';
 import { MobileBookingContext } from '../../../context/mobileBookingContext';
 
@@ -14,36 +13,78 @@ import ReportPopup from '../../common/popups/report-popups/ReportPopup';
 import BookingCalendarMobile from './BookingCalendarMobile';
 import GuestsPopoverMobile from './GuestsPopoverMobile';
 import OtherServicesPopover from './OtherServicesPopover';
-import PriceBreakdownPopover from './PriceBreakdownPopover';
 import PersonalizeExperiencePopover from './PersonalizeExpPopover';
 import RequestToBookPopover from './RequestToBookPopover';
 
 import StarIcon from '../../../../public/icons/star.svg';
-import QuestionMarkIcon from '../../../../public/icons/question-mark.svg';
-import FlagIcon from '../../../../public/icons/purple-flag.svg';
-import UserIcon from '../../../../public/icons/user-outline.svg';
-import ChevronIcon from '../../../../public/icons/chevron-down.svg';
 import CloseIcon from '../../../../public/icons/xmark.svg';
+import CalendarEditIcon from '../../../../public/icons/calendar-edit.svg';
+import CalendarIcon from '../../../../public/icons/calendar-tick.svg';
+import VoiceIcon from '../../../../public/icons/call-calling.svg';
+import CheckmarkIcon from '../../../../public/icons/check-lg.svg';
+import ArrowDownIcon from '../../../../public/icons/chevron-right.svg';
+import ClockIcon from '../../../../public/icons/clock-1.svg';
+import FlagIcon from '../../../../public/icons/flag-2.svg';
+import InstagramIcon from '../../../../public/icons/instagram-2.svg';
+import PeopleIcon from '../../../../public/icons/people.svg';
+import QuestionMarkIcon from '../../../../public/icons/question-mark-2.svg';
+import TagIcon from '../../../../public/icons/tag-2.svg';
+import UndoIcon from '../../../../public/icons/undo.svg';
+import UserIcon from '../../../../public/icons/user-outline.svg';
+import VideoIcon from '../../../../public/icons/video.svg';
+import RequestToBookTimePopover from './RequestToBookTimePopover';
 
 const BookingCardMobile = () => {
   const { setGlobalOverflow } = useContext(OverflowContext);
+  const { showMobileBooking, setShowMobileBooking } =
+    useContext(MobileBookingContext);
+  const [tabs, setTabs] = useState([
+    { id: 1, title: 'Video Message', icon: <VideoIcon />, active: true },
+    { id: 2, title: 'DM On Instagram', icon: <InstagramIcon />, active: false },
+    { id: 3, title: 'Book Appointment', icon: <CalendarIcon />, active: false },
+    { id: 4, title: 'Brand Enquiry', icon: <TagIcon />, active: false },
+  ]);
+
+  const [typeTabs, setTypeTabs] = useState([
+    { id: 1, title: 'Basic', price: 300, active: true },
+    { id: 2, title: 'Standard', price: 400, active: false },
+    { id: 3, title: 'Premium', price: 500, active: false },
+  ]);
+
+  const [bookMode, setBookMode] = useState([
+    { id: 1, title: 'Video Call', icon: <VideoIcon />, active: false },
+    { id: 2, title: 'Voice Call', icon: <VoiceIcon />, active: false },
+    { id: 3, title: 'Meeting', icon: <PeopleIcon />, active: false },
+  ]);
+
+  const [bookDuration, setBookDuration] = useState([
+    { id: 1, title: '15 Min', active: false },
+    { id: 2, title: '30 Min', active: false },
+    { id: 3, title: '45 Min', active: false },
+    { id: 4, title: '60 Min', active: false },
+  ]);
+
+  const [plans, setPlans] = useState([
+    { id: 1, title: 'Corporate Events', active: false },
+    { id: 2, title: 'Studio Shoot', active: false },
+    { id: 3, title: 'Brand Video', active: false },
+    { id: 4, title: 'Star Hour', active: false },
+    { id: 5, title: 'Experiences', active: false },
+    { id: 6, title: 'Photo Shoot', active: false },
+  ]);
+
   const [openPopup, setOpenPopup] = useState<boolean>(false);
   const [openReport, setOpenReport] = useState<boolean>(false);
-  const [openPriceBreakdown, setOpenPriceBreakdown] = useState<boolean>(false);
   const [openPersonalizedExperience, setOpenPersonalizedExperience] =
     useState<boolean>(false);
   const [openRequestToBook, setOpenRequestToBook] = useState<boolean>(false);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
-  const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+  const [showTimePicker, setShowTimePicker] = useState<boolean>(false);
+  const [bookingTime, setBookingTime] = useState<string | null>(null);
   const [showGuests, setShowGuests] = useState<boolean>(false);
-  const [startDate, setStartDate] = useState<Date | null>(new Date());
-  const [endDate, setEndDate] = useState<Date | null>(new Date());
-  const [clickedDate, setClickedDate] = useState<string>('');
-  const { showMobileBooking, setShowMobileBooking } =
-    useContext(MobileBookingContext);
-
-  const [bookingDate, setBookingDate] = useState<Date | null>(new Date());
-  const [bookingTime, setBookingTime] = useState<string>('10:00 pm');
+  const [showMoreServices, setShowMoreServices] = useState<boolean>(false);
 
   const [guestsCount, setGuestsCount] = useState<{
     adults: number;
@@ -54,6 +95,77 @@ const BookingCardMobile = () => {
     children: 0,
     infants: 0,
   });
+
+  const handleDateChange = (dates: [Date | null, Date | null]) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
+
+  const handleTabChange = (id: number) => {
+    const newTabs = tabs.map((tab) => {
+      if (tab.id === id) {
+        return { ...tab, active: true };
+      }
+      return { ...tab, active: false };
+    });
+    setTabs(newTabs);
+  };
+
+  const getActiveTabId = () => {
+    const activeTab = tabs.find((tab) => tab.active);
+    return activeTab?.id;
+  };
+
+  const getActiveTypeTabTitle = () => {
+    const activeTab = tabs.find((tab) => tab.active);
+    return activeTab?.title;
+  };
+
+  const getActiveTypeTabPrice = () => {
+    const activeTab = typeTabs.find((tab) => tab.active);
+    return activeTab?.price;
+  };
+
+  const handleTypeChange = (id: number) => {
+    const newType = typeTabs.map((tab) => {
+      if (tab.id === id) {
+        return { ...tab, active: true };
+      }
+      return { ...tab, active: false };
+    });
+    setTypeTabs(newType);
+  };
+
+  const handleModeChange = (id: number) => {
+    const newMode = bookMode.map((mode) => {
+      if (mode.id === id) {
+        return { ...mode, active: true };
+      }
+      return { ...mode, active: false };
+    });
+    setBookMode(newMode);
+  };
+
+  const handleDurationChange = (id: number) => {
+    const newDuration = bookDuration.map((duration) => {
+      if (duration.id === id) {
+        return { ...duration, active: true };
+      }
+      return { ...duration, active: false };
+    });
+    setBookDuration(newDuration);
+  };
+
+  const handlePlanChange = (id: number) => {
+    const newPlan = plans.map((plan) => {
+      if (plan.id === id) {
+        return { ...plan, active: true };
+      }
+      return { ...plan, active: false };
+    });
+    setPlans(newPlan);
+  };
 
   const handleGuestCount = (type: string, count: number) => {
     if (type === 'adults') {
@@ -67,12 +179,12 @@ const BookingCardMobile = () => {
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 z-[20] w-full border-t border-t-slate-200 bg-white">
+      <div className="fixed bottom-0 left-0 z-[20] w-full rounded-tr-[10px] rounded-tl-[10px] bg-black bg-opacity-70 backdrop:blur-md">
         <div className="container">
-          <div className="flex items-center justify-between py-3 text-lg">
+          <div className="flex items-center justify-between py-3 text-lg text-white">
             <div>
               <div className="font-semibold">
-                $458 <span className="text-sm font-medium">night</span>
+                <span className="text-sm font-medium">From</span> $458
               </div>
               <div className="flex items-center">
                 <div className="svg_icon mr-1 w-[13px] shrink-0">
@@ -158,6 +270,9 @@ const BookingCardMobile = () => {
                       <CloseIcon />
                     </div>
                   </button>
+                  <h4 className="text-center text-lg font-bold text-black">
+                    Request To Book
+                  </h4>
                 </div>
                 <div
                   className="custom_scrollbar overflow-y-auto bg-white px-6 pb-6 pt-3 md:max-h-[70vh]"
@@ -166,198 +281,269 @@ const BookingCardMobile = () => {
                   }}
                 >
                   <div className="booking-card mb-5 w-full rounded-[20px]">
-                    <h3 className="mb-2 text-center text-xl font-bold leading-snug xl:mt-6 xl:mb-3 xl:text-2xl">
-                      The Best of Berling in a Convertible Car
-                    </h3>
-                    <div className="flex items-center justify-center text-center text-lg">
-                      <span className="mr-3">Hosted by</span>
-                      <Image src="/miha.png" width={51} height={22} />
-                    </div>
-                    <div className="mt-3 mb-5 flex items-center justify-center text-center text-sm">
-                      <div className="font-semibold">
-                        From $45 <span className="line-through">$567</span> /
-                        night
-                      </div>
-                      <div className="ml-3 flex items-center">
-                        <div className="svg_icon mr-1 w-[13px] shrink-0">
-                          <StarIcon />
-                        </div>
-                        <span className="mr-2">4.6</span>
-                        <span className="underline">(25)reviews</span>
-                      </div>
-                    </div>
-                    <div className="relative rounded-lg border border-[#808080]">
-                      <div className="flex border-b border-b-[#808080]">
+                    <div className="flex flex-wrap justify-between gap-y-2">
+                      {tabs.map((tab) => (
                         <button
+                          key={tab.id}
                           type="button"
-                          onClick={() => {
-                            setClickedDate('start');
-                            setShowDatePicker(!showDatePicker);
-                          }}
-                          className="flex-1 border-r border-r-[#808080] px-4 py-4 text-left text-sm"
+                          className={`w-[49%] rounded-2xl border-2 border-[#ebebeb] py-[10px] px-2 text-left ${
+                            tab.active
+                              ? 'purple_orange_bg border-[#303030] text-white'
+                              : 'bg-[#F5F5F5] text-[#9C9C9C]'
+                          }`}
+                          onClick={() => handleTabChange(tab.id)}
                         >
-                          <span className="block font-semibold">CHECK-IN</span>
-                          <span className="">{formatDate(startDate)}</span>
+                          <div className="svg_icon w-5">{tab.icon}</div>
+                          <p className="pt-1 text-[12px] font-bold">
+                            {tab.title}
+                          </p>
                         </button>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setClickedDate('end');
-                            setShowDatePicker(!showDatePicker);
-                          }}
-                          className="flex-1 px-4 py-4 text-left text-sm"
-                        >
-                          <span className="block font-semibold">CHECK-OUT</span>
-                          <span className="">{formatDate(endDate)}</span>
-                        </button>
+                      ))}
+                    </div>
 
-                        <BookingCalendarMobile
-                          status={showDatePicker}
-                          onClose={() => setShowDatePicker(false)}
-                          startDate={startDate}
-                          endDate={endDate}
-                          clickedDate={clickedDate}
-                          onStartDateChange={(date) => {
-                            setClickedDate('end');
-                            setStartDate(date);
-                          }}
-                          onEndDateChange={(date) => {
-                            setEndDate(date);
-                            setShowDatePicker(false);
-                          }}
-                          onClickedDateChange={(type) => setClickedDate(type)}
-                        />
-                      </div>
-                      <div className="relative flex px-4 py-3">
+                    <div className="services-packages-tab mt-5 flex items-center justify-between rounded-full border border-[#F4F3F4] bg-white p-[5px] text-xs lg:text-sm">
+                      {typeTabs.map((tab) => (
                         <button
+                          key={tab.id}
                           type="button"
-                          onClick={() => setShowGuests(!showGuests)}
-                          className="flex flex-1 items-center justify-between text-left text-sm"
+                          className={`${
+                            tab.active ? 'active text-white' : 'text-[#272731]'
+                          } relative h-[40px] w-full rounded-full px-1 text-center text-sm font-bold lg:px-3`}
+                          onClick={() => handleTypeChange(tab.id)}
                         >
-                          <div>
-                            <span className="font-semibold">GUESTS</span>
-                            <div className="mt-1 flex items-center">
-                              <div className="svg_icon w-4">
-                                <UserIcon />
+                          <span className="ease relative z-[2] transition duration-300">
+                            {tab.title}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+
+                    <div className="pt-4">
+                      <div className="flex items-center justify-between font-bold text-black">
+                        <span>{getActiveTypeTabTitle()}</span>
+                        <span>${getActiveTypeTabPrice()}</span>
+                      </div>
+                      <p className="pt-3 pb-4 text-[13px]">
+                        Web application consist of 2-4 database table and also
+                        2-4 web page.
+                      </p>
+
+                      <div className="flex items-center gap-x-7 text-[#70757A]">
+                        <div className="flex items-center text-xs">
+                          <div className="svg_icon mr-2 w-4">
+                            <ClockIcon />
+                          </div>
+                          5 Week
+                        </div>
+                        <div className="mt-[1px] flex items-center text-xs">
+                          <div className="svg_icon mr-2 -mt-[1px] w-3">
+                            <UndoIcon />
+                          </div>
+                          <div>1 Revision</div>
+                        </div>
+                      </div>
+                      <div className="mt-2 flex items-center text-xs text-[#BEBEBE]">
+                        <div className="svg_icon mr-2 w-4 text-[#8796A0]">
+                          <CheckmarkIcon />
+                        </div>
+                        4k ultra HD
+                      </div>
+                      <div className="mt-2 mb-4 flex items-center text-xs text-[#EF5DA8]">
+                        <div className="svg_icon mr-2 w-4">
+                          <CheckmarkIcon />
+                        </div>
+                        30 Seconds running time
+                      </div>
+
+                      {getActiveTabId() === 3 && (
+                        <>
+                          <div className="border-1 mb-4 rounded-lg border-[#EF5DA8] bg-[#FDEFF6] px-4 py-[10px] text-xs font-bold text-[#EF5DA8]">
+                            Whats Included
+                          </div>
+                          <div className="relative rounded-lg border border-[#DFDFDF]">
+                            <div className="flex">
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setShowDatePicker(!showDatePicker);
+                                }}
+                                className="flex flex-1 items-center justify-between border-r border-r-[#DFDFDF] px-4 py-4 text-left text-xs"
+                              >
+                                <div className="flex items-center">
+                                  <span className="svg_icon mr-2 block w-5 text-transparent">
+                                    <CalendarEditIcon />
+                                  </span>
+                                  <span>
+                                    {startDate
+                                      ? formatDayMonth(startDate)
+                                      : 'Date'}
+                                    {endDate && ` - ${formatDayMonth(endDate)}`}
+                                  </span>
+                                </div>
+                                <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                                  <ArrowDownIcon />
+                                </span>
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setShowTimePicker(true);
+                                }}
+                                className="flex flex-1 items-center justify-between px-4 py-4 text-left text-xs"
+                              >
+                                <div className="flex items-center">
+                                  <span className="svg_icon mr-2 block w-5 text-transparent">
+                                    <ClockIcon />
+                                  </span>
+                                  <span>{bookingTime || 'Time'}</span>
+                                </div>
+                                <span className="svg_icon flex w-4 rotate-90 transform text-[#C4C4C4]">
+                                  <ArrowDownIcon />
+                                </span>
+                              </button>
+                            </div>
+
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setShowGuests(true);
+                              }}
+                              className="flex w-full flex-1 items-center justify-between border-t border-[#DFDFDF] px-4 py-4 text-left text-xs"
+                            >
+                              <div className="flex items-center">
+                                <div className="svg_icon w-4">
+                                  <UserIcon />
+                                </div>
+                                <span className="ml-2">
+                                  {guestsCount.adults +
+                                    guestsCount.children +
+                                    guestsCount.infants}{' '}
+                                  guests
+                                </span>
                               </div>
-                              <span className="ml-2">
-                                {guestsCount.adults +
-                                  guestsCount.children +
-                                  guestsCount.infants}{' '}
-                                guests
-                              </span>
+                              <div
+                                className={`svg_icon flex w-4 rotate-90 transform text-[#C4C4C4] ${
+                                  showGuests ? 'rotate-180' : ''
+                                }`}
+                              >
+                                <ArrowDownIcon />
+                              </div>
+                            </button>
+                          </div>
+
+                          <div className="mt-5 mb-6 border-b border-b-[#DFDFDF] pb-4">
+                            <div className="flex items-center">
+                              <div className="text-sm font-semibold">
+                                Book for Private Group
+                              </div>
+                              <button
+                                type="button"
+                                className="svg_icon ml-2 w-[14px] rounded-full"
+                                onClick={() => setOpenPopup(true)}
+                              >
+                                <QuestionMarkIcon />
+                              </button>
+                              <label className="switch ml-auto">
+                                <input type="checkbox" />
+                                <span className="slider round" />
+                              </label>
                             </div>
                           </div>
-                          <div
-                            className={`svg_icon w-4 transform text-transparent ${
-                              showGuests ? 'rotate-180' : ''
-                            }`}
-                          >
-                            <ChevronIcon />
-                          </div>
-                        </button>
 
-                        <GuestsPopoverMobile
-                          status={showGuests}
-                          onClose={() => setShowGuests(false)}
-                          guests={guestsCount}
-                          onChange={(type: string, count: number) => {
-                            handleGuestCount(type, count);
-                          }}
-                        />
+                          <div className="pb-4 text-sm font-semibold">
+                            Select Mode
+                          </div>
+                          <div className="flex justify-between">
+                            {bookMode.map((mode) => (
+                              <button
+                                key={mode.id}
+                                type="button"
+                                className={`flex w-[32%] items-end rounded-lg border border-[#EF5DA8] py-2 px-2 text-[12px] ${
+                                  mode.active
+                                    ? 'bg-[#EF5DA8] text-white'
+                                    : 'text-[#EF5DA8]'
+                                }`}
+                                onClick={() => handleModeChange(mode.id)}
+                              >
+                                <div className="svg_icon mr-1 w-4 flex-shrink-0">
+                                  {mode.icon}
+                                </div>
+                                <span>{mode.title}</span>
+                              </button>
+                            ))}
+                          </div>
+
+                          <div className="pb-4 pt-5 text-sm font-semibold">
+                            Select Duration
+                          </div>
+                          <div className="mb-5 flex justify-between">
+                            {bookDuration.map((time) => (
+                              <button
+                                key={time.id}
+                                type="button"
+                                className={`w-[23.5%] items-end rounded-lg border border-[#EF5DA8] py-2 px-2 text-[12px] ${
+                                  time.active
+                                    ? 'bg-[#EF5DA8] text-white'
+                                    : 'text-[#EF5DA8]'
+                                }`}
+                                onClick={() => handleDurationChange(time.id)}
+                              >
+                                <span>{time.title}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </>
+                      )}
+
+                      {getActiveTabId() === 4 && (
+                        <>
+                          <div className="pb-4 text-sm font-semibold">
+                            Choose your plan
+                          </div>
+                          <div className="mb-5 flex flex-wrap gap-2">
+                            {plans.map((plan) => (
+                              <button
+                                key={plan.id}
+                                type="button"
+                                className={`items-end rounded-lg border border-[#EF5DA8] py-2 px-2 text-[12px] ${
+                                  plan.active
+                                    ? 'bg-[#EF5DA8] text-white'
+                                    : 'text-[#EF5DA8]'
+                                }`}
+                                onClick={() => handlePlanChange(plan.id)}
+                              >
+                                <span>{plan.title}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </>
+                      )}
+
+                      <div className="rounded-lg bg-[#F3F3F3] p-3 text-xs text-[#C0C0C0]">
+                        Amet minim mollit non deserunt ullamco est sit aliqua
+                        dolor do amet sint. Velit officia consequat duis enim
+                        velit
                       </div>
-                    </div>
-                    <div className="mt-4 mb-3">
-                      <div className="flex items-center">
-                        <div className="text-base font-semibold">
-                          Book for Private Group
-                        </div>
+
+                      <div className="mt-5 text-center">
                         <button
                           type="button"
-                          className="svg_icon ml-2 w-[14px] rounded-full bg-black text-white"
-                          onClick={() => setOpenPopup(true)}
+                          className="mx-auto flex items-center text-xs font-semibold text-[#222222]"
+                          onClick={() => setOpenReport(true)}
                         >
-                          <QuestionMarkIcon />
+                          <div className="svg_icon mr-1 w-4">
+                            <FlagIcon />
+                          </div>
+                          <div className="underline">Report this listings</div>
                         </button>
-                        <label className="switch ml-auto">
-                          <input type="checkbox" />
-                          <span className="slider round" />
-                        </label>
-                        <BookInfoPopups
-                          status={openPopup}
-                          onClose={() => setOpenPopup(false)}
-                        />
+                        <button
+                          type="button"
+                          onClick={() => setOpenPersonalizedExperience(true)}
+                          className="mt-3 rounded-full border-2 border-pink_primary px-5 py-[6px] text-xs text-pink_primary"
+                        >
+                          Contact me to customize this to your needs
+                        </button>
                       </div>
-                    </div>
-                    <p className="text-center text-sm">
-                      You won’t be charged yet
-                    </p>
-                    <div className="border-b border-b-[#DBDBDB] pt-3 pb-3 text-base text-[#4A4A4A]">
-                      <div className="mb-3 flex justify-between">
-                        <div className="underline">$315 x nights</div>
-                        <div>$2,203</div>
-                      </div>
-                      <div className="flex justify-between">
-                        <div className="underline">
-                          Service fee{' '}
-                          <button
-                            type="button"
-                            className="svg_icon ml-2 w-[14px] rounded-full"
-                            onClick={() => setOpenPriceBreakdown(true)}
-                          >
-                            <QuestionMarkIcon />
-                          </button>
-                          <PriceBreakdownPopover
-                            status={openPriceBreakdown}
-                            onClose={() => setOpenPriceBreakdown(false)}
-                          />
-                        </div>
-                        <div>$203</div>
-                      </div>
-                    </div>
-                    <div className="flex justify-between pt-2 text-base font-semibold text-[#222222]">
-                      <div>Total before taxes</div>
-                      <div>$2,203</div>
-                    </div>
-
-                    <div className="mt-3 text-center">
-                      <button
-                        type="button"
-                        className="mx-auto flex items-center text-xs font-semibold text-[#222222]"
-                        onClick={() => setOpenReport(true)}
-                      >
-                        <div className="svg_icon mr-2 w-[12px]">
-                          <FlagIcon />
-                        </div>
-                        <div className="underline">Report this listings</div>
-                      </button>
-                      <ReportPopup
-                        status={openReport}
-                        onClose={() => {
-                          setOpenReport(false);
-                        }}
-                      />
-                      <button
-                        type="button"
-                        onClick={() => setOpenPersonalizedExperience(true)}
-                        className="mt-3 rounded-full border-2 border-pink_primary px-5 py-[6px] text-xs text-pink_primary"
-                      >
-                        Contact me to customize this to your needs
-                      </button>
-                      <PersonalizeExperiencePopover
-                        status={openPersonalizedExperience}
-                        onClose={() => setOpenPersonalizedExperience(false)}
-                        date={bookingDate}
-                        time={bookingTime}
-                        onDateChange={(date: Date | null) => {
-                          setBookingDate(date);
-                        }}
-                        onTimeChange={(time: string) => setBookingTime(time)}
-                        guests={guestsCount}
-                        onGuestsChange={(type: string, count: number) => {
-                          handleGuestCount(type, count);
-                        }}
-                      />
                     </div>
                   </div>
                   <button
@@ -365,13 +551,10 @@ const BookingCardMobile = () => {
                     onClick={() => {
                       setShowMoreServices(true);
                     }}
-                    className="relative z-0 w-full pb-10 text-sm"
+                    className="relative z-0 w-full rounded-lg border border-[#E7E7E7] bg-white p-1"
                   >
-                    <div className="z-50 w-full rounded-xl border-b-4 border-[#fff] bg-[#002390] py-3 text-center text-[#fff] ">
-                      View All My Service
-                    </div>
-                    <div className="absolute left-0 top-10 -z-10 w-full rounded-xl border-[#fff] bg-[#23B4ED] py-3 text-center text-[#fff] ">
-                      Total 10 Services
+                    <div className="w-full rounded-lg bg-[#374C74] py-2.5 text-center text-xs font-semibold text-[#fff] hover:bg-[#1F3660]">
+                      View one-off sessions
                     </div>
                   </button>
                   <OtherServicesPopover
@@ -381,6 +564,7 @@ const BookingCardMobile = () => {
                     }}
                   />
                 </div>
+
                 <div className="border-t border-t-[#EAEAEA] px-5 py-3">
                   <button
                     type="button"
@@ -389,16 +573,56 @@ const BookingCardMobile = () => {
                   >
                     Request To Book
                   </button>
+
                   <RequestToBookPopover
                     status={openRequestToBook}
                     onClose={() => setOpenRequestToBook(false)}
-                    date={bookingDate}
+                    startDate={startDate}
+                    endDate={endDate}
+                    onDateChange={handleDateChange}
                     time={bookingTime}
-                    onDateChange={(date: Date | null) => setBookingDate(date)}
                     onTimeChange={(time: string) => setBookingTime(time)}
                     guests={guestsCount}
                     onGuestsChange={(type: string, count: number) => {
                       handleGuestCount(type, count);
+                    }}
+                  />
+                  <BookingCalendarMobile
+                    status={showDatePicker}
+                    onClose={() => setShowDatePicker(false)}
+                    startDate={startDate}
+                    endDate={endDate}
+                    onDateChange={handleDateChange}
+                  />
+
+                  <RequestToBookTimePopover
+                    status={showTimePicker}
+                    onClose={() => setShowTimePicker(false)}
+                    time={bookingTime}
+                    onTimeChange={(time: string) => setBookingTime(time)}
+                  />
+                  <BookInfoPopups
+                    status={openPopup}
+                    onClose={() => setOpenPopup(false)}
+                  />
+                  <GuestsPopoverMobile
+                    status={showGuests}
+                    onClose={() => setShowGuests(false)}
+                    guests={guestsCount}
+                    onChange={(type: string, count: number) => {
+                      handleGuestCount(type, count);
+                    }}
+                  />
+                  <ReportPopup
+                    status={openReport}
+                    onClose={() => {
+                      setOpenReport(false);
+                    }}
+                  />
+                  <PersonalizeExperiencePopover
+                    status={openPersonalizedExperience}
+                    onClose={() => {
+                      setOpenPersonalizedExperience(false);
                     }}
                   />
                 </div>

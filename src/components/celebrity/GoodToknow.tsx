@@ -92,9 +92,9 @@ const GoodToKnow = () => {
   ];
 
   return (
-    <div>
+    <div className="">
       <div className="container">
-        <div className="relative pb-5">
+        <div className="relative w-full pb-5 lg:max-w-[650px] xl:max-w-[730px]">
           <h2 className="pb-3 text-2xl font-bold text-black md:pb-5 md:text-[28px] lg:text-[32px]">
             Good to know
           </h2>
@@ -132,7 +132,7 @@ const GoodToKnow = () => {
               {sliderItems.map((item) => (
                 <SwiperSlide
                   key={item.id}
-                  className="!w-[58%] md:!w-1/3 lg:!w-1/5"
+                  className="!w-[58%] md:!w-1/2 lg:!w-1/3"
                 >
                   <div
                     className="m-3 my-5 rounded-xl bg-white p-[15px]"

@@ -94,8 +94,8 @@ const OtherServicesPopover = ({
               <div className="relative overflow-hidden rounded-tl-lg rounded-tr-lg bg-white p-5 md:rounded-xl md:shadow-xl">
                 <div>
                   <div
-                    className="w-full rounded-xl px-4 py-4"
-                    style={{ backgroundImage: 'url(/other-services-bg.jpg)' }}
+                    className="w-full rounded-xl bg-[#ef5da8] px-4 py-4"
+                    // style={{ backgroundImage: 'url(/other-services-bg.jpg)' }}
                   >
                     <div className="xs:flex block items-center justify-between">
                       <div className="flex items-center gap-3 lg:gap-5">
@@ -124,7 +124,7 @@ const OtherServicesPopover = ({
                       </button>
                     </div>
 
-                    <Tab.List className="other-services-nav mt-4 flex max-w-[400px] items-center justify-between rounded-full bg-white p-[5px] text-xs lg:mt-6 lg:text-sm">
+                    <Tab.List className="other-services-nav celebrity-other-services-nav mt-4 flex max-w-[400px] items-center justify-between rounded-full bg-white p-[5px] text-xs lg:mt-6 lg:text-sm">
                       <Tab as={Fragment}>
                         {({ selected }) => (
                           <button
@@ -170,10 +170,10 @@ const OtherServicesPopover = ({
                     </Tab.List>
                   </div>
                   <div className="mt-3 flex gap-x-6 border-b border-[#E6EEF8]">
-                    <div className="border-b-2 border-b-[#224F9C] py-2">
+                    <div className="border-b-2 border-b-[#ef5da8] py-2">
                       <button
                         type="button"
-                        className="flex items-center gap-1 text-[#224F9C]"
+                        className="flex items-center gap-1 text-[#ef5da8]"
                       >
                         <div className="svg_icon w-4">
                           <OnlineIcon />
@@ -262,7 +262,7 @@ const OtherServicesPopover = ({
                                   </p>
                                   <button
                                     type="button"
-                                    className="flex items-center gap-2 rounded-lg bg-[#224F9C] px-6 py-[9px] text-xs text-white hover:bg-pink_primary lg:text-sm"
+                                    className="flex items-center gap-2 rounded-lg bg-[#ef5da8] px-6 py-[9px] text-xs text-white hover:bg-pink_primary lg:text-sm"
                                   >
                                     <span>See Details</span>
                                     <span className="svg_icon w-4 text-transparent lg:w-5">
@@ -334,7 +334,7 @@ const OtherServicesPopover = ({
                                   </p>
                                   <button
                                     type="button"
-                                    className="flex items-center gap-2 rounded-lg bg-[#224F9C] px-6 py-[9px] text-xs text-white hover:bg-pink_primary lg:text-sm"
+                                    className="flex items-center gap-2 rounded-lg bg-[#ef5da8] px-6 py-[9px] text-xs text-white hover:bg-pink_primary lg:text-sm"
                                   >
                                     <span>See Details</span>
                                     <span className="svg_icon w-4 text-transparent lg:w-5">
@@ -406,7 +406,7 @@ const OtherServicesPopover = ({
                                   </p>
                                   <button
                                     type="button"
-                                    className="flex items-center gap-2 rounded-lg bg-[#224F9C] px-6 py-[9px] text-xs text-white hover:bg-pink_primary lg:text-sm"
+                                    className="flex items-center gap-2 rounded-lg bg-[#ef5da8] px-6 py-[9px] text-xs text-white hover:bg-pink_primary lg:text-sm"
                                   >
                                     <span>See Details</span>
                                     <span className="svg_icon w-4 text-transparent lg:w-5">

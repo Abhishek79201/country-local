@@ -1,5 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import VisibilitySensor from 'react-visibility-sensor';
+import { useState } from 'react';
 import useViewport from '../src/hooks/useViewport';
 
 import Banner from '../src/components/celebrity/Banner';
@@ -23,12 +25,22 @@ import BannerMobile from '../src/components/celebrity/BannerMobile';
 
 const Celebrity: NextPage = () => {
   const { width } = useViewport();
+  const [sectionVisible, setSectionVisible] = useState<boolean>(false);
+
+  const onChange = (isVisible: boolean) => {
+    setSectionVisible(isVisible);
+  };
+
+  const offsetHeight = process.browser ? window.innerHeight - 760 : '';
 
   return (
     <>
       <style>
         {`header.mobile_header, .mobile_floating_header {
             display: none;
+          }
+          .booking-card-wrapper {
+            opacity: ${sectionVisible ? '0' : '1'};
           }`}
       </style>
       <Head>
@@ -37,7 +49,7 @@ const Celebrity: NextPage = () => {
       <div className="bg-[#FBFBFB] pb-10">
         <Intro />
 
-        {width > 1023 ? <Banner /> : <BannerMobile />}
+        {width > 1063 ? <Banner /> : <BannerMobile />}
 
         <PinkPurpleGradient />
 
@@ -45,19 +57,26 @@ const Celebrity: NextPage = () => {
 
         <Profiles />
 
-        <PreviewAccordion />
+        <VisibilitySensor
+          onChange={onChange}
+          partialVisibility
+          offset={{ bottom: offsetHeight }}
+        >
+          <div>
+            <PreviewAccordion />
+            <CelebrityProfile />
+          </div>
+        </VisibilitySensor>
 
         <ThingsToKnow />
 
-        <CelebrityProfile />
-
         <GoodToKnow />
 
-        <Review />
+        <CelebrityFaq />
 
         <DeliverySlider />
 
-        <CelebrityFaq />
+        <Review />
 
         <WorkshopExperience />
 

@@ -90,6 +90,9 @@ const PreviewAccordion = () => {
   return (
     <div className="pb-16">
       <div className="container">
+        <h2 className="pb-3 text-2xl font-bold text-black md:pb-5 md:text-[28px] lg:text-[32px]">
+          More Reasons...
+        </h2>
         <div className="flex">
           <div className="w-full lg:w-1/2">
             {accordions.map(({ id, badge, title, content, open }) => (

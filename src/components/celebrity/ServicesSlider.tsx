@@ -69,12 +69,12 @@ const PersonSlider = () => (
                     </div>
 
                     <div className="absolute top-3 flex w-full items-center justify-between px-3">
-                      <div className="flex items-center rounded-full bg-white px-3 py-1.5 text-[8px] font-bold text-black">
+                      <div className="flex items-center rounded-full bg-white px-3 py-1.5 text-[9px] font-bold text-black">
                         4-Week Class
                       </div>
 
                       {item % 2 === 0 && (
-                        <div className="flex items-center rounded-full bg-[#FC4037] px-3 py-1.5 text-[8px] font-bold text-white">
+                        <div className="flex items-center rounded-full bg-[#FC4037] px-3 py-1.5 text-[9px] font-bold text-white">
                           30% Off
                         </div>
                       )}
@@ -96,7 +96,7 @@ const PersonSlider = () => (
                         <div className="svg_icon mr-1 w-[14px]">
                           <ClockIcon />
                         </div>
-                        <span className="text-[10px] font-bold">
+                        <span className="text-[11px] font-bold">
                           2 days left to join
                         </span>
                       </div>
@@ -147,7 +147,7 @@ const PersonSlider = () => (
                           </motion.span>
                         )}
                       </div>
-                      <div className="ml-2 min-h-[45px] text-[10px] font-bold leading-tight">
+                      <div className="ml-2 min-h-[45px] text-[11px] font-bold leading-tight">
                         <p>Richard Seil</p>
                         {item % 2 !== 0 && (
                           <motion.p
@@ -169,9 +169,16 @@ const PersonSlider = () => (
                             Clarisa Bru
                           </motion.p>
                         )}
-                        <div className="mt-1 w-[60px] rounded-md bg-[#CCCCCC] py-[2px] px-2 text-center text-[9px] text-white">
-                          Celebrity
-                        </div>
+                        {(item === 1 || item === 2) && (
+                          <div className="mt-1 w-[60px] rounded-md bg-[#CCCCCC] py-[2px] px-2 text-center text-[9px] text-white">
+                            Celebrity
+                          </div>
+                        )}
+                        {(item === 4 || item === 6) && (
+                          <div className="mt-1 w-[60px] rounded-md bg-[#CCCCCC] py-[2px] px-2 text-center text-[9px] text-white">
+                            Pro
+                          </div>
+                        )}
                       </div>
                       <div className="ml-3 flex h-5 w-5 items-center justify-center rounded-full bg-[#FED501]">
                         <div className="svg_icon w-3">
@@ -180,20 +187,20 @@ const PersonSlider = () => (
                       </div>
                     </div>
 
-                    <p className="pt-1 pb-2 text-sm font-bold leading-tight lg:pb-[6px]">
+                    <p className="pt-1 pb-2 text-[15px] font-bold leading-tight lg:pb-[6px]">
                       Designing Desserts with Richard Seil
                     </p>
 
                     <div className="flex">
                       <button
                         type="button"
-                        className="mr-2 rounded-full bg-[#EBEDFC] px-3 py-[6px] text-[8px] font-bold text-[#202124] transition duration-300 hover:bg-black hover:text-white"
+                        className="mr-2 rounded-full bg-[#EBEDFC] px-3 py-[6px] text-[9px] font-bold text-[#202124] transition duration-300 hover:bg-black hover:text-white"
                       >
                         Backing
                       </button>
                       <button
                         type="button"
-                        className="mr-2 flex items-center rounded-full bg-[#e6e6e6] px-3 py-[6px] text-[8px] font-bold text-[#767676] transition duration-300 hover:bg-black hover:text-white"
+                        className="mr-2 flex items-center rounded-full bg-[#e6e6e6] px-3 py-[6px] text-[9px] font-bold text-[#767676] transition duration-300 hover:bg-black hover:text-white"
                       >
                         <div className="svg_icon -mt-[2px] mr-1 w-[14px]">
                           <CalendarIcon />

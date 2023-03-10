@@ -1,6 +1,6 @@
 /* eslint @next/next/no-img-element: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
-import { Pagination, Autoplay } from 'swiper';
+import { Pagination, Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ReasonsSlider = () => (
@@ -9,7 +9,7 @@ const ReasonsSlider = () => (
       <Swiper
         slidesPerView={1}
         freeMode
-        modules={[Pagination, Autoplay]}
+        modules={[Pagination, Autoplay, Navigation]}
         spaceBetween={0}
         // effect="fade"
         // fadeEffect={{
@@ -22,6 +22,10 @@ const ReasonsSlider = () => (
         pagination={{
           el: '.reason_slider.swiper-pagination',
           clickable: true,
+        }}
+        navigation={{
+          prevEl: '.reason_slider.swiper-button-prev',
+          nextEl: '.reason_slider.swiper-button-next',
         }}
         className="purple_gradient_bg rounded-xl !pt-10 !pb-16 lg:rounded-3xl"
       >
@@ -44,14 +48,8 @@ const ReasonsSlider = () => (
         ))}
         <div className="reason_slider swiper-pagination !bottom-4 !left-[50%] !w-[225px] !translate-x-[-50%] transform text-[#666]" />
       </Swiper>
-    </div>
-    <div className="pt-4 text-center lg:pt-5">
-      <button
-        type="button"
-        className="purple_gradient_bg h-[44px] w-[160px] rounded-lg py-1 px-2 text-xs font-bold uppercase text-white transition-shadow hover:shadow-lg"
-      >
-        More Reasons...
-      </button>
+      <div className="reason_slider swiper-button-prev !-left-5 !-mt-[14px]  !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+      <div className="reason_slider swiper-button-next !-right-5 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
     </div>
   </div>
 );

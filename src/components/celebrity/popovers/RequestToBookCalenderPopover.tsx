@@ -1,7 +1,7 @@
-import { useContext } from 'react';
 import { Dialog } from '@headlessui/react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useContext } from 'react';
 import DatePicker from 'react-datepicker';
-import { motion, AnimatePresence } from 'framer-motion';
 import { OverflowContext } from '../../../context/overflowContext';
 import useViewport from '../../../hooks/useViewport';
 
@@ -10,14 +10,16 @@ import CloseIcon from '../../../../public/icons/xmark.svg';
 interface RequestToBookCalenderPopoverTypes {
   status: boolean;
   onClose: () => void;
-  date: Date | null;
-  onDateChange: (date: Date | null) => void;
+  startDate: Date | null;
+  endDate: Date | null;
+  onDateChange: (dates: [Date: Date | null, Date: Date | null]) => void;
 }
 
 const RequestToBookCalenderPopover = ({
   status,
   onClose,
-  date,
+  startDate,
+  endDate,
   onDateChange,
 }: RequestToBookCalenderPopoverTypes) => {
   const { width } = useViewport();
@@ -104,15 +106,38 @@ const RequestToBookCalenderPopover = ({
                 <div>
                   <div className="booking_calendar">
                     <DatePicker
-                      selected={date}
-                      onChange={(updated) => {
-                        onDateChange(updated);
-                        onClose();
+                      selected={startDate}
+                      onChange={(dates: [Date, Date]) => {
+                        onDateChange(dates);
                       }}
+                      startDate={startDate}
+                      endDate={endDate}
                       minDate={new Date()}
                       monthsShown={2}
+                      selectsRange
                       inline
+                      isClearable
                     />
+                  </div>
+                  <div className="mt-4 flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        // setStartDate(null);
+                        // setEndDate(null);
+                        onDateChange([null, null]);
+                      }}
+                      className="text-xs underline"
+                    >
+                      Clear dates
+                    </button>
+                    <button
+                      type="button"
+                      onClick={onClose}
+                      className="rounded-lg bg-[#222] px-5 py-2 text-xs text-white"
+                    >
+                      Close
+                    </button>
                   </div>
                 </div>
               </div>

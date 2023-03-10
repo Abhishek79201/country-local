@@ -37,7 +37,7 @@ const GuestsPopover = ({
   };
 
   return (
-    <div className="z-10 rounded-xl bg-white py-8">
+    <div className="z-10 rounded-xl bg-white py-4">
       <div className="flex items-center justify-between border-b border-[#ddd] pb-5">
         <div>
           <p className="text-base font-semibold leading-none text-[#222]">

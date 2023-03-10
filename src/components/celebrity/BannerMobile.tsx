@@ -88,9 +88,6 @@ const BannerMobile = () => {
             </div>
           </div>
         </div>
-        <div className="absolute right-0 -bottom-5 z-[1] hidden h-full max-w-[500px] sm:block">
-          <img src="/banner-side.png" alt="banner" className="h-full w-auto" />
-        </div>
       </div>
       <BannerVideoPopover
         status={showVideo}

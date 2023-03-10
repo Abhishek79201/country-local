@@ -2,13 +2,12 @@
 /* eslint react/no-array-index-key: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
 import { useState } from 'react';
-import { Autoplay, EffectCards } from 'swiper';
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import BannerVideoPopover from './popovers/BannerVideoPopover';
 
 import 'swiper/css';
-import 'swiper/css/effect-cards';
 
 const Banner = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -16,8 +15,8 @@ const Banner = () => {
   return (
     <>
       <div className="relative -mt-8 bg-[#1C1C25] pt-8 lg:mt-0 lg:pt-0">
-        <div className="container">
-          <div className="relative z-[2] flex flex-wrap lg:flex-nowrap">
+        <div className="">
+          <div className="main-banner-wrapper relative z-[2] flex flex-wrap lg:ml-5 lg:flex-nowrap xl:ml-0">
             <div className="mt-8 mb-4 w-full lg:w-1/2">
               <div className="-ml-6 max-w-[200px] sm:-ml-8 sm:max-w-[250px]">
                 <img src="/live-session.png" alt="Live Session" />
@@ -53,19 +52,16 @@ const Banner = () => {
               </div>
             </div>
             <div className="flex w-full items-center justify-end lg:w-1/2">
-              <div className="-mr-[5%]">
+              <div className="pl-8">
                 <Swiper
-                  spaceBetween={0}
-                  modules={[Autoplay, EffectCards]}
+                  slidesPerView="auto"
+                  spaceBetween={30}
+                  modules={[Autoplay]}
                   autoplay
-                  loop
-                  // initialSlide={2}
-                  effect="cards"
-                  grabCursor
-                  className="flex flex-wrap lg:-mb-[20%] lg:max-w-[550px] xl:-mb-[15%]"
+                  className="flex flex-wrap lg:-mb-[20%] xl:-mb-[15%]"
                 >
                   {[...Array(6)].map((info, index) => (
-                    <SwiperSlide key={index} className="!w-full">
+                    <SwiperSlide key={index} className="!w-full md:!w-[80%]">
                       <div className="relative">
                         <p className="absolute top-4 left-10 text-lg text-white opacity-80">
                           From <strong>US$254</strong>
@@ -88,9 +84,6 @@ const Banner = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="absolute right-0 -bottom-5 z-[1] hidden h-full max-w-[500px] sm:block">
-          <img src="/banner-side.png" alt="banner" className="h-full w-auto" />
         </div>
       </div>
       <BannerVideoPopover
