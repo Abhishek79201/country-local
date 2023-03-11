@@ -639,7 +639,8 @@ body.active {
 }
 .reason_slider,
 .stay_slider,
-.similar_prop_inner_pagination {
+.similar_prop_inner_pagination,
+.main_banner_slider {
   span.swiper-pagination-bullet {
     background-color: #fff;
   }
@@ -697,16 +698,19 @@ body.active {
   button:nth-child(1).active
   ~ button:last-child::after {
   left: -200%;
-  background-color: #ef5da8;
+  background: linear-gradient(90.29deg, #e45f8c 0.27%, #a96ad8 103.4%)
+    var(--x, 0) / 200%;
 }
 .celebrity-other-services-nav
   button:nth-child(2).active
   ~ button:last-child::after {
   left: -100%;
-  background-color: #ef5da8;
+  background: linear-gradient(90.29deg, #e45f8c 0.27%, #a96ad8 103.4%)
+    var(--x, 0) / 200%;
 }
 .celebrity-other-services-nav button:nth-child(3).active::after {
-  background-color: #ef5da8;
+  background: linear-gradient(90.29deg, #e45f8c 0.27%, #a96ad8 103.4%)
+    var(--x, 0) / 200%;
 }
 
 .lightBox_gallery_slider {

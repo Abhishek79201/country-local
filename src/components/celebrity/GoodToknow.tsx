@@ -94,7 +94,7 @@ const GoodToKnow = () => {
   return (
     <div className="">
       <div className="container">
-        <div className="relative w-full pb-5 lg:max-w-[650px] xl:max-w-[730px]">
+        <div className="relative w-full lg:max-w-[650px] lg:pb-5 xl:max-w-[730px]">
           <h2 className="pb-3 text-2xl font-bold text-black md:pb-5 md:text-[28px] lg:text-[32px]">
             Good to know
           </h2>

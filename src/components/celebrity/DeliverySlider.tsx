@@ -54,7 +54,7 @@ const DeliverySlider = () => {
   ];
 
   return (
-    <div className="relative pt-10 md:pt-14 lg:pt-20">
+    <div className="relative pt-2 md:pt-14 lg:pt-20">
       <div className="mx-auto max-w-[1500px] px-2">
         <h2 className="pb-7 text-center text-2xl font-bold leading-tight text-black md:text-[28px] lg:text-[36px]">
           BY THE END, YOU’LL HAVE 3 RELEASE READY SONGS

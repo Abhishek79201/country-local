@@ -56,7 +56,7 @@ const RecentVideoSlider = () => {
   };
 
   return (
-    <div className="relative pt-14">
+    <div className="relative pt-5 md:pt-14">
       <div className="container">
         <div className="flex items-center justify-between gap-4 pb-2">
           <div className="w-full md:w-1/2">
@@ -104,12 +104,12 @@ const RecentVideoSlider = () => {
                         tabIndex={0}
                         onKeyDown={() => handlePlayPause(video.id)}
                         onClick={() => handlePlayPause(video.id)}
-                        className="absolute left-0 top-0 h-full w-full cursor-pointer"
+                        className="group absolute left-0 top-0 h-full w-full cursor-pointer overflow-hidden"
                       >
                         <img
                           src={video.image}
                           alt="poster"
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover transition-all duration-1000 ease-in-out group-hover:scale-110"
                         />
 
                         <button

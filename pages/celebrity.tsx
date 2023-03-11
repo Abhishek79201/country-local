@@ -31,7 +31,7 @@ const Celebrity: NextPage = () => {
     setSectionVisible(isVisible);
   };
 
-  const offsetHeight = process.browser ? window.innerHeight - 760 : '';
+  const offsetHeight = process.browser ? window.innerHeight - 950 : '';
 
   return (
     <>

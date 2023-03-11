@@ -94,7 +94,7 @@ const OtherServicesPopover = ({
               <div className="relative overflow-hidden rounded-tl-lg rounded-tr-lg bg-white p-5 md:rounded-xl md:shadow-xl">
                 <div>
                   <div
-                    className="w-full rounded-xl bg-[#ef5da8] px-4 py-4"
+                    className="purple_gradient_bg_light w-full rounded-xl px-4 py-4"
                     // style={{ backgroundImage: 'url(/other-services-bg.jpg)' }}
                   >
                     <div className="xs:flex block items-center justify-between">
@@ -209,7 +209,7 @@ const OtherServicesPopover = ({
                             key={item}
                             className="card rounded-lg border border-[#E6EEF8] bg-white px-3 pb-5 pt-3 lg:rounded-2xl lg:px-5"
                           >
-                            <h3 className="text-xl font-semibold text-[#172E59]">
+                            <h3 className="text-xl font-semibold text-[#333]">
                               Introduction Call
                             </h3>
                             <div className="mt-3 flex flex-wrap items-center lg:flex-nowrap lg:gap-3">
@@ -249,20 +249,20 @@ const OtherServicesPopover = ({
                                 />
                               </div>
                               <div>
-                                <div className="py-3 text-xs text-[#172E59] lg:text-sm">
+                                <div className="py-3 text-xs text-[#333] lg:text-sm">
                                   Amet minim mollit non deserunt ullamco est sit
                                   aliqua dolor do amet sint. Velit officia
                                   consequat duis enim velit mollit. Exercitation
                                   nostrud....
                                 </div>
                                 <div className="flex items-center justify-between">
-                                  <p className="text-sm text-[#172E59] lg:text-base">
+                                  <p className="text-sm text-[#333] lg:text-base">
                                     <span className="font-semibold">$120 </span>
                                     <span>/ Person</span>
                                   </p>
                                   <button
                                     type="button"
-                                    className="flex items-center gap-2 rounded-lg bg-[#ef5da8] px-6 py-[9px] text-xs text-white hover:bg-pink_primary lg:text-sm"
+                                    className="purple_gradient_bg_light flex items-center gap-2 rounded-lg px-6 py-[9px] text-xs text-white lg:text-sm"
                                   >
                                     <span>See Details</span>
                                     <span className="svg_icon w-4 text-transparent lg:w-5">
@@ -281,7 +281,7 @@ const OtherServicesPopover = ({
                             key={item}
                             className="card rounded-lg border border-[#E6EEF8] bg-white px-3 pb-5 pt-3 lg:rounded-2xl lg:px-5"
                           >
-                            <h3 className="text-xl font-semibold text-[#172E59]">
+                            <h3 className="text-xl font-semibold text-[#333]">
                               Experiences You&apos;ll get
                             </h3>
                             <div className="mt-3 flex flex-wrap items-center lg:flex-nowrap lg:gap-3">
@@ -321,20 +321,20 @@ const OtherServicesPopover = ({
                                 />
                               </div>
                               <div>
-                                <div className="py-3 text-xs text-[#172E59] lg:text-sm">
+                                <div className="py-3 text-xs text-[#333] lg:text-sm">
                                   Amet minim mollit non deserunt ullamco est sit
                                   aliqua dolor do amet sint. Velit officia
                                   consequat duis enim velit mollit. Exercitation
                                   nostrud....
                                 </div>
                                 <div className="flex items-center justify-between">
-                                  <p className="text-sm text-[#172E59] lg:text-base">
+                                  <p className="text-sm text-[#333] lg:text-base">
                                     <span className="font-semibold">$120 </span>
                                     <span>/ Person</span>
                                   </p>
                                   <button
                                     type="button"
-                                    className="flex items-center gap-2 rounded-lg bg-[#ef5da8] px-6 py-[9px] text-xs text-white hover:bg-pink_primary lg:text-sm"
+                                    className="purple_gradient_bg_light flex items-center gap-2 rounded-lg px-6 py-[9px] text-xs text-white lg:text-sm"
                                   >
                                     <span>See Details</span>
                                     <span className="svg_icon w-4 text-transparent lg:w-5">
@@ -353,7 +353,7 @@ const OtherServicesPopover = ({
                             key={item}
                             className="card rounded-lg border border-[#E6EEF8] bg-white px-3 pb-5 pt-3 lg:rounded-2xl lg:px-5"
                           >
-                            <h3 className="text-xl font-semibold text-[#172E59]">
+                            <h3 className="text-xl font-semibold text-[#333]">
                               Prime Packs Deal
                             </h3>
                             <div className="mt-3 flex flex-wrap items-center lg:flex-nowrap lg:gap-3">
@@ -393,20 +393,20 @@ const OtherServicesPopover = ({
                                 />
                               </div>
                               <div>
-                                <div className="py-3 text-xs text-[#172E59] lg:text-sm">
+                                <div className="py-3 text-xs text-[#333] lg:text-sm">
                                   Amet minim mollit non deserunt ullamco est sit
                                   aliqua dolor do amet sint. Velit officia
                                   consequat duis enim velit mollit. Exercitation
                                   nostrud....
                                 </div>
                                 <div className="flex items-center justify-between">
-                                  <p className="text-sm text-[#172E59] lg:text-base">
+                                  <p className="text-sm text-[#333] lg:text-base">
                                     <span className="font-semibold">$120 </span>
                                     <span>/ Person</span>
                                   </p>
                                   <button
                                     type="button"
-                                    className="flex items-center gap-2 rounded-lg bg-[#ef5da8] px-6 py-[9px] text-xs text-white hover:bg-pink_primary lg:text-sm"
+                                    className="purple_gradient_bg_light flex items-center gap-2 rounded-lg px-6 py-[9px] text-xs text-white lg:text-sm"
                                   >
                                     <span>See Details</span>
                                     <span className="svg_icon w-4 text-transparent lg:w-5">

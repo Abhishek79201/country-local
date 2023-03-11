@@ -42,7 +42,7 @@ const WorkshopExperience = () => {
   ];
 
   return (
-    <div className="relative hidden pt-10 md:block md:pt-14 lg:pt-20">
+    <div className="relative hidden pt-10 md:block md:pt-8">
       <div className="container">
         <h2 className="mb-8 text-center text-2xl font-bold text-black md:mb-10 md:text-3xl lg:mb-12 lg:text-4xl">
           <span className="purple_gradient_text mr-2">Country Locals</span>{' '}

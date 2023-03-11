@@ -179,7 +179,7 @@ const BookingCardMobile = () => {
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 z-[20] w-full rounded-tr-[10px] rounded-tl-[10px] bg-black bg-opacity-70 backdrop:blur-md">
+      <div className="fixed bottom-0 left-0 z-[20] w-full bg-white bg-opacity-20 backdrop-blur-md">
         <div className="container">
           <div className="flex items-center justify-between py-3 text-lg text-white">
             <div>
@@ -199,7 +199,7 @@ const BookingCardMobile = () => {
                 setShowMobileBooking(true);
                 setGlobalOverflow(true);
               }}
-              className="rounded-lg bg-pink_primary py-3 px-4 text-sm font-semibold text-white transition duration-300 hover:bg-[#A96AD8]"
+              className="purple_gradient_bg_light rounded-lg py-[10px] px-7 text-sm font-semibold text-white"
             >
               Reserve
             </button>
@@ -546,86 +546,85 @@ const BookingCardMobile = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div className="flex items-center justify-between border-t border-t-[#EAEAEA] px-5 py-3">
+                  <button
+                    type="button"
+                    className="purple_gradient_bg_light w-[48%] rounded-lg py-[10px] px-4 text-sm font-semibold text-white transition duration-300"
+                    onClick={() => setOpenRequestToBook(true)}
+                  >
+                    Book Now
+                  </button>
                   <button
                     type="button"
                     onClick={() => {
                       setShowMoreServices(true);
                     }}
-                    className="relative z-0 w-full rounded-lg border border-[#E7E7E7] bg-white p-1"
+                    className="w-[48%] rounded-lg bg-[#374C74] py-[10px] text-center text-sm font-semibold text-[#fff] hover:bg-[#1F3660]"
                   >
-                    <div className="w-full rounded-lg bg-[#374C74] py-2.5 text-center text-xs font-semibold text-[#fff] hover:bg-[#1F3660]">
-                      View one-off sessions
-                    </div>
+                    All gigs
                   </button>
-                  <OtherServicesPopover
-                    status={showMoreServices}
-                    onClose={() => {
-                      setShowMoreServices(false);
-                    }}
-                  />
                 </div>
 
-                <div className="border-t border-t-[#EAEAEA] px-5 py-3">
-                  <button
-                    type="button"
-                    className="w-full rounded-lg bg-pink_primary py-[10px] px-4 text-sm font-semibold text-white transition duration-300 hover:bg-[#A96AD8]"
-                    onClick={() => setOpenRequestToBook(true)}
-                  >
-                    Request To Book
-                  </button>
+                <OtherServicesPopover
+                  status={showMoreServices}
+                  onClose={() => {
+                    setShowMoreServices(false);
+                  }}
+                />
 
-                  <RequestToBookPopover
-                    status={openRequestToBook}
-                    onClose={() => setOpenRequestToBook(false)}
-                    startDate={startDate}
-                    endDate={endDate}
-                    onDateChange={handleDateChange}
-                    time={bookingTime}
-                    onTimeChange={(time: string) => setBookingTime(time)}
-                    guests={guestsCount}
-                    onGuestsChange={(type: string, count: number) => {
-                      handleGuestCount(type, count);
-                    }}
-                  />
-                  <BookingCalendarMobile
-                    status={showDatePicker}
-                    onClose={() => setShowDatePicker(false)}
-                    startDate={startDate}
-                    endDate={endDate}
-                    onDateChange={handleDateChange}
-                  />
+                <RequestToBookPopover
+                  status={openRequestToBook}
+                  onClose={() => setOpenRequestToBook(false)}
+                  startDate={startDate}
+                  endDate={endDate}
+                  onDateChange={handleDateChange}
+                  time={bookingTime}
+                  onTimeChange={(time: string) => setBookingTime(time)}
+                  guests={guestsCount}
+                  onGuestsChange={(type: string, count: number) => {
+                    handleGuestCount(type, count);
+                  }}
+                />
+                <BookingCalendarMobile
+                  status={showDatePicker}
+                  onClose={() => setShowDatePicker(false)}
+                  startDate={startDate}
+                  endDate={endDate}
+                  onDateChange={handleDateChange}
+                />
 
-                  <RequestToBookTimePopover
-                    status={showTimePicker}
-                    onClose={() => setShowTimePicker(false)}
-                    time={bookingTime}
-                    onTimeChange={(time: string) => setBookingTime(time)}
-                  />
-                  <BookInfoPopups
-                    status={openPopup}
-                    onClose={() => setOpenPopup(false)}
-                  />
-                  <GuestsPopoverMobile
-                    status={showGuests}
-                    onClose={() => setShowGuests(false)}
-                    guests={guestsCount}
-                    onChange={(type: string, count: number) => {
-                      handleGuestCount(type, count);
-                    }}
-                  />
-                  <ReportPopup
-                    status={openReport}
-                    onClose={() => {
-                      setOpenReport(false);
-                    }}
-                  />
-                  <PersonalizeExperiencePopover
-                    status={openPersonalizedExperience}
-                    onClose={() => {
-                      setOpenPersonalizedExperience(false);
-                    }}
-                  />
-                </div>
+                <RequestToBookTimePopover
+                  status={showTimePicker}
+                  onClose={() => setShowTimePicker(false)}
+                  time={bookingTime}
+                  onTimeChange={(time: string) => setBookingTime(time)}
+                />
+                <BookInfoPopups
+                  status={openPopup}
+                  onClose={() => setOpenPopup(false)}
+                />
+                <GuestsPopoverMobile
+                  status={showGuests}
+                  onClose={() => setShowGuests(false)}
+                  guests={guestsCount}
+                  onChange={(type: string, count: number) => {
+                    handleGuestCount(type, count);
+                  }}
+                />
+                <ReportPopup
+                  status={openReport}
+                  onClose={() => {
+                    setOpenReport(false);
+                  }}
+                />
+                <PersonalizeExperiencePopover
+                  status={openPersonalizedExperience}
+                  onClose={() => {
+                    setOpenPersonalizedExperience(false);
+                  }}
+                />
               </div>
             </Dialog.Panel>
           </Dialog>

@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const MoreCelebrities = () => (
-  <div className="relative pt-14">
+  <div className="relative pt-5 md:pt-14">
     <div className="container">
       <div className="flex items-center justify-between gap-4 pb-2">
         <div className="w-full md:w-1/2">

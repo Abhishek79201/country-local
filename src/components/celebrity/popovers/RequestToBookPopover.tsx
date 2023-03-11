@@ -247,7 +247,7 @@ const RequestToBookPopover = ({
                       />
                       <button
                         type="submit"
-                        className="purple_gradient_bg mt-4 w-full rounded-full px-3 py-3 font-bold text-white"
+                        className="purple_gradient_bg_light mt-4 w-full rounded-full px-3 py-3 font-bold text-white"
                       >
                         Book Now
                       </button>

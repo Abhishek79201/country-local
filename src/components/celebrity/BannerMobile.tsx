@@ -65,15 +65,18 @@ const BannerMobile = () => {
                   shadowOffset: 20,
                   shadowScale: 0.94,
                 }}
-                className="flex flex-wrap lg:-mb-[20%] lg:max-w-[550px] xl:-mb-[15%]"
+                className="-mb-[8%] flex flex-wrap"
               >
-                {[...Array(6)].map((info, index) => (
+                {[...Array(4)].map((info, index) => (
                   <SwiperSlide key={index} className="!w-full">
                     <div className="relative">
                       <p className="absolute top-4 left-10 text-lg text-white opacity-80">
                         From <strong>US$254</strong>
                       </p>
-                      <img src="/slider-video-poster.jpg" alt="Video Poster" />
+                      <img
+                        src={`/slider-video-poster-${index + 1}.jpg`}
+                        alt="Video Poster"
+                      />
                       <button
                         type="button"
                         className="absolute left-[50%] top-[50%] max-w-[65px] translate-x-[-50%] translate-y-[-50%] transform"

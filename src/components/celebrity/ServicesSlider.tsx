@@ -15,7 +15,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const PersonSlider = () => (
-  <div className="relative pt-14">
+  <div className="relative pt-5 md:pt-14">
     <div className="container">
       <div className="flex items-center justify-between gap-4 pb-2">
         <div className="w-full md:w-1/2">
@@ -69,12 +69,12 @@ const PersonSlider = () => (
                     </div>
 
                     <div className="absolute top-3 flex w-full items-center justify-between px-3">
-                      <div className="flex items-center rounded-full bg-white px-3 py-1.5 text-[9px] font-bold text-black">
+                      <div className="flex items-center rounded-full bg-white px-3 py-1.5 text-[11px] font-bold text-black">
                         4-Week Class
                       </div>
 
                       {item % 2 === 0 && (
-                        <div className="flex items-center rounded-full bg-[#FC4037] px-3 py-1.5 text-[9px] font-bold text-white">
+                        <div className="flex items-center rounded-full bg-[#FC4037] px-3 py-1.5 text-[11px] font-bold text-white">
                           30% Off
                         </div>
                       )}
@@ -96,7 +96,7 @@ const PersonSlider = () => (
                         <div className="svg_icon mr-1 w-[14px]">
                           <ClockIcon />
                         </div>
-                        <span className="text-[11px] font-bold">
+                        <span className="text-[12x] font-bold">
                           2 days left to join
                         </span>
                       </div>
@@ -194,13 +194,13 @@ const PersonSlider = () => (
                     <div className="flex">
                       <button
                         type="button"
-                        className="mr-2 rounded-full bg-[#EBEDFC] px-3 py-[6px] text-[9px] font-bold text-[#202124] transition duration-300 hover:bg-black hover:text-white"
+                        className="mr-2 rounded-full bg-[#EBEDFC] px-3 py-[6px] text-[11px] font-bold text-[#202124] transition duration-300 hover:bg-black hover:text-white"
                       >
                         Backing
                       </button>
                       <button
                         type="button"
-                        className="mr-2 flex items-center rounded-full bg-[#e6e6e6] px-3 py-[6px] text-[9px] font-bold text-[#767676] transition duration-300 hover:bg-black hover:text-white"
+                        className="mr-2 flex items-center rounded-full bg-[#e6e6e6] px-3 py-[6px] text-[11px] font-bold text-[#767676] transition duration-300 hover:bg-black hover:text-white"
                       >
                         <div className="svg_icon -mt-[2px] mr-1 w-[14px]">
                           <CalendarIcon />
@@ -211,7 +211,7 @@ const PersonSlider = () => (
                   </div>
 
                   <div className="mt-1 flex items-center justify-between border-t border-t-slate-200 px-4 pt-1 pb-2 lg:mt-0 lg:pb-1 lg:pt-[2px]">
-                    <div className="text-[10px] leading-tight text-[#C7C7C7]">
+                    <div className="text-[12px] leading-tight text-[#C7C7C7]">
                       From
                       <div>
                         <span className="text-base font-bold leading-tight text-black">
@@ -222,7 +222,7 @@ const PersonSlider = () => (
                     </div>
                     <a
                       href="#"
-                      className="rounded-lg border-2 border-black bg-black px-3 py-1 text-[10px] font-bold text-white transition duration-300 hover:bg-transparent hover:text-black"
+                      className="rounded-lg border-2 border-black bg-black px-3 py-1 text-xs font-bold text-white transition duration-300 hover:bg-transparent hover:text-black"
                     >
                       Learn More
                     </a>

@@ -2,12 +2,13 @@
 /* eslint react/no-array-index-key: "off" */
 /* eslint react/jsx-one-expression-per-line: "off" */
 import { useState } from 'react';
-import { Autoplay } from 'swiper';
+import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import BannerVideoPopover from './popovers/BannerVideoPopover';
 
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 const Banner = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -52,22 +53,26 @@ const Banner = () => {
               </div>
             </div>
             <div className="flex w-full items-center justify-end lg:w-1/2">
-              <div className="pl-8">
+              <div className="relative pl-8">
                 <Swiper
                   slidesPerView="auto"
                   spaceBetween={30}
-                  modules={[Autoplay]}
+                  modules={[Autoplay, Pagination]}
                   autoplay
-                  className="flex flex-wrap lg:-mb-[20%] xl:-mb-[15%]"
+                  className="flex flex-wrap lg:-mb-[40%] xl:-mb-[20%]"
+                  pagination={{
+                    el: '.main_banner_slider.swiper-pagination',
+                    clickable: true,
+                  }}
                 >
-                  {[...Array(6)].map((info, index) => (
+                  {[...Array(4)].map((info, index) => (
                     <SwiperSlide key={index} className="!w-full md:!w-[80%]">
                       <div className="relative">
                         <p className="absolute top-4 left-10 text-lg text-white opacity-80">
                           From <strong>US$254</strong>
                         </p>
                         <img
-                          src="/slider-video-poster.jpg"
+                          src={`/slider-video-poster-${index + 1}.jpg`}
                           alt="Video Poster"
                         />
                         <button
@@ -80,6 +85,7 @@ const Banner = () => {
                       </div>
                     </SwiperSlide>
                   ))}
+                  <div className="main_banner_slider swiper-pagination !bottom-4 !left-[50%] !w-[225px] !translate-x-[-50%] transform text-[#666]" />
                 </Swiper>
               </div>
             </div>

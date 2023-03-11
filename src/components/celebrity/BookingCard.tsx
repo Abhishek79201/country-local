@@ -174,7 +174,7 @@ const BookingCard = () => {
 
   return (
     <Sticky top={15} bottomBoundary=".sticky_bottom_container">
-      <div className="booking-card-wrapper h-full transition-opacity duration-300 ease-in-out">
+      <div className="booking-card-wrapper h-full transition-opacity duration-100">
         <div className="booking-card mb-3 w-full rounded-[20px] border border-[#ebebeb] bg-white p-3 shadow-small xl:p-6">
           <div className="flex flex-wrap justify-between gap-y-3">
             {tabs.map((tab) => (

@@ -15,7 +15,7 @@ const CelebrityFaq = () => {
   const { width } = useViewport();
 
   return (
-    <div className="sticky_bottom_container relative pt-20">
+    <div className="sticky_bottom_container relative md:pt-6">
       <div className="container">
         <div className="lg:max-w-[650px] xl:max-w-[730px]">
           <div className="pb-6 text-center md:pb-12">

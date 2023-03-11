@@ -88,9 +88,9 @@ const PreviewAccordion = () => {
   };
 
   return (
-    <div className="pb-16">
+    <div className="pb-10 md:pb-16">
       <div className="container">
-        <h2 className="pb-3 text-2xl font-bold text-black md:pb-5 md:text-[28px] lg:text-[32px]">
+        <h2 className="mb-3 text-2xl font-bold text-black md:text-3xl lg:mb-10 lg:text-4xl">
           More Reasons...
         </h2>
         <div className="flex">
