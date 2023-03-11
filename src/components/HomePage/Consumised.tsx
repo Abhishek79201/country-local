@@ -51,7 +51,7 @@ const Consumised = () => (
     <div className="flex justify-center">
       <button
         type="button"
-        className=" rounded-[10px] bg-[#E71575] py-[16px] px-[26px] text-center text-[16px] font-semibold  text-[#E71575]  lg:hidden"
+        className=" rounded-[10px] bg-[#E71575] py-[16px] px-[26px] text-center text-[16px] font-semibold  text-[#fff]  lg:hidden"
       >
         + Post a Request
       </button>
