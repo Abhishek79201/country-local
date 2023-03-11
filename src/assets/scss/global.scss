@@ -4,9 +4,17 @@
 :root {
   --x: 0;
 }
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+}
+.cityyy::-webkit-scrollbar {
+  display: none;
+}
+.cityyy {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
 }
 svg {
   max-width: 100%;
@@ -507,7 +515,7 @@ input:checked + .slider:before {
   //   ),
   //   linear-gradient(109.26deg, #6ae8d1 14.08%, rgba(216, 17, 172, 0.5) 62.34%);
   background: linear-gradient(
-    -45deg,
+    -90deg,
     #ac6ad6,
     #9527c8,
     #c864b1,

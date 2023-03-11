@@ -9,9 +9,6 @@ import SnapchatIcon from '../../../public/icons/snapchat-square.svg';
 
 const Footer = () => (
   <div className="footer relative min-h-[740px] w-[full] ">
-    <div className=" absolute -top-[1px] h-4 w-full rounded-bl-[20px] rounded-br-[20px] bg-[#fff] md:h-16 md:rounded-bl-[50px] md:rounded-br-[50px] ">
-      {/* // */}
-    </div>
     <div className="container pb-[250px] pt-4 md:pb-[350px] md:pt-[110px] lg:pb-0">
       <div className="flex flex-wrap justify-between pt-10 pb-2 md:pb-10 lg:px-10">
         <div className="pb-10 lg:w-[30%]">

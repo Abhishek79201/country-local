@@ -1,6 +1,6 @@
 const NewsLetter = () => (
-  <div className="bg-white font-bold ">
-    <div className="relative  flex h-[630px] w-full items-center justify-center bg-[url('../../../public/image15.jpg')]  bg-cover bg-no-repeat md:h-[700px] ">
+  <div className=" footer font-bold">
+    <div className=" relative flex  h-[630px] w-full items-center justify-center rounded-b-[50px] bg-[url('../../../public/image15.jpg')]  bg-cover bg-no-repeat md:h-[700px] ">
       <div className="absolute bottom-[30px] h-[312px] w-[320px] rounded-[40px] bg-[white] md:bottom-auto md:h-[515px] md:w-[528px] lg:right-[60px]">
         <h3 className="purple_gradient_text_deep pt-[36px] pb-[14px] text-center text-[13px] font-medium uppercase leading-[16px] tracking-[0.1em] md:pb-[24px] md:pt-[60px] md:text-[22px] md:leading-[27px]">
           Newsletter

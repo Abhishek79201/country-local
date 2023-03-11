@@ -19,7 +19,7 @@ const Hero = () => (
         <SwiperSlide>
           <img
             className="object-position:left min-h-[740px] w-[full] object-cover lg:h-screen lg:w-screen"
-            src="/list-page-slider.jpg"
+            src="/tribehero.png"
             alt="list-page-slider"
           />
         </SwiperSlide>
@@ -45,11 +45,11 @@ const Hero = () => (
         With Country Locals experiences are always
       </h1>
       <div className="flex flex-wrap items-center justify-center">
-        <div className="m-3 flex flex-col flex-nowrap justify-center gap-2 overflow-hidden rounded-[10px] border border-white bg-white backdrop-blur-xl lg:flex-row">
+        <div className="m-3 flex flex-col flex-nowrap justify-center gap-2 overflow-hidden rounded-[22px] border border-white bg-transparent backdrop-blur-[80px] lg:flex-row">
           <div className="flex">
-            <div className="flex min-w-[45%] overflow-hidden rounded-[10px]">
+            <div className="flex min-w-[45%] overflow-hidden rounded-[22px]">
               <img
-                src="/review-popup-2.jpg"
+                src="/firsthero.jpg"
                 alt="review 1"
                 className="min-w-[100%] object-cover sm:max-w-[128px]"
               />
@@ -64,36 +64,37 @@ const Hero = () => (
             </div>
           </div>
           <div className="flex flex-row-reverse lg:flex-row">
-            <div className="flex min-w-[45%] overflow-hidden rounded-[10px]">
+            <div className="flex min-w-[45%] overflow-hidden rounded-[22px]">
               <img
-                src="/review-popup-2.jpg"
+                src="/secondhero.jpg"
                 alt="review 1"
                 className="min-w-[100%] object-cover sm:max-w-[128px]"
               />
             </div>
             <div className="flex max-w-[450px] flex-col justify-center gap-2 self-center p-5 pb-2 pr-2 md:min-h-[250px] md:pr-5">
               <h3 className="text-[14px] font-bold leading-tight text-[#fff] md:text-[22px]">
-                1 | Alaways private & personal
+                2 | A Guided by local exprtts
               </h3>
               <h4 className="text-[12px] font-thin leading-snug text-[#fff] md:text-[18px]">
-                No strangers,just you. Fully costomize your trip to your needs
+                From historical facts to the most up-to-date health regulations.
               </h4>
             </div>
           </div>
           <div className="flex ">
-            <div className="flex min-w-[45%] overflow-hidden rounded-[10px]">
+            <div className="flex min-w-[45%] overflow-hidden rounded-[22px]">
               <img
-                src="/review-popup-2.jpg"
+                src="/thirdhero.jpg"
                 alt="review 1"
                 className="min-w-[100%] object-cover sm:max-w-[128px]"
               />
             </div>
             <div className="flex max-w-[450px] flex-col justify-center gap-2 self-center p-5 pb-2 pr-2 md:min-h-[250px] md:pr-5">
               <h3 className="text-[14px] font-bold leading-tight text-[#fff] md:text-[22px]">
-                1 | Alaways private & personal
+                3 | Without crowds
               </h3>
               <h4 className="text-[12px] font-thin leading-snug text-[#fff] md:text-[18px]">
-                No strangers,just you. Fully costomize your trip to your needs
+                Experiences designed to take away from the crowds towards
+                authentic local spots.
               </h4>
             </div>
           </div>
