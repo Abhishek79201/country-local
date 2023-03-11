@@ -8,8 +8,8 @@ import 'swiper/css/pagination';
 
 const EastExperiences = () => (
   <div className="relative pb-14">
-    <div className="container my-6">
-      <h3 className=" text-lg font-bold text-black md:text-[20px]">
+    <div className="p-[20px] lg:p-[60px]">
+      <h3 className=" text-[24px] font-bold text-black lg:text-[38px]">
         Get Inspired By
         <span className="purple_gradient_text_deep ">
           Best North East Experiences

@@ -8,7 +8,7 @@ const Consumised = () => (
       <div>
         <button
           type="button"
-          className="hidden rounded-[10px] bg-[#E71575] py-[16px] px-[32px] text-[20px] font-semibold  text-[#E71575]  lg:block"
+          className="hidden rounded-[10px] bg-[#E71575] py-[16px] px-[32px] text-[20px] font-semibold  text-[#fff]  lg:block"
         >
           + Post a Request
         </button>

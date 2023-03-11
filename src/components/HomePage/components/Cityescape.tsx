@@ -1,5 +1,5 @@
 const Cityescape = () => (
-  <div className="flex gap-[22px] overflow-x-auto cityyy">
+  <div className="cityyy flex gap-[22px] overflow-x-auto">
     {[
       ['Florence, Italy'],
       ['Florence, Italy'],
