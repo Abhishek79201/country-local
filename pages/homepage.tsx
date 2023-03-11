@@ -1,14 +1,14 @@
-import Header from '../src/components/header/Header';
 import Camping from '../src/components/HomePage/Camping';
 import Consumised from '../src/components/HomePage/Consumised';
 import DestinationTheme from '../src/components/HomePage/DestinationTheme';
-import East_Experiences from '../src/components/HomePage/East_Experiences';
+import EastExperiences from '../src/components/HomePage/EastExperiences';
 import Hero from '../src/components/HomePage/Hero';
+import NewsLetter from '../src/components/HomePage/NewsLetter';
 import TravelBag from '../src/components/HomePage/TravelBag';
 import Video from '../src/components/HomePage/Video';
 import Voluntour from '../src/components/HomePage/Voluntour';
 
-const HomePage: NextPage = () => (
+const HomePage = () => (
   <>
     <style>
       {`header.mobile_header, .mobile_floating_header {
@@ -17,12 +17,13 @@ const HomePage: NextPage = () => (
     </style>
     <Hero />
     <DestinationTheme />
-    <East_Experiences />
+    <EastExperiences />
     <Camping />
     <Video />
     <Voluntour />
     <Consumised />
     <TravelBag />
+    <NewsLetter />
   </>
 );
 export default HomePage;

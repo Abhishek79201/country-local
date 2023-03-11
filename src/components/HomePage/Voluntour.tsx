@@ -1,22 +1,22 @@
 import Cityescape from './components/Cityescape';
 
 const Voluntour = () => (
-  <div className="lg:p-[60px] p-[20px] font-bold">
+  <div className="p-[20px] font-bold lg:p-[60px]">
     <div className="flex justify-between">
-      <div className="whitespace-pre lg:text-[38px] text-[24px]">
-      Voluntour
+      <div className="whitespace-pre text-[24px] lg:text-[38px]">Voluntour</div>
+      <div>
+        <a className="hidden cursor-pointer text-[24px] text-[#E71575] lg:block">
+          All things to do
+        </a>
       </div>
-    <div>
-        <a className="text-[#E71575] text-[24px]  hidden  lg:block cursor-pointer">All things to do ></a>
     </div>
-    </div>
-    <p className="sm:text-[12px] lg:text-[22px]  font-medium pb-[32px]">Let’s making your trip full of meaningful stories</p>
-  <Cityescape/>
-  <a className="sea text-[#E71575] text-[16px] font-bold pt-[15px] lg:hidden cursor-pointer">See all ></a>
+    <p className="pb-[32px] font-medium sm:text-[12px] lg:text-[22px]">
+      Let’s making your trip full of meaningful stories
+    </p>
+    <Cityescape />
+    <a className="sea cursor-pointer pt-[15px] text-[16px] font-bold text-[#E71575] lg:hidden">
+      See all
+    </a>
   </div>
-
-
-
-   
 );
 export default Voluntour;

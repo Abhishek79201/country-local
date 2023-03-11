@@ -4,6 +4,9 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
+  rules: {
+    'linebreak-style': 0,
+  },
   theme: {
     extend: {
       colors: {

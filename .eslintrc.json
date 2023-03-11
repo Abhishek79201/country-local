@@ -18,6 +18,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "linebreak-style": 0,
     "@typescript-eslint/no-unused-vars": "error",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",

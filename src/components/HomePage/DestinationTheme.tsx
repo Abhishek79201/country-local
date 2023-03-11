@@ -1,14 +1,12 @@
 /* eslint react/jsx-one-expression-per-line: "off" */
 /* eslint react/require-default-props: "off" */
-import { Navigation, FreeMode, Pagination } from 'swiper';
+import { Navigation, FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { PrData } from '../PrData/PrData';
 
-const DestinationTheme = ({ sliderId, title, data }: DestinationProps) => (
+const DestinationTheme = () => (
   <div className="relative ">
     <div className="container my-6">
       <h3 className=" text-lg font-bold text-black md:text-[20px]">
@@ -27,22 +25,25 @@ const DestinationTheme = ({ sliderId, title, data }: DestinationProps) => (
           }}
           className="flex flex-wrap !pr-5 md:!pr-0"
         >
-          {PrData.map((item) => (
-            <SwiperSlide
-              key={item}
-              className="!w-[202px] sm:!w-[33.33%] lg:!w-[20%]"
-            >
+          {[
+            ['Honeymoon', '16+ destinations'],
+            ['Family', '16+ destinations'],
+            ['Friends/Group', '16+ destinations'],
+            ['Solo', '16+ destinations'],
+            ['Adventure', '16+ destinations'],
+            ['Nature', '16+ destinations'],
+            ['Village', '16+ destinations'],
+          ].map(([title, subtitle]) => (
+            <SwiperSlide className="!w-[202px] sm:!w-[33.33%] lg:!w-[20%]">
               <div className="m-3 flex flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px]">
                 <div className=" rounded-[20px] ">
-                  <img src={item.src} alt="review 1" />
+                  <img src="/boat-girl.png" alt="review 1" />
                 </div>
                 <div className=" flex flex-col items-start  justify-center p-5 pr-2 md:pr-5">
                   <h3 className="py-0 text-base font-semibold text-[#222]">
-                    {item.title}
+                    {title}
                   </h3>
-                  <h4 className="mb-4 text-[12px] font-medium">
-                    {item.subtitle}
-                  </h4>
+                  <h4 className="mb-4 text-[12px] font-medium">{subtitle}</h4>
                 </div>
               </div>
             </SwiperSlide>

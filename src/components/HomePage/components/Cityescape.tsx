@@ -1,13 +1,20 @@
-import { CampingData } from '../../PrData/CampingData';
-
 const Cityescape = () => (
   <div className="flex gap-[22px] overflow-auto">
-    {CampingData.map((item) => (
+    {[
+      ['Florence, Italy'],
+      ['Florence, Italy'],
+      ['Florence, Italy'],
+      ['Florence, Italy'],
+      ['Florence, Italy'],
+      ['Florence, Italy'],
+      ['Florence, Italy'],
+    ].map(([title]) => (
       <div className="alll min-w-[246px]">
         <div>
           <img
             className="  h-[181px] w-[246px] rounded-2xl "
             src="/Rectangle 14.jpg"
+            alt="Rectangle"
           />
         </div>
         <div className="flex pt-[18px]">
@@ -15,6 +22,7 @@ const Cityescape = () => (
             <img
               className="  h-[44px] w-[44px] rounded-full"
               src="/Ellipse 2.jpg"
+              alt="Ellipse"
             />
           </div>
           <div className="letter">
@@ -23,9 +31,10 @@ const Cityescape = () => (
                 <img
                   className="  h-[9px] w-[9px] rounded-full "
                   src="/image6.jpg"
+                  alt="image6"
                 />
               </div>
-              <div className="test text-[8px] text-[#808080]">{item.title}</div>
+              <div className="test text-[8px] text-[#808080]">{title}</div>
             </div>
             <div className="star flex">
               <div className="star">
@@ -87,7 +96,7 @@ const Cityescape = () => (
               </div>
             </div>
             <div className="text-[10px]  text-[#222222]">
-              Enjoy Florence with{' '}
+              Enjoy Florence with
               <span className="text-[#E71575]">Olacorno </span>
             </div>
           </div>
