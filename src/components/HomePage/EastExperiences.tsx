@@ -8,13 +8,14 @@ import 'swiper/css/pagination';
 
 const EastExperiences = () => (
   <div className="relative pb-14">
-    <div className="p-[20px] lg:p-[60px]">
+    <div className="px-[20px] lg:px-[60px]">
       <h3 className=" text-[24px] font-bold text-black lg:text-[38px]">
-        Get Inspired By
+        Get Inspired By{' '}
         <span className="purple_gradient_text_deep ">
           Best North East Experiences
         </span>
       </h3>
+
       <div className="relative -mr-5 -ml-2 mt-3 md:-mr-3 md:-ml-3">
         <Swiper
           slidesPerView="auto"
@@ -22,37 +23,52 @@ const EastExperiences = () => (
           freeMode
           modules={[Navigation, FreeMode]}
           navigation={{
-            prevEl: '.available_dates.swiper-button-prev',
-            nextEl: '.available_dates.swiper-button-next',
+            prevEl: '.available_ex.swiper-button-prev',
+            nextEl: '.available_ex.swiper-button-next',
           }}
           className="flex flex-wrap !pr-5 md:!pr-0"
         >
           {[
-            ['Honeymoon', '16+ destinations'],
-            ['Family', '16+ destinations'],
-            ['Friends/Group', '16+ destinations'],
-            ['Solo', '16+ destinations'],
-            ['Adventure', '16+ destinations'],
-            ['Nature', '16+ destinations'],
-            ['Village', '16+ destinations'],
-          ].map(([title, subtitle]) => (
-            <SwiperSlide className="!w-[202px] sm:!w-[33.33%] lg:!w-[20%]">
-              <div className="m-3 flex flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px]">
+            ['Foodies', '/Foodiesex.jpg'],
+            ['Families', '/Familiesex.jpg'],
+            ['History Buffs', '/Historyex.jpg'],
+            ['Foodies', '/Foodiesex.jpg'],
+            ['Families', '/Familiesex.jpg'],
+            ['History Buffs', '/Historyex.jpg'],
+            ['Foodies', '/Foodiesex.jpg'],
+            ['Families', '/Familiesex.jpg'],
+            ['History Buffs', '/Historyex.jpg'],
+            ['Foodies', '/Foodiesex.jpg'],
+            ['Families', '/Familiesex.jpg'],
+            ['History Buffs', '/Historyex.jpg'],
+          ].map(([title, src]) => (
+            <SwiperSlide className="!w-[202px] ">
+              <div className="relative m-3 flex flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px] ">
                 <div className=" rounded-[20px] ">
-                  <img src="/boat-girl.png" alt="review 1" />
+                  <img src={src} alt="review 1" />
+                  <div className="absolute bottom-0 left-0 h-full w-full bg-black opacity-25" />
                 </div>
-                <div className=" flex flex-col items-start  justify-center p-5 pr-2 md:pr-5">
-                  <h3 className="py-0 text-base font-semibold text-[#222]">
+                <h3 className="absolute bottom-[75%] right-[50%] w-full translate-x-1/2 translate-y-1/2 p-2 py-0 text-center text-[12px] font-semibold  text-[#fff]  lg:text-[10px]">
+                  Sorrento for
+                </h3>
+                <div className="absolute bottom-[60%] right-[50%] flex   w-full translate-y-1/2 translate-x-1/2 flex-col items-start  justify-center gap-4 p-5 pr-2 md:pr-5 ">
+                  <h3 className="Kostania	w-full py-0 text-center text-[28px] text-base font-semibold leading-[28px]  text-[#fff] lg:text-[28px]">
                     {title}
                   </h3>
-                  <h4 className="mb-4 text-[12px] font-medium">{subtitle}</h4>
+                </div>
+                <h3 className="absolute bottom-[40%] right-[50%] w-full translate-x-1/2 translate-y-1/2 p-2 py-0 text-center text-[12px] font-semibold  text-[#fff]  lg:text-[10px]">
+                  Home Dinners • Local Delicacies • Food Markets
+                </h3>
+                <div className="absolute bottom-[20%] right-[50%] translate-x-1/2 translate-y-1/2  rounded-[50px] border-2  py-[5px]  px-[20px] text-[#fff]">
+                  Explore
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="available_dates swiper-button-prev !-left-1 !-mt-[14px]  !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
-        <div className="available_dates swiper-button-next !-right-1 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+
+        <div className="available_ex swiper-button-prev !-left-1 !-mt-[14px]  !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
+        <div className="available_ex swiper-button-next !-right-1 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
       </div>
     </div>
   </div>

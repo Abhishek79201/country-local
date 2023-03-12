@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 
 const DestinationTheme = () => (
   <div className="relative ">
-    <div className="p-[20px] lg:p-[60px]">
+    <div className="px-[20px] pt-[20px] lg:px-[60px]">
       <h3 className="text-[24px] font-bold text-black lg:text-[38px]">
         Choose Destination By
         <span className="purple_gradient_text_deep "> Theme</span>
@@ -26,18 +26,18 @@ const DestinationTheme = () => (
           className="flex flex-wrap !pr-5 md:!pr-0"
         >
           {[
-            ['Honeymoon', '16+ destinations'],
-            ['Family', '16+ destinations'],
-            ['Friends/Group', '16+ destinations'],
-            ['Solo', '16+ destinations'],
-            ['Adventure', '16+ destinations'],
-            ['Nature', '16+ destinations'],
-            ['Village', '16+ destinations'],
-          ].map(([title, subtitle]) => (
-            <SwiperSlide className="!w-[202px] sm:!w-[33.33%] lg:!w-[20%]">
+            ['Honeymoon', '16+ destinations', '/HoneymoonTheme.jpg'],
+            ['Family', '16+ destinations', '/FamillyTheme.jpg'],
+            ['Friends/Group', '16+ destinations', '/FriendsGroupTheme.jpg'],
+            ['Solo', '16+ destinations', '/SoloTheme.jpg'],
+            ['Adventure', '16+ destinations', '/AdventureTheme.jpg'],
+            ['Nature', '16+ destinations', '/NatureTheme.jpg'],
+            ['Village', '16+ destinations', '/VillageTheme.jpg'],
+          ].map(([title, subtitle, src]) => (
+            <SwiperSlide className="!w-[202px] ">
               <div className="m-3 flex flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px]">
-                <div className=" rounded-[20px] ">
-                  <img src="/boat-girl.png" alt="review 1" />
+                <div>
+                  <img className=" rounded-[20px] " src={src} alt="review 1" />
                 </div>
                 <div className=" flex flex-col items-start  justify-center p-5 pr-2 md:pr-5">
                   <h3 className="py-0 text-base font-semibold text-[#222]">

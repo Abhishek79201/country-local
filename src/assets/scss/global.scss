@@ -16,6 +16,13 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
 }
+@font-face {
+  font-family: 'Kostania';
+  src: url('/public/fonts/Kostania-Bold.ttf');
+}
+.Kostania {
+  font-family: 'Kostania';
+}
 svg {
   max-width: 100%;
   width: 100%;

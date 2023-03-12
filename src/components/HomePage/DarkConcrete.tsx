@@ -28,8 +28,9 @@ const DarkConcrete = () => (
             </button>
           </div>
         </div>
-        <div className="lg:mt-[44px]">
-          <div className="flex h-[373px] items-center bg-[url('../../../public/top-view.png')] bg-cover bg-no-repeat md:h-[573px]"></div>
+        <div className="relative lg:mt-[44px]">
+          <div className="flex h-[373px] items-center bg-[url('../../../public/top-view.png')] bg-cover bg-no-repeat md:h-[573px]" />
+          <div className="absolute bottom-0 left-0" />
         </div>
       </div>
     </div>
