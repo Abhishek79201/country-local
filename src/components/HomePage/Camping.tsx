@@ -5,10 +5,10 @@ const Camping = () => (
     <div className="flex justify-between">
       <div className=" text-[24px] lg:text-[38px]">
         Local
-        <span className=" purple_gradient_text_deep">Homestay and Camping</span>
+        <span className="purple_gradient_text_deep"> Homestay and Camping</span>
       </div>
       <div>
-        <a className="hidden cursor-pointer  text-[24px]  text-[#E71575] lg:block">
+        <a className="hidden cursor-pointer items-center text-[24px]  text-[#E71575] lg:block">
           All things to do
         </a>
       </div>

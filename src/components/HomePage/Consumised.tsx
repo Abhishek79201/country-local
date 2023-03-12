@@ -3,7 +3,7 @@ const Consumised = () => (
     <div className="flex justify-between">
       <div className=" text-[24px] lg:text-[38px]">
         Looking For
-        <span className=" purple_gradient_text_deep">Costumised Packages?</span>
+        <span className="purple_gradient_text_deep"> Costumised Packages?</span>
       </div>
       <div>
         <button
@@ -20,19 +20,32 @@ const Consumised = () => (
           [
             'Personalise Your Package',
             'Select your preferred package or let us know of your requirements through chat options',
+            '/Group2.png',
           ],
           [
             'Get Multiple Quotes',
             'Get multiple free quotes from verified travel experts',
+            '/Group2.png',
           ],
           [
             'Request Changes, if any',
             'Chat or Speak to the experts to understand itenerary. Request for further customisations',
+            '/Group3.png',
           ],
-          ['Book the Best Deal', 'Book your hassle free holiday.'],
-        ].map(([title, subtitle]) => (
+          [
+            'Book the Best Deal',
+            'Book your hassle free holiday.',
+            '/Group4.png',
+          ],
+        ].map(([title, subtitle, src]) => (
           <div className="relative h-[115px] rounded-2xl bg-[white] md:h-[231px]">
-            <div className="absolute left-2.5 top-[28px] -mt-4  grid h-[93px] w-[78px] place-items-center rounded-2xl bg-[#F8F8F8] md:top-[38px] md:left-6 md:h-[187px] md:w-[158px]" />
+            <div className="absolute left-2.5 top-[28px] -mt-4  grid h-[93px] w-[78px] place-items-center rounded-2xl bg-[#F8F8F8] md:top-[38px] md:left-6 md:h-[187px] md:w-[158px]">
+              <img
+                src={src}
+                alt="review 1"
+                className="absolute bottom-0 max-w-[110%] md:max-w-fit"
+              />
+            </div>
             <div className="absolute left-[93px] p-4 md:left-[200px]  ">
               <div
                 className=" blue-gray text-blue-gray-600 pb-[8px] text-[14px] font-extrabold  md:pb-[16px] md:text-[28px]"

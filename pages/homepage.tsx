@@ -1,5 +1,6 @@
 import Camping from '../src/components/HomePage/Camping';
 import Consumised from '../src/components/HomePage/Consumised';
+import DarkConcrete from '../src/components/HomePage/DarkConcrete';
 import DestinationTheme from '../src/components/HomePage/DestinationTheme';
 import EastExperiences from '../src/components/HomePage/EastExperiences';
 import Hero from '../src/components/HomePage/Hero';
@@ -20,6 +21,7 @@ const HomePage = () => (
     <EastExperiences />
     <Camping />
     <Video />
+    <DarkConcrete />
     <Voluntour />
     <Consumised />
     <TravelBag />
