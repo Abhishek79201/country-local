@@ -36,7 +36,7 @@ const NewsLetter = () => (
           By submitting, you give Country Locals permission to store and process
           your personal information so we can provide you with the content
           you’ve requested. For more information, please see our
-          <a className="text-[#E71575]">Privacy Policy.</a>
+          <a className="text-[#E71575]"> Privacy Policy.</a>
         </p>
       </div>
     </div>

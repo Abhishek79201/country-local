@@ -44,8 +44,8 @@ const Hero = () => (
       <h1 className="max-w-[670px] font-bold text-[#fff] sm:text-left md:pb-6 md:text-[20px] md:leading-snug lg:text-[38px]">
         With Country Locals experiences are always
       </h1>
-      <div className="flex flex-wrap items-center justify-center">
-        <div className="m-3 flex flex-col flex-nowrap justify-center gap-2 overflow-hidden rounded-[22px] border border-white bg-transparent backdrop-blur-[80px] lg:flex-row">
+      <div className="flex flex-wrap items-center justify-center backdrop-blur-[80px]">
+        <div className="m-3 flex flex-col flex-nowrap justify-center gap-2 overflow-hidden rounded-[22px] border border-white bg-transparent lg:flex-row">
           <div className="flex">
             <div className="flex min-w-[45%] overflow-hidden rounded-[22px]">
               <img

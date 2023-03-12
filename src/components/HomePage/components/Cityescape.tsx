@@ -97,7 +97,7 @@ const Cityescape = () => (
             </div>
             <div className="text-[10px]  text-[#222222]">
               Enjoy Florence with
-              <span className="text-[#E71575]">Olacorno </span>
+              <span className="text-[#E71575]"> Olacorno </span>
             </div>
           </div>
         </div>
@@ -105,10 +105,13 @@ const Cityescape = () => (
           <div className="first pt-3 text-sm font-bold text-[#222222]">
             City Escape: Tuscany Day Trip
           </div>
-          <div className="full flex pt-[11px]">
-            <div className="first whitespace-pre  pr-[23px] text-[10px] font-bold">
+          <div className="full flex items-center pt-[11px]">
+            <div className="first whitespace-pre  pr-[7px] text-[10px] font-bold">
               From $2,420/
               <span className="font-medium">person</span>
+            </div>
+            <div className="pr-[7px]">
+              <img src="/clock.png" alt="clock" />
             </div>
             <div className=" whitespace-pre text-[8px] font-bold">
               7 hours • Day Trip

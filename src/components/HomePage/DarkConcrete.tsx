@@ -1,7 +1,7 @@
 const DarkConcrete = () => (
   <div className="bg-white font-bold">
     <div className="h-[800px] w-full items-center rounded-[33px] bg-[url('../../../public/BG.jpg')] bg-cover bg-no-repeat md:h-[654px]">
-      <div className="grid h-full grid-cols-1 gap-2 md:grid-cols-2">
+      <div className="grid h-full grid-cols-1 gap-2 lg:grid-cols-2">
         <div className="flex flex-col px-[10px] pt-[133px] md:pl-[60px] md:pt-[111px]">
           <div className="flex justify-center md:justify-start">
             <button
@@ -28,8 +28,8 @@ const DarkConcrete = () => (
             </button>
           </div>
         </div>
-        <div className="">
-          <div className="flex h-[573px] items-center bg-[url('../../../public/top-view.png')] bg-cover bg-no-repeat"></div>
+        <div className="lg:mt-[44px]">
+          <div className="flex h-[373px] items-center bg-[url('../../../public/top-view.png')] bg-cover bg-no-repeat md:h-[573px]"></div>
         </div>
       </div>
     </div>
