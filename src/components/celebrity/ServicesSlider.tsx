@@ -96,18 +96,18 @@ const PersonSlider = () => (
                         <div className="svg_icon mr-1 w-[14px]">
                           <ClockIcon />
                         </div>
-                        <span className="text-[12x] font-bold">
+                        <span className="md:text-[12x] text-[11px] font-bold">
                           2 days left to join
                         </span>
                       </div>
-                      <div className="flex items-center">
-                        <div className="svg_icon mr-1 w-3 text-[#FFCE31]">
+                      <div className="flex items-center text-[11px] md:text-[10px]">
+                        <div className="svg_icon mr-1 w-[14px] text-[#FFCE31] md:w-3">
                           <StarIcon />
                         </div>
-                        <span className="mr-1 text-[10px] font-bold text-[#FFCE31]">
+                        <span className="mr-1 font-bold text-[#FFCE31]">
                           4.9
                         </span>
-                        <div className="text-[10px] opacity-50">(42)</div>
+                        <div className="opacity-50">(42)</div>
                       </div>
                     </div>
 

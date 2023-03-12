@@ -1,23 +1,21 @@
 /* eslint react/jsx-one-expression-per-line: "off" */
 /* eslint jsx-a11y/label-has-associated-control: "off" */
 /* eslint implicit-arrow-linebreak: "off" */
-import { useState, useContext } from 'react';
 import { Dialog } from '@headlessui/react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { formatDayMonth } from '../../../utilities/helpers';
-import { OverflowContext } from '../../../context/overflowContext';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useContext, useState } from 'react';
 import { MobileBookingContext } from '../../../context/mobileBookingContext';
+import { OverflowContext } from '../../../context/overflowContext';
+import { formatDayMonth } from '../../../utilities/helpers';
 
-import BookInfoPopups from './BookInfoPopup';
 import ReportPopup from '../../common/popups/report-popups/ReportPopup';
+import BookInfoPopups from './BookInfoPopup';
 import BookingCalendarMobile from './BookingCalendarMobile';
 import GuestsPopoverMobile from './GuestsPopoverMobile';
 import OtherServicesPopover from './OtherServicesPopover';
 import PersonalizeExperiencePopover from './PersonalizeExpPopover';
 import RequestToBookPopover from './RequestToBookPopover';
 
-import StarIcon from '../../../../public/icons/star.svg';
-import CloseIcon from '../../../../public/icons/xmark.svg';
 import CalendarEditIcon from '../../../../public/icons/calendar-edit.svg';
 import CalendarIcon from '../../../../public/icons/calendar-tick.svg';
 import VoiceIcon from '../../../../public/icons/call-calling.svg';
@@ -32,6 +30,7 @@ import TagIcon from '../../../../public/icons/tag-2.svg';
 import UndoIcon from '../../../../public/icons/undo.svg';
 import UserIcon from '../../../../public/icons/user-outline.svg';
 import VideoIcon from '../../../../public/icons/video.svg';
+import CloseIcon from '../../../../public/icons/xmark.svg';
 import RequestToBookTimePopover from './RequestToBookTimePopover';
 
 const BookingCardMobile = () => {
@@ -181,17 +180,18 @@ const BookingCardMobile = () => {
     <>
       <div className="fixed bottom-0 left-0 z-[20] w-full bg-white bg-opacity-20 backdrop-blur-md">
         <div className="container">
-          <div className="flex items-center justify-between py-3 text-lg text-white">
+          <div className="flex items-center justify-between py-3 text-lg">
             <div>
-              <div className="font-semibold">
-                <span className="text-sm font-medium">From</span> $458
-              </div>
-              <div className="flex items-center">
-                <div className="svg_icon mr-1 w-[13px] shrink-0">
-                  <StarIcon />
-                </div>
-                <span className="mr-2">4.6</span>
-              </div>
+              <div className="font-semibold leading-none">From $458</div>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowMoreServices(true);
+                }}
+                className="text-sm leading-none underline"
+              >
+                Show all gigs
+              </button>
             </div>
             <button
               type="button"
@@ -201,7 +201,7 @@ const BookingCardMobile = () => {
               }}
               className="purple_gradient_bg_light rounded-lg py-[10px] px-7 text-sm font-semibold text-white"
             >
-              Reserve
+              Book Now
             </button>
           </div>
         </div>
@@ -551,13 +551,6 @@ const BookingCardMobile = () => {
                 <div className="flex items-center justify-between border-t border-t-[#EAEAEA] px-5 py-3">
                   <button
                     type="button"
-                    className="purple_gradient_bg_light w-[48%] rounded-lg py-[10px] px-4 text-sm font-semibold text-white transition duration-300"
-                    onClick={() => setOpenRequestToBook(true)}
-                  >
-                    Book Now
-                  </button>
-                  <button
-                    type="button"
                     onClick={() => {
                       setShowMoreServices(true);
                     }}
@@ -565,14 +558,14 @@ const BookingCardMobile = () => {
                   >
                     All gigs
                   </button>
+                  <button
+                    type="button"
+                    className="purple_gradient_bg_light w-[48%] rounded-lg py-[10px] px-4 text-sm font-semibold text-white transition duration-300"
+                    onClick={() => setOpenRequestToBook(true)}
+                  >
+                    Book Now
+                  </button>
                 </div>
-
-                <OtherServicesPopover
-                  status={showMoreServices}
-                  onClose={() => {
-                    setShowMoreServices(false);
-                  }}
-                />
 
                 <RequestToBookPopover
                   status={openRequestToBook}
@@ -630,6 +623,12 @@ const BookingCardMobile = () => {
           </Dialog>
         )}
       </AnimatePresence>
+      <OtherServicesPopover
+        status={showMoreServices}
+        onClose={() => {
+          setShowMoreServices(false);
+        }}
+      />
     </>
   );
 };
