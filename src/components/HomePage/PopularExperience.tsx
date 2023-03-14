@@ -41,7 +41,7 @@ const PopularExperience = () => (
                   <div className="absolute bottom-[15px] left-0 h-[277px] w-full rounded-[20px] bg-black opacity-25" />
                 </div>
                 <div className="absolute left-[25px] top-[20px] flex flex-col items-start">
-                  <div className="test text-[8px] font-bold text-[#fff]	">
+                  <div className="test text-[8px] font-bold text-[#fff]">
                     FLORENCE
                   </div>
                   <div className="flex items-center ">

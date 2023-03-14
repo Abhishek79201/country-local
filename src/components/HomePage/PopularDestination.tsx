@@ -73,8 +73,6 @@ const PopularDestination = () => (
                     </div>
                   </div>
                 </div>
-
-              
               </div>
             </SwiperSlide>
           ))}
