@@ -25,7 +25,7 @@ const NewsLetter = () => (
           />
 
           <button
-            className="mb-[12px] flex h-[41px] w-full appearance-none items-center justify-center rounded-[10px] bg-[black] py-[12px] px-[18px] text-[12px] font-medium leading-[24px] text-white focus:border-gray-500 focus:bg-black  focus:outline-none md:mb-[21px]  md:h-[68px]  md:rounded-[18px]   md:py-[22px] md:px-[30px]  md:text-[20px] md:leading-[24px]"
+            className="mb-[12px] flex h-[41px] w-full appearance-none items-center justify-center rounded-[10px] border-gray-200 bg-[black] py-[12px] px-[18px] text-[12px] font-medium leading-[24px] text-white duration-300  hover:bg-[#F2F2F2] hover:text-black  focus:border-gray-500  focus:bg-black   focus:outline-none md:mb-[21px]  md:h-[68px] md:rounded-[18px] md:py-[22px] md:px-[30px] md:text-[20px] md:leading-[24px]"
             id="grid-last-name"
             type="submit"
           >

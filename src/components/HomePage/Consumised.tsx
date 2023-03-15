@@ -8,7 +8,7 @@ const Consumised = () => (
       <div>
         <button
           type="button"
-          className="hidden rounded-[10px] bg-[#E71575] py-[16px] px-[32px] text-[20px] font-semibold  text-[#fff]  lg:block"
+          className="hidden rounded-[10px] bg-[#E71575] py-[16px] px-[32px] text-[20px] font-semibold text-[#fff] duration-300  hover:bg-[#a96ad8]  lg:block"
         >
           + Post a Request
         </button>
@@ -39,11 +39,14 @@ const Consumised = () => (
           ],
         ].map(([title, subtitle, src]) => (
           <div className="relative h-[115px] rounded-2xl bg-[white] md:h-[231px]">
-            <div className="absolute left-2.5 top-[28px] -mt-4  grid h-[93px] w-[78px] place-items-center rounded-2xl bg-[#F8F8F8] md:top-[38px] md:left-6 md:h-[187px] md:w-[158px]">
+            <div
+              className="absolute left-2.5 top-[28px] -mt-4  grid h-[93px] w-[78px] place-items-center  rounded-2xl bg-[#F8F8F8] after:duration-300 hover:after:scale-110 md:top-[38px] 
+ md:left-6 md:h-[187px] md:w-[158px]"
+            >
               <img
                 src={src}
                 alt="review 1"
-                className="absolute bottom-0 max-w-[110%] md:max-w-fit"
+                className="absolute bottom-0 max-w-[110%] cursor-pointer duration-300 hover:scale-105 md:max-w-fit"
               />
             </div>
             <div className="absolute left-[93px] p-4 md:left-[200px]  ">
@@ -64,7 +67,7 @@ const Consumised = () => (
     <div className="flex justify-center">
       <button
         type="button"
-        className=" rounded-[10px] bg-[#E71575] py-[16px] px-[26px] text-center text-[16px] font-semibold  text-[#fff]  lg:hidden"
+        className="rounded-[10px]  bg-[#E71575] py-[16px] px-[26px] text-center text-[16px] font-semibold text-[#fff] duration-300  hover:bg-[#a96ad8]  lg:hidden"
       >
         + Post a Request
       </button>

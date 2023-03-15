@@ -44,8 +44,12 @@ const EastExperiences = () => (
           ].map(([title, src]) => (
             <SwiperSlide className="!w-[202px]">
               <div className="relative m-3 flex flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px] ">
-                <div className=" rounded-[20px] ">
-                  <img src={src} alt="review 1" />
+                <div className=" relative overflow-hidden rounded-[20px] after:duration-300 hover:after:scale-110 ">
+                  <img
+                    src={src}
+                    alt="review 1"
+                    className="cursor-pointer duration-300 hover:scale-105"
+                  />
                   <div className="absolute bottom-0 left-0 h-full w-full bg-black opacity-25" />
                 </div>
                 <h3 className="absolute bottom-[75%] right-[50%] w-full translate-x-1/2 translate-y-1/2 p-2 py-0 text-center text-[12px] font-semibold  text-[#fff]  lg:text-[10px]">

@@ -23,9 +23,9 @@ const Cityescape = () => (
     ].map(([title]) => (
       <SwiperSlide className="!w-[246px]">
         <div className="m-3 flex flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px] ">
-          <div>
+          <div className="relative overflow-hidden after:duration-300 hover:after:scale-110">
             <img
-              className="  h-[181px] w-[246px] rounded-2xl "
+              className="  h-[181px] w-[246px] cursor-pointer rounded-2xl duration-300 hover:scale-105 "
               src="/Rectangle 14.jpg"
               alt="Rectangle"
             />

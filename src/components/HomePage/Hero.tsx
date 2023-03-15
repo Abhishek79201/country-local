@@ -47,11 +47,11 @@ const Hero = () => (
       <div className="flex flex-wrap items-center justify-center backdrop-blur-[80px]">
         <div className="m-3 flex flex-col flex-nowrap justify-center gap-2 overflow-hidden rounded-[22px] border border-white bg-transparent lg:flex-row">
           <div className="flex">
-            <div className="flex min-w-[45%] overflow-hidden rounded-[22px]">
+            <div className="relative flex  min-w-[45%]  overflow-hidden rounded-[22px] after:duration-300 hover:after:scale-110">
               <img
                 src="/firsthero.jpg"
                 alt="review 1"
-                className="min-w-[100%] object-cover sm:max-w-[128px]"
+                className="min-w-[100%] cursor-pointer object-cover duration-300 hover:scale-105 sm:max-w-[128px]"
               />
             </div>
             <div className="flex max-w-[450px] flex-col justify-center gap-2 self-center p-5 pb-2 pr-2  md:min-h-[250px] md:pr-5">
@@ -64,11 +64,11 @@ const Hero = () => (
             </div>
           </div>
           <div className="flex flex-row-reverse lg:flex-row">
-            <div className="flex min-w-[45%] overflow-hidden rounded-[22px]">
+            <div className="relative flex  min-w-[45%]  overflow-hidden rounded-[22px] after:duration-300 hover:after:scale-110">
               <img
                 src="/secondhero.jpg"
                 alt="review 1"
-                className="min-w-[100%] object-cover sm:max-w-[128px]"
+                className="min-w-[100%] cursor-pointer object-cover duration-300 hover:scale-105 sm:max-w-[128px]"
               />
             </div>
             <div className="flex max-w-[450px] flex-col justify-center gap-2 self-center p-5 pb-2 pr-2 md:min-h-[250px] md:pr-5">
@@ -81,11 +81,11 @@ const Hero = () => (
             </div>
           </div>
           <div className="flex ">
-            <div className="flex min-w-[45%] overflow-hidden rounded-[22px]">
+            <div className="relative flex  min-w-[45%]  overflow-hidden rounded-[22px] after:duration-300 hover:after:scale-110">
               <img
                 src="/thirdhero.jpg"
                 alt="review 1"
-                className="min-w-[100%] object-cover sm:max-w-[128px]"
+                className="min-w-[100%] cursor-pointer object-cover duration-300 hover:scale-105 sm:max-w-[128px]"
               />
             </div>
             <div className="flex max-w-[450px] flex-col justify-center gap-2 self-center p-5 pb-2 pr-2 md:min-h-[250px] md:pr-5">

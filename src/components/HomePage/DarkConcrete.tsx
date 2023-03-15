@@ -22,7 +22,7 @@ const DarkConcrete = () => (
           <div className="flex justify-center md:justify-start">
             <button
               type="button"
-              className="md:text-[16px]font-medium rounded-[7px] bg-gradient-to-r from-[#E71575] to-[#6F01F0] px-[27px] py-[13px] text-[14px] leading-[21px] text-[white] md:px-[58px]"
+              className="md:text-[16px]font-medium rounded-[7px] bg-gradient-to-r from-[#E71575] to-[#6F01F0] px-[27px] py-[13px] text-[14px] leading-[21px] text-[white] duration-300 hover:bg-[#a96ad8]  md:px-[58px]"
             >
               sea all online experiences
             </button>

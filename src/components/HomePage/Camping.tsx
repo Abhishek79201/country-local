@@ -8,7 +8,7 @@ const Camping = () => (
         <span className="purple_gradient_text_deep"> Homestay and Camping</span>
       </div>
       <div>
-        <a className="hidden cursor-pointer items-center text-[24px]  text-[#E71575] lg:block">
+        <a className="hidden cursor-pointer items-center text-[24px]  text-[#E71575] duration-300 hover:text-[#a96ad8] lg:block">
           All things to do
         </a>
       </div>
@@ -20,7 +20,7 @@ const Camping = () => (
       learning new skills and wisdom from farmers and craftsmen.
     </p>
     <Cityescape />
-    <div className="sea cursor-pointer pt-[15px] text-[16px] font-bold text-[#E71575] lg:hidden">
+    <div className="sea cursor-pointer pt-[15px] text-[16px] font-bold text-[#E71575] duration-300 hover:text-[#a96ad8] lg:hidden">
       See all
     </div>
   </div>

@@ -43,8 +43,12 @@ const ExploreWithLocal = () => (
           ].map(([title, src]) => (
             <SwiperSlide className="!w-[202px] ">
               <div className="m-3 flex flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px] shadow">
-                <div>
-                  <img src={src} alt="review 1" />
+                <div className="relative overflow-hidden after:duration-300 hover:after:scale-110">
+                  <img
+                    src={src}
+                    alt="review 1"
+                    className="cursor-pointer duration-300 hover:scale-105"
+                  />
                   <div className=" flex flex-col items-start  justify-center p-5 pr-2 md:pr-5">
                     <h3 className="py-0 text-base font-semibold text-[#222]">
                       {title}
