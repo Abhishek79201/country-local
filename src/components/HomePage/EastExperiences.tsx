@@ -63,7 +63,7 @@ const EastExperiences = () => (
                 <h3 className="absolute bottom-[40%] right-[50%] w-full translate-x-1/2 translate-y-1/2 p-2 py-0 text-center text-[12px] font-semibold  text-[#fff]  lg:text-[10px]">
                   Home Dinners • Local Delicacies • Food Markets
                 </h3>
-                <div className="absolute bottom-[20%] right-[50%] translate-x-1/2 translate-y-1/2  rounded-[50px] border-2  py-[5px]  px-[20px] text-[#fff]">
+                <div className="absolute bottom-[20%] right-[50%] translate-x-1/2 translate-y-1/2  rounded-[50px] border-2  py-[5px]  px-[20px] text-[#fff] duration-300 hover:bg-[#E71575] ">
                   Explore
                 </div>
               </div>

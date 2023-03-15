@@ -35,7 +35,7 @@ const PopularExperience = () => (
             ['/PoppularExperiences.jpg'],
           ].map(([src]) => (
             <SwiperSlide className="!h-[277px] !w-[425px] rounded-[20px]">
-              <div className="relative m-3 flex !h-[277px]  flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px] rounded-[20px]">
+              <div className="relative m-3 flex !h-[277px]  flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[20px]">
                 <div>
                   <img className=" rounded-[20px] " src={src} alt="review 1" />
                   <div className="absolute bottom-[15px] left-0 h-[277px] w-full rounded-[20px] bg-black opacity-25" />
@@ -125,7 +125,7 @@ const PopularExperience = () => (
                       {' '}
                       Choose one of our 9 local guides
                     </h3>
-                    <div className="absolute bottom-[-100%] right-[20%] w-[100px]  translate-y-1/2 translate-x-1/2  rounded-[50px] border-2 bg-gray-500/25 py-[5px]  px-[20px] text-[#fff]">
+                    <div className="absolute bottom-[-100%] right-[20%] w-[100px]  translate-y-1/2 translate-x-1/2  rounded-[50px] border-2 bg-gray-500/25 py-[5px]  px-[20px] text-[#fff] duration-300 hover:bg-[#E71575]">
                       Explore
                     </div>
                   </div>

@@ -67,12 +67,11 @@ const PopularDestination = () => (
                       />
                     </div>
                     <h3 className=" absolute bottom-[-100%] left-[10%] w-[150px]  translate-y-1/2 translate-x-1/2 py-0 text-left text-[12px]  font-semibold  text-[#fff] lg:text-[12px]">
-                      {' '}
                       3+ tours and activities
                       <br />
                       Connect with 4+ locals
                     </h3>
-                    <div className="absolute bottom-[-100%] right-[20%] translate-y-1/2 translate-x-1/2 rounded-[50px]  border-2 py-[5px] px-[20px] text-[#fff]">
+                    <div className="absolute bottom-[-100%] right-[20%] translate-y-1/2 translate-x-1/2 rounded-[50px]  border-2 py-[5px] px-[20px] text-[#fff] duration-300 hover:bg-[#E71575]">
                       Explore
                     </div>
                   </div>
