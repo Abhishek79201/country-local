@@ -1,9 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { animationWrapper, fadeInUp } from '../../utilities/animations';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -56,23 +54,11 @@ const DeliverySlider = () => {
   ];
 
   return (
-    <div className="relative pt-10 md:pt-14 lg:pt-20">
-      <motion.div
-        variants={animationWrapper}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="mx-auto max-w-[1500px] px-2"
-      >
-        <motion.h2
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="pb-7 text-center text-2xl font-bold leading-tight text-black md:text-[28px] lg:text-[36px]"
-        >
+    <div className="relative pt-2 md:pt-14 lg:pt-20">
+      <div className="mx-auto max-w-[1500px] px-2">
+        <h2 className="pb-7 text-center text-2xl font-bold leading-tight text-black md:text-[28px] lg:text-[36px]">
           BY THE END, YOU’LL HAVE 3 RELEASE READY SONGS
-        </motion.h2>
+        </h2>
 
         <div>
           <Swiper
@@ -112,6 +98,7 @@ const DeliverySlider = () => {
                       src={`/${item.imgUrl}`}
                       width={165 * 2}
                       height={180 * 2}
+                      className="transition-all duration-1000 ease-in-out hover:scale-110"
                     />
                   </div>
                 </div>
@@ -142,7 +129,7 @@ const DeliverySlider = () => {
             <div className="image_gallery swiper-button-next !relative !top-0 !bottom-0 !-right-0 !mt-0 !h-[30px] !w-[30px] shrink-0 rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-[10px]" />
           </div>
         </div>
-      </motion.div>
+      </div>
       <div className="mt-10 text-center">
         <Link href="#">
           <a className="focus_green mx-auto flex h-[44px] w-[160px] items-center justify-center rounded-lg bg-black p-1 text-[13px] font-bold text-white transition-shadow hover:shadow-lg">

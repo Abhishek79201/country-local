@@ -1,29 +1,30 @@
 /* eslint react/jsx-one-expression-per-line: "off" */
-import { useContext, useState } from 'react';
 import { Dialog } from '@headlessui/react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useContext, useState } from 'react';
 import { OverflowContext } from '../../../context/overflowContext';
-import { formatDate } from '../../../utilities/helpers';
 import useViewport from '../../../hooks/useViewport';
+import { formatDayMonth } from '../../../utilities/helpers';
 
-import RequestToBookCalenderPopover from './RequestToBookCalenderPopover';
-import RequestToBookTimePopover from './RequestToBookTimePopover';
 import GuestsPopover from './GuestsPopover';
 import GuestsPopoverMobile from './GuestsPopoverMobile';
+import RequestToBookCalenderPopover from './RequestToBookCalenderPopover';
+import RequestToBookTimePopover from './RequestToBookTimePopover';
 
-import CloseIcon from '../../../../public/icons/xmark.svg';
 import CalendarIcon from '../../../../public/icons/calendar.svg';
+import ArrowDownIcon from '../../../../public/icons/chevron-right.svg';
 import ClockIcon from '../../../../public/icons/clock-1.svg';
 import UserIcon from '../../../../public/icons/user-outline.svg';
-import ArrowDownIcon from '../../../../public/icons/chevron-right.svg';
+import CloseIcon from '../../../../public/icons/xmark.svg';
 
 interface RequestToBookPopoverTypes {
   status: boolean;
   onClose: () => void;
-  date: Date | null;
+  startDate: Date | null;
+  endDate: Date | null;
+  onDateChange: (dates: [Date: Date | null, Date: Date | null]) => void;
   time: string | null;
-  onDateChange: (date: Date | null) => void;
   onTimeChange: (time: string) => void;
   guests: { adults: number; children: number; infants: number };
   onGuestsChange: (type: string, count: number) => void;
@@ -32,9 +33,10 @@ interface RequestToBookPopoverTypes {
 const RequestToBookPopover = ({
   status,
   onClose,
-  date,
-  time,
+  startDate,
+  endDate,
   onDateChange,
+  time,
   onTimeChange,
   guests,
   onGuestsChange,
@@ -138,12 +140,12 @@ const RequestToBookPopover = ({
                           <br />
                           Let’s Personalize your experience
                         </p>
-                        <button
+                        {/* <button
                           type="button"
                           className="text-left font-bold text-pink_primary hover:text-purple-700"
                         >
                           Or just ask me a question &gt;
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                     <div className="pt-5 pb-4">
@@ -159,7 +161,8 @@ const RequestToBookPopover = ({
                           <span className="svg_icon absolute top-3 left-3 flex w-4 text-gray-500 md:top-[11px]">
                             <CalendarIcon />
                           </span>
-                          {formatDate(date)}
+                          {startDate ? formatDayMonth(startDate) : 'Date'}
+                          {endDate && ` - ${formatDayMonth(endDate)}`}
                           <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
                             <ArrowDownIcon />
                           </span>
@@ -174,7 +177,7 @@ const RequestToBookPopover = ({
                           <span className="svg_icon absolute top-3 left-3 flex w-4 text-transparent md:top-[11px]">
                             <ClockIcon />
                           </span>
-                          {time}
+                          {time || '9:00 AM'}
                           <span className="svg_icon absolute top-[14px] right-3 flex w-4 rotate-90 transform text-gray-500 md:top-[11px]">
                             <ArrowDownIcon />
                           </span>
@@ -202,7 +205,7 @@ const RequestToBookPopover = ({
                         </button>
                         {showGuestsPicker &&
                           (width > 1063 ? (
-                            <div className="absolute -top-5 w-full">
+                            <div className="absolute top-12 w-full rounded-lg border-2 border-[#E8E8E8] bg-white px-5 pb-5">
                               <GuestsPopover
                                 guests={guests}
                                 onChange={(type: string, count: number) => {
@@ -244,7 +247,7 @@ const RequestToBookPopover = ({
                       />
                       <button
                         type="submit"
-                        className="purple_gradient_bg mt-4 w-full rounded-full px-3 py-3 font-bold text-white"
+                        className="purple_gradient_bg_light mt-4 w-full rounded-full px-3 py-3 font-bold text-white"
                       >
                         Book Now
                       </button>
@@ -259,7 +262,8 @@ const RequestToBookPopover = ({
       <RequestToBookCalenderPopover
         status={showDatePicker}
         onClose={() => setShowDatePicker(false)}
-        date={date}
+        startDate={startDate}
+        endDate={endDate}
         onDateChange={onDateChange}
       />
 

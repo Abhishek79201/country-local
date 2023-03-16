@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { Dialog } from '@headlessui/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import DatePicker from 'react-datepicker';
-import { formatDate } from '../../../utilities/helpers';
+import { formatDayMonth } from '../../../utilities/helpers';
 import { OverflowContext } from '../../../context/overflowContext';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -18,10 +18,7 @@ interface BookingCalendarMobileTypes {
   onClose: () => void;
   startDate: Date | null;
   endDate: Date | null;
-  clickedDate: string;
-  onStartDateChange: (date: Date | null) => void;
-  onEndDateChange: (date: Date | null) => void;
-  onClickedDateChange: (type: string) => void;
+  onDateChange: (dates: [Date: Date, Date: Date]) => void;
 }
 
 const BookingCalendarMobile = ({
@@ -29,10 +26,7 @@ const BookingCalendarMobile = ({
   onClose,
   startDate,
   endDate,
-  clickedDate,
-  onStartDateChange,
-  onEndDateChange,
-  onClickedDateChange,
+  onDateChange,
 }: BookingCalendarMobileTypes) => {
   const { setGlobalOverflow } = useContext(OverflowContext);
 
@@ -102,7 +96,7 @@ const BookingCalendarMobile = ({
                   </div>
                 </button>
                 <h4 className="text-center text-lg font-bold text-black">
-                  Check In - Check Out
+                  Date
                 </h4>
               </div>
               <div
@@ -114,50 +108,29 @@ const BookingCalendarMobile = ({
                 <div className="rounded-2xl bg-white">
                   <div className="flex justify-between">
                     <div className="w-full">
-                      <h4 className="text-lg font-semibold">32 nights</h4>
-                      <p className="text-[#808080]">
-                        {formatDate(startDate)} - {formatDate(endDate)}
-                      </p>
+                      {startDate ? formatDayMonth(startDate) : 'Date'}
+                      {endDate && ` - ${formatDayMonth(endDate)}`}
                     </div>
                   </div>
-                  <div className="booking_calendar mt-8 mb-4">
-                    {clickedDate === 'start' && (
-                      <DatePicker
-                        selected={startDate}
-                        onChange={(date) => {
-                          onStartDateChange(date);
-                          onClickedDateChange('end');
-                        }}
-                        selectsStart
-                        startDate={startDate}
-                        endDate={endDate}
-                        minDate={new Date()}
-                        monthsShown={4}
-                        inline
-                      />
-                    )}
-                    {clickedDate === 'end' && (
-                      <DatePicker
-                        selected={endDate}
-                        onChange={(date) => {
-                          onEndDateChange(date);
-                          onClose();
-                        }}
-                        selectsEnd
-                        startDate={startDate}
-                        endDate={endDate}
-                        minDate={startDate}
-                        monthsShown={4}
-                        inline
-                      />
-                    )}
+                  <div className="booking_calendar mt-5 mb-4">
+                    <DatePicker
+                      selected={startDate}
+                      onChange={onDateChange}
+                      startDate={startDate}
+                      endDate={endDate}
+                      minDate={new Date()}
+                      monthsShown={2}
+                      selectsRange
+                      inline
+                      isClearable
+                    />
                   </div>
                 </div>
               </div>
               <div className="flex items-center justify-between border-t border-t-[#EAEAEA] px-5 py-3 md:py-3">
                 <div className="text-lg">
                   <div className="font-semibold">
-                    $458 <span className="text-sm font-medium">night</span>
+                    <span className="text-sm font-medium">From</span> $458
                   </div>
                   <div className="flex items-center">
                     <div className="svg_icon mr-1 w-[13px] shrink-0">

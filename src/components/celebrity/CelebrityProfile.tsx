@@ -9,13 +9,15 @@ const CelebrityProfile = () => {
   return (
     <div className="pb-12 lg:pb-16">
       <div className="container">
-        <div className="flex flex-wrap overflow-hidden rounded-xl bg-[#272B34] shadow-2xl lg:rounded-3xl">
+        <div className="group flex flex-wrap overflow-hidden rounded-xl bg-[#272B34] shadow-2xl lg:rounded-3xl">
           <div className="w-full lg:w-1/3">
-            <img
-              src="/large-profile.jpeg"
-              alt="Jade Warren"
-              className="h-[220px] w-full object-cover md:h-[300px] lg:h-full"
-            />
+            <div className="h-full w-full overflow-hidden">
+              <img
+                src="/large-profile.jpeg"
+                alt="Jade Warren"
+                className="h-[220px] w-full object-cover transition-all duration-1000 ease-in-out group-hover:scale-110 md:h-[300px] lg:h-full"
+              />
+            </div>
           </div>
           <div className="w-full p-4 md:py-6 md:px-6 lg:w-2/3 lg:py-10 lg:px-8">
             <p className="text-sm uppercase text-[#CCD3DD] md:text-lg lg:text-xl">

@@ -15,7 +15,7 @@ const PreviewAccordion = () => {
   const [accordions, setAccordions] = useState([
     {
       id: 1,
-      badge: 'Part One',
+      badge: 'One',
       title: 'Accordion 1',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium ex illo dolores eos, incidunt, ad perspiciatis tempora dolorum velit aut reprehenderit in? Animi maxime ea ipsum, quis doloremque ducimus nemo officiis, fugit nam consequatur et nesciunt culpa minima soluta nobis architecto maiores iure ipsam sapiente cumque, repellat laudantium. Nulla.',
@@ -25,7 +25,7 @@ const PreviewAccordion = () => {
     },
     {
       id: 2,
-      badge: 'Part Two',
+      badge: 'Two',
       title: 'Accordion 2',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium ex illo dolores eos, incidunt, ad perspiciatis tempora dolorum velit aut reprehenderit in? Animi maxime ea ipsum, quis doloremque ducimus nemo officiis, fugit nam consequatur et nesciunt culpa minima soluta nobis architecto maiores iure ipsam sapiente cumque, repellat laudantium. Nulla.',
@@ -35,7 +35,7 @@ const PreviewAccordion = () => {
     },
     {
       id: 3,
-      badge: 'Part Three',
+      badge: 'Three',
       title: 'Accordion 3',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium ex illo dolores eos, incidunt, ad perspiciatis tempora dolorum velit aut reprehenderit in? Animi maxime ea ipsum, quis doloremque ducimus nemo officiis, fugit nam consequatur',
@@ -88,8 +88,11 @@ const PreviewAccordion = () => {
   };
 
   return (
-    <div className="pb-16">
+    <div className="pb-10 md:pb-16">
       <div className="container">
+        <h2 className="mb-3 text-2xl font-bold text-black md:text-3xl lg:mb-10 lg:text-4xl">
+          More Reasons...
+        </h2>
         <div className="flex">
           <div className="w-full lg:w-1/2">
             {accordions.map(({ id, badge, title, content, open }) => (
@@ -108,7 +111,7 @@ const PreviewAccordion = () => {
                 >
                   <div className="flex w-full flex-wrap items-center text-[#4A4A4A] lg:flex-nowrap">
                     <div
-                      className={`block rounded-full border bg-black px-2 py-1 text-xs font-medium text-white lg:px-[13px] lg:py-[6px] lg:text-base lg:font-semibold ${
+                      className={`block rounded-full border bg-black px-4 py-1 text-xs font-medium text-white lg:px-5 lg:py-[6px] lg:text-base lg:font-semibold ${
                         open ? 'border-[#F9E171]' : 'border-black'
                       }`}
                     >
@@ -138,7 +141,7 @@ const PreviewAccordion = () => {
                         collapsed: { opacity: 0, height: 0 },
                       }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden"
+                      className="w-full overflow-hidden"
                     >
                       <div className="pb-4 text-sm leading-relaxed lg:text-base">
                         {content}

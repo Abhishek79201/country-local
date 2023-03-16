@@ -1,3 +1,4 @@
+/* eslint @next/next/no-img-element: "off" */
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FreeMode, Navigation, Pagination } from 'swiper';
@@ -14,7 +15,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const PersonSlider = () => (
-  <div className="relative pt-14">
+  <div className="relative pt-5 md:pt-14">
     <div className="container">
       <div className="flex items-center justify-between gap-4 pb-2">
         <div className="w-full md:w-1/2">
@@ -52,22 +53,31 @@ const PersonSlider = () => (
           {[1, 2, 3, 4, 5, 6, 7].map((item) => (
             <SwiperSlide
               key={item}
-              className="!w-[320px] md:!w-[33.33%] lg:!w-[29%]"
+              className="!w-[260px] md:!w-[33.33%] lg:!w-[22%]"
             >
               <div className="mx-3 my-5">
-                <div className="dark_shadow block rounded-2xl bg-white transition-shadow hover:shadow-lg">
+                <div className="dark_shadow group block rounded-lg bg-white transition-shadow hover:shadow-lg">
                   <div className="relative rounded">
                     <div className="flex justify-center overflow-hidden rounded-lg">
-                      <Image
-                        src="/more-services-thumb.jpg"
-                        width={590}
-                        height={366}
-                        alt="Mentor Name"
-                      />
+                      <div className="flex max-h-[120px] transition duration-1000 ease-in-out group-hover:scale-105">
+                        <img
+                          src="/more-services-thumb.jpg"
+                          alt=""
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
 
-                    <div className="absolute top-3 left-3 flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-bold text-black">
-                      4-Week Class
+                    <div className="absolute top-3 flex w-full items-center justify-between px-3">
+                      <div className="flex items-center rounded-full bg-white px-3 py-1.5 text-[11px] font-bold text-black">
+                        4-Week Class
+                      </div>
+
+                      {item % 2 === 0 && (
+                        <div className="flex items-center rounded-full bg-[#FC4037] px-3 py-1.5 text-[11px] font-bold text-white">
+                          30% Off
+                        </div>
+                      )}
                     </div>
 
                     <button
@@ -80,105 +90,119 @@ const PersonSlider = () => (
                     </button>
                   </div>
 
-                  <div className="px-4 pt-4 pb-2">
+                  <div className="px-4 pt-2 pb-2 lg:pt-1">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-[#E91E63]">
-                        <div className="svg_icon mr-1 w-4">
+                        <div className="svg_icon mr-1 w-[14px]">
                           <ClockIcon />
                         </div>
-                        <span className="text-xs font-bold">
+                        <span className="md:text-[12x] text-[11px] font-bold">
                           2 days left to join
                         </span>
                       </div>
-                      <div className="flex items-center">
-                        <div className="svg_icon mr-1 w-4 text-[#FFCE31]">
+                      <div className="flex items-center text-[11px] md:text-[10px]">
+                        <div className="svg_icon mr-1 w-[14px] text-[#FFCE31] md:w-3">
                           <StarIcon />
                         </div>
-                        <span className="mr-1 text-sm font-bold text-[#FFCE31]">
+                        <span className="mr-1 font-bold text-[#FFCE31]">
                           4.9
                         </span>
-                        <div className="text-xs opacity-50">(42)</div>
+                        <div className="opacity-50">(42)</div>
                       </div>
                     </div>
 
-                    <div className="mt-3 flex items-center">
+                    <div className="mt-1 flex">
                       <div className="z-10 flex">
-                        <div className="z-[5] flex h-[44px] w-[44px] overflow-hidden rounded-full border-2 border-white">
+                        <div className="z-[5] flex h-[34px] w-[34px] overflow-hidden rounded-full border-2 border-white">
                           <Image
                             src="/author-head.png"
-                            width={44}
-                            height={44}
+                            width={34}
+                            height={34}
                           />
                         </div>
-                        <motion.span
-                          variants={{
-                            initial: { opacity: 0, x: -20 },
-                            animate: {
-                              opacity: 1,
-                              x: 0,
-                              transition: {
-                                duration: 0.5,
-                                delay: 1,
+                        {item % 2 !== 0 && (
+                          <motion.span
+                            variants={{
+                              initial: { opacity: 0, x: -20 },
+                              animate: {
+                                opacity: 1,
+                                x: 0,
+                                transition: {
+                                  duration: 0.5,
+                                  delay: 1,
+                                },
                               },
-                            },
-                          }}
-                          initial="initial"
-                          whileInView="animate"
-                          viewport={{ once: true }}
-                          className="z-[4] -ml-2 flex h-[44px] w-[44px] overflow-hidden rounded-full border-2 border-white"
-                        >
-                          <Image
-                            src="/user-2.png"
-                            width={44}
-                            height={44}
-                            alt="user-2"
-                          />
-                        </motion.span>
+                            }}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{ once: true }}
+                            className="z-[4] -ml-2 flex h-[34px] w-[34px] overflow-hidden rounded-full border-2 border-white"
+                          >
+                            <Image
+                              src="/user-2.png"
+                              width={34}
+                              height={34}
+                              alt="user-2"
+                            />
+                          </motion.span>
+                        )}
                       </div>
-                      <div className="ml-3 text-base font-bold leading-tight">
+                      <div className="ml-2 min-h-[45px] text-[11px] font-bold leading-tight">
                         <p>Richard Seil</p>
-                        <motion.p
-                          variants={{
-                            initial: { opacity: 0, y: -20 },
-                            animate: {
-                              opacity: 1,
-                              y: 0,
-                              transition: {
-                                duration: 0.5,
-                                delay: 1,
+                        {item % 2 !== 0 && (
+                          <motion.p
+                            variants={{
+                              initial: { opacity: 0, y: -20 },
+                              animate: {
+                                opacity: 1,
+                                y: 0,
+                                transition: {
+                                  duration: 0.5,
+                                  delay: 1,
+                                },
                               },
-                            },
-                          }}
-                          initial="initial"
-                          whileInView="animate"
-                          viewport={{ once: true }}
-                        >
-                          Clarisa Bru
-                        </motion.p>
+                            }}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{ once: true }}
+                          >
+                            Clarisa Bru
+                          </motion.p>
+                        )}
+                        {(item === 1 || item === 2) && (
+                          <div className="mt-1 w-[60px] rounded-md bg-[#CCCCCC] py-[2px] px-2 text-center text-[9px] text-white">
+                            Celebrity
+                          </div>
+                        )}
+                        {(item === 4 || item === 6) && (
+                          <div className="mt-1 w-[60px] rounded-md bg-[#CCCCCC] py-[2px] px-2 text-center text-[9px] text-white">
+                            Pro
+                          </div>
+                        )}
                       </div>
-                      <div className="ml-3 flex h-6 w-6 items-center justify-center rounded-full bg-[#FED501]">
-                        <div className="svg_icon w-4">
+                      <div className="ml-3 flex h-5 w-5 items-center justify-center rounded-full bg-[#FED501]">
+                        <div className="svg_icon w-3">
                           <CheckmarkIcon />
                         </div>
                       </div>
                     </div>
 
-                    <p className="py-3 text-lg font-bold leading-normal">
+                    <p className="pt-1 pb-2 text-[15px] font-bold leading-tight lg:pb-[6px]">
                       Designing Desserts with Richard Seil
                     </p>
 
                     <div className="flex">
                       <button
                         type="button"
-                        className="mr-2 rounded-full bg-[#EBEDFC] px-4 py-2 text-xs font-bold text-[#202124] transition duration-300 hover:bg-black hover:text-white"
+                        className="mr-2 rounded-full bg-[#EBEDFC] px-3 py-[6px] text-[11px] font-bold text-[#202124] transition duration-300 hover:bg-black hover:text-white"
                       >
                         Backing
                       </button>
                       <button
                         type="button"
-                        className="mr-2 flex items-center rounded-full bg-[#e6e6e6] px-4 py-2 text-xs font-bold text-[#767676] transition duration-300 hover:bg-black hover:text-white"
+                        className="mr-2 flex items-center rounded-full bg-[#e6e6e6] px-3 py-[6px] text-[11px] font-bold text-[#767676] transition duration-300 hover:bg-black hover:text-white"
                       >
-                        <div className="svg_icon -mt-[2px] mr-1 w-4">
+                        <div className="svg_icon -mt-[2px] mr-1 w-[14px]">
                           <CalendarIcon />
                         </div>
                         Start Oct 31
@@ -186,11 +210,11 @@ const PersonSlider = () => (
                     </div>
                   </div>
 
-                  <div className="mt-3 flex items-center justify-between border-t border-t-slate-200 px-4 pt-2 pb-3">
-                    <div className="text-sm text-[#C7C7C7]">
+                  <div className="mt-1 flex items-center justify-between border-t border-t-slate-200 px-4 pt-1 pb-2 lg:mt-0 lg:pb-1 lg:pt-[2px]">
+                    <div className="text-[12px] leading-tight text-[#C7C7C7]">
                       From
                       <div>
-                        <span className="text-2xl font-bold text-black">
+                        <span className="text-base font-bold leading-tight text-black">
                           $50
                         </span>
                         <span> / class</span>
@@ -198,7 +222,7 @@ const PersonSlider = () => (
                     </div>
                     <a
                       href="#"
-                      className="rounded-lg border-2 border-black bg-black px-4 py-2 text-xs text-white transition duration-300 hover:bg-transparent hover:text-black"
+                      className="rounded-lg border-2 border-black bg-black px-3 py-1 text-xs font-bold text-white transition duration-300 hover:bg-transparent hover:text-black"
                     >
                       Learn More
                     </a>

@@ -266,7 +266,7 @@ const ReviewPopup = ({ status, onClose }: ReviewPopupPropsType) => {
                           <h4 className="mb-3 text-lg font-semibold md:ml-5">
                             Mentor’s response:
                           </h4>
-                          <div className="ml-5 mr-5 mb-5 flex flex-wrap items-center md:mb-8 md:flex-nowrap">
+                          <div className="ml-4 mr-5 mb-5 flex flex-wrap items-center md:mb-8 md:flex-nowrap">
                             <div className="mr-4 flex h-[50px] w-[50px] shrink-0 overflow-hidden rounded-full md:h-[76px] md:w-[76px]">
                               <Image
                                 src="/review-popup-2.jpg"
@@ -274,15 +274,13 @@ const ReviewPopup = ({ status, onClose }: ReviewPopupPropsType) => {
                                 height={76}
                               />
                             </div>
-                            <div className="mt-3 md:mt-0">
-                              <p className="text-xs text-[#5F5D5f]">
-                                Hello Amy We highly appreciate your time taken
-                                to give a review of your 4 day weekend retreat
-                                Thank you for flying in to attend and we are
-                                very happy to know you enjoyed your stay. Take
-                                care and we are sure we shall all meet again,
-                                Kind regards Rose & Fushin
-                              </p>
+                            <div className="mt-3 bg-gray-100 px-3 py-2 text-sm text-[#5F5D5f] md:mt-0">
+                              Hello Amy We highly appreciate your time taken to
+                              give a review of your 4 day weekend retreat Thank
+                              you for flying in to attend and we are very happy
+                              to know you enjoyed your stay. Take care and we
+                              are sure we shall all meet again, Kind regards
+                              Rose & Fushin
                             </div>
                           </div>
                         </>
