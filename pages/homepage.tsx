@@ -13,22 +13,22 @@ import Video from '../src/components/HomePage/Video';
 import Voluntour from '../src/components/HomePage/Voluntour';
 
 const HomePage = () => (
-<>    
+  <div>
     <Hero />
-  <div className="container ">
-    <DestinationTheme />
-    <EastExperiences />
-    <PopularDestination />
-    <PopularExperience />
-    <ExploreWithLocal />
-    <Camping />
-    <Video />
-    <DarkConcrete />
-    <Voluntour />
-    <Consumised />
-    <TravelBag />
+    <div className="container">
+      <DestinationTheme />
+      <EastExperiences />
+      <PopularDestination />
+      <PopularExperience />
+      <ExploreWithLocal />
+      <Camping />
+      <Video />
+      <DarkConcrete />
+      <Voluntour />
+      <Consumised />
+      <TravelBag />
     </div>
     <NewsLetter />
-  </>
+  </div>
 );
 export default HomePage;
