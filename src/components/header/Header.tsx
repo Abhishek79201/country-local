@@ -109,7 +109,7 @@ const Header = () => {
         <>
           <header
             id="header"
-            className={`relative z-10 bg-white pt-4 shadow-lg transition-all duration-200 ease-in ${
+            className={`relative z-10  bg-white pt-4 shadow-lg transition-all duration-200 ease-in ${
               isOpen ? 'pb-[105px]' : 'pb-4'
             }`}
           >
@@ -280,7 +280,7 @@ const Header = () => {
               }
             `}
           </style>
-          <header className="mobile_header fixed top-0 left-0 z-[31] w-full">
+          <header className="mobile_header fixed top-0 left-0 z-[31000] w-full">
             <div className="px-[15px]">
               <button
                 type="button"

@@ -13,13 +13,9 @@ import Video from '../src/components/HomePage/Video';
 import Voluntour from '../src/components/HomePage/Voluntour';
 
 const HomePage = () => (
-  <>
-    <style>
-      {`header.mobile_header, .mobile_floating_header {
-            display: none;
-          }`}
-    </style>
+<>    
     <Hero />
+  <div className="container ">
     <DestinationTheme />
     <EastExperiences />
     <PopularDestination />
@@ -31,6 +27,7 @@ const HomePage = () => (
     <Voluntour />
     <Consumised />
     <TravelBag />
+    </div>
     <NewsLetter />
   </>
 );

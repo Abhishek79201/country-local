@@ -32,7 +32,15 @@ const DestinationTheme = () => (
             ['Solo', '16+ destinations', '/SoloTheme.jpg'],
             ['Adventure', '16+ destinations', '/AdventureTheme.jpg'],
             ['Nature', '16+ destinations', '/NatureTheme.jpg'],
-            ['Village', '16+ destinations', '/VillageTheme.jpg'],
+            ['Village Tourism', '16+ destinations', '/VillageTheme.jpg'],
+            ['Religious', '16+ destinations', '/ReligiousTheme.jpg'],
+            ['wildlife', '16+ destinations', '/WildlifeTheme.jpg'],
+            [
+              'Water Activities',
+              '16+ destinations',
+              '/waterActivitiesTheme.jpg',
+            ],
+            ['Camping', '16+ destinations', '/campingTheme.jpg'],
           ].map(([title, subtitle, src]) => (
             <SwiperSlide className="!w-[202px] ">
               <div className="m-3 flex flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px]">

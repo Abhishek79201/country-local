@@ -23,7 +23,7 @@ const PopularExperience = () => (
             prevEl: '.available_PopEx.swiper-button-prev',
             nextEl: '.available_PopEx.swiper-button-next',
           }}
-          className="flex flex-wrap !pr-5 md:!pr-0"
+          className="flex  flex-wrap !pr-5 md:!pr-0"
         >
           {[
             ['/PoppularExperiences.jpg'],
@@ -34,11 +34,11 @@ const PopularExperience = () => (
             ['/PoppularExperiences.jpg'],
             ['/PoppularExperiences.jpg'],
           ].map(([src]) => (
-            <SwiperSlide className="!h-[277px] !w-[425px] rounded-[20px]">
-              <div className="relative m-3 flex !h-[277px]  flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[20px]">
+            <SwiperSlide className="  !h-[277px] !w-[425px] rounded-[20px]">
+              <div className="relative ml-3 flex !h-[277px] flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[20px] shadow">
                 <div>
                   <img className=" rounded-[20px] " src={src} alt="review 1" />
-                  <div className="absolute bottom-[15px] left-0 h-[277px] w-full rounded-[20px] bg-black opacity-25" />
+                  <div className="absolute bottom-[7px] left-0 h-[277px] w-full rounded-[20px] bg-black opacity-25" />
                 </div>
                 <div className="absolute left-[25px] top-[20px] flex flex-col items-start">
                   <div className="test text-[8px] font-bold text-[#fff]">
