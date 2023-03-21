@@ -1,6 +1,6 @@
 const DarkConcrete = () => (
-  <div className="bg-white font-bold">
-    <div className="h-[800px] w-full items-center rounded-[33px] bg-[url('../../../public/BG.jpg')] bg-cover bg-no-repeat md:h-[654px]">
+  <div className="bg-white py-[20px] font-bold">
+    <div className="h-[800px] w-full items-center rounded-[15px] bg-[url('../../../public/BG.jpg')] bg-cover bg-no-repeat md:h-[654px] lg:rounded-[33px]">
       <div className="grid h-full grid-cols-1 gap-2 md:grid-cols-2">
         <div className="flex flex-col px-[10px] pt-[133px] md:pl-[60px] md:pt-[111px]">
           <div className="flex justify-center md:justify-start">

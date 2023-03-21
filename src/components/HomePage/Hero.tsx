@@ -62,7 +62,7 @@ const Hero = () => (
     </div>
     <div className="available_Hero swiper-button-prev !-left-1 !-mt-[14px]  !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
     <div className="available_Hero swiper-button-next !-right-1 !-mt-[14px] !hidden !h-[34px] !w-[34px] rounded-full border border-[#ddd] bg-white !text-[#000] shadow-lg after:!text-xs md:!flex" />
-    <div className="min-h-[440px] rounded-b-[5rem] bg-gradient-to-r from-fuchsia-500 to-violet-500 p-8">
+    <div className="min-h-[440px] rounded-b-[1rem]  bg-gradient-to-r from-fuchsia-500 to-violet-500 p-8 shadow-lg shadow-fuchsia-500/50 md:rounded-b-[3rem] xl:rounded-b-[5rem]">
       <h1 className="max-w-[670px] font-bold text-[#fff] sm:text-left md:pb-6 md:text-[20px] md:leading-snug lg:text-[38px]">
         With Country Locals experiences are always
       </h1>

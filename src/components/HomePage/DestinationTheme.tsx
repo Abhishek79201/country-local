@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 
 const DestinationTheme = () => (
   <div className="relative ">
-    <div className="px-[20px] pt-[20px] lg:px-[60px]">
+    <div className="pt-[20px] lg:px-[60px]">
       <h3 className="text-[24px] font-bold text-black lg:text-[38px]">
         Choose Destination By
         <span className="purple_gradient_text_deep "> Theme</span>

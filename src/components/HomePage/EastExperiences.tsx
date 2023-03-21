@@ -7,8 +7,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const EastExperiences = () => (
-  <div className="relative pb-14">
-    <div className="px-[20px] lg:px-[60px]">
+  <div className="relative pb-5 md:pb-14">
+    <div className="lg:px-[60px]">
       <h3 className=" text-[24px] font-bold text-black lg:text-[38px]">
         Get Inspired By{' '}
         <span className="purple_gradient_text_deep ">

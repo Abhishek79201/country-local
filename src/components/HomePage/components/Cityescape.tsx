@@ -21,11 +21,11 @@ const Cityescape = () => (
       ['Florence, Italy'],
       ['Florence, Italy'],
     ].map(([title]) => (
-      <SwiperSlide className="!w-[246px]">
+      <SwiperSlide className="!w-[300px]">
         <div className="m-3 flex flex-col flex-nowrap items-stretch justify-between overflow-hidden rounded-[10px] ">
           <div className="relative overflow-hidden after:duration-300 hover:after:scale-110">
             <img
-              className="  h-[181px] w-[246px] cursor-pointer rounded-2xl duration-300 hover:scale-105 "
+              className="  h-[181px] w-[300px] cursor-pointer rounded-2xl duration-300 hover:scale-105 "
               src="/Rectangle 14.jpg"
               alt="Rectangle"
             />

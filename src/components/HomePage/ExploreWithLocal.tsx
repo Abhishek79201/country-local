@@ -8,12 +8,12 @@ import 'swiper/css/pagination';
 
 const ExploreWithLocal = () => (
   <div className="relative ">
-    <div className="px-[20px] pt-[20px] lg:px-[60px]">
+    <div className="pt-[20px] lg:px-[60px]">
       <h3 className="text-[24px] font-bold text-black lg:text-[38px]">
         Explore
         <span className="purple_gradient_text_deep "> Withlocals</span>
       </h3>
-      <p className="pb-[32px] font-medium  sm:text-[12px] lg:text-[22px]">
+      <p className="pb-[10px] font-medium  sm:text-[12px] lg:text-[22px]">
         All of our tours and activities are: • Private • Personalized • With the
         local of your choice
       </p>

@@ -7,8 +7,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const PopularDestination = () => (
-  <div className="relative pb-14">
-    <div className="px-[20px] lg:px-[60px]">
+  <div className="relative pb-3 lg:pb-14">
+    <div className="lg:px-[60px]">
       <h3 className=" text-[24px] font-bold text-black lg:text-[38px]">
         Popular <span className="purple_gradient_text_deep ">Destination</span>
       </h3>
